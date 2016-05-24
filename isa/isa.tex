@@ -13,9 +13,23 @@
 \author{}
 \date{\today}
 \maketitle
+PRELIMINARY -- WORKING DOCUMENT
 \section{Introduction to the architecture}
+The core makes use of a pipeline architecture:
+\begin{enumerate}
+    \item FETCH: In this stage the instruction is fetched and loaded
+    \item DECODE: The instruction is decoded and the correct registers are wired into the ALU
+    \item EXECUTE: The ALU executes the decoded instruction, together with the data that was provided
+    \item WRITEBACK: Depending on the set conditions, the register(s) are updated
+\end{enumerate}
 
 \section{Introduction to the ISA}
+Due to the pipeline nature of the architecture take into account the following:
+\begin{itemize}
+    \item When writing a value to a register, will only take effect on instructions delayed ... 
+    \item When branching, the entire pipeline is hard flushed and no writeback can take place
+\end{itemize}
+
 \begin{table}
 	\begin{center}
 	\begin{tabular}{|C{8cm}|C{6cm}|C{2cm}|}
