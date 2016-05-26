@@ -29,6 +29,10 @@ begin
 	elsif (clk'event and clk = '1')
 	    writeback_Out	<= writeback_In;
 	    registerC_Out	<= registerC_In;
+	    case instr is
+		when others =>
+		    null;    
+	    end case;
 	end if;
     end process;
 end architecture;

@@ -22,6 +22,9 @@ The core makes use of a pipeline architecture:
     \item EXECUTE: The ALU executes the decoded instruction, together with the data that was provided
     \item WRITEBACK: Depending on the set conditions, the register(s) are updated
 \end{enumerate}
+In general any part of the pipeline is completely independent and agnostic of what the other
+parts are doing. Of course, there are exceptions to this rule. The DECODE block for example, can schedule
+(or multiplex) ALU output into ALU input. The ALU itself, is completely unaware where its input data is coming from.
 
 \section{Introduction to the ISA}
 Due to the pipeline nature of the architecture take into account the following:
