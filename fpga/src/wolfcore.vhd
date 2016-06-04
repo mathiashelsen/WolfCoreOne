@@ -1,25 +1,21 @@
-LIBRARY ieee;
-USE ieee.std_logic_1164.all;
-use IEEE.numeric_std.all;
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
 
 
+entity wolfcore is
+	port (
+		clock_50: in   std_logic;
+		key:      in   std_logic_vector(1 downto 0);
+		led:      out  std_logic_vector(3 downto 0));
+end wolfcore;
 
-ENTITY wolfcore IS
-		    PORT
-			    (
-				        CLOCK_50 :  IN  STD_LOGIC;
-				        KEY :  IN  STD_LOGIC_VECTOR(1 DOWNTO 0);
-				        LED :  OUT  STD_LOGIC_VECTOR(3 DOWNTO 0)
-						    );
-					END wolfcore;
-
-ARCHITECTURE a OF wolfcore IS
-		    signal a: unsigned(24 downto 0);
+architecture a of wolfcore is
+	signal a: unsigned(24 downto 0);
 begin
 
-		    a <= a+1 when rising_edge(CLOCK_50);
-			    LED(0) <= a(24);
-				    LED(2) <= KEY(0);
+	a <= a+1 when rising_edge(clock_50);
+    led(0) <= a(24);
+    led(2) <= key(0);
 
-			END a;
-			~                    
+end a;
