@@ -1,3 +1,6 @@
+-- Top-level entity for the DE0-Nano-SoC (Atlas SoC) board.
+-- Defines how the core is wired to the baseboard.
+
 library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
@@ -12,10 +15,9 @@ entity DE0_Nano_SoC is
 end DE0_Nano_SoC;
 
 architecture a of DE0_Nano_SoC is
-	signal a: unsigned(31 downto 0);
 begin
 
-	a <= a+1 when rising_edge(clock_50);
-	LED <= std_logic_vector(a(31 downto 24));
+	--TODO: wire core here
+	LED(3 downto 0) <= SW;
 
 end a;
