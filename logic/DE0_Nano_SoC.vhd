@@ -17,9 +17,13 @@ entity DE0_Nano_SoC is
 end DE0_Nano_SoC;
 
 architecture a of DE0_Nano_SoC is
-begin
+	component prescaler port (
+		clock_in:  in  std_logic;
+		clock_out: out std_logic);
+	end component;
 
-	--TODO: wire core here
-	LED(3 downto 0) <= SW;
+begin
+	prescale_uart: prescaler port map(CLOCK_50, LED(0));
+	LED(1) <= '1';
 
 end a;
