@@ -7,9 +7,9 @@ Under construction. Nothing to see here yet.
 Directory [logic](logic/) contains the VHDL files defining the Core. [DE0_Nano_SoC.vhd](logic/DE0_Nano_SoC.vhd) is the top-level entity that wires the Core to a DE0 Nano SoC (Atlas SoC) development board.
 
 
-## logic/src
+### logic/src
 
-Directory [logic](docs/) contains the VHDL files defining the Core, independent of the hardware it's implemented on.
+Directory [logic/src](logic/src) contains the VHDL files defining the Core, independent of the hardware it's implemented on.
 
 
 ## soc
