@@ -17,6 +17,6 @@ Directory [logic/src](logic/src) contains the VHDL files defining the Core, inde
 Directory [soc](soc/) contains code for the ARM SoC. This is mainly for testing.
 
 
-## tools
+## toolchain
 
-Directory [tools](tools/) contains the compilation toolchain (assembler, emulator, ...)
+Directory [toolchain](toolchain/) contains the compilation toolchain (assembler, emulator, ...)
