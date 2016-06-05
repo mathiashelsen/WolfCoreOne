@@ -11,7 +11,8 @@ entity DE0_Nano_SoC is
 		CLOCK_50: in   std_logic;
 		KEY:      in   std_logic_vector(1 downto 0);
 		LED:      out  std_logic_vector(7 downto 0);
-		SW:       in   std_logic_vector(3 downto 0));
+		SW:       in   std_logic_vector(3 downto 0);
+		GPIO_0: inout std_logic_vector(23 downto 0));
 end DE0_Nano_SoC;
 
 architecture a of DE0_Nano_SoC is
