@@ -21,12 +21,13 @@ end ALU;
 architecture default of ALU is
 begin
     process( clk, rst )
+	begin
 	if( rst = '1' ) then
 	    ALU_Out		<= X"0000_0000_0000_0000";
 	    ALU_Status_Register	<= X"0000_0000_0000_0000";
 	    writeback_Out	<= X"00";
 	    registerC_Out	<= X"00";
-	elsif (clk'event and clk = '1')
+	elsif (clk'event and clk = '1') then
 	    writeback_Out	<= writeback_In;
 	    registerC_Out	<= registerC_In;
 	    case instr is
