@@ -4,6 +4,8 @@ use ieee.numeric_std.all;
 
 
 entity prescaler is
+	generic(
+		  n: integer);
 	port (
 		clock_in:  in  std_logic;
 		clock_out: out std_logic);
@@ -16,7 +18,7 @@ begin
 	p: process(count)
 	begin
 		if rising_edge(clock_in) then
-			if count = X"00001b2" then
+			if count = n then
 				count <= X"00000000";
 				enable <= not enable;
 			else
@@ -24,5 +26,5 @@ begin
 			end if;
 		end if;
 	end process p;
-	clock_out <= enable;
+	clock_out <= enable when rising_edge(clock_in);
 end a;
