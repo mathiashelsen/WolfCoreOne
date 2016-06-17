@@ -5,6 +5,7 @@ use ieee.std_logic_unsigned.all;
 entity mtu is
 	port(
 		clk	:	in	std_logic;
+		rst	:	in	std_logic;
 		-- Ports to the Instruction cache
 		dataToICache	:	out	std_logic_vector(63 downto 0);
 		dataFromICache	:	in	std_logic_vector(63 downto 0);
@@ -35,6 +36,36 @@ entity mtu is
 		cacheBank		:	in	std_logic_vector(3 downto 0);
 		sdramAddress	:	in	std_logic_vector(27 downto 0);
 		enableXfer		:	in	std_logic;
-		idle			:	out	std_logic;
+		idle			:	out	std_logic
 	);
 end mtu;
+
+architecture default of mtu is
+	type states is (INIT, WRITING, READING);
+	signal	state	:	states	:= init;
+	signal	ctr	:	std_logic_vector(31 downto 0);
+	signal	address	:	std_logic_vector(27 downto 0);
+	signal	wordCtr	:	std_logic_vector(7 downto 0); -- Need to update this to the correct value
+	process(clk, rst)
+		if( rst = '1' ) then
+			ctr	<= X"0000_0000";
+			address	<= std_logic_vector(to_unsigned(0, address'length));
+			state	<= INIT;
+		else if( ctr'event and clk = '1' ) then
+			case state is
+				when IDLE =>
+					if( enableXfer = '1' ) then
+						if( direction = '1' ) then
+							address 	<= sdramAddress;
+							addressDCache	<= 
+						else
+
+						end if;
+					end if;
+				when WRITING =>
+
+				when READING =>
+			end case;
+		end if;
+	end process;
+end architecture;
