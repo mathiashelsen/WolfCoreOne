@@ -46,12 +46,13 @@ architecture default of mtu is
 	signal	cacheAddress	:	std_logic_vector(13 downto 0);
 	signal	wordLow			:	std_logic_vector(31 downto 0);
 	signal	wordHigh		:	std_logic_vector(31 downto 0);
-	process(clk, rst)
+begin	
+	process(clk, rst) begin
 		if( rst = '1' ) then
 			ctr	<= X"0000_0000";
 			address	<= std_logic_vector(to_unsigned(0, address'length));
 			state	<= INIT;
-		else if( clk'event and clk = '1' ) then
+		elsif( clk'event and clk = '1' ) then
 			case state is
 				when IDLE =>
 					sdramRead	<= '0';	
