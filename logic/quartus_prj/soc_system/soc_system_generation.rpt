@@ -1,6 +1,6 @@
 Info: Starting: Create block symbol file (.bsf)
-Info: qsys-generate /home/mathias/Projects/TestBridges/soc_system.qsys --block-symbol-file --output-directory=/home/mathias/Projects/TestBridges/soc_system --family="Cyclone V" --part=5CSEMA4U23C6
-Progress: Loading TestBridges/soc_system.qsys
+Info: qsys-generate C:\Users\helsen\WolfCoreOne\logic\quartus_prj\soc_system.qsys --block-symbol-file --output-directory=C:\Users\helsen\WolfCoreOne\logic\quartus_prj\soc_system --family="Cyclone V" --part=5CSEMA4U23C6
+Progress: Loading quartus_prj/soc_system.qsys
 Progress: Reading input file
 Progress: Adding clk_0 [clock_source 16.0]
 Progress: Parameterizing module clk_0
@@ -40,8 +40,8 @@ Info: qsys-generate succeeded.
 Info: Finished: Create block symbol file (.bsf)
 Info: 
 Info: Starting: Create HDL design files for synthesis
-Info: qsys-generate /home/mathias/Projects/TestBridges/soc_system.qsys --synthesis=VERILOG --output-directory=/home/mathias/Projects/TestBridges/soc_system/synthesis --family="Cyclone V" --part=5CSEMA4U23C6
-Progress: Loading TestBridges/soc_system.qsys
+Info: qsys-generate C:\Users\helsen\WolfCoreOne\logic\quartus_prj\soc_system.qsys --synthesis=VERILOG --output-directory=C:\Users\helsen\WolfCoreOne\logic\quartus_prj\soc_system\synthesis --family="Cyclone V" --part=5CSEMA4U23C6
+Progress: Loading quartus_prj/soc_system.qsys
 Progress: Reading input file
 Progress: Adding clk_0 [clock_source 16.0]
 Progress: Parameterizing module clk_0
@@ -94,19 +94,19 @@ Warning: hps_0: 1 or more output clock frequencies cannot be achieved precisely,
 Info: hps_0: "soc_system" instantiated altera_hps "hps_0"
 Info: intr_capturer_0: "soc_system" instantiated intr_capturer "intr_capturer_0"
 Info: jtag_uart: Starting RTL generation for module 'soc_system_jtag_uart'
-Info: jtag_uart:   Generation command is [exec /opt/altera_lite/16.0/quartus/linux64/perl/bin/perl -I /opt/altera_lite/16.0/quartus/linux64/perl/lib -I /opt/altera_lite/16.0/quartus/sopc_builder/bin/europa -I /opt/altera_lite/16.0/quartus/sopc_builder/bin/perl_lib -I /opt/altera_lite/16.0/quartus/sopc_builder/bin -I /opt/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/common -I /opt/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart -- /opt/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart/generate_rtl.pl --name=soc_system_jtag_uart --dir=/tmp/alt6965_3799252503907201875.dir/0002_jtag_uart_gen/ --quartus_dir=/opt/altera_lite/16.0/quartus --verilog --config=/tmp/alt6965_3799252503907201875.dir/0002_jtag_uart_gen//soc_system_jtag_uart_component_configuration.pl  --do_build_sim=0  ]
+Info: jtag_uart:   Generation command is [exec C:/altera_lite/16.0/quartus/bin64/perl/bin/perl.exe -I C:/altera_lite/16.0/quartus/bin64/perl/lib -I C:/altera_lite/16.0/quartus/sopc_builder/bin/europa -I C:/altera_lite/16.0/quartus/sopc_builder/bin/perl_lib -I C:/altera_lite/16.0/quartus/sopc_builder/bin -I C:/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/common -I C:/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart -- C:/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart/generate_rtl.pl --name=soc_system_jtag_uart --dir=C:/Users/helsen/AppData/Local/Temp/alt6972_9045995060868202225.dir/0002_jtag_uart_gen/ --quartus_dir=C:/altera_lite/16.0/quartus --verilog --config=C:/Users/helsen/AppData/Local/Temp/alt6972_9045995060868202225.dir/0002_jtag_uart_gen//soc_system_jtag_uart_component_configuration.pl  --do_build_sim=0  ]
 Info: jtag_uart: Done RTL generation for module 'soc_system_jtag_uart'
 Info: jtag_uart: "soc_system" instantiated altera_avalon_jtag_uart "jtag_uart"
 Info: onchip_memory2_0: Starting RTL generation for module 'soc_system_onchip_memory2_0'
-Info: onchip_memory2_0:   Generation command is [exec /opt/altera_lite/16.0/quartus/linux64/perl/bin/perl -I /opt/altera_lite/16.0/quartus/linux64/perl/lib -I /opt/altera_lite/16.0/quartus/sopc_builder/bin/europa -I /opt/altera_lite/16.0/quartus/sopc_builder/bin/perl_lib -I /opt/altera_lite/16.0/quartus/sopc_builder/bin -I /opt/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/common -I /opt/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2 -- /opt/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2/generate_rtl.pl --name=soc_system_onchip_memory2_0 --dir=/tmp/alt6965_3799252503907201875.dir/0003_onchip_memory2_0_gen/ --quartus_dir=/opt/altera_lite/16.0/quartus --verilog --config=/tmp/alt6965_3799252503907201875.dir/0003_onchip_memory2_0_gen//soc_system_onchip_memory2_0_component_configuration.pl  --do_build_sim=0  ]
+Info: onchip_memory2_0:   Generation command is [exec C:/altera_lite/16.0/quartus/bin64/perl/bin/perl.exe -I C:/altera_lite/16.0/quartus/bin64/perl/lib -I C:/altera_lite/16.0/quartus/sopc_builder/bin/europa -I C:/altera_lite/16.0/quartus/sopc_builder/bin/perl_lib -I C:/altera_lite/16.0/quartus/sopc_builder/bin -I C:/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/common -I C:/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2 -- C:/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2/generate_rtl.pl --name=soc_system_onchip_memory2_0 --dir=C:/Users/helsen/AppData/Local/Temp/alt6972_9045995060868202225.dir/0003_onchip_memory2_0_gen/ --quartus_dir=C:/altera_lite/16.0/quartus --verilog --config=C:/Users/helsen/AppData/Local/Temp/alt6972_9045995060868202225.dir/0003_onchip_memory2_0_gen//soc_system_onchip_memory2_0_component_configuration.pl  --do_build_sim=0  ]
 Info: onchip_memory2_0: Done RTL generation for module 'soc_system_onchip_memory2_0'
 Info: onchip_memory2_0: "soc_system" instantiated altera_avalon_onchip_memory2 "onchip_memory2_0"
 Info: pio_fpga2hps: Starting RTL generation for module 'soc_system_pio_fpga2hps'
-Info: pio_fpga2hps:   Generation command is [exec /opt/altera_lite/16.0/quartus/linux64/perl/bin/perl -I /opt/altera_lite/16.0/quartus/linux64/perl/lib -I /opt/altera_lite/16.0/quartus/sopc_builder/bin/europa -I /opt/altera_lite/16.0/quartus/sopc_builder/bin/perl_lib -I /opt/altera_lite/16.0/quartus/sopc_builder/bin -I /opt/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/common -I /opt/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- /opt/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=soc_system_pio_fpga2hps --dir=/tmp/alt6965_3799252503907201875.dir/0004_pio_fpga2hps_gen/ --quartus_dir=/opt/altera_lite/16.0/quartus --verilog --config=/tmp/alt6965_3799252503907201875.dir/0004_pio_fpga2hps_gen//soc_system_pio_fpga2hps_component_configuration.pl  --do_build_sim=0  ]
+Info: pio_fpga2hps:   Generation command is [exec C:/altera_lite/16.0/quartus/bin64/perl/bin/perl.exe -I C:/altera_lite/16.0/quartus/bin64/perl/lib -I C:/altera_lite/16.0/quartus/sopc_builder/bin/europa -I C:/altera_lite/16.0/quartus/sopc_builder/bin/perl_lib -I C:/altera_lite/16.0/quartus/sopc_builder/bin -I C:/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/common -I C:/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- C:/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=soc_system_pio_fpga2hps --dir=C:/Users/helsen/AppData/Local/Temp/alt6972_9045995060868202225.dir/0004_pio_fpga2hps_gen/ --quartus_dir=C:/altera_lite/16.0/quartus --verilog --config=C:/Users/helsen/AppData/Local/Temp/alt6972_9045995060868202225.dir/0004_pio_fpga2hps_gen//soc_system_pio_fpga2hps_component_configuration.pl  --do_build_sim=0  ]
 Info: pio_fpga2hps: Done RTL generation for module 'soc_system_pio_fpga2hps'
 Info: pio_fpga2hps: "soc_system" instantiated altera_avalon_pio "pio_fpga2hps"
 Info: pio_hps2fpga: Starting RTL generation for module 'soc_system_pio_hps2fpga'
-Info: pio_hps2fpga:   Generation command is [exec /opt/altera_lite/16.0/quartus/linux64/perl/bin/perl -I /opt/altera_lite/16.0/quartus/linux64/perl/lib -I /opt/altera_lite/16.0/quartus/sopc_builder/bin/europa -I /opt/altera_lite/16.0/quartus/sopc_builder/bin/perl_lib -I /opt/altera_lite/16.0/quartus/sopc_builder/bin -I /opt/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/common -I /opt/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- /opt/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=soc_system_pio_hps2fpga --dir=/tmp/alt6965_3799252503907201875.dir/0005_pio_hps2fpga_gen/ --quartus_dir=/opt/altera_lite/16.0/quartus --verilog --config=/tmp/alt6965_3799252503907201875.dir/0005_pio_hps2fpga_gen//soc_system_pio_hps2fpga_component_configuration.pl  --do_build_sim=0  ]
+Info: pio_hps2fpga:   Generation command is [exec C:/altera_lite/16.0/quartus/bin64/perl/bin/perl.exe -I C:/altera_lite/16.0/quartus/bin64/perl/lib -I C:/altera_lite/16.0/quartus/sopc_builder/bin/europa -I C:/altera_lite/16.0/quartus/sopc_builder/bin/perl_lib -I C:/altera_lite/16.0/quartus/sopc_builder/bin -I C:/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/common -I C:/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- C:/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=soc_system_pio_hps2fpga --dir=C:/Users/helsen/AppData/Local/Temp/alt6972_9045995060868202225.dir/0005_pio_hps2fpga_gen/ --quartus_dir=C:/altera_lite/16.0/quartus --verilog --config=C:/Users/helsen/AppData/Local/Temp/alt6972_9045995060868202225.dir/0005_pio_hps2fpga_gen//soc_system_pio_hps2fpga_component_configuration.pl  --do_build_sim=0  ]
 Info: pio_hps2fpga: Done RTL generation for module 'soc_system_pio_hps2fpga'
 Info: pio_hps2fpga: "soc_system" instantiated altera_avalon_pio "pio_hps2fpga"
 Info: sysid_qsys: "soc_system" instantiated altera_avalon_sysid_qsys "sysid_qsys"
@@ -144,46 +144,46 @@ Info: router_006: "mm_interconnect_0" instantiated altera_merlin_router "router_
 Info: router_007: "mm_interconnect_0" instantiated altera_merlin_router "router_007"
 Info: router_009: "mm_interconnect_0" instantiated altera_merlin_router "router_009"
 Info: fpga_only_master_master_limiter: "mm_interconnect_0" instantiated altera_merlin_traffic_limiter "fpga_only_master_master_limiter"
-Info: Reusing file /home/mathias/Projects/TestBridges/soc_system/synthesis/submodules/altera_avalon_sc_fifo.v
-Info: Reusing file /home/mathias/Projects/TestBridges/soc_system/synthesis/submodules/altera_avalon_st_pipeline_base.v
+Info: Reusing file C:/Users/helsen/WolfCoreOne/logic/quartus_prj/soc_system/synthesis/submodules/altera_avalon_sc_fifo.v
+Info: Reusing file C:/Users/helsen/WolfCoreOne/logic/quartus_prj/soc_system/synthesis/submodules/altera_avalon_st_pipeline_base.v
 Info: onchip_memory2_0_s1_burst_adapter: "mm_interconnect_0" instantiated altera_merlin_burst_adapter "onchip_memory2_0_s1_burst_adapter"
-Info: Reusing file /home/mathias/Projects/TestBridges/soc_system/synthesis/submodules/altera_merlin_address_alignment.sv
-Info: Reusing file /home/mathias/Projects/TestBridges/soc_system/synthesis/submodules/altera_avalon_st_pipeline_stage.sv
-Info: Reusing file /home/mathias/Projects/TestBridges/soc_system/synthesis/submodules/altera_avalon_st_pipeline_base.v
+Info: Reusing file C:/Users/helsen/WolfCoreOne/logic/quartus_prj/soc_system/synthesis/submodules/altera_merlin_address_alignment.sv
+Info: Reusing file C:/Users/helsen/WolfCoreOne/logic/quartus_prj/soc_system/synthesis/submodules/altera_avalon_st_pipeline_stage.sv
+Info: Reusing file C:/Users/helsen/WolfCoreOne/logic/quartus_prj/soc_system/synthesis/submodules/altera_avalon_st_pipeline_base.v
 Info: cmd_demux: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "cmd_demux"
 Info: cmd_demux_002: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "cmd_demux_002"
 Info: cmd_mux: "mm_interconnect_0" instantiated altera_merlin_multiplexer "cmd_mux"
 Info: cmd_mux_001: "mm_interconnect_0" instantiated altera_merlin_multiplexer "cmd_mux_001"
-Info: Reusing file /home/mathias/Projects/TestBridges/soc_system/synthesis/submodules/altera_merlin_arbitrator.sv
+Info: Reusing file C:/Users/helsen/WolfCoreOne/logic/quartus_prj/soc_system/synthesis/submodules/altera_merlin_arbitrator.sv
 Info: cmd_mux_002: "mm_interconnect_0" instantiated altera_merlin_multiplexer "cmd_mux_002"
-Info: Reusing file /home/mathias/Projects/TestBridges/soc_system/synthesis/submodules/altera_merlin_arbitrator.sv
+Info: Reusing file C:/Users/helsen/WolfCoreOne/logic/quartus_prj/soc_system/synthesis/submodules/altera_merlin_arbitrator.sv
 Info: cmd_mux_004: "mm_interconnect_0" instantiated altera_merlin_multiplexer "cmd_mux_004"
-Info: Reusing file /home/mathias/Projects/TestBridges/soc_system/synthesis/submodules/altera_merlin_arbitrator.sv
+Info: Reusing file C:/Users/helsen/WolfCoreOne/logic/quartus_prj/soc_system/synthesis/submodules/altera_merlin_arbitrator.sv
 Info: rsp_demux: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "rsp_demux"
 Info: rsp_demux_001: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "rsp_demux_001"
 Info: rsp_demux_002: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "rsp_demux_002"
 Info: rsp_demux_004: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "rsp_demux_004"
 Info: rsp_mux: "mm_interconnect_0" instantiated altera_merlin_multiplexer "rsp_mux"
-Info: Reusing file /home/mathias/Projects/TestBridges/soc_system/synthesis/submodules/altera_merlin_arbitrator.sv
+Info: Reusing file C:/Users/helsen/WolfCoreOne/logic/quartus_prj/soc_system/synthesis/submodules/altera_merlin_arbitrator.sv
 Info: rsp_mux_002: "mm_interconnect_0" instantiated altera_merlin_multiplexer "rsp_mux_002"
-Info: Reusing file /home/mathias/Projects/TestBridges/soc_system/synthesis/submodules/altera_merlin_arbitrator.sv
+Info: Reusing file C:/Users/helsen/WolfCoreOne/logic/quartus_prj/soc_system/synthesis/submodules/altera_merlin_arbitrator.sv
 Info: fpga_only_master_master_to_onchip_memory2_0_s1_cmd_width_adapter: "mm_interconnect_0" instantiated altera_merlin_width_adapter "fpga_only_master_master_to_onchip_memory2_0_s1_cmd_width_adapter"
-Info: Reusing file /home/mathias/Projects/TestBridges/soc_system/synthesis/submodules/altera_merlin_address_alignment.sv
-Info: Reusing file /home/mathias/Projects/TestBridges/soc_system/synthesis/submodules/altera_merlin_burst_uncompressor.sv
+Info: Reusing file C:/Users/helsen/WolfCoreOne/logic/quartus_prj/soc_system/synthesis/submodules/altera_merlin_address_alignment.sv
+Info: Reusing file C:/Users/helsen/WolfCoreOne/logic/quartus_prj/soc_system/synthesis/submodules/altera_merlin_burst_uncompressor.sv
 Info: avalon_st_adapter: "mm_interconnect_0" instantiated altera_avalon_st_adapter "avalon_st_adapter"
 Info: avalon_st_adapter_001: "mm_interconnect_0" instantiated altera_avalon_st_adapter "avalon_st_adapter_001"
 Info: hps_0_f2h_axi_slave_agent: "mm_interconnect_1" instantiated altera_merlin_axi_slave_ni "hps_0_f2h_axi_slave_agent"
-Info: Reusing file /home/mathias/Projects/TestBridges/soc_system/synthesis/submodules/altera_merlin_burst_uncompressor.sv
-Info: Reusing file /home/mathias/Projects/TestBridges/soc_system/synthesis/submodules/altera_avalon_sc_fifo.v
-Info: Reusing file /home/mathias/Projects/TestBridges/soc_system/synthesis/submodules/altera_merlin_address_alignment.sv
+Info: Reusing file C:/Users/helsen/WolfCoreOne/logic/quartus_prj/soc_system/synthesis/submodules/altera_merlin_burst_uncompressor.sv
+Info: Reusing file C:/Users/helsen/WolfCoreOne/logic/quartus_prj/soc_system/synthesis/submodules/altera_avalon_sc_fifo.v
+Info: Reusing file C:/Users/helsen/WolfCoreOne/logic/quartus_prj/soc_system/synthesis/submodules/altera_merlin_address_alignment.sv
 Info: router: "mm_interconnect_1" instantiated altera_merlin_router "router"
 Info: router_001: "mm_interconnect_1" instantiated altera_merlin_router "router_001"
 Info: cmd_demux: "mm_interconnect_1" instantiated altera_merlin_demultiplexer "cmd_demux"
 Info: cmd_mux: "mm_interconnect_1" instantiated altera_merlin_multiplexer "cmd_mux"
-Info: Reusing file /home/mathias/Projects/TestBridges/soc_system/synthesis/submodules/altera_merlin_arbitrator.sv
+Info: Reusing file C:/Users/helsen/WolfCoreOne/logic/quartus_prj/soc_system/synthesis/submodules/altera_merlin_arbitrator.sv
 Info: rsp_demux: "mm_interconnect_1" instantiated altera_merlin_demultiplexer "rsp_demux"
 Info: rsp_mux: "mm_interconnect_1" instantiated altera_merlin_multiplexer "rsp_mux"
-Info: Reusing file /home/mathias/Projects/TestBridges/soc_system/synthesis/submodules/altera_merlin_arbitrator.sv
+Info: Reusing file C:/Users/helsen/WolfCoreOne/logic/quartus_prj/soc_system/synthesis/submodules/altera_merlin_arbitrator.sv
 Info: border: "hps_io" instantiated altera_interface_generator "border"
 Info: error_adapter_0: "avalon_st_adapter" instantiated error_adapter "error_adapter_0"
 Info: error_adapter_0: "avalon_st_adapter_001" instantiated error_adapter "error_adapter_0"
