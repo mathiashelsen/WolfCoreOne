@@ -60,7 +60,7 @@ architecture default of mtu is
 					wrenDCache	<= '0';
 					ctr			<= X"0000_0000";
 
-					if( enableXfer = '1' and direction ='0') then
+					if( enableXfer = '1' and direction ='0' ) then
 						dramAddress			<= sdramAddress;
 						cacheAddress		<= to_integer(0, addressICache'length);
 						state				<= READ1;
@@ -82,8 +82,8 @@ architecture default of mtu is
 
 					if( sdramReadDataValid = '1' ) then
 						wordLow			<= sdramReadData;	
-						state			<= READ3;
 						ctr				<= to_integer(10_000_000, 32);
+						state			<= READ3;
 					else
 						if( ctr = X"0" ) then
 							state 		<= IDLE;
@@ -101,9 +101,14 @@ architecture default of mtu is
 						dataICache		<= wordHigh & wordLow;
 						wrenICache		<= '1';	
 
-						cacheAddress	<= cacheAddress + X"1";
-							
-						state			<= READ2;
+						
+						if( cacheAddress = to_integer(16_383, 14) ) then
+							state		<= IDLE;
+						else
+							cacheAddress	<= cacheAddress + X"1";
+							ctr				<= to_integer(10_000_000, 32);
+							state			<= READ2;	
+						end if;	
 					else
 						if( ctr = X"0" ) then
 							state 		<= IDLE;
