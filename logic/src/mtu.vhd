@@ -1,6 +1,7 @@
 library ieee;
 use ieee.std_logic_1164.all;
 use ieee.std_logic_unsigned.all;
+use ieee.numeric_std.all;
 
 entity mtu is
 	port(
@@ -33,14 +34,14 @@ entity mtu is
 		direction		:	in	std_logic;							-- 0 For read, 1 for write
 		cacheBank		:	in	std_logic_vector(3 downto 0);
 		sdramAddress	:	in	std_logic_vector(27 downto 0);
-		enableXfer		:	in	std_logic;
-		idle			:	out	std_logic
+		enableXfer		:	in	std_logic
+		--idle			:	out	std_logic
 	);
 end mtu;
 
 architecture default of mtu is
-	type states is (INIT, WRITING, READING);
-	signal	state			:	states	:= init;
+	type states is (IDLE, READ1, READ2, READ3);
+	signal	state			:	states	:= IDLE;
 	signal	ctr				:	std_logic_vector(31 downto 0);
 	signal	dramAddress		:	std_logic_vector(28 downto 0);
 	signal	cacheAddress	:	std_logic_vector(13 downto 0);
@@ -50,45 +51,45 @@ begin
 	process(clk, rst) begin
 		if( rst = '1' ) then
 			ctr	<= X"0000_0000";
-			address	<= std_logic_vector(to_unsigned(0, address'length));
-			state	<= INIT;
+			cacheAddress	<= std_logic_vector(to_unsigned(0, cacheAddress'length));
+			state	<= IDLE;
 		elsif( clk'event and clk = '1' ) then
 			case state is
 				when IDLE =>
-					sdramRead	<= '0';	
-					sdramWrite	<= '0';	
+					sdramReadRead	<= '0';	
+					sdramWriteWrite	<= '0';	
 					wrenICache	<= '0';
 					wrenDCache	<= '0';
 					ctr			<= X"0000_0000";
 
 					if( enableXfer = '1' and direction ='0' ) then
 						dramAddress			<= sdramAddress;
-						cacheAddress		<= to_integer(0, addressICache'length);
+						cacheAddress		<= std_logic_vector(to_unsigned(0, addressICache'length));
 						state				<= READ1;
 					end if;
 				when READ1 =>
 					-- Initial read state, put the right pins high and low
 					sdramReadAddr		<= dramAddress;
 					sdramReadBurstCnt	<=	X"FF";
-					sdramRead			<= '1';	
+					sdramReadRead			<= '1';	
 					state				<= READ2;
-					ctr					<= to_integer(10_000_000, 32);
+					ctr					<= std_logic_vector(to_unsigned(10_000_000, 32));
 
 				when READ2 =>
 					wrenICache			<= '0';
 
 					if( sdramReadWaitReq = '0' ) then
-						sdramRead	<= '0';	
+						sdramReadRead	<= '0';	
 					end if;
 
 					if( sdramReadDataValid = '1' ) then
 						wordLow			<= sdramReadData;	
-						ctr				<= to_integer(10_000_000, 32);
+						ctr				<= std_logic_vector(to_unsigned(10_000_000, 32));
 						state			<= READ3;
 					else
 						if( ctr = X"0" ) then
 							state 		<= IDLE;
-							sdramRead	<= '0';
+							sdramReadRead	<= '0';
 						else
 							ctr			<= ctr - X"1";
 						end if;
@@ -103,17 +104,17 @@ begin
 						wrenICache		<= '1';	
 
 						
-						if( cacheAddress = to_integer(16_383, 14) ) then
+						if( cacheAddress = std_logic_vector(to_unsigned(16_383, 14)) ) then
 							state		<= IDLE;
 						else
 							cacheAddress	<= cacheAddress + X"1";
-							ctr				<= to_integer(10_000_000, 32);
+							ctr				<= std_logic_vector(to_unsigned(10_000_000, 32));
 							state			<= READ2;	
 						end if;	
 					else
 						if( ctr = X"0" ) then
 							state 		<= IDLE;
-							sdramRead	<= '0';
+							sdramReadRead	<= '0';
 						else
 							ctr			<= ctr - X"1";
 						end if;
