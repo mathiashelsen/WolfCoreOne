@@ -7,32 +7,30 @@ entity mtu is
 		clk	:	in	std_logic;
 		rst	:	in	std_logic;
 		-- Ports to the Instruction cache
-		dataToICache	:	out	std_logic_vector(63 downto 0);
-		dataFromICache	:	in	std_logic_vector(63 downto 0);
-		addressICache	:	out std_logic_vector(9 downto 0);
+		dataICache		:	out	std_logic_vector(63 downto 0);
+		addressICache	:	out std_logic_vector(13 downto 0);
 		wrenICache		:	out std_logic;
 		-- Ports to the Data cache
-		dataToDCache	:	out	std_logic_vector(63 downto 0);
-		dataFromDCache	:	in	std_logic_vector(63 downto 0);
-		addressDCache	:	out std_logic_vector(9 downto 0);
+		dataDCache		:	out	std_logic_vector(63 downto 0);
+		addressDCache	:	out std_logic_vector(913 downto 0);
 		wrenDCache		:	out std_logic;
 		-- Ports to the SDRAM bridge
 		-- For writing to the RAM
-		sdramWriteAddr		:	out	std_logic_vector(27 downto 0);
-		sdramWrtiteData		:	out	std_logic_Vector(31 downto 0);
+		sdramWriteAddr		:	out	std_logic_vector(28 downto 0);
+		sdramWriteData		:	out	std_logic_Vector(31 downto 0);
 		sdramWriteBurstCnt	:	out	std_logic_vector(7 downto 0);
 		sdramWriteWaitReq	:	in	std_logic;
 		sdramWriteWrite		:	out std_logic;
 		sdramWriteByteEn	:	out	std_logic_vector(3 downto 0);
 		-- For reading from the RAM
-		sdramReadAddr		:	out std_logic_vector(27 downto 0);
+		sdramReadAddr		:	out std_logic_vector(28 downto 0);
 		sdramReadData		:	in	std_logic_vector(31 downto 0);
 		sdramReadBurstCnt	:	out std_logic_Vector(7 downto 0);
 		sdramReadWaitReq	:	in	std_logic;
 		sdramReadDataValid	:	in	std_logic;
 		sdramReadRead		:	out	std_logic;
 		-- Control ports
-		direction		:	in	std_logic;
+		direction		:	in	std_logic;							-- 0 For read, 1 for write
 		cacheBank		:	in	std_logic_vector(3 downto 0);
 		sdramAddress	:	in	std_logic_vector(27 downto 0);
 		enableXfer		:	in	std_logic;
@@ -42,29 +40,81 @@ end mtu;
 
 architecture default of mtu is
 	type states is (INIT, WRITING, READING);
-	signal	state	:	states	:= init;
-	signal	ctr	:	std_logic_vector(31 downto 0);
-	signal	address	:	std_logic_vector(27 downto 0);
-	signal	wordCtr	:	std_logic_vector(7 downto 0); -- Need to update this to the correct value
+	signal	state			:	states	:= init;
+	signal	ctr				:	std_logic_vector(31 downto 0);
+	signal	dramAddress		:	std_logic_vector(28 downto 0);
+	signal	cacheAddress	:	std_logic_vector(13 downto 0);
+	signal	wordLow			:	std_logic_vector(31 downto 0);
+	signal	wordHigh		:	std_logic_vector(31 downto 0);
 	process(clk, rst)
 		if( rst = '1' ) then
 			ctr	<= X"0000_0000";
 			address	<= std_logic_vector(to_unsigned(0, address'length));
 			state	<= INIT;
-		else if( ctr'event and clk = '1' ) then
+		else if( clk'event and clk = '1' ) then
 			case state is
 				when IDLE =>
-					if( enableXfer = '1' ) then
-						if( direction = '1' ) then
-							address 	<= sdramAddress;
-							addressDCache	<= 
-						else
+					sdramRead	<= '0';	
+					sdramWrite	<= '0';	
+					wrenICache	<= '0';
+					wrenDCache	<= '0';
+					ctr			<= X"0000_0000";
 
+					if( enableXfer = '1' and direction ='0') then
+						dramAddress			<= sdramAddress;
+						cacheAddress		<= to_integer(0, addressICache'length);
+						state				<= READ1;
+					end if;
+				when READ1 =>
+					-- Initial read state, put the right pins high and low
+					sdramReadAddr		<= dramAddress;
+					sdramReadBurstCnt	<=	X"FF";
+					sdramRead			<= '1';	
+					state				<= READ2;
+					ctr					<= to_integer(10_000_000, 32);
+
+				when READ2 =>
+					wrenICache			<= '0';
+
+					if( sdramReadWaitReq = '0' ) then
+						sdramRead	<= '0';	
+					end if;
+
+					if( sdramReadDataValid = '1' ) then
+						wordLow			<= sdramReadData;	
+						state			<= READ3;
+						ctr				<= to_integer(10_000_000, 32);
+					else
+						if( ctr = X"0" ) then
+							state 		<= IDLE;
+							sdramRead	<= '0';
+						else
+							ctr			<= ctr - X"1";
 						end if;
 					end if;
-				when WRITING =>
 
-				when READING =>
+				when READ3 =>
+					if( sdramReadDataValid = '1' ) then
+						wordHigh		<= sdramReadData;
+
+						addressICache	<= cacheAddress;
+						dataICache		<= wordHigh & wordLow;
+						wrenICache		<= '1';	
+
+						cacheAddress	<= cacheAddress + X"1";
+							
+						state			<= READ2;
+					else
+						if( ctr = X"0" ) then
+							state 		<= IDLE;
+							sdramRead	<= '0';
+						else
+							ctr			<= ctr - X"1";
+						end if;
+					end if;
+				
+				when others =>
+					state <= IDLE;
 			end case;
 		end if;
 	end process;
