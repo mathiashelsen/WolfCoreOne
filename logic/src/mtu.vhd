@@ -104,7 +104,7 @@ begin
 						wrenICache		<= '1';	
 
 						
-						if( cacheAddress = std_logic_vector(to_unsigned(16_383, 14)) ) then
+						if( cacheAddress = std_logic_vector(to_unsigned(128, 14)) ) then
 							state		<= IDLE;
 						else
 							cacheAddress	<= cacheAddress + X"1";
