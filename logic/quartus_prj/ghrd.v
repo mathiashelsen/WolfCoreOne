@@ -148,6 +148,12 @@ module ghrd(
   wire sdram1_waitRequest;
   wire sdram1_write;
   wire [31:0] sdram1_data;
+  wire	[13:0]  address_a;
+	wire [63:0]  data_a;
+	wire	  wren_a;
+
+	wire	[63:0]  q_a;
+
   	
   
 //	input	[7:0]	hps_0_f2h_sdram0_data_burstcount;
@@ -268,19 +274,41 @@ module ghrd(
      .hps_0_f2h_sdram1_data_write             (sdram1_write)             //                                 .write
      //.pio_fpga2hps_external_connection_export (<connected-to-pio_fpga2hps_external_connection_export>)  // pio_fpga2hps_external_connection.export
  );
-
- read_sdram basicReadTest (
-        .clk(FPGA_CLK1_50),
-        .rst(hps_cold_reset),
-        .address(sdram0_data_address),
-		  .burstCount(sdram0_data_burstcount),
-		  .waitRequest(sdram0_data_waitrequest),
-		  .data(sdram0_data_readdata),
-		  .dataValid(sdram0_data_readdatavalid),
-		  .read(sdram0_data_read),
-		  .LEDs(LED)
- );
  
+ instrCache cacheBlock(
+	.address_a(address_a),
+	.address_b(0),
+	.clock(FPGA_CLK1_50),
+	.data_a(data_a),
+	.data_b(0),
+	.wren_a(wren_a),
+	.wren_b(0),
+	.q_a(q_a)
+	);
+ 
+ mtu MTU(
+		.clk(FPGA_CLK1_50),
+		.rst(hps_cold_reset),
+		// Ports to the Instruction cache
+		.dataICache(data_a),
+		.addressICache(address_a),
+		.wrenICache(wren_a),
+		// Ports to the SDRAM bridge
+		// For reading from the RAM
+		.sdramReadAddr(sdram0_data_address),
+		.sdramReadData(sdram0_data_readdata),
+		.sdramReadBurstCnt(sdram0_data_burstcount),
+		.sdramReadWaitReq(sdram0_data_waitrequest),
+		.sdramReadDataValid(sdram0_data_readdatavalid),
+		.sdramReadRead(sdram0_data_read),
+		// Control ports
+		.direction(1'b0),
+		.cacheBank(4'h0),
+		.sdramAddress(28'h772_0000),
+		.enableXfer(SW[0])
+		//idle			:	out	std_logic
+ );
+
 
 write_sdram basicWriteTest(
 	.clk(FPGA_CLK1_50),

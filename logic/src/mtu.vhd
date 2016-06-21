@@ -33,7 +33,7 @@ entity mtu is
 		-- Control ports
 		direction		:	in	std_logic;							-- 0 For read, 1 for write
 		cacheBank		:	in	std_logic_vector(3 downto 0);
-		sdramAddress	:	in	std_logic_vector(27 downto 0);
+		sdramAddress	:	in	std_logic_vector(28 downto 0);
 		enableXfer		:	in	std_logic
 		--idle			:	out	std_logic
 	);
@@ -100,7 +100,7 @@ begin
 						wordHigh		<= sdramReadData;
 
 						addressICache	<= cacheAddress;
-						dataICache		<= wordHigh & wordLow;
+						dataICache		<= sdramReadData & wordLow;
 						wrenICache		<= '1';	
 
 						
