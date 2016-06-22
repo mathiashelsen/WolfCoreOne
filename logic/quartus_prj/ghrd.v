@@ -302,7 +302,7 @@ module ghrd(
 		.sdramReadDataValid(sdram0_data_readdatavalid),
 		.sdramReadRead(sdram0_data_read),
 		// Control ports
-		.direction(1'b0),
+		.direction(SW[1]),
 		.cacheBank(4'h0),
 		.sdramAddress(28'h772_0000),
 		.enableXfer(SW[0])

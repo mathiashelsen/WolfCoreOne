@@ -15,7 +15,7 @@ entity write_sdram is
     );
 end write_sdram;
 
-architecture default of write_sdram is
+architecture mdefault of write_sdram is
     signal  ctr		:   std_logic_vector(31 downto 0) := X"0000_0000";
     type states is (init, waitForValid, writeData, idle);
     signal  state	:   states := init;

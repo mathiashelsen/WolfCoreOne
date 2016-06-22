@@ -17,7 +17,7 @@ entity read_sdram is
     );
 end read_sdram;
 
-architecture default of read_sdram is
+architecture mdefault of read_sdram is
     signal  ctr		:   std_logic_vector(31 downto 0) := X"0000_0000";
     type states is (init, waitForValid, sample, reset);
     signal  state	:   states := init;
