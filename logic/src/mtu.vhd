@@ -106,6 +106,7 @@ begin
 		elsif( clk'event and clk = '1' ) then
 			case state is
 				when IDLE =>
+					sdramWriteByteEn	<= X"F";
 					sdramReadRead	<= '0';	
 					sdramWriteWrite	<= '0';	
 					wrenCache		<= '0';

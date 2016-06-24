@@ -153,7 +153,8 @@ module ghrd(
 	wire	  wren_a;
 
 	wire	[63:0]  q_a;
-
+	wire [7:0] sdram1_burstcount;
+	wire [3:0] sdram1_byteenable;
   	
   
 //	input	[7:0]	hps_0_f2h_sdram0_data_burstcount;
@@ -267,10 +268,10 @@ module ghrd(
 	  //.pio_hps2fpga_external_connection_export (<connected-to-pio_hps2fpga_external_connection_export>), // pio_hps2fpga_external_connection.export
      .hps_0_f2h_sdram1_clock_clk              (FPGA_CLK1_50),              //           hps_0_f2h_sdram1_clock.clk
      .hps_0_f2h_sdram1_data_address           (sdram1_data_address),           //            hps_0_f2h_sdram1_data.address
-     .hps_0_f2h_sdram1_data_burstcount        (8'h01),        //                                 .burstcount
+     .hps_0_f2h_sdram1_data_burstcount        (sdram1_burstcount),        //                                 .burstcount
      .hps_0_f2h_sdram1_data_waitrequest       (sdram1_waitRequest),       //                                 .waitrequest
      .hps_0_f2h_sdram1_data_writedata         (sdram1_data),         //                                 .writedata
-     .hps_0_f2h_sdram1_data_byteenable        (4'b1111),        //                                 .byteenable
+     .hps_0_f2h_sdram1_data_byteenable        (sdram1_byteenable),        //                                 .byteenable
      .hps_0_f2h_sdram1_data_write             (sdram1_write)             //                                 .write
      //.pio_fpga2hps_external_connection_export (<connected-to-pio_fpga2hps_external_connection_export>)  // pio_fpga2hps_external_connection.export
  );
@@ -292,6 +293,7 @@ module ghrd(
 		// Ports to the Instruction cache
 		.dataICache(data_a),
 		.addressICache(address_a),
+		.qICache(q_a),
 		.wrenICache(wren_a),
 		// Ports to the SDRAM bridge
 		// For reading from the RAM
@@ -301,6 +303,14 @@ module ghrd(
 		.sdramReadWaitReq(sdram0_data_waitrequest),
 		.sdramReadDataValid(sdram0_data_readdatavalid),
 		.sdramReadRead(sdram0_data_read),
+		// Writing to RAM
+		.sdramWriteAddr(sdram1_data_address),
+		.sdramWriteData(sdram1_data),
+		.sdramWriteBurstCnt(sdram1_burstcount),
+		.sdramWriteWaitReq(sdram1_waitRequest),
+		.sdramWriteWrite(sdram1_write),
+		.sdramWriteByteEn(sdram1_byteenable),
+		
 		// Control ports
 		.direction(SW[1]),
 		.cacheBank(4'h0),
@@ -308,16 +318,6 @@ module ghrd(
 		.enableXfer(SW[0])
 		//idle			:	out	std_logic
  );
-
-
-write_sdram basicWriteTest(
-	.clk(FPGA_CLK1_50),
-	.rst(hps_cold_reset),
-	.address(sdram1_data_address),
-	.waitRequest(sdram1_waitRequest),
-	.data(sdram1_data),
-	.write(sdram1_write)
-);
 
  
 // Source/Probe megawizard instance
