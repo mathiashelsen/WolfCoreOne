@@ -8,17 +8,17 @@ entity mtu is
 		clk	:	in	std_logic;
 		rst	:	in	std_logic;
 		-- Ports to the Instruction cache
-		dataICache		:	out	std_logic_vector(63 downto 0);
-		qICache			:	in 	std_logic_vector(63 downto 0);
-		addressICache	:	out std_logic_vector(13 downto 0);
-		wrenICache		:	out std_logic;
+		instr_cache_data		:	out	std_logic_vector(63 downto 0);
+		instr_cache_q			:	in 	std_logic_vector(63 downto 0);
+		instr_cache_address	:	out std_logic_vector(13 downto 0);
+		instr_cache_wren		:	out std_logic;
 		-- Ports to the Data cache
 		-- Data input to cache
-		dataDCache		:	out	std_logic_vector(63 downto 0);
+		data_cache_data		:	out	std_logic_vector(63 downto 0);
 		-- Data output to cache
-		qDCache			:	in 	std_logic_vector(63 downto 0);
-		addressDCache	:	out std_logic_vector(13 downto 0);
-		wrenDCache		:	out std_logic;
+		data_cache_q			:	in 	std_logic_vector(63 downto 0);
+		data_cache_address	:	out std_logic_vector(13 downto 0);
+		data_cache_wren		:	out std_logic;
 		-- Ports to the SDRAM bridge
 		-- For writing to the RAM
 		sdramWriteAddr		:	out	std_logic_vector(28 downto 0);
@@ -46,7 +46,6 @@ end mtu;
 architecture mdefault of mtu is
 	type states is (IDLE, READ1, READ2, READ3, READ4, WRITE1, WRITE2, WRITE3);
 	signal	state			:	states	:= IDLE;
-	signal	ctr				:	std_logic_vector(31 downto 0);
 	signal	dramAddress		:	std_logic_vector(28 downto 0);
 	signal	cacheAddress	:	std_logic_vector(13 downto 0);
 	signal	cacheAddressCtr	:	std_logic_vector(13 downto 0);
@@ -54,7 +53,7 @@ architecture mdefault of mtu is
 	signal	cacheQ			:	std_logic_vector(63 downto 0);
 	signal	wordLow			:	std_logic_vector(31 downto 0);
 	signal	wordHigh		:	std_logic_vector(31 downto 0);
-	signal	wrenCache		:	std_logic;
+	signal	cacheWren		:	std_logic;
 	signal	sramCtr			:	std_logic_vector(7 downto 0);
 	signal	cacheCtr		:	std_logic_vector(7 downto 0);
 
@@ -64,17 +63,17 @@ architecture mdefault of mtu is
 				cacheData		:	in	std_logic_vector(63 downto 0);
 				cacheAddress	:	in std_logic_vector(13 downto 0);
 				cacheQ			:	out std_logic_vector(63 downto 0);
-				wrenCache		:	in std_logic;
+				cacheWren		:	in std_logic;
 				-- Ports to the Instruction cache
-				dataICache		:	out	std_logic_vector(63 downto 0);
-				qICache			:	in	std_logic_vector(63 downto 0);
-				addressICache	:	out std_logic_vector(13 downto 0);
-				wrenICache		:	out std_logic;
+				instr_cache_data		:	out	std_logic_vector(63 downto 0);
+				instr_cache_q			:	in	std_logic_vector(63 downto 0);
+				instr_cache_address	:	out std_logic_vector(13 downto 0);
+				instr_cache_wren		:	out std_logic;
 				-- Ports to the Data cache
-				dataDCache		:	out	std_logic_vector(63 downto 0);
-				qDCache			:	in	std_logic_vector(63 downto 0);
-				addressDCache	:	out std_logic_vector(13 downto 0);
-				wrenDCache		:	out std_logic
+				data_cache_data		:	out	std_logic_vector(63 downto 0);
+				data_cache_q			:	in	std_logic_vector(63 downto 0);
+				data_cache_address	:	out std_logic_vector(13 downto 0);
+				data_cache_wren		:	out std_logic
 		);
 	end component;
 begin	
@@ -84,22 +83,21 @@ begin
 		cacheData,
 		cacheAddress,
 		cacheQ,
-		wrenCache,
+		cacheWren,
 		-- Ports to the Instruction cache
-		dataICache,
-		qICache,
-		addressICache,
-		wrenICache,	
+		instr_cache_data,
+		instr_cache_q,
+		instr_cache_address,
+		instr_cache_wren,	
 		-- Ports to the Data cache
-		dataDCache,
-		qDCache,
-		addressDCache,
-		wrenDCache
+		data_cache_data,
+		data_cache_q,
+		data_cache_address,
+		data_cache_wren
 		);
 
 	process(clk, rst) begin
 		if( rst = '1' ) then
-			ctr				<= X"0000_0000";
 			cacheAddressCtr	<= std_logic_vector(to_unsigned(0, cacheAddressCtr'length));
 			sramCtr			<= X"FF";
 			state			<= IDLE;
@@ -109,8 +107,7 @@ begin
 					sdramWriteByteEn	<= X"F";
 					sdramReadRead	<= '0';	
 					sdramWriteWrite	<= '0';	
-					wrenCache		<= '0';
-					ctr				<= X"0000_0000";
+					cacheWren		<= '0';
 
 					if( enableXfer = '1' ) then
 						dramAddress			<= sdramAddress;
@@ -129,10 +126,9 @@ begin
 					sdramReadRead		<= '1';	
 					sramCtr				<= X"FF";
 					state				<= READ2;
-					ctr					<= std_logic_vector(to_unsigned(10_000_000, 32));
 
 				when READ2 =>
-					wrenCache			<= '0';
+					cacheWren			<= '0';
 
 					if( sdramReadWaitReq = '0' ) then
 						sdramReadRead	<= '0';	
@@ -140,23 +136,15 @@ begin
 
 					if( sdramReadDataValid = '1' ) then
 						wordLow			<= sdramReadData;	
-						ctr				<= std_logic_vector(to_unsigned(10_000_000, 32));
 						sramCtr			<= sramCtr - X"01";
 						state			<= READ3;
-					else
-						if( ctr = X"0" ) then
-							state 		<= IDLE;
-							sdramReadRead	<= '0';
-						else
-							ctr			<= ctr - X"1";
-						end if;
 					end if;
 
 				when READ3 =>
 					if( sdramReadDataValid = '1' ) then
 						cacheAddress	<= cacheAddressCtr;
 						cacheData		<= sdramReadData & wordLow;
-						wrenCache		<= '1';	
+						cacheWren		<= '1';	
 
 						
 						if( sramCtr = X"00" ) then
@@ -164,19 +152,11 @@ begin
 						else
 							sramCtr			<= sramCtr - X"01";
 							cacheAddressCtr	<= cacheAddressCtr + X"1";
-							ctr				<= std_logic_vector(to_unsigned(10_000_000, 32));
 							state			<= READ2;	
 						end if;	
-					else
-						if( ctr = X"0" ) then
-							state 		<= IDLE;
-							sdramReadRead	<= '0';
-						else
-							ctr			<= ctr - X"1";
-						end if;
 					end if;
 				when READ4 =>
-					wrenCache	<= '0';
+					cacheWren	<= '0';
 					if(cacheCtr = X"00") then
 						state 		<= IDLE;
 					else
@@ -192,7 +172,7 @@ begin
 					sdramWriteWrite		<= '0';
 					sramCtr				<= X"FF";
 					-- Fetch the first 64-bits from cache
-					wrenCache			<= '0';
+					cacheWren			<= '0';
 					cacheAddress		<= cacheAddressCtr;
 
 					state				<= WRITE2;

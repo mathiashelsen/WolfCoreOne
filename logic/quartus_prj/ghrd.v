@@ -291,10 +291,10 @@ module ghrd(
 		.clk(FPGA_CLK1_50),
 		.rst(hps_cold_reset),
 		// Ports to the Instruction cache
-		.dataICache(data_a),
-		.addressICache(address_a),
-		.qICache(q_a),
-		.wrenICache(wren_a),
+		.instr_cache_data(data_a),
+		.instr_cache_address(address_a),
+		.instr_cache_q(q_a),
+		.instr_cache_wren(wren_a),
 		// Ports to the SDRAM bridge
 		// For reading from the RAM
 		.sdramReadAddr(sdram0_data_address),
