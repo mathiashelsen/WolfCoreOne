@@ -51,11 +51,17 @@ architecture mdefault of mtu is
 	signal	cacheAddressCtr	:	std_logic_vector(13 downto 0);
 	signal	cacheData		:	std_logic_vector(63 downto 0);
 	signal	cacheQ			:	std_logic_vector(63 downto 0);
+	signal	cacheQcache		:	std_logic_vector(63 downto 0);
+	signal	cacheOutput		:	std_logic_vector(63 downto 0);
 	signal	wordLow			:	std_logic_vector(31 downto 0);
 	signal	wordHigh		:	std_logic_vector(31 downto 0);
 	signal	cacheWren		:	std_logic;
 	signal	sramCtr			:	std_logic_vector(7 downto 0);
 	signal	cacheCtr		:	std_logic_vector(7 downto 0);
+
+	attribute keep: boolean;
+	attribute keep of state: signal is true;
+	attribute keep of cacheQcache: signal is true;
 
 	component mux
 		port(
@@ -99,7 +105,7 @@ begin
 	process(clk, rst) begin
 		if( rst = '1' ) then
 			cacheAddressCtr	<= std_logic_vector(to_unsigned(0, cacheAddressCtr'length));
-			sramCtr			<= X"FF";
+			sramCtr			<= X"FE";
 			state			<= IDLE;
 		elsif( clk'event and clk = '1' ) then
 			case state is
@@ -117,14 +123,15 @@ begin
 							state				<= READ1;
 						else
 							state				<= WRITE1;
+							cacheAddress		<= cacheBank(6 downto 0) & std_logic_vector(to_unsigned(0, cacheAddress'length-7));
 						end if;
 					end if;
 				when READ1 =>
 					-- Initial read state, put the right pins high and low
 					sdramReadAddr		<= dramAddress;
-					sdramReadBurstCnt	<=	X"FF";
+					sdramReadBurstCnt	<=	X"FE";
 					sdramReadRead		<= '1';	
-					sramCtr				<= X"FF";
+					sramCtr				<= X"FE";
 					state				<= READ2;
 
 				when READ2 =>
@@ -147,7 +154,7 @@ begin
 						cacheWren		<= '1';	
 
 						
-						if( sramCtr = X"00" ) then
+						if( sramCtr = X"01" ) then
 							state			<= READ4;
 						else
 							sramCtr			<= sramCtr - X"01";
@@ -168,31 +175,37 @@ begin
 				when WRITE1 =>
 					-- Prepare the SDRAM bridge
 					sdramWriteAddr		<= dramAddress;
-					sdramWriteBurstCnt	<=	X"FF";
+					sdramWriteBurstCnt	<=	X"FE";
 					sdramWriteWrite		<= '0';
-					sramCtr				<= X"FF";
+					sramCtr				<= X"FE";
 					-- Fetch the first 64-bits from cache
 					cacheWren			<= '0';
-					cacheAddress		<= cacheAddressCtr;
 
 					state				<= WRITE2;
 				when WRITE2 =>
+					cacheQcache <= cacheQ;
 					if( sdramWriteWaitReq = '0' ) then
 						sdramWriteWrite		<= '1';
 						sdramWriteData		<= cacheQ(31 downto 0);
 
 						cacheAddressCtr		<= cacheAddressCtr + X"1";
+						cacheAddress		<= cacheAddressCtr + X"1";
 	
 						sramCtr				<= sramCtr - X"1";
 
-						state				<= WRITE3;
+						if( sramCtr = X"00" ) then
+							sdramWriteWrite	<= '0';	
+							state				<= IDLE;
+						else
+							state				<= WRITE3;
+						end if;
 					end if;
 				when WRITE3 =>
 					if( sdramWriteWaitReq = '0' ) then	
-						sdramWriteData		<= cacheQ(63 downto 32);
-						cacheAddress		<= cacheAddressCtr;
+						sdramWriteData		<= cacheQcache(63 downto 32);
 						
 						if( sramCtr = X"00" ) then
+							sdramWriteWrite	<= '0';	
 							state				<= IDLE;
 						else
 							sramCtr				<= sramCtr - X"1";
