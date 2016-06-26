@@ -193,19 +193,13 @@ begin
 	
 						sramCtr				<= sramCtr - X"1";
 
-						if( sramCtr = X"00" ) then
-							sdramWriteWrite	<= '0';	
-							state				<= IDLE;
-						else
-							state				<= WRITE3;
-						end if;
+						state				<= WRITE3;
 					end if;
 				when WRITE3 =>
 					if( sdramWriteWaitReq = '0' ) then	
 						sdramWriteData		<= cacheQcache(63 downto 32);
 						
-						if( sramCtr = X"00" ) then
-							sdramWriteWrite	<= '0';	
+						if( sramCtr = X"01" or sramCtr = X"00" ) then	
 							state				<= IDLE;
 						else
 							sramCtr				<= sramCtr - X"1";
