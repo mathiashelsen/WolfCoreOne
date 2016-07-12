@@ -44,7 +44,7 @@ entity mtu is
 end mtu;
 
 architecture mdefault of mtu is
-	type states is (IDLE, READ1, READ2, READ3, READ4, WRITE1, WRITE2, WRITE3);
+	type states is (IDLE, READ1, READ2, READ3, READ4, WRITE1, WRITE2, WRITE3, WRITE4);
 	signal	state			:	states	:= IDLE;
 	signal	dramAddress		:	std_logic_vector(28 downto 0);
 	signal	cacheAddress	:	std_logic_vector(13 downto 0);
@@ -118,7 +118,7 @@ begin
 					if( enableXfer = '1' ) then
 						dramAddress			<= sdramAddress;
 						cacheAddressCtr		<= cacheBank(6 downto 0) & std_logic_vector(to_unsigned(0, cacheAddress'length-7));
-						cacheCtr			<= X"00";
+						cacheCtr			<= X"01";
 						if(direction = '0') then
 							state				<= READ1;
 						else
@@ -168,7 +168,7 @@ begin
 						state 		<= IDLE;
 					else
 						cacheCtr	<= cacheCtr - X"01";
-						dramAddress	<= dramAddress + X"FF";
+						dramAddress	<= dramAddress + X"FE";
 						state		<= READ1;
 					end if;
 
@@ -200,11 +200,21 @@ begin
 						sdramWriteData		<= cacheQcache(63 downto 32);
 						
 						if( sramCtr = X"01" or sramCtr = X"00" ) then	
-							state				<= IDLE;
+							state				<= WRITE4;
 						else
 							sramCtr				<= sramCtr - X"1";
 							state				<= WRITE2;
 						end if;
+					end if;
+				when WRITE4 =>
+					cacheWren	<= '0';
+					sdramWriteWrite	<= '0';	
+					if(cacheCtr = X"00") then
+						state 		<= IDLE;
+					else
+						cacheCtr	<= cacheCtr - X"01";
+						dramAddress	<= dramAddress + X"FE";
+						state		<= WRITE1;
 					end if;
 				when others =>
 					state <= IDLE;
