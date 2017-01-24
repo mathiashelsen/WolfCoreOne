@@ -88,6 +88,10 @@ module DE0_NANO_SOC_Default(
 //  REG/WIRE declarations
 //=======================================================
 reg  [31:0]	Cont;
+wire uartClk;
+wire busyTx;
+reg startTx;
+reg [7:0] dataTx;
 
 //=======================================================
 //  Structural coding
@@ -104,6 +108,28 @@ always@(posedge FPGA_CLK1_50 or negedge KEY[0])
 			 Cont	<=	Cont+1;
     end
 
-runningLED led_test ( FPGA_CLK1_50, LED ); 									  
-									  
+runningLED led_test ( FPGA_CLK1_50, LED ); 								
+mainPLL pll_unit( FPGA_CLK1_50, 1'b1, uartClk );
+
+always@(posedge FPGA_CLK1_50 )
+begin
+	if(busyTx)
+	begin
+		startTx <= 1'b0;
+	end
+	else
+	begin
+		dataTx <= dataTx + 1'b1;
+		startTx <= 1'b1;
+	end
+end
+UART uart_test ( .baudRtClk(uartClk), 
+						.rst(1'b0),
+						.RxD(GPIO_0[1]),
+						.TxD(GPIO_0[2]),
+						.inputData(dataTx),
+						.TxEnable(startTx),
+						.TxActive(busyTx)
+						);
+
 endmodule

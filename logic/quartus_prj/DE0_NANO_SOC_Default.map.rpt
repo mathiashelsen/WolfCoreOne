@@ -1,5 +1,5 @@
 Analysis & Synthesis report for DE0_NANO_SOC_Default
-Mon Jan 23 18:13:32 2017
+Tue Jan 24 19:23:38 2017
 Quartus Prime Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
 
 
@@ -13,11 +13,16 @@ Quartus Prime Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. General Register Statistics
-  9. Post-Synthesis Netlist Statistics for Top Partition
- 10. Elapsed Time Per Partition
- 11. Analysis & Synthesis Messages
- 12. Analysis & Synthesis Suppressed Messages
+  8. Analysis & Synthesis IP Cores Summary
+  9. General Register Statistics
+ 10. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 11. Parameter Settings for User Entity Instance: mainPLL:pll_unit|mainPLL_0002:mainpll_inst|altera_pll:altera_pll_i
+ 12. Port Connectivity Checks: "UART:uart_test"
+ 13. Port Connectivity Checks: "mainPLL:pll_unit"
+ 14. Post-Synthesis Netlist Statistics for Top Partition
+ 15. Elapsed Time Per Partition
+ 16. Analysis & Synthesis Messages
+ 17. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -44,13 +49,13 @@ agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Mon Jan 23 18:13:32 2017       ;
+; Analysis & Synthesis Status     ; Successful - Tue Jan 24 19:23:38 2017       ;
 ; Quartus Prime Version           ; 16.0.0 Build 211 04/27/2016 SJ Lite Edition ;
 ; Revision Name                   ; DE0_NANO_SOC_Default                        ;
 ; Top-level Entity Name           ; DE0_NANO_SOC_Default                        ;
 ; Family                          ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 48                                          ;
+; Total registers                 ; 78                                          ;
 ; Total pins                      ; 93                                          ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 0                                           ;
@@ -59,7 +64,7 @@ agreement for further details.
 ; Total HSSI PMA RX Deserializers ; 0                                           ;
 ; Total HSSI TX PCSs              ; 0                                           ;
 ; Total HSSI PMA TX Serializers   ; 0                                           ;
-; Total PLLs                      ; 0                                           ;
+; Total PLLs                      ; 1                                           ;
 ; Total DLLs                      ; 0                                           ;
 +---------------------------------+---------------------------------------------+
 
@@ -174,47 +179,67 @@ agreement for further details.
 +----------------------------------+-----------------+------------------------------+-----------------------------------------------------------------------------+---------+
 ; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                ; Library ;
 +----------------------------------+-----------------+------------------------------+-----------------------------------------------------------------------------+---------+
+; ../src/io/uart.vhd               ; yes             ; User VHDL File               ; /home/mathias/Projects/WolfCoreOne/logic/src/io/uart.vhd                    ;         ;
 ; runningLED.vhd                   ; yes             ; User VHDL File               ; /home/mathias/Projects/WolfCoreOne/logic/quartus_prj/runningLED.vhd         ;         ;
+; mainPLL.v                        ; yes             ; User Wizard-Generated File   ; /home/mathias/Projects/WolfCoreOne/logic/quartus_prj/mainPLL.v              ; mainPLL ;
+; mainPLL/mainPLL_0002.v           ; yes             ; User Verilog HDL File        ; /home/mathias/Projects/WolfCoreOne/logic/quartus_prj/mainPLL/mainPLL_0002.v ; mainPLL ;
 ; DE0_NANO_SOC_Default.v           ; yes             ; Auto-Found Verilog HDL File  ; /home/mathias/Projects/WolfCoreOne/logic/quartus_prj/DE0_NANO_SOC_Default.v ;         ;
+; altera_pll.v                     ; yes             ; Megafunction                 ; /opt/altera/16.0/quartus/libraries/megafunctions/altera_pll.v               ;         ;
 +----------------------------------+-----------------+------------------------------+-----------------------------------------------------------------------------+---------+
 
 
-+----------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary                                ;
-+---------------------------------------------+------------------------------+
-; Resource                                    ; Usage                        ;
-+---------------------------------------------+------------------------------+
-; Estimate of Logic utilization (ALMs needed) ; 28                           ;
-;                                             ;                              ;
-; Combinational ALUT usage for logic          ; 47                           ;
-;     -- 7 input functions                    ; 0                            ;
-;     -- 6 input functions                    ; 6                            ;
-;     -- 5 input functions                    ; 0                            ;
-;     -- 4 input functions                    ; 0                            ;
-;     -- <=3 input functions                  ; 41                           ;
-;                                             ;                              ;
-; Dedicated logic registers                   ; 48                           ;
-;                                             ;                              ;
-; I/O pins                                    ; 93                           ;
-;                                             ;                              ;
-; Total DSP Blocks                            ; 0                            ;
-;                                             ;                              ;
-; Maximum fan-out node                        ; runningLED:led_test|Equal0~6 ;
-; Maximum fan-out                             ; 48                           ;
-; Total fan-out                               ; 433                          ;
-; Average fan-out                             ; 1.23                         ;
-+---------------------------------------------+------------------------------+
++------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                      ;
++---------------------------------------------+--------------------+
+; Resource                                    ; Usage              ;
++---------------------------------------------+--------------------+
+; Estimate of Logic utilization (ALMs needed) ; 46                 ;
+;                                             ;                    ;
+; Combinational ALUT usage for logic          ; 71                 ;
+;     -- 7 input functions                    ; 2                  ;
+;     -- 6 input functions                    ; 9                  ;
+;     -- 5 input functions                    ; 3                  ;
+;     -- 4 input functions                    ; 5                  ;
+;     -- <=3 input functions                  ; 52                 ;
+;                                             ;                    ;
+; Dedicated logic registers                   ; 78                 ;
+;                                             ;                    ;
+; I/O pins                                    ; 93                 ;
+;                                             ;                    ;
+; Total DSP Blocks                            ; 0                  ;
+;                                             ;                    ;
+; Total PLLs                                  ; 1                  ;
+;     -- PLLs                                 ; 1                  ;
+;                                             ;                    ;
+; Maximum fan-out node                        ; FPGA_CLK1_50~input ;
+; Maximum fan-out                             ; 58                 ;
+; Total fan-out                               ; 617                ;
+; Average fan-out                             ; 1.51               ;
++---------------------------------------------+--------------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                    ;
-+----------------------------+-------------------+--------------+-------------------+------------+------+--------------+-------------------------------------------+----------------------+--------------+
-; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                       ; Entity Name          ; Library Name ;
-+----------------------------+-------------------+--------------+-------------------+------------+------+--------------+-------------------------------------------+----------------------+--------------+
-; |DE0_NANO_SOC_Default      ; 47 (0)            ; 48 (0)       ; 0                 ; 0          ; 93   ; 0            ; |DE0_NANO_SOC_Default                     ; DE0_NANO_SOC_Default ; work         ;
-;    |runningLED:led_test|   ; 47 (47)           ; 48 (48)      ; 0                 ; 0          ; 0    ; 0            ; |DE0_NANO_SOC_Default|runningLED:led_test ; runningLED           ; work         ;
-+----------------------------+-------------------+--------------+-------------------+------------+------+--------------+-------------------------------------------+----------------------+--------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                           ;
++------------------------------------+-------------------+--------------+-------------------+------------+------+--------------+------------------------------------------------------------------------------------------+----------------------+--------------+
+; Compilation Hierarchy Node         ; LC Combinationals ; LC Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                      ; Entity Name          ; Library Name ;
++------------------------------------+-------------------+--------------+-------------------+------------+------+--------------+------------------------------------------------------------------------------------------+----------------------+--------------+
+; |DE0_NANO_SOC_Default              ; 71 (9)            ; 78 (9)       ; 0                 ; 0          ; 93   ; 0            ; |DE0_NANO_SOC_Default                                                                    ; DE0_NANO_SOC_Default ; work         ;
+;    |UART:uart_test|                ; 15 (15)           ; 21 (21)      ; 0                 ; 0          ; 0    ; 0            ; |DE0_NANO_SOC_Default|UART:uart_test                                                     ; UART                 ; work         ;
+;    |mainPLL:pll_unit|              ; 0 (0)             ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |DE0_NANO_SOC_Default|mainPLL:pll_unit                                                   ; mainPLL              ; mainPLL      ;
+;       |mainPLL_0002:mainpll_inst|  ; 0 (0)             ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |DE0_NANO_SOC_Default|mainPLL:pll_unit|mainPLL_0002:mainpll_inst                         ; mainPLL_0002         ; mainPLL      ;
+;          |altera_pll:altera_pll_i| ; 0 (0)             ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |DE0_NANO_SOC_Default|mainPLL:pll_unit|mainPLL_0002:mainpll_inst|altera_pll:altera_pll_i ; altera_pll           ; work         ;
+;    |runningLED:led_test|           ; 47 (47)           ; 48 (48)      ; 0                 ; 0          ; 0    ; 0            ; |DE0_NANO_SOC_Default|runningLED:led_test                                                ; runningLED           ; work         ;
++------------------------------------+-------------------+--------------+-------------------+------------+------+--------------+------------------------------------------------------------------------------------------+----------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++--------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis IP Cores Summary                                                                                    ;
++--------+--------------+---------+--------------+--------------+----------------------------------------+-----------------+
+; Vendor ; IP Core Name ; Version ; Release Date ; License Type ; Entity Instance                        ; IP Include File ;
++--------+--------------+---------+--------------+--------------+----------------------------------------+-----------------+
+; Altera ; altera_pll   ; 16.0    ; N/A          ; N/A          ; |DE0_NANO_SOC_Default|mainPLL:pll_unit ; mainPLL.v       ;
++--------+--------------+---------+--------------+--------------+----------------------------------------+-----------------+
 
 
 +------------------------------------------------------+
@@ -222,14 +247,294 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 48    ;
+; Total registers                              ; 78    ;
 ; Number of registers using Synchronous Clear  ; 32    ;
-; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Synchronous Load   ; 8     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 16    ;
+; Number of registers using Clock Enable       ; 35    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                     ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------+
+; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |DE0_NANO_SOC_Default|UART:uart_test|txBitCtr[1]     ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DE0_NANO_SOC_Default|UART:uart_test|outputBuffer[7] ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |DE0_NANO_SOC_Default|UART:uart_test|txClkDivCtr[1]  ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: mainPLL:pll_unit|mainPLL_0002:mainpll_inst|altera_pll:altera_pll_i ;
++--------------------------------------+------------------------+-------------------------------------------------+
+; Parameter Name                       ; Value                  ; Type                                            ;
++--------------------------------------+------------------------+-------------------------------------------------+
+; reference_clock_frequency            ; 50.0 MHz               ; String                                          ;
+; fractional_vco_multiplier            ; true                   ; String                                          ;
+; pll_type                             ; General                ; String                                          ;
+; pll_subtype                          ; General                ; String                                          ;
+; number_of_clocks                     ; 1                      ; Signed Integer                                  ;
+; operation_mode                       ; direct                 ; String                                          ;
+; deserialization_factor               ; 4                      ; Signed Integer                                  ;
+; data_rate                            ; 0                      ; Signed Integer                                  ;
+; sim_additional_refclk_cycles_to_lock ; 0                      ; Signed Integer                                  ;
+; output_clock_frequency0              ; 1.152000 MHz           ; String                                          ;
+; phase_shift0                         ; 0 ps                   ; String                                          ;
+; duty_cycle0                          ; 50                     ; Signed Integer                                  ;
+; output_clock_frequency1              ; 0 MHz                  ; String                                          ;
+; phase_shift1                         ; 0 ps                   ; String                                          ;
+; duty_cycle1                          ; 50                     ; Signed Integer                                  ;
+; output_clock_frequency2              ; 0 MHz                  ; String                                          ;
+; phase_shift2                         ; 0 ps                   ; String                                          ;
+; duty_cycle2                          ; 50                     ; Signed Integer                                  ;
+; output_clock_frequency3              ; 0 MHz                  ; String                                          ;
+; phase_shift3                         ; 0 ps                   ; String                                          ;
+; duty_cycle3                          ; 50                     ; Signed Integer                                  ;
+; output_clock_frequency4              ; 0 MHz                  ; String                                          ;
+; phase_shift4                         ; 0 ps                   ; String                                          ;
+; duty_cycle4                          ; 50                     ; Signed Integer                                  ;
+; output_clock_frequency5              ; 0 MHz                  ; String                                          ;
+; phase_shift5                         ; 0 ps                   ; String                                          ;
+; duty_cycle5                          ; 50                     ; Signed Integer                                  ;
+; output_clock_frequency6              ; 0 MHz                  ; String                                          ;
+; phase_shift6                         ; 0 ps                   ; String                                          ;
+; duty_cycle6                          ; 50                     ; Signed Integer                                  ;
+; output_clock_frequency7              ; 0 MHz                  ; String                                          ;
+; phase_shift7                         ; 0 ps                   ; String                                          ;
+; duty_cycle7                          ; 50                     ; Signed Integer                                  ;
+; output_clock_frequency8              ; 0 MHz                  ; String                                          ;
+; phase_shift8                         ; 0 ps                   ; String                                          ;
+; duty_cycle8                          ; 50                     ; Signed Integer                                  ;
+; output_clock_frequency9              ; 0 MHz                  ; String                                          ;
+; phase_shift9                         ; 0 ps                   ; String                                          ;
+; duty_cycle9                          ; 50                     ; Signed Integer                                  ;
+; output_clock_frequency10             ; 0 MHz                  ; String                                          ;
+; phase_shift10                        ; 0 ps                   ; String                                          ;
+; duty_cycle10                         ; 50                     ; Signed Integer                                  ;
+; output_clock_frequency11             ; 0 MHz                  ; String                                          ;
+; phase_shift11                        ; 0 ps                   ; String                                          ;
+; duty_cycle11                         ; 50                     ; Signed Integer                                  ;
+; output_clock_frequency12             ; 0 MHz                  ; String                                          ;
+; phase_shift12                        ; 0 ps                   ; String                                          ;
+; duty_cycle12                         ; 50                     ; Signed Integer                                  ;
+; output_clock_frequency13             ; 0 MHz                  ; String                                          ;
+; phase_shift13                        ; 0 ps                   ; String                                          ;
+; duty_cycle13                         ; 50                     ; Signed Integer                                  ;
+; output_clock_frequency14             ; 0 MHz                  ; String                                          ;
+; phase_shift14                        ; 0 ps                   ; String                                          ;
+; duty_cycle14                         ; 50                     ; Signed Integer                                  ;
+; output_clock_frequency15             ; 0 MHz                  ; String                                          ;
+; phase_shift15                        ; 0 ps                   ; String                                          ;
+; duty_cycle15                         ; 50                     ; Signed Integer                                  ;
+; output_clock_frequency16             ; 0 MHz                  ; String                                          ;
+; phase_shift16                        ; 0 ps                   ; String                                          ;
+; duty_cycle16                         ; 50                     ; Signed Integer                                  ;
+; output_clock_frequency17             ; 0 MHz                  ; String                                          ;
+; phase_shift17                        ; 0 ps                   ; String                                          ;
+; duty_cycle17                         ; 50                     ; Signed Integer                                  ;
+; clock_name_0                         ;                        ; String                                          ;
+; clock_name_1                         ;                        ; String                                          ;
+; clock_name_2                         ;                        ; String                                          ;
+; clock_name_3                         ;                        ; String                                          ;
+; clock_name_4                         ;                        ; String                                          ;
+; clock_name_5                         ;                        ; String                                          ;
+; clock_name_6                         ;                        ; String                                          ;
+; clock_name_7                         ;                        ; String                                          ;
+; clock_name_8                         ;                        ; String                                          ;
+; clock_name_global_0                  ; false                  ; String                                          ;
+; clock_name_global_1                  ; false                  ; String                                          ;
+; clock_name_global_2                  ; false                  ; String                                          ;
+; clock_name_global_3                  ; false                  ; String                                          ;
+; clock_name_global_4                  ; false                  ; String                                          ;
+; clock_name_global_5                  ; false                  ; String                                          ;
+; clock_name_global_6                  ; false                  ; String                                          ;
+; clock_name_global_7                  ; false                  ; String                                          ;
+; clock_name_global_8                  ; false                  ; String                                          ;
+; m_cnt_hi_div                         ; 1                      ; Signed Integer                                  ;
+; m_cnt_lo_div                         ; 1                      ; Signed Integer                                  ;
+; m_cnt_bypass_en                      ; false                  ; String                                          ;
+; m_cnt_odd_div_duty_en                ; false                  ; String                                          ;
+; n_cnt_hi_div                         ; 1                      ; Signed Integer                                  ;
+; n_cnt_lo_div                         ; 1                      ; Signed Integer                                  ;
+; n_cnt_bypass_en                      ; false                  ; String                                          ;
+; n_cnt_odd_div_duty_en                ; false                  ; String                                          ;
+; c_cnt_hi_div0                        ; 1                      ; Signed Integer                                  ;
+; c_cnt_lo_div0                        ; 1                      ; Signed Integer                                  ;
+; c_cnt_bypass_en0                     ; false                  ; String                                          ;
+; c_cnt_in_src0                        ; ph_mux_clk             ; String                                          ;
+; c_cnt_odd_div_duty_en0               ; false                  ; String                                          ;
+; c_cnt_prst0                          ; 1                      ; Signed Integer                                  ;
+; c_cnt_ph_mux_prst0                   ; 0                      ; Signed Integer                                  ;
+; c_cnt_hi_div1                        ; 1                      ; Signed Integer                                  ;
+; c_cnt_lo_div1                        ; 1                      ; Signed Integer                                  ;
+; c_cnt_bypass_en1                     ; false                  ; String                                          ;
+; c_cnt_in_src1                        ; ph_mux_clk             ; String                                          ;
+; c_cnt_odd_div_duty_en1               ; false                  ; String                                          ;
+; c_cnt_prst1                          ; 1                      ; Signed Integer                                  ;
+; c_cnt_ph_mux_prst1                   ; 0                      ; Signed Integer                                  ;
+; c_cnt_hi_div2                        ; 1                      ; Signed Integer                                  ;
+; c_cnt_lo_div2                        ; 1                      ; Signed Integer                                  ;
+; c_cnt_bypass_en2                     ; false                  ; String                                          ;
+; c_cnt_in_src2                        ; ph_mux_clk             ; String                                          ;
+; c_cnt_odd_div_duty_en2               ; false                  ; String                                          ;
+; c_cnt_prst2                          ; 1                      ; Signed Integer                                  ;
+; c_cnt_ph_mux_prst2                   ; 0                      ; Signed Integer                                  ;
+; c_cnt_hi_div3                        ; 1                      ; Signed Integer                                  ;
+; c_cnt_lo_div3                        ; 1                      ; Signed Integer                                  ;
+; c_cnt_bypass_en3                     ; false                  ; String                                          ;
+; c_cnt_in_src3                        ; ph_mux_clk             ; String                                          ;
+; c_cnt_odd_div_duty_en3               ; false                  ; String                                          ;
+; c_cnt_prst3                          ; 1                      ; Signed Integer                                  ;
+; c_cnt_ph_mux_prst3                   ; 0                      ; Signed Integer                                  ;
+; c_cnt_hi_div4                        ; 1                      ; Signed Integer                                  ;
+; c_cnt_lo_div4                        ; 1                      ; Signed Integer                                  ;
+; c_cnt_bypass_en4                     ; false                  ; String                                          ;
+; c_cnt_in_src4                        ; ph_mux_clk             ; String                                          ;
+; c_cnt_odd_div_duty_en4               ; false                  ; String                                          ;
+; c_cnt_prst4                          ; 1                      ; Signed Integer                                  ;
+; c_cnt_ph_mux_prst4                   ; 0                      ; Signed Integer                                  ;
+; c_cnt_hi_div5                        ; 1                      ; Signed Integer                                  ;
+; c_cnt_lo_div5                        ; 1                      ; Signed Integer                                  ;
+; c_cnt_bypass_en5                     ; false                  ; String                                          ;
+; c_cnt_in_src5                        ; ph_mux_clk             ; String                                          ;
+; c_cnt_odd_div_duty_en5               ; false                  ; String                                          ;
+; c_cnt_prst5                          ; 1                      ; Signed Integer                                  ;
+; c_cnt_ph_mux_prst5                   ; 0                      ; Signed Integer                                  ;
+; c_cnt_hi_div6                        ; 1                      ; Signed Integer                                  ;
+; c_cnt_lo_div6                        ; 1                      ; Signed Integer                                  ;
+; c_cnt_bypass_en6                     ; false                  ; String                                          ;
+; c_cnt_in_src6                        ; ph_mux_clk             ; String                                          ;
+; c_cnt_odd_div_duty_en6               ; false                  ; String                                          ;
+; c_cnt_prst6                          ; 1                      ; Signed Integer                                  ;
+; c_cnt_ph_mux_prst6                   ; 0                      ; Signed Integer                                  ;
+; c_cnt_hi_div7                        ; 1                      ; Signed Integer                                  ;
+; c_cnt_lo_div7                        ; 1                      ; Signed Integer                                  ;
+; c_cnt_bypass_en7                     ; false                  ; String                                          ;
+; c_cnt_in_src7                        ; ph_mux_clk             ; String                                          ;
+; c_cnt_odd_div_duty_en7               ; false                  ; String                                          ;
+; c_cnt_prst7                          ; 1                      ; Signed Integer                                  ;
+; c_cnt_ph_mux_prst7                   ; 0                      ; Signed Integer                                  ;
+; c_cnt_hi_div8                        ; 1                      ; Signed Integer                                  ;
+; c_cnt_lo_div8                        ; 1                      ; Signed Integer                                  ;
+; c_cnt_bypass_en8                     ; false                  ; String                                          ;
+; c_cnt_in_src8                        ; ph_mux_clk             ; String                                          ;
+; c_cnt_odd_div_duty_en8               ; false                  ; String                                          ;
+; c_cnt_prst8                          ; 1                      ; Signed Integer                                  ;
+; c_cnt_ph_mux_prst8                   ; 0                      ; Signed Integer                                  ;
+; c_cnt_hi_div9                        ; 1                      ; Signed Integer                                  ;
+; c_cnt_lo_div9                        ; 1                      ; Signed Integer                                  ;
+; c_cnt_bypass_en9                     ; false                  ; String                                          ;
+; c_cnt_in_src9                        ; ph_mux_clk             ; String                                          ;
+; c_cnt_odd_div_duty_en9               ; false                  ; String                                          ;
+; c_cnt_prst9                          ; 1                      ; Signed Integer                                  ;
+; c_cnt_ph_mux_prst9                   ; 0                      ; Signed Integer                                  ;
+; c_cnt_hi_div10                       ; 1                      ; Signed Integer                                  ;
+; c_cnt_lo_div10                       ; 1                      ; Signed Integer                                  ;
+; c_cnt_bypass_en10                    ; false                  ; String                                          ;
+; c_cnt_in_src10                       ; ph_mux_clk             ; String                                          ;
+; c_cnt_odd_div_duty_en10              ; false                  ; String                                          ;
+; c_cnt_prst10                         ; 1                      ; Signed Integer                                  ;
+; c_cnt_ph_mux_prst10                  ; 0                      ; Signed Integer                                  ;
+; c_cnt_hi_div11                       ; 1                      ; Signed Integer                                  ;
+; c_cnt_lo_div11                       ; 1                      ; Signed Integer                                  ;
+; c_cnt_bypass_en11                    ; false                  ; String                                          ;
+; c_cnt_in_src11                       ; ph_mux_clk             ; String                                          ;
+; c_cnt_odd_div_duty_en11              ; false                  ; String                                          ;
+; c_cnt_prst11                         ; 1                      ; Signed Integer                                  ;
+; c_cnt_ph_mux_prst11                  ; 0                      ; Signed Integer                                  ;
+; c_cnt_hi_div12                       ; 1                      ; Signed Integer                                  ;
+; c_cnt_lo_div12                       ; 1                      ; Signed Integer                                  ;
+; c_cnt_bypass_en12                    ; false                  ; String                                          ;
+; c_cnt_in_src12                       ; ph_mux_clk             ; String                                          ;
+; c_cnt_odd_div_duty_en12              ; false                  ; String                                          ;
+; c_cnt_prst12                         ; 1                      ; Signed Integer                                  ;
+; c_cnt_ph_mux_prst12                  ; 0                      ; Signed Integer                                  ;
+; c_cnt_hi_div13                       ; 1                      ; Signed Integer                                  ;
+; c_cnt_lo_div13                       ; 1                      ; Signed Integer                                  ;
+; c_cnt_bypass_en13                    ; false                  ; String                                          ;
+; c_cnt_in_src13                       ; ph_mux_clk             ; String                                          ;
+; c_cnt_odd_div_duty_en13              ; false                  ; String                                          ;
+; c_cnt_prst13                         ; 1                      ; Signed Integer                                  ;
+; c_cnt_ph_mux_prst13                  ; 0                      ; Signed Integer                                  ;
+; c_cnt_hi_div14                       ; 1                      ; Signed Integer                                  ;
+; c_cnt_lo_div14                       ; 1                      ; Signed Integer                                  ;
+; c_cnt_bypass_en14                    ; false                  ; String                                          ;
+; c_cnt_in_src14                       ; ph_mux_clk             ; String                                          ;
+; c_cnt_odd_div_duty_en14              ; false                  ; String                                          ;
+; c_cnt_prst14                         ; 1                      ; Signed Integer                                  ;
+; c_cnt_ph_mux_prst14                  ; 0                      ; Signed Integer                                  ;
+; c_cnt_hi_div15                       ; 1                      ; Signed Integer                                  ;
+; c_cnt_lo_div15                       ; 1                      ; Signed Integer                                  ;
+; c_cnt_bypass_en15                    ; false                  ; String                                          ;
+; c_cnt_in_src15                       ; ph_mux_clk             ; String                                          ;
+; c_cnt_odd_div_duty_en15              ; false                  ; String                                          ;
+; c_cnt_prst15                         ; 1                      ; Signed Integer                                  ;
+; c_cnt_ph_mux_prst15                  ; 0                      ; Signed Integer                                  ;
+; c_cnt_hi_div16                       ; 1                      ; Signed Integer                                  ;
+; c_cnt_lo_div16                       ; 1                      ; Signed Integer                                  ;
+; c_cnt_bypass_en16                    ; false                  ; String                                          ;
+; c_cnt_in_src16                       ; ph_mux_clk             ; String                                          ;
+; c_cnt_odd_div_duty_en16              ; false                  ; String                                          ;
+; c_cnt_prst16                         ; 1                      ; Signed Integer                                  ;
+; c_cnt_ph_mux_prst16                  ; 0                      ; Signed Integer                                  ;
+; c_cnt_hi_div17                       ; 1                      ; Signed Integer                                  ;
+; c_cnt_lo_div17                       ; 1                      ; Signed Integer                                  ;
+; c_cnt_bypass_en17                    ; false                  ; String                                          ;
+; c_cnt_in_src17                       ; ph_mux_clk             ; String                                          ;
+; c_cnt_odd_div_duty_en17              ; false                  ; String                                          ;
+; c_cnt_prst17                         ; 1                      ; Signed Integer                                  ;
+; c_cnt_ph_mux_prst17                  ; 0                      ; Signed Integer                                  ;
+; pll_vco_div                          ; 1                      ; Signed Integer                                  ;
+; pll_slf_rst                          ; false                  ; String                                          ;
+; pll_bw_sel                           ; low                    ; String                                          ;
+; pll_output_clk_frequency             ; 0 MHz                  ; String                                          ;
+; pll_cp_current                       ; 0                      ; Signed Integer                                  ;
+; pll_bwctrl                           ; 0                      ; Signed Integer                                  ;
+; pll_fractional_division              ; 1                      ; Signed Integer                                  ;
+; pll_fractional_cout                  ; 24                     ; Signed Integer                                  ;
+; pll_dsm_out_sel                      ; 1st_order              ; String                                          ;
+; mimic_fbclk_type                     ; gclk                   ; String                                          ;
+; pll_fbclk_mux_1                      ; glb                    ; String                                          ;
+; pll_fbclk_mux_2                      ; fb_1                   ; String                                          ;
+; pll_m_cnt_in_src                     ; ph_mux_clk             ; String                                          ;
+; pll_vcoph_div                        ; 1                      ; Signed Integer                                  ;
+; refclk1_frequency                    ; 0 MHz                  ; String                                          ;
+; pll_clkin_0_src                      ; clk_0                  ; String                                          ;
+; pll_clkin_1_src                      ; clk_0                  ; String                                          ;
+; pll_clk_loss_sw_en                   ; false                  ; String                                          ;
+; pll_auto_clk_sw_en                   ; false                  ; String                                          ;
+; pll_manu_clk_sw_en                   ; false                  ; String                                          ;
+; pll_clk_sw_dly                       ; 0                      ; Signed Integer                                  ;
+; pll_extclk_0_cnt_src                 ; pll_extclk_cnt_src_vss ; String                                          ;
+; pll_extclk_1_cnt_src                 ; pll_extclk_cnt_src_vss ; String                                          ;
++--------------------------------------+------------------------+-------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "UART:uart_test"                                                                                                                                     ;
++-------------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; Port        ; Type   ; Severity ; Details                                                                                                                                      ;
++-------------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; rst         ; Input  ; Info     ; Stuck at GND                                                                                                                                 ;
+; outputdata  ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                     ;
+; rxactive    ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                     ;
+; rxclearflag ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
++-------------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "mainPLL:pll_unit"                                                                                          ;
++--------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                                                  ;
++--------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; rst    ; Input  ; Info     ; Stuck at VCC                                                                                             ;
+; locked ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
++--------+--------+----------+----------------------------------------------------------------------------------------------------------+
 
 
 +-----------------------------------------------------+
@@ -237,23 +542,30 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_ff             ; 48                          ;
-;     ENA               ; 16                          ;
+; arriav_ff             ; 78                          ;
+;     ENA               ; 27                          ;
+;     ENA SLD           ; 8                           ;
 ;     SCLR              ; 32                          ;
+;     plain             ; 11                          ;
 ; arriav_io_obuf        ; 72                          ;
-; arriav_lcell_comb     ; 48                          ;
-;     arith             ; 39                          ;
-;         1 data inputs ; 38                          ;
-;         2 data inputs ; 1                           ;
-;     normal            ; 9                           ;
+; arriav_lcell_comb     ; 72                          ;
+;     arith             ; 46                          ;
+;         1 data inputs ; 44                          ;
+;         2 data inputs ; 2                           ;
+;     extend            ; 2                           ;
+;         7 data inputs ; 2                           ;
+;     normal            ; 24                          ;
 ;         0 data inputs ; 1                           ;
-;         1 data inputs ; 1                           ;
-;         2 data inputs ; 1                           ;
-;         6 data inputs ; 6                           ;
+;         1 data inputs ; 4                           ;
+;         2 data inputs ; 2                           ;
+;         4 data inputs ; 5                           ;
+;         5 data inputs ; 3                           ;
+;         6 data inputs ; 9                           ;
 ; boundary_port         ; 93                          ;
+; generic_pll           ; 1                           ;
 ;                       ;                             ;
 ; Max LUT depth         ; 4.10                        ;
-; Average LUT depth     ; 1.65                        ;
+; Average LUT depth     ; 1.57                        ;
 +-----------------------+-----------------------------+
 
 
@@ -272,20 +584,103 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
-    Info: Processing started: Mon Jan 23 18:13:20 2017
+    Info: Processing started: Tue Jan 24 19:23:26 2017
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off DE0_NANO_SOC_Default -c DE0_NANO_SOC_Default
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (12021): Found 2 design units, including 1 entities, in source file /home/mathias/Projects/WolfCoreOne/logic/src/io/uart.vhd
+    Info (12022): Found design unit 1: UART-default File: /home/mathias/Projects/WolfCoreOne/logic/src/io/uart.vhd Line: 22
+    Info (12023): Found entity 1: UART File: /home/mathias/Projects/WolfCoreOne/logic/src/io/uart.vhd Line: 6
 Info (12021): Found 2 design units, including 1 entities, in source file runningLED.vhd
     Info (12022): Found design unit 1: runningLED-default File: /home/mathias/Projects/WolfCoreOne/logic/quartus_prj/runningLED.vhd Line: 13
     Info (12023): Found entity 1: runningLED File: /home/mathias/Projects/WolfCoreOne/logic/quartus_prj/runningLED.vhd Line: 6
+Info (12021): Found 1 design units, including 1 entities, in source file mainPLL.v
+    Info (12023): Found entity 1: mainPLL File: /home/mathias/Projects/WolfCoreOne/logic/quartus_prj/mainPLL.v Line: 8
+Info (12021): Found 1 design units, including 1 entities, in source file mainPLL/mainPLL_0002.v
+    Info (12023): Found entity 1: mainPLL_0002 File: /home/mathias/Projects/WolfCoreOne/logic/quartus_prj/mainPLL/mainPLL_0002.v Line: 2
 Warning (12125): Using design file DE0_NANO_SOC_Default.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
     Info (12023): Found entity 1: DE0_NANO_SOC_Default File: /home/mathias/Projects/WolfCoreOne/logic/quartus_prj/DE0_NANO_SOC_Default.v Line: 7
 Info (12127): Elaborating entity "DE0_NANO_SOC_Default" for the top level hierarchy
 Warning (10034): Output port "ADC_CONVST" at DE0_NANO_SOC_Default.v(10) has no driver File: /home/mathias/Projects/WolfCoreOne/logic/quartus_prj/DE0_NANO_SOC_Default.v Line: 10
 Warning (10034): Output port "ADC_SCK" at DE0_NANO_SOC_Default.v(11) has no driver File: /home/mathias/Projects/WolfCoreOne/logic/quartus_prj/DE0_NANO_SOC_Default.v Line: 11
 Warning (10034): Output port "ADC_SDI" at DE0_NANO_SOC_Default.v(12) has no driver File: /home/mathias/Projects/WolfCoreOne/logic/quartus_prj/DE0_NANO_SOC_Default.v Line: 12
-Info (12128): Elaborating entity "runningLED" for hierarchy "runningLED:led_test" File: /home/mathias/Projects/WolfCoreOne/logic/quartus_prj/DE0_NANO_SOC_Default.v Line: 107
+Info (12128): Elaborating entity "runningLED" for hierarchy "runningLED:led_test" File: /home/mathias/Projects/WolfCoreOne/logic/quartus_prj/DE0_NANO_SOC_Default.v Line: 111
+Info (12128): Elaborating entity "mainPLL" for hierarchy "mainPLL:pll_unit" File: /home/mathias/Projects/WolfCoreOne/logic/quartus_prj/DE0_NANO_SOC_Default.v Line: 112
+Info (12128): Elaborating entity "mainPLL_0002" for hierarchy "mainPLL:pll_unit|mainPLL_0002:mainpll_inst" File: /home/mathias/Projects/WolfCoreOne/logic/quartus_prj/mainPLL.v Line: 20
+Info (12128): Elaborating entity "altera_pll" for hierarchy "mainPLL:pll_unit|mainPLL_0002:mainpll_inst|altera_pll:altera_pll_i" File: /home/mathias/Projects/WolfCoreOne/logic/quartus_prj/mainPLL/mainPLL_0002.v Line: 85
+Info (10008): Verilog HDL or VHDL information: EDA Netlist Writer cannot regroup multidimensional array "wire_to_nowhere_64" into its bus
+Info (12130): Elaborated megafunction instantiation "mainPLL:pll_unit|mainPLL_0002:mainpll_inst|altera_pll:altera_pll_i" File: /home/mathias/Projects/WolfCoreOne/logic/quartus_prj/mainPLL/mainPLL_0002.v Line: 85
+Info (12133): Instantiated megafunction "mainPLL:pll_unit|mainPLL_0002:mainpll_inst|altera_pll:altera_pll_i" with the following parameter: File: /home/mathias/Projects/WolfCoreOne/logic/quartus_prj/mainPLL/mainPLL_0002.v Line: 85
+    Info (12134): Parameter "fractional_vco_multiplier" = "true"
+    Info (12134): Parameter "reference_clock_frequency" = "50.0 MHz"
+    Info (12134): Parameter "operation_mode" = "direct"
+    Info (12134): Parameter "number_of_clocks" = "1"
+    Info (12134): Parameter "output_clock_frequency0" = "1.152000 MHz"
+    Info (12134): Parameter "phase_shift0" = "0 ps"
+    Info (12134): Parameter "duty_cycle0" = "50"
+    Info (12134): Parameter "output_clock_frequency1" = "0 MHz"
+    Info (12134): Parameter "phase_shift1" = "0 ps"
+    Info (12134): Parameter "duty_cycle1" = "50"
+    Info (12134): Parameter "output_clock_frequency2" = "0 MHz"
+    Info (12134): Parameter "phase_shift2" = "0 ps"
+    Info (12134): Parameter "duty_cycle2" = "50"
+    Info (12134): Parameter "output_clock_frequency3" = "0 MHz"
+    Info (12134): Parameter "phase_shift3" = "0 ps"
+    Info (12134): Parameter "duty_cycle3" = "50"
+    Info (12134): Parameter "output_clock_frequency4" = "0 MHz"
+    Info (12134): Parameter "phase_shift4" = "0 ps"
+    Info (12134): Parameter "duty_cycle4" = "50"
+    Info (12134): Parameter "output_clock_frequency5" = "0 MHz"
+    Info (12134): Parameter "phase_shift5" = "0 ps"
+    Info (12134): Parameter "duty_cycle5" = "50"
+    Info (12134): Parameter "output_clock_frequency6" = "0 MHz"
+    Info (12134): Parameter "phase_shift6" = "0 ps"
+    Info (12134): Parameter "duty_cycle6" = "50"
+    Info (12134): Parameter "output_clock_frequency7" = "0 MHz"
+    Info (12134): Parameter "phase_shift7" = "0 ps"
+    Info (12134): Parameter "duty_cycle7" = "50"
+    Info (12134): Parameter "output_clock_frequency8" = "0 MHz"
+    Info (12134): Parameter "phase_shift8" = "0 ps"
+    Info (12134): Parameter "duty_cycle8" = "50"
+    Info (12134): Parameter "output_clock_frequency9" = "0 MHz"
+    Info (12134): Parameter "phase_shift9" = "0 ps"
+    Info (12134): Parameter "duty_cycle9" = "50"
+    Info (12134): Parameter "output_clock_frequency10" = "0 MHz"
+    Info (12134): Parameter "phase_shift10" = "0 ps"
+    Info (12134): Parameter "duty_cycle10" = "50"
+    Info (12134): Parameter "output_clock_frequency11" = "0 MHz"
+    Info (12134): Parameter "phase_shift11" = "0 ps"
+    Info (12134): Parameter "duty_cycle11" = "50"
+    Info (12134): Parameter "output_clock_frequency12" = "0 MHz"
+    Info (12134): Parameter "phase_shift12" = "0 ps"
+    Info (12134): Parameter "duty_cycle12" = "50"
+    Info (12134): Parameter "output_clock_frequency13" = "0 MHz"
+    Info (12134): Parameter "phase_shift13" = "0 ps"
+    Info (12134): Parameter "duty_cycle13" = "50"
+    Info (12134): Parameter "output_clock_frequency14" = "0 MHz"
+    Info (12134): Parameter "phase_shift14" = "0 ps"
+    Info (12134): Parameter "duty_cycle14" = "50"
+    Info (12134): Parameter "output_clock_frequency15" = "0 MHz"
+    Info (12134): Parameter "phase_shift15" = "0 ps"
+    Info (12134): Parameter "duty_cycle15" = "50"
+    Info (12134): Parameter "output_clock_frequency16" = "0 MHz"
+    Info (12134): Parameter "phase_shift16" = "0 ps"
+    Info (12134): Parameter "duty_cycle16" = "50"
+    Info (12134): Parameter "output_clock_frequency17" = "0 MHz"
+    Info (12134): Parameter "phase_shift17" = "0 ps"
+    Info (12134): Parameter "duty_cycle17" = "50"
+    Info (12134): Parameter "pll_type" = "General"
+    Info (12134): Parameter "pll_subtype" = "General"
+Info (12128): Elaborating entity "UART" for hierarchy "UART:uart_test" File: /home/mathias/Projects/WolfCoreOne/logic/quartus_prj/DE0_NANO_SOC_Default.v Line: 133
+Warning (10541): VHDL Signal Declaration warning at uart.vhd(16): used implicit default value for signal "outputData" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: /home/mathias/Projects/WolfCoreOne/logic/src/io/uart.vhd Line: 16
+Warning (10541): VHDL Signal Declaration warning at uart.vhd(17): used implicit default value for signal "RxActive" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: /home/mathias/Projects/WolfCoreOne/logic/src/io/uart.vhd Line: 17
+Warning (12241): 2 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Warning (13034): The following nodes have both tri-state and non-tri-state drivers
+    Warning (13035): Inserted always-enabled tri-state buffer between "GPIO_0[2]" and its non-tri-state driver. File: /home/mathias/Projects/WolfCoreOne/logic/quartus_prj/DE0_NANO_SOC_Default.v Line: 81
+Warning (13027): Removed fan-outs from the following always-disabled I/O buffers
+    Warning (13028): Removed fan-out from the always-disabled I/O buffer "GPIO_0[2]" to the node "GPIO_0[2]" File: /home/mathias/Projects/WolfCoreOne/logic/quartus_prj/DE0_NANO_SOC_Default.v Line: 81
+Warning (13009): TRI or OPNDRN buffers permanently enabled
+    Warning (13010): Node "GPIO_0[2]~synth" File: /home/mathias/Projects/WolfCoreOne/logic/quartus_prj/DE0_NANO_SOC_Default.v Line: 81
 Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "ADC_CONVST" is stuck at GND File: /home/mathias/Projects/WolfCoreOne/logic/quartus_prj/DE0_NANO_SOC_Default.v Line: 10
     Warning (13410): Pin "ADC_SCK" is stuck at GND File: /home/mathias/Projects/WolfCoreOne/logic/quartus_prj/DE0_NANO_SOC_Default.v Line: 11
@@ -293,7 +688,9 @@ Warning (13024): Output pins are stuck at VCC or GND
 Info (286030): Timing-Driven Synthesis is running
 Info (144001): Generated suppressed messages file /home/mathias/Projects/WolfCoreOne/logic/quartus_prj/DE0_NANO_SOC_Default.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
-    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+    Info (16011): Adding 3 node(s), including 0 DDIO, 1 PLL, 0 transceiver and 0 LCELL
+Warning: RST port on the PLL is not properly connected on instance mainPLL:pll_unit|mainPLL_0002:mainpll_inst|altera_pll:altera_pll_i|general[0].gpll. The reset port on the PLL should be connected. If the PLL loses lock for any reason, you might need to manually reset the PLL in order to re-establish lock to the reference clock. File: /opt/altera/16.0/quartus/libraries/megafunctions/altera_pll.v Line: 749
+    Info: Must be connected
 Warning (21074): Design contains 9 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "ADC_SDO" File: /home/mathias/Projects/WolfCoreOne/logic/quartus_prj/DE0_NANO_SOC_Default.v Line: 13
     Warning (15610): No output dependent on input pin "FPGA_CLK2_50" File: /home/mathias/Projects/WolfCoreOne/logic/quartus_prj/DE0_NANO_SOC_Default.v Line: 16
@@ -304,16 +701,17 @@ Warning (21074): Design contains 9 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "SW[1]" File: /home/mathias/Projects/WolfCoreOne/logic/quartus_prj/DE0_NANO_SOC_Default.v Line: 78
     Warning (15610): No output dependent on input pin "SW[2]" File: /home/mathias/Projects/WolfCoreOne/logic/quartus_prj/DE0_NANO_SOC_Default.v Line: 78
     Warning (15610): No output dependent on input pin "SW[3]" File: /home/mathias/Projects/WolfCoreOne/logic/quartus_prj/DE0_NANO_SOC_Default.v Line: 78
-Info (21057): Implemented 148 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 182 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 10 input pins
     Info (21059): Implemented 11 output pins
     Info (21060): Implemented 72 bidirectional pins
-    Info (21061): Implemented 55 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 19 warnings
-    Info: Peak virtual memory: 1344 megabytes
-    Info: Processing ended: Mon Jan 23 18:13:32 2017
+    Info (21061): Implemented 88 logic cells
+    Info (21065): Implemented 1 PLLs
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 29 warnings
+    Info: Peak virtual memory: 1357 megabytes
+    Info: Processing ended: Tue Jan 24 19:23:38 2017
     Info: Elapsed time: 00:00:12
-    Info: Total CPU time (on all processors): 00:00:31
+    Info: Total CPU time (on all processors): 00:00:32
 
 
 +------------------------------------------+
