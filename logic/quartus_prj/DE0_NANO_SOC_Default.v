@@ -119,7 +119,7 @@ begin
 	end
 	else
 	begin
-		dataTx <= dataTx + 1'b1;
+		dataTx <= 8'h41;
 		startTx <= 1'b1;
 	end
 end

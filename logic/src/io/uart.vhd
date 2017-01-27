@@ -5,7 +5,7 @@ use ieee.numeric_std.all;
 
 entity UART is
     port(
-	baudRtClk	    : in std_logic;			    			-- clock running at X2 the baud rate clock
+	baudRtClk	    : in std_logic;			    			-- clock running at X10 the baud rate clock
 	rst			    : in std_logic;			    			-- async reset
 	RxD				: in std_logic;							-- serial input for the UART
 	TxD				: out std_logic;						-- output from the UART
