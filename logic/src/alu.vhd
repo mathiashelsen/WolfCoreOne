@@ -65,7 +65,7 @@ begin
 	
 		case instr is
 		when STORE =>
-			ALU_Out <= inputA - X"1";
+			ALU_Out <= std_logic_vector(unsgndA - X"1");
 		when AND_OPC =>
 			ALU_Out <= inputA and inputB;
 		when OR_OPC =>
