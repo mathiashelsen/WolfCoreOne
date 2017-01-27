@@ -131,5 +131,17 @@ UART uart_test ( .baudRtClk(uartClk),
 						.TxEnable(startTx),
 						.TxActive(busyTx)
 						);
+						
+reg [31:0] inputA;
+reg [31:0] inputB;
+reg [4:0] instr;
+
+always@(posedge FPGA_CLK1_50) begin
+	inputA <= 32'h0000FFFF;
+	inputB <= 32'hFFFF0000;
+	instr <= 5'b00011;
+end					
+						
+ALU alu_test ( instr, inputA, inputB );						
 
 endmodule

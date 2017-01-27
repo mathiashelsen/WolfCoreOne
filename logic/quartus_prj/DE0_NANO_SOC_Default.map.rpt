@@ -1,5 +1,5 @@
 Analysis & Synthesis report for DE0_NANO_SOC_Default
-Tue Jan 24 19:23:38 2017
+Fri Jan 27 18:24:34 2017
 Quartus Prime Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
 
 
@@ -14,15 +14,17 @@ Quartus Prime Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
   8. Analysis & Synthesis IP Cores Summary
-  9. General Register Statistics
- 10. Multiplexer Restructuring Statistics (Restructuring Performed)
- 11. Parameter Settings for User Entity Instance: mainPLL:pll_unit|mainPLL_0002:mainpll_inst|altera_pll:altera_pll_i
- 12. Port Connectivity Checks: "UART:uart_test"
- 13. Port Connectivity Checks: "mainPLL:pll_unit"
- 14. Post-Synthesis Netlist Statistics for Top Partition
- 15. Elapsed Time Per Partition
- 16. Analysis & Synthesis Messages
- 17. Analysis & Synthesis Suppressed Messages
+  9. Registers Removed During Synthesis
+ 10. General Register Statistics
+ 11. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 12. Parameter Settings for User Entity Instance: mainPLL:pll_unit|mainPLL_0002:mainpll_inst|altera_pll:altera_pll_i
+ 13. Port Connectivity Checks: "ALU:alu_test"
+ 14. Port Connectivity Checks: "UART:uart_test"
+ 15. Port Connectivity Checks: "mainPLL:pll_unit"
+ 16. Post-Synthesis Netlist Statistics for Top Partition
+ 17. Elapsed Time Per Partition
+ 18. Analysis & Synthesis Messages
+ 19. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -49,13 +51,13 @@ agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Tue Jan 24 19:23:38 2017       ;
+; Analysis & Synthesis Status     ; Successful - Fri Jan 27 18:24:34 2017       ;
 ; Quartus Prime Version           ; 16.0.0 Build 211 04/27/2016 SJ Lite Edition ;
 ; Revision Name                   ; DE0_NANO_SOC_Default                        ;
 ; Top-level Entity Name           ; DE0_NANO_SOC_Default                        ;
 ; Family                          ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 78                                          ;
+; Total registers                 ; 70                                          ;
 ; Total pins                      ; 93                                          ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 0                                           ;
@@ -179,6 +181,7 @@ agreement for further details.
 +----------------------------------+-----------------+------------------------------+-----------------------------------------------------------------------------+---------+
 ; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                ; Library ;
 +----------------------------------+-----------------+------------------------------+-----------------------------------------------------------------------------+---------+
+; ../src/alu.vhd                   ; yes             ; User VHDL File               ; /home/mathias/Projects/WolfCoreOne/logic/src/alu.vhd                        ;         ;
 ; ../src/io/uart.vhd               ; yes             ; User VHDL File               ; /home/mathias/Projects/WolfCoreOne/logic/src/io/uart.vhd                    ;         ;
 ; runningLED.vhd                   ; yes             ; User VHDL File               ; /home/mathias/Projects/WolfCoreOne/logic/quartus_prj/runningLED.vhd         ;         ;
 ; mainPLL.v                        ; yes             ; User Wizard-Generated File   ; /home/mathias/Projects/WolfCoreOne/logic/quartus_prj/mainPLL.v              ; mainPLL ;
@@ -193,7 +196,7 @@ agreement for further details.
 +---------------------------------------------+--------------------+
 ; Resource                                    ; Usage              ;
 +---------------------------------------------+--------------------+
-; Estimate of Logic utilization (ALMs needed) ; 46                 ;
+; Estimate of Logic utilization (ALMs needed) ; 42                 ;
 ;                                             ;                    ;
 ; Combinational ALUT usage for logic          ; 71                 ;
 ;     -- 7 input functions                    ; 2                  ;
@@ -202,7 +205,7 @@ agreement for further details.
 ;     -- 4 input functions                    ; 5                  ;
 ;     -- <=3 input functions                  ; 52                 ;
 ;                                             ;                    ;
-; Dedicated logic registers                   ; 78                 ;
+; Dedicated logic registers                   ; 70                 ;
 ;                                             ;                    ;
 ; I/O pins                                    ; 93                 ;
 ;                                             ;                    ;
@@ -212,9 +215,9 @@ agreement for further details.
 ;     -- PLLs                                 ; 1                  ;
 ;                                             ;                    ;
 ; Maximum fan-out node                        ; FPGA_CLK1_50~input ;
-; Maximum fan-out                             ; 58                 ;
-; Total fan-out                               ; 617                ;
-; Average fan-out                             ; 1.51               ;
+; Maximum fan-out                             ; 50                 ;
+; Total fan-out                               ; 578                ;
+; Average fan-out                             ; 1.45               ;
 +---------------------------------------------+--------------------+
 
 
@@ -223,8 +226,8 @@ agreement for further details.
 +------------------------------------+-------------------+--------------+-------------------+------------+------+--------------+------------------------------------------------------------------------------------------+----------------------+--------------+
 ; Compilation Hierarchy Node         ; LC Combinationals ; LC Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                      ; Entity Name          ; Library Name ;
 +------------------------------------+-------------------+--------------+-------------------+------------+------+--------------+------------------------------------------------------------------------------------------+----------------------+--------------+
-; |DE0_NANO_SOC_Default              ; 71 (9)            ; 78 (9)       ; 0                 ; 0          ; 93   ; 0            ; |DE0_NANO_SOC_Default                                                                    ; DE0_NANO_SOC_Default ; work         ;
-;    |UART:uart_test|                ; 15 (15)           ; 21 (21)      ; 0                 ; 0          ; 0    ; 0            ; |DE0_NANO_SOC_Default|UART:uart_test                                                     ; UART                 ; work         ;
+; |DE0_NANO_SOC_Default              ; 71 (1)            ; 70 (1)       ; 0                 ; 0          ; 93   ; 0            ; |DE0_NANO_SOC_Default                                                                    ; DE0_NANO_SOC_Default ; work         ;
+;    |UART:uart_test|                ; 23 (23)           ; 21 (21)      ; 0                 ; 0          ; 0    ; 0            ; |DE0_NANO_SOC_Default|UART:uart_test                                                     ; UART                 ; work         ;
 ;    |mainPLL:pll_unit|              ; 0 (0)             ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |DE0_NANO_SOC_Default|mainPLL:pll_unit                                                   ; mainPLL              ; mainPLL      ;
 ;       |mainPLL_0002:mainpll_inst|  ; 0 (0)             ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |DE0_NANO_SOC_Default|mainPLL:pll_unit|mainPLL_0002:mainpll_inst                         ; mainPLL_0002         ; mainPLL      ;
 ;          |altera_pll:altera_pll_i| ; 0 (0)             ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |DE0_NANO_SOC_Default|mainPLL:pll_unit|mainPLL_0002:mainpll_inst|altera_pll:altera_pll_i ; altera_pll           ; work         ;
@@ -242,17 +245,30 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------+--------------+---------+--------------+--------------+----------------------------------------+-----------------+
 
 
++--------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                             ;
++---------------------------------------+----------------------------------------+
+; Register name                         ; Reason for Removal                     ;
++---------------------------------------+----------------------------------------+
+; dataTx[6]                             ; Stuck at VCC due to stuck port data_in ;
+; dataTx[1..5]                          ; Stuck at GND due to stuck port data_in ;
+; dataTx[0]                             ; Stuck at VCC due to stuck port data_in ;
+; dataTx[7]                             ; Stuck at GND due to stuck port data_in ;
+; Total Number of Removed Registers = 8 ;                                        ;
++---------------------------------------+----------------------------------------+
+
+
 +------------------------------------------------------+
 ; General Register Statistics                          ;
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 78    ;
+; Total registers                              ; 70    ;
 ; Number of registers using Synchronous Clear  ; 32    ;
-; Number of registers using Synchronous Load   ; 8     ;
+; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 35    ;
+; Number of registers using Clock Enable       ; 27    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -262,8 +278,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                           ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------+
-; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |DE0_NANO_SOC_Default|UART:uart_test|txBitCtr[1]     ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DE0_NANO_SOC_Default|UART:uart_test|outputBuffer[7] ;
+; 3:1                ; 13 bits   ; 26 LEs        ; 13 LEs               ; 13 LEs                 ; Yes        ; |DE0_NANO_SOC_Default|UART:uart_test|outputBuffer[6] ;
 ; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |DE0_NANO_SOC_Default|UART:uart_test|txClkDivCtr[1]  ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------+
 
@@ -515,6 +530,17 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
++---------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "ALU:alu_test"                                                                                                    ;
++--------------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Port         ; Type   ; Severity ; Details                                                                                                  ;
++--------------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; alu_out      ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
+; alu_overflow ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
+; alu_status   ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
++--------------+--------+----------+----------------------------------------------------------------------------------------------------------+
+
+
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 ; Port Connectivity Checks: "UART:uart_test"                                                                                                                                     ;
 +-------------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
@@ -542,22 +568,21 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_ff             ; 78                          ;
+; arriav_ff             ; 70                          ;
 ;     ENA               ; 27                          ;
-;     ENA SLD           ; 8                           ;
 ;     SCLR              ; 32                          ;
 ;     plain             ; 11                          ;
 ; arriav_io_obuf        ; 72                          ;
 ; arriav_lcell_comb     ; 72                          ;
-;     arith             ; 46                          ;
-;         1 data inputs ; 44                          ;
-;         2 data inputs ; 2                           ;
+;     arith             ; 39                          ;
+;         1 data inputs ; 38                          ;
+;         2 data inputs ; 1                           ;
 ;     extend            ; 2                           ;
 ;         7 data inputs ; 2                           ;
-;     normal            ; 24                          ;
+;     normal            ; 31                          ;
 ;         0 data inputs ; 1                           ;
-;         1 data inputs ; 4                           ;
-;         2 data inputs ; 2                           ;
+;         1 data inputs ; 3                           ;
+;         2 data inputs ; 10                          ;
 ;         4 data inputs ; 5                           ;
 ;         5 data inputs ; 3                           ;
 ;         6 data inputs ; 9                           ;
@@ -565,7 +590,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; generic_pll           ; 1                           ;
 ;                       ;                             ;
 ; Max LUT depth         ; 4.10                        ;
-; Average LUT depth     ; 1.57                        ;
+; Average LUT depth     ; 1.60                        ;
 +-----------------------+-----------------------------+
 
 
@@ -584,10 +609,13 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
-    Info: Processing started: Tue Jan 24 19:23:26 2017
+    Info: Processing started: Fri Jan 27 18:24:21 2017
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off DE0_NANO_SOC_Default -c DE0_NANO_SOC_Default
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (12021): Found 2 design units, including 1 entities, in source file /home/mathias/Projects/WolfCoreOne/logic/src/alu.vhd
+    Info (12022): Found design unit 1: ALU-default File: /home/mathias/Projects/WolfCoreOne/logic/src/alu.vhd Line: 17
+    Info (12023): Found entity 1: ALU File: /home/mathias/Projects/WolfCoreOne/logic/src/alu.vhd Line: 6
 Info (12021): Found 2 design units, including 1 entities, in source file /home/mathias/Projects/WolfCoreOne/logic/src/io/uart.vhd
     Info (12022): Found design unit 1: UART-default File: /home/mathias/Projects/WolfCoreOne/logic/src/io/uart.vhd Line: 22
     Info (12023): Found entity 1: UART File: /home/mathias/Projects/WolfCoreOne/logic/src/io/uart.vhd Line: 6
@@ -674,7 +702,45 @@ Info (12133): Instantiated megafunction "mainPLL:pll_unit|mainPLL_0002:mainpll_i
 Info (12128): Elaborating entity "UART" for hierarchy "UART:uart_test" File: /home/mathias/Projects/WolfCoreOne/logic/quartus_prj/DE0_NANO_SOC_Default.v Line: 133
 Warning (10541): VHDL Signal Declaration warning at uart.vhd(16): used implicit default value for signal "outputData" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: /home/mathias/Projects/WolfCoreOne/logic/src/io/uart.vhd Line: 16
 Warning (10541): VHDL Signal Declaration warning at uart.vhd(17): used implicit default value for signal "RxActive" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: /home/mathias/Projects/WolfCoreOne/logic/src/io/uart.vhd Line: 17
-Warning (12241): 2 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Info (12128): Elaborating entity "ALU" for hierarchy "ALU:alu_test" File: /home/mathias/Projects/WolfCoreOne/logic/quartus_prj/DE0_NANO_SOC_Default.v Line: 145
+Warning (10492): VHDL Process Statement warning at alu.vhd(43): signal "ALU_Out" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/mathias/Projects/WolfCoreOne/logic/src/alu.vhd Line: 43
+Warning (10492): VHDL Process Statement warning at alu.vhd(50): signal "ALU_Out" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/mathias/Projects/WolfCoreOne/logic/src/alu.vhd Line: 50
+Warning (10631): VHDL Process Statement warning at alu.vhd(32): inferring latch(es) for signal or variable "resTmp", which holds its previous value in one or more paths through the process File: /home/mathias/Projects/WolfCoreOne/logic/src/alu.vhd Line: 32
+Warning (10873): Using initial value X (don't care) for net "ALU_Status[28..0]" at alu.vhd(13) File: /home/mathias/Projects/WolfCoreOne/logic/src/alu.vhd Line: 13
+Info (10041): Inferred latch for "resTmp[0]" at alu.vhd(32) File: /home/mathias/Projects/WolfCoreOne/logic/src/alu.vhd Line: 32
+Info (10041): Inferred latch for "resTmp[1]" at alu.vhd(32) File: /home/mathias/Projects/WolfCoreOne/logic/src/alu.vhd Line: 32
+Info (10041): Inferred latch for "resTmp[2]" at alu.vhd(32) File: /home/mathias/Projects/WolfCoreOne/logic/src/alu.vhd Line: 32
+Info (10041): Inferred latch for "resTmp[3]" at alu.vhd(32) File: /home/mathias/Projects/WolfCoreOne/logic/src/alu.vhd Line: 32
+Info (10041): Inferred latch for "resTmp[4]" at alu.vhd(32) File: /home/mathias/Projects/WolfCoreOne/logic/src/alu.vhd Line: 32
+Info (10041): Inferred latch for "resTmp[5]" at alu.vhd(32) File: /home/mathias/Projects/WolfCoreOne/logic/src/alu.vhd Line: 32
+Info (10041): Inferred latch for "resTmp[6]" at alu.vhd(32) File: /home/mathias/Projects/WolfCoreOne/logic/src/alu.vhd Line: 32
+Info (10041): Inferred latch for "resTmp[7]" at alu.vhd(32) File: /home/mathias/Projects/WolfCoreOne/logic/src/alu.vhd Line: 32
+Info (10041): Inferred latch for "resTmp[8]" at alu.vhd(32) File: /home/mathias/Projects/WolfCoreOne/logic/src/alu.vhd Line: 32
+Info (10041): Inferred latch for "resTmp[9]" at alu.vhd(32) File: /home/mathias/Projects/WolfCoreOne/logic/src/alu.vhd Line: 32
+Info (10041): Inferred latch for "resTmp[10]" at alu.vhd(32) File: /home/mathias/Projects/WolfCoreOne/logic/src/alu.vhd Line: 32
+Info (10041): Inferred latch for "resTmp[11]" at alu.vhd(32) File: /home/mathias/Projects/WolfCoreOne/logic/src/alu.vhd Line: 32
+Info (10041): Inferred latch for "resTmp[12]" at alu.vhd(32) File: /home/mathias/Projects/WolfCoreOne/logic/src/alu.vhd Line: 32
+Info (10041): Inferred latch for "resTmp[13]" at alu.vhd(32) File: /home/mathias/Projects/WolfCoreOne/logic/src/alu.vhd Line: 32
+Info (10041): Inferred latch for "resTmp[14]" at alu.vhd(32) File: /home/mathias/Projects/WolfCoreOne/logic/src/alu.vhd Line: 32
+Info (10041): Inferred latch for "resTmp[15]" at alu.vhd(32) File: /home/mathias/Projects/WolfCoreOne/logic/src/alu.vhd Line: 32
+Info (10041): Inferred latch for "resTmp[16]" at alu.vhd(32) File: /home/mathias/Projects/WolfCoreOne/logic/src/alu.vhd Line: 32
+Info (10041): Inferred latch for "resTmp[17]" at alu.vhd(32) File: /home/mathias/Projects/WolfCoreOne/logic/src/alu.vhd Line: 32
+Info (10041): Inferred latch for "resTmp[18]" at alu.vhd(32) File: /home/mathias/Projects/WolfCoreOne/logic/src/alu.vhd Line: 32
+Info (10041): Inferred latch for "resTmp[19]" at alu.vhd(32) File: /home/mathias/Projects/WolfCoreOne/logic/src/alu.vhd Line: 32
+Info (10041): Inferred latch for "resTmp[20]" at alu.vhd(32) File: /home/mathias/Projects/WolfCoreOne/logic/src/alu.vhd Line: 32
+Info (10041): Inferred latch for "resTmp[21]" at alu.vhd(32) File: /home/mathias/Projects/WolfCoreOne/logic/src/alu.vhd Line: 32
+Info (10041): Inferred latch for "resTmp[22]" at alu.vhd(32) File: /home/mathias/Projects/WolfCoreOne/logic/src/alu.vhd Line: 32
+Info (10041): Inferred latch for "resTmp[23]" at alu.vhd(32) File: /home/mathias/Projects/WolfCoreOne/logic/src/alu.vhd Line: 32
+Info (10041): Inferred latch for "resTmp[24]" at alu.vhd(32) File: /home/mathias/Projects/WolfCoreOne/logic/src/alu.vhd Line: 32
+Info (10041): Inferred latch for "resTmp[25]" at alu.vhd(32) File: /home/mathias/Projects/WolfCoreOne/logic/src/alu.vhd Line: 32
+Info (10041): Inferred latch for "resTmp[26]" at alu.vhd(32) File: /home/mathias/Projects/WolfCoreOne/logic/src/alu.vhd Line: 32
+Info (10041): Inferred latch for "resTmp[27]" at alu.vhd(32) File: /home/mathias/Projects/WolfCoreOne/logic/src/alu.vhd Line: 32
+Info (10041): Inferred latch for "resTmp[28]" at alu.vhd(32) File: /home/mathias/Projects/WolfCoreOne/logic/src/alu.vhd Line: 32
+Info (10041): Inferred latch for "resTmp[29]" at alu.vhd(32) File: /home/mathias/Projects/WolfCoreOne/logic/src/alu.vhd Line: 32
+Info (10041): Inferred latch for "resTmp[30]" at alu.vhd(32) File: /home/mathias/Projects/WolfCoreOne/logic/src/alu.vhd Line: 32
+Info (10041): Inferred latch for "resTmp[31]" at alu.vhd(32) File: /home/mathias/Projects/WolfCoreOne/logic/src/alu.vhd Line: 32
+Info (10041): Inferred latch for "resTmp[32]" at alu.vhd(32) File: /home/mathias/Projects/WolfCoreOne/logic/src/alu.vhd Line: 32
+Warning (12241): 3 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Warning (13034): The following nodes have both tri-state and non-tri-state drivers
     Warning (13035): Inserted always-enabled tri-state buffer between "GPIO_0[2]" and its non-tri-state driver. File: /home/mathias/Projects/WolfCoreOne/logic/quartus_prj/DE0_NANO_SOC_Default.v Line: 81
 Warning (13027): Removed fan-outs from the following always-disabled I/O buffers
@@ -701,16 +767,16 @@ Warning (21074): Design contains 9 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "SW[1]" File: /home/mathias/Projects/WolfCoreOne/logic/quartus_prj/DE0_NANO_SOC_Default.v Line: 78
     Warning (15610): No output dependent on input pin "SW[2]" File: /home/mathias/Projects/WolfCoreOne/logic/quartus_prj/DE0_NANO_SOC_Default.v Line: 78
     Warning (15610): No output dependent on input pin "SW[3]" File: /home/mathias/Projects/WolfCoreOne/logic/quartus_prj/DE0_NANO_SOC_Default.v Line: 78
-Info (21057): Implemented 182 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 174 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 10 input pins
     Info (21059): Implemented 11 output pins
     Info (21060): Implemented 72 bidirectional pins
-    Info (21061): Implemented 88 logic cells
+    Info (21061): Implemented 80 logic cells
     Info (21065): Implemented 1 PLLs
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 29 warnings
-    Info: Peak virtual memory: 1357 megabytes
-    Info: Processing ended: Tue Jan 24 19:23:38 2017
-    Info: Elapsed time: 00:00:12
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 33 warnings
+    Info: Peak virtual memory: 1362 megabytes
+    Info: Processing ended: Fri Jan 27 18:24:34 2017
+    Info: Elapsed time: 00:00:13
     Info: Total CPU time (on all processors): 00:00:32
 
 
