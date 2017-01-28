@@ -1,5 +1,5 @@
 TimeQuest Timing Analyzer report for DE0_NANO_SOC_Default
-Tue Jan 24 19:24:28 2017
+Fri Jan 27 18:25:23 2017
 Quartus Prime Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
 
 
@@ -98,14 +98,14 @@ agreement for further details.
 ; Number detected on machine ; 8           ;
 ; Maximum allowed            ; 4           ;
 ;                            ;             ;
-; Average used               ; 1.07        ;
+; Average used               ; 1.06        ;
 ; Maximum used               ; 4           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   2.3%      ;
-;     Processor 3            ;   2.2%      ;
-;     Processor 4            ;   2.2%      ;
+;     Processor 2            ;   1.9%      ;
+;     Processor 3            ;   1.9%      ;
+;     Processor 4            ;   1.8%      ;
 +----------------------------+-------------+
 
 
@@ -125,8 +125,8 @@ agreement for further details.
 +------------+-----------------+------------------------------------------------------------------------------+------+
 ; Fmax       ; Restricted Fmax ; Clock Name                                                                   ; Note ;
 +------------+-----------------+------------------------------------------------------------------------------+------+
-; 244.68 MHz ; 244.68 MHz      ; FPGA_CLK1_50                                                                 ;      ;
-; 338.98 MHz ; 338.98 MHz      ; pll_unit|mainpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;      ;
+; 270.49 MHz ; 270.49 MHz      ; FPGA_CLK1_50                                                                 ;      ;
+; 354.36 MHz ; 354.36 MHz      ; pll_unit|mainpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;      ;
 +------------+-----------------+------------------------------------------------------------------------------+------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
@@ -142,8 +142,8 @@ HTML report is unavailable in plain text report export.
 +------------------------------------------------------------------------------+--------+---------------+
 ; Clock                                                                        ; Slack  ; End Point TNS ;
 +------------------------------------------------------------------------------+--------+---------------+
-; FPGA_CLK1_50                                                                 ; -8.581 ; -76.789       ;
-; pll_unit|mainpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; -1.897 ; -34.872       ;
+; FPGA_CLK1_50                                                                 ; -8.855 ; -8.855        ;
+; pll_unit|mainpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; -1.891 ; -35.304       ;
 +------------------------------------------------------------------------------+--------+---------------+
 
 
@@ -152,8 +152,8 @@ HTML report is unavailable in plain text report export.
 +------------------------------------------------------------------------------+-------+---------------+
 ; Clock                                                                        ; Slack ; End Point TNS ;
 +------------------------------------------------------------------------------+-------+---------------+
-; pll_unit|mainpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 0.240 ; 0.000         ;
-; FPGA_CLK1_50                                                                 ; 0.394 ; 0.000         ;
+; pll_unit|mainpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 0.309 ; 0.000         ;
+; FPGA_CLK1_50                                                                 ; 0.396 ; 0.000         ;
 +------------------------------------------------------------------------------+-------+---------------+
 
 
@@ -175,8 +175,8 @@ No paths to report.
 ; Clock                                                                        ; Slack   ; End Point TNS ;
 +------------------------------------------------------------------------------+---------+---------------+
 ; pll_unit|mainpll_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0]   ; 1.240   ; 0.000         ;
-; FPGA_CLK1_50                                                                 ; 9.195   ; 0.000         ;
-; pll_unit|mainpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 433.331 ; 0.000         ;
+; FPGA_CLK1_50                                                                 ; 9.205   ; 0.000         ;
+; pll_unit|mainpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 433.335 ; 0.000         ;
 +------------------------------------------------------------------------------+---------+---------------+
 
 
@@ -191,8 +191,8 @@ No synchronizer chains to report.
 +------------+-----------------+------------------------------------------------------------------------------+------+
 ; Fmax       ; Restricted Fmax ; Clock Name                                                                   ; Note ;
 +------------+-----------------+------------------------------------------------------------------------------+------+
-; 250.38 MHz ; 250.38 MHz      ; FPGA_CLK1_50                                                                 ;      ;
-; 346.98 MHz ; 346.98 MHz      ; pll_unit|mainpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;      ;
+; 278.63 MHz ; 278.63 MHz      ; FPGA_CLK1_50                                                                 ;      ;
+; 363.5 MHz  ; 363.5 MHz       ; pll_unit|mainpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;      ;
 +------------+-----------------+------------------------------------------------------------------------------+------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
@@ -202,8 +202,8 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +------------------------------------------------------------------------------+--------+---------------+
 ; Clock                                                                        ; Slack  ; End Point TNS ;
 +------------------------------------------------------------------------------+--------+---------------+
-; FPGA_CLK1_50                                                                 ; -8.164 ; -73.020       ;
-; pll_unit|mainpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; -1.932 ; -34.575       ;
+; FPGA_CLK1_50                                                                 ; -8.486 ; -8.486        ;
+; pll_unit|mainpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; -1.896 ; -34.675       ;
 +------------------------------------------------------------------------------+--------+---------------+
 
 
@@ -212,7 +212,7 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +------------------------------------------------------------------------------+-------+---------------+
 ; Clock                                                                        ; Slack ; End Point TNS ;
 +------------------------------------------------------------------------------+-------+---------------+
-; pll_unit|mainpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 0.220 ; 0.000         ;
+; pll_unit|mainpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 0.291 ; 0.000         ;
 ; FPGA_CLK1_50                                                                 ; 0.390 ; 0.000         ;
 +------------------------------------------------------------------------------+-------+---------------+
 
@@ -235,8 +235,8 @@ No paths to report.
 ; Clock                                                                        ; Slack   ; End Point TNS ;
 +------------------------------------------------------------------------------+---------+---------------+
 ; pll_unit|mainpll_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0]   ; 1.240   ; 0.000         ;
-; FPGA_CLK1_50                                                                 ; 9.268   ; 0.000         ;
-; pll_unit|mainpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 433.269 ; 0.000         ;
+; FPGA_CLK1_50                                                                 ; 9.279   ; 0.000         ;
+; pll_unit|mainpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 433.268 ; 0.000         ;
 +------------------------------------------------------------------------------+---------+---------------+
 
 
@@ -251,8 +251,8 @@ No synchronizer chains to report.
 +------------------------------------------------------------------------------+--------+---------------+
 ; Clock                                                                        ; Slack  ; End Point TNS ;
 +------------------------------------------------------------------------------+--------+---------------+
-; FPGA_CLK1_50                                                                 ; -5.140 ; -46.220       ;
-; pll_unit|mainpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; -2.140 ; -39.882       ;
+; FPGA_CLK1_50                                                                 ; -5.508 ; -5.508        ;
+; pll_unit|mainpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; -2.140 ; -40.018       ;
 +------------------------------------------------------------------------------+--------+---------------+
 
 
@@ -261,8 +261,8 @@ No synchronizer chains to report.
 +------------------------------------------------------------------------------+-------+---------------+
 ; Clock                                                                        ; Slack ; End Point TNS ;
 +------------------------------------------------------------------------------+-------+---------------+
-; pll_unit|mainpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 0.145 ; 0.000         ;
-; FPGA_CLK1_50                                                                 ; 0.208 ; 0.000         ;
+; pll_unit|mainpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 0.179 ; 0.000         ;
+; FPGA_CLK1_50                                                                 ; 0.210 ; 0.000         ;
 +------------------------------------------------------------------------------+-------+---------------+
 
 
@@ -284,7 +284,7 @@ No paths to report.
 ; Clock                                                                        ; Slack   ; End Point TNS ;
 +------------------------------------------------------------------------------+---------+---------------+
 ; pll_unit|mainpll_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0]   ; 1.240   ; 0.000         ;
-; FPGA_CLK1_50                                                                 ; 9.073   ; 0.000         ;
+; FPGA_CLK1_50                                                                 ; 9.078   ; 0.000         ;
 ; pll_unit|mainpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 433.587 ; 0.000         ;
 +------------------------------------------------------------------------------+---------+---------------+
 
@@ -300,8 +300,8 @@ No synchronizer chains to report.
 +------------------------------------------------------------------------------+--------+---------------+
 ; Clock                                                                        ; Slack  ; End Point TNS ;
 +------------------------------------------------------------------------------+--------+---------------+
-; FPGA_CLK1_50                                                                 ; -4.546 ; -40.898       ;
-; pll_unit|mainpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; -2.116 ; -39.307       ;
+; FPGA_CLK1_50                                                                 ; -4.882 ; -4.882        ;
+; pll_unit|mainpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; -2.107 ; -39.173       ;
 +------------------------------------------------------------------------------+--------+---------------+
 
 
@@ -310,8 +310,8 @@ No synchronizer chains to report.
 +------------------------------------------------------------------------------+-------+---------------+
 ; Clock                                                                        ; Slack ; End Point TNS ;
 +------------------------------------------------------------------------------+-------+---------------+
-; FPGA_CLK1_50                                                                 ; 0.021 ; 0.000         ;
-; pll_unit|mainpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 0.133 ; 0.000         ;
+; FPGA_CLK1_50                                                                 ; 0.100 ; 0.000         ;
+; pll_unit|mainpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 0.164 ; 0.000         ;
 +------------------------------------------------------------------------------+-------+---------------+
 
 
@@ -333,8 +333,8 @@ No paths to report.
 ; Clock                                                                        ; Slack   ; End Point TNS ;
 +------------------------------------------------------------------------------+---------+---------------+
 ; pll_unit|mainpll_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0]   ; 1.240   ; 0.000         ;
-; FPGA_CLK1_50                                                                 ; 9.038   ; 0.000         ;
-; pll_unit|mainpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 433.576 ; 0.000         ;
+; FPGA_CLK1_50                                                                 ; 9.041   ; 0.000         ;
+; pll_unit|mainpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 433.577 ; 0.000         ;
 +------------------------------------------------------------------------------+---------+---------------+
 
 
@@ -344,20 +344,20 @@ No paths to report.
 No synchronizer chains to report.
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------+
-; Multicorner Timing Analysis Summary                                                                                                         ;
-+-------------------------------------------------------------------------------+----------+-------+----------+---------+---------------------+
-; Clock                                                                         ; Setup    ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
-+-------------------------------------------------------------------------------+----------+-------+----------+---------+---------------------+
-; Worst-case Slack                                                              ; -8.581   ; 0.021 ; N/A      ; N/A     ; 1.240               ;
-;  FPGA_CLK1_50                                                                 ; -8.581   ; 0.021 ; N/A      ; N/A     ; 9.038               ;
-;  pll_unit|mainpll_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0]   ; N/A      ; N/A   ; N/A      ; N/A     ; 1.240               ;
-;  pll_unit|mainpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; -2.140   ; 0.133 ; N/A      ; N/A     ; 433.269             ;
-; Design-wide TNS                                                               ; -111.661 ; 0.0   ; 0.0      ; 0.0     ; 0.0                 ;
-;  FPGA_CLK1_50                                                                 ; -76.789  ; 0.000 ; N/A      ; N/A     ; 0.000               ;
-;  pll_unit|mainpll_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0]   ; N/A      ; N/A   ; N/A      ; N/A     ; 0.000               ;
-;  pll_unit|mainpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; -39.882  ; 0.000 ; N/A      ; N/A     ; 0.000               ;
-+-------------------------------------------------------------------------------+----------+-------+----------+---------+---------------------+
++--------------------------------------------------------------------------------------------------------------------------------------------+
+; Multicorner Timing Analysis Summary                                                                                                        ;
++-------------------------------------------------------------------------------+---------+-------+----------+---------+---------------------+
+; Clock                                                                         ; Setup   ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
++-------------------------------------------------------------------------------+---------+-------+----------+---------+---------------------+
+; Worst-case Slack                                                              ; -8.855  ; 0.100 ; N/A      ; N/A     ; 1.240               ;
+;  FPGA_CLK1_50                                                                 ; -8.855  ; 0.100 ; N/A      ; N/A     ; 9.041               ;
+;  pll_unit|mainpll_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0]   ; N/A     ; N/A   ; N/A      ; N/A     ; 1.240               ;
+;  pll_unit|mainpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; -2.140  ; 0.164 ; N/A      ; N/A     ; 433.268             ;
+; Design-wide TNS                                                               ; -45.526 ; 0.0   ; 0.0      ; 0.0     ; 0.0                 ;
+;  FPGA_CLK1_50                                                                 ; -8.855  ; 0.000 ; N/A      ; N/A     ; 0.000               ;
+;  pll_unit|mainpll_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0]   ; N/A     ; N/A   ; N/A      ; N/A     ; 0.000               ;
+;  pll_unit|mainpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; -40.018 ; 0.000 ; N/A      ; N/A     ; 0.000               ;
++-------------------------------------------------------------------------------+---------+-------+----------+---------+---------------------+
 
 
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -910,9 +910,9 @@ No synchronizer chains to report.
 +------------------------------------------------------------------------------+------------------------------------------------------------------------------+----------+----------+----------+----------+
 ; From Clock                                                                   ; To Clock                                                                     ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
 +------------------------------------------------------------------------------+------------------------------------------------------------------------------+----------+----------+----------+----------+
-; FPGA_CLK1_50                                                                 ; FPGA_CLK1_50                                                                 ; 2324     ; 0        ; 0        ; 0        ;
-; pll_unit|mainpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; FPGA_CLK1_50                                                                 ; 9        ; 0        ; 0        ; 0        ;
-; FPGA_CLK1_50                                                                 ; pll_unit|mainpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 27       ; 0        ; 0        ; 0        ;
+; FPGA_CLK1_50                                                                 ; FPGA_CLK1_50                                                                 ; 2232     ; 0        ; 0        ; 0        ;
+; pll_unit|mainpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; FPGA_CLK1_50                                                                 ; 1        ; 0        ; 0        ; 0        ;
+; FPGA_CLK1_50                                                                 ; pll_unit|mainpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 19       ; 0        ; 0        ; 0        ;
 ; pll_unit|mainpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; pll_unit|mainpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 202      ; 0        ; 0        ; 0        ;
 +------------------------------------------------------------------------------+------------------------------------------------------------------------------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
@@ -923,9 +923,9 @@ Entries labeled "false path" only account for clock-to-clock false paths and not
 +------------------------------------------------------------------------------+------------------------------------------------------------------------------+----------+----------+----------+----------+
 ; From Clock                                                                   ; To Clock                                                                     ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
 +------------------------------------------------------------------------------+------------------------------------------------------------------------------+----------+----------+----------+----------+
-; FPGA_CLK1_50                                                                 ; FPGA_CLK1_50                                                                 ; 2324     ; 0        ; 0        ; 0        ;
-; pll_unit|mainpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; FPGA_CLK1_50                                                                 ; 9        ; 0        ; 0        ; 0        ;
-; FPGA_CLK1_50                                                                 ; pll_unit|mainpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 27       ; 0        ; 0        ; 0        ;
+; FPGA_CLK1_50                                                                 ; FPGA_CLK1_50                                                                 ; 2232     ; 0        ; 0        ; 0        ;
+; pll_unit|mainpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; FPGA_CLK1_50                                                                 ; 1        ; 0        ; 0        ; 0        ;
+; FPGA_CLK1_50                                                                 ; pll_unit|mainpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 19       ; 0        ; 0        ; 0        ;
 ; pll_unit|mainpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; pll_unit|mainpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 202      ; 0        ; 0        ; 0        ;
 +------------------------------------------------------------------------------+------------------------------------------------------------------------------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
@@ -1008,7 +1008,7 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 Info: *******************************************************************
 Info: Running Quartus Prime TimeQuest Timing Analyzer
     Info: Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
-    Info: Processing started: Tue Jan 24 19:24:22 2017
+    Info: Processing started: Fri Jan 27 18:25:17 2017
 Info: Command: quartus_sta DE0_NANO_SOC_Default -c DE0_NANO_SOC_Default
 Info: qsta_default_script.tcl version: #1
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
@@ -1035,26 +1035,26 @@ Warning (332009): The launch and latch times for the relationship between source
 Warning (332009): The launch and latch times for the relationship between source clock: FPGA_CLK1_50 and destination clock: pll_unit|mainpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk are outside of the legal time range. The relationship difference is correct, however the launch time is set to 0.
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the TimeQuest Timing Analyzer.
-Info (332146): Worst-case setup slack is -8.581
+Info (332146): Worst-case setup slack is -8.855
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -8.581             -76.789 FPGA_CLK1_50 
-    Info (332119):    -1.897             -34.872 pll_unit|mainpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
+    Info (332119):    -8.855              -8.855 FPGA_CLK1_50 
+    Info (332119):    -1.891             -35.304 pll_unit|mainpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
 Warning (332009): The launch and latch times for the relationship between source clock: pll_unit|mainpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk and destination clock: FPGA_CLK1_50 are outside of the legal time range. The relationship difference is correct, however the launch time is set to 0.
 Warning (332009): The launch and latch times for the relationship between source clock: FPGA_CLK1_50 and destination clock: pll_unit|mainpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk are outside of the legal time range. The relationship difference is correct, however the launch time is set to 0.
-Info (332146): Worst-case hold slack is 0.240
+Info (332146): Worst-case hold slack is 0.309
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.240               0.000 pll_unit|mainpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
-    Info (332119):     0.394               0.000 FPGA_CLK1_50 
+    Info (332119):     0.309               0.000 pll_unit|mainpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
+    Info (332119):     0.396               0.000 FPGA_CLK1_50 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
 Info (332146): Worst-case minimum pulse width slack is 1.240
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
     Info (332119):     1.240               0.000 pll_unit|mainpll_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0] 
-    Info (332119):     9.195               0.000 FPGA_CLK1_50 
-    Info (332119):   433.331               0.000 pll_unit|mainpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
+    Info (332119):     9.205               0.000 FPGA_CLK1_50 
+    Info (332119):   433.335               0.000 pll_unit|mainpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
 Warning (18330): Ignoring Synchronizer Identification setting Off, and using Auto instead.
 Warning (332009): The launch and latch times for the relationship between source clock: FPGA_CLK1_50 and destination clock: pll_unit|mainpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk are outside of the legal time range. The relationship difference is correct, however the launch time is set to 0.
 Info: Analyzing Slow 1100mV 0C Model
@@ -1068,17 +1068,17 @@ Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQue
 Warning (332009): The launch and latch times for the relationship between source clock: FPGA_CLK1_50 and destination clock: pll_unit|mainpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk are outside of the legal time range. The relationship difference is correct, however the launch time is set to 0.
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the TimeQuest Timing Analyzer.
-Info (332146): Worst-case setup slack is -8.164
+Info (332146): Worst-case setup slack is -8.486
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -8.164             -73.020 FPGA_CLK1_50 
-    Info (332119):    -1.932             -34.575 pll_unit|mainpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
+    Info (332119):    -8.486              -8.486 FPGA_CLK1_50 
+    Info (332119):    -1.896             -34.675 pll_unit|mainpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
 Warning (332009): The launch and latch times for the relationship between source clock: pll_unit|mainpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk and destination clock: FPGA_CLK1_50 are outside of the legal time range. The relationship difference is correct, however the launch time is set to 0.
 Warning (332009): The launch and latch times for the relationship between source clock: FPGA_CLK1_50 and destination clock: pll_unit|mainpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk are outside of the legal time range. The relationship difference is correct, however the launch time is set to 0.
-Info (332146): Worst-case hold slack is 0.220
+Info (332146): Worst-case hold slack is 0.291
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.220               0.000 pll_unit|mainpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
+    Info (332119):     0.291               0.000 pll_unit|mainpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
     Info (332119):     0.390               0.000 FPGA_CLK1_50 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
@@ -1086,8 +1086,8 @@ Info (332146): Worst-case minimum pulse width slack is 1.240
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
     Info (332119):     1.240               0.000 pll_unit|mainpll_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0] 
-    Info (332119):     9.268               0.000 FPGA_CLK1_50 
-    Info (332119):   433.269               0.000 pll_unit|mainpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
+    Info (332119):     9.279               0.000 FPGA_CLK1_50 
+    Info (332119):   433.268               0.000 pll_unit|mainpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
 Warning (18330): Ignoring Synchronizer Identification setting Off, and using Auto instead.
 Warning (332009): The launch and latch times for the relationship between source clock: FPGA_CLK1_50 and destination clock: pll_unit|mainpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk are outside of the legal time range. The relationship difference is correct, however the launch time is set to 0.
 Info: Analyzing Fast 1100mV 85C Model
@@ -1101,25 +1101,25 @@ Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQue
 Warning (332009): The launch and latch times for the relationship between source clock: FPGA_CLK1_50 and destination clock: pll_unit|mainpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk are outside of the legal time range. The relationship difference is correct, however the launch time is set to 0.
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the TimeQuest Timing Analyzer.
-Info (332146): Worst-case setup slack is -5.140
+Info (332146): Worst-case setup slack is -5.508
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -5.140             -46.220 FPGA_CLK1_50 
-    Info (332119):    -2.140             -39.882 pll_unit|mainpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
+    Info (332119):    -5.508              -5.508 FPGA_CLK1_50 
+    Info (332119):    -2.140             -40.018 pll_unit|mainpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
 Warning (332009): The launch and latch times for the relationship between source clock: pll_unit|mainpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk and destination clock: FPGA_CLK1_50 are outside of the legal time range. The relationship difference is correct, however the launch time is set to 0.
 Warning (332009): The launch and latch times for the relationship between source clock: FPGA_CLK1_50 and destination clock: pll_unit|mainpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk are outside of the legal time range. The relationship difference is correct, however the launch time is set to 0.
-Info (332146): Worst-case hold slack is 0.145
+Info (332146): Worst-case hold slack is 0.179
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.145               0.000 pll_unit|mainpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
-    Info (332119):     0.208               0.000 FPGA_CLK1_50 
+    Info (332119):     0.179               0.000 pll_unit|mainpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
+    Info (332119):     0.210               0.000 FPGA_CLK1_50 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
 Info (332146): Worst-case minimum pulse width slack is 1.240
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
     Info (332119):     1.240               0.000 pll_unit|mainpll_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0] 
-    Info (332119):     9.073               0.000 FPGA_CLK1_50 
+    Info (332119):     9.078               0.000 FPGA_CLK1_50 
     Info (332119):   433.587               0.000 pll_unit|mainpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
 Warning (18330): Ignoring Synchronizer Identification setting Off, and using Auto instead.
 Warning (332009): The launch and latch times for the relationship between source clock: FPGA_CLK1_50 and destination clock: pll_unit|mainpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk are outside of the legal time range. The relationship difference is correct, however the launch time is set to 0.
@@ -1132,35 +1132,35 @@ Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQue
 Warning (332009): The launch and latch times for the relationship between source clock: FPGA_CLK1_50 and destination clock: pll_unit|mainpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk are outside of the legal time range. The relationship difference is correct, however the launch time is set to 0.
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the TimeQuest Timing Analyzer.
-Info (332146): Worst-case setup slack is -4.546
+Info (332146): Worst-case setup slack is -4.882
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -4.546             -40.898 FPGA_CLK1_50 
-    Info (332119):    -2.116             -39.307 pll_unit|mainpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
+    Info (332119):    -4.882              -4.882 FPGA_CLK1_50 
+    Info (332119):    -2.107             -39.173 pll_unit|mainpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
 Warning (332009): The launch and latch times for the relationship between source clock: pll_unit|mainpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk and destination clock: FPGA_CLK1_50 are outside of the legal time range. The relationship difference is correct, however the launch time is set to 0.
 Warning (332009): The launch and latch times for the relationship between source clock: FPGA_CLK1_50 and destination clock: pll_unit|mainpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk are outside of the legal time range. The relationship difference is correct, however the launch time is set to 0.
-Info (332146): Worst-case hold slack is 0.021
+Info (332146): Worst-case hold slack is 0.100
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.021               0.000 FPGA_CLK1_50 
-    Info (332119):     0.133               0.000 pll_unit|mainpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
+    Info (332119):     0.100               0.000 FPGA_CLK1_50 
+    Info (332119):     0.164               0.000 pll_unit|mainpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
 Info (332146): Worst-case minimum pulse width slack is 1.240
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
     Info (332119):     1.240               0.000 pll_unit|mainpll_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0] 
-    Info (332119):     9.038               0.000 FPGA_CLK1_50 
-    Info (332119):   433.576               0.000 pll_unit|mainpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
+    Info (332119):     9.041               0.000 FPGA_CLK1_50 
+    Info (332119):   433.577               0.000 pll_unit|mainpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
 Warning (18330): Ignoring Synchronizer Identification setting Off, and using Auto instead.
 Warning (332009): The launch and latch times for the relationship between source clock: FPGA_CLK1_50 and destination clock: pll_unit|mainpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk are outside of the legal time range. The relationship difference is correct, however the launch time is set to 0.
 Warning (332009): The launch and latch times for the relationship between source clock: FPGA_CLK1_50 and destination clock: pll_unit|mainpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk are outside of the legal time range. The relationship difference is correct, however the launch time is set to 0.
 Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
 Info: Quartus Prime TimeQuest Timing Analyzer was successful. 0 errors, 28 warnings
-    Info: Peak virtual memory: 1474 megabytes
-    Info: Processing ended: Tue Jan 24 19:24:28 2017
+    Info: Peak virtual memory: 1473 megabytes
+    Info: Processing ended: Fri Jan 27 18:25:23 2017
     Info: Elapsed time: 00:00:06
-    Info: Total CPU time (on all processors): 00:00:06
+    Info: Total CPU time (on all processors): 00:00:07
 
 

@@ -35,8 +35,6 @@ begin
 		sgndA	<= signed(inputA);	
 		sgndB	<= signed(inputA);
 	
-		
-	
 		ALU_Overflow <= X"0000_0000";
 	
 		-- Check for all zeros output result

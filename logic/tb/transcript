@@ -1,0 +1,44 @@
+# Loading project tb_cpu
+# Compile of tb_alu.vhd failed with 3 errors.
+# Compile of alu.vhd was successful.
+# 2 compiles, 1 failed with 3 errors.
+# Compile of tb_alu.vhd was successful.
+# Compile of alu.vhd was successful.
+# 2 compiles, 0 failed with no errors.
+vsim work.tb_alu
+# vsim work.tb_alu 
+# Start time: 09:17:51 on Jan 28,2017
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading work.tb_alu(behavior)
+# Loading ieee.numeric_std(body)
+# Loading work.alu(default)
+# ** Warning: (vsim-8684) No drivers exist on out port /tb_alu/uut/ALU_Status(28 downto 0), and its initial value is not used.
+# Therefore, simulation behavior may occur that is not in compliance with
+# the VHDL standard as the initial values come from the base signal /tb_alu/ALU_Status(28 downto 0).
+run -all
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_alu/uut
+add wave  \
+sim:/tb_alu/instr \
+sim:/tb_alu/inputA \
+sim:/tb_alu/inputB \
+sim:/tb_alu/ALU_Out \
+sim:/tb_alu/ALU_Overflow \
+sim:/tb_alu/ALU_Status
+restart -f
+# ** Warning: (vsim-8684) No drivers exist on out port /tb_alu/uut/ALU_Status(28 downto 0), and its initial value is not used.
+# Therefore, simulation behavior may occur that is not in compliance with
+# the VHDL standard as the initial values come from the base signal /tb_alu/ALU_Status(28 downto 0).
+run
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_alu/uut
+# WARNING: No extended dataflow license exists
+property wave -radix unsigned
+# cannot find item 
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# End time: 09:23:15 on Jan 28,2017, Elapsed time: 0:05:24
+# Errors: 2, Warnings: 5

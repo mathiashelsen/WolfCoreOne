@@ -3,19 +3,19 @@ TimeQuest Timing Analyzer Summary
 ------------------------------------------------------------
 
 Type  : Slow 1100mV 85C Model Setup 'FPGA_CLK1_50'
-Slack : -8.581
-TNS   : -76.789
+Slack : -8.855
+TNS   : -8.855
 
 Type  : Slow 1100mV 85C Model Setup 'pll_unit|mainpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk'
-Slack : -1.897
-TNS   : -34.872
+Slack : -1.891
+TNS   : -35.304
 
 Type  : Slow 1100mV 85C Model Hold 'pll_unit|mainpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk'
-Slack : 0.240
+Slack : 0.309
 TNS   : 0.000
 
 Type  : Slow 1100mV 85C Model Hold 'FPGA_CLK1_50'
-Slack : 0.394
+Slack : 0.396
 TNS   : 0.000
 
 Type  : Slow 1100mV 85C Model Minimum Pulse Width 'pll_unit|mainpll_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0]'
@@ -23,23 +23,23 @@ Slack : 1.240
 TNS   : 0.000
 
 Type  : Slow 1100mV 85C Model Minimum Pulse Width 'FPGA_CLK1_50'
-Slack : 9.195
+Slack : 9.205
 TNS   : 0.000
 
 Type  : Slow 1100mV 85C Model Minimum Pulse Width 'pll_unit|mainpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk'
-Slack : 433.331
+Slack : 433.335
 TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Setup 'FPGA_CLK1_50'
-Slack : -8.164
-TNS   : -73.020
+Slack : -8.486
+TNS   : -8.486
 
 Type  : Slow 1100mV 0C Model Setup 'pll_unit|mainpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk'
-Slack : -1.932
-TNS   : -34.575
+Slack : -1.896
+TNS   : -34.675
 
 Type  : Slow 1100mV 0C Model Hold 'pll_unit|mainpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk'
-Slack : 0.220
+Slack : 0.291
 TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Hold 'FPGA_CLK1_50'
@@ -51,27 +51,27 @@ Slack : 1.240
 TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Minimum Pulse Width 'FPGA_CLK1_50'
-Slack : 9.268
+Slack : 9.279
 TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Minimum Pulse Width 'pll_unit|mainpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk'
-Slack : 433.269
+Slack : 433.268
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Setup 'FPGA_CLK1_50'
-Slack : -5.140
-TNS   : -46.220
+Slack : -5.508
+TNS   : -5.508
 
 Type  : Fast 1100mV 85C Model Setup 'pll_unit|mainpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk'
 Slack : -2.140
-TNS   : -39.882
+TNS   : -40.018
 
 Type  : Fast 1100mV 85C Model Hold 'pll_unit|mainpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk'
-Slack : 0.145
+Slack : 0.179
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Hold 'FPGA_CLK1_50'
-Slack : 0.208
+Slack : 0.210
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Minimum Pulse Width 'pll_unit|mainpll_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0]'
@@ -79,7 +79,7 @@ Slack : 1.240
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Minimum Pulse Width 'FPGA_CLK1_50'
-Slack : 9.073
+Slack : 9.078
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Minimum Pulse Width 'pll_unit|mainpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk'
@@ -87,19 +87,19 @@ Slack : 433.587
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Setup 'FPGA_CLK1_50'
-Slack : -4.546
-TNS   : -40.898
+Slack : -4.882
+TNS   : -4.882
 
 Type  : Fast 1100mV 0C Model Setup 'pll_unit|mainpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk'
-Slack : -2.116
-TNS   : -39.307
+Slack : -2.107
+TNS   : -39.173
 
 Type  : Fast 1100mV 0C Model Hold 'FPGA_CLK1_50'
-Slack : 0.021
+Slack : 0.100
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Hold 'pll_unit|mainpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk'
-Slack : 0.133
+Slack : 0.164
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Minimum Pulse Width 'pll_unit|mainpll_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0]'
@@ -107,11 +107,11 @@ Slack : 1.240
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Minimum Pulse Width 'FPGA_CLK1_50'
-Slack : 9.038
+Slack : 9.041
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Minimum Pulse Width 'pll_unit|mainpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk'
-Slack : 433.576
+Slack : 433.577
 TNS   : 0.000
 
 ------------------------------------------------------------
