@@ -1,6 +1,5 @@
 library ieee;
 use ieee.std_logic_1164.all;
---use ieee.std_logic_unsigned.all;
 use ieee.numeric_std.all;
 
 entity ALU is
@@ -58,7 +57,7 @@ begin
 			ALU_Status(5)	<= '0';
 		end if;
 
-		ALU_Status(4 downto 0)	<= "0_0000";
+		ALU_Status(4 downto 0)	<= "00000";
 	
 		case instr is
 		when STORE =>

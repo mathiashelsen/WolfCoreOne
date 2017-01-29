@@ -1,5 +1,6 @@
 library ieee;
 use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
 
 entity wolfcore is
 	port(
@@ -11,7 +12,7 @@ entity wolfcore is
 		instrAddr	: out std_logic_Vector(31 downto 0);
 		CPU_Status	: buffer std_logic_vector(31 downto 0);
 		rst			: in std_logic;
-		clk			: in std_logic;
+		clk			: in std_logic
 	);
 end entity;
 
@@ -23,7 +24,10 @@ architecture default of wolfcore is
 	signal pc		: std_logic_vector(31 downto 0);
 	signal ALU_Overflow : std_logic_vector(31 downto 0);
 	signal ALU_Out	: std_logic_vector(31 downto 0);
-	signal ALU_Result : std_logic_vector(31 downto 0);
+	signal ALU_Status	: std_logic_vector(7 downto 0);
+	signal ALU_reg: std_logic_vector(31 downto 0);
+	signal ALU_Overflow_reg: std_logic_vector(31 downto 0);
+	signal ALU_Status_reg : std_logic_vector(7 downto 0);
 	-- The instruction as it travels down the pipeline
 	signal instrDecode	: std_logic_vector(31 downto 0);
 	signal instrExecute	: std_logic_vector(31 downto 0);
@@ -40,6 +44,9 @@ architecture default of wolfcore is
 	signal wbCond	: std_logic_vector(2 downto 0);
 	signal wbEn		: std_logic;
 
+	signal instrWriteBack : std_logic_vector(31 downto 0);
+	signal opcWriteBack : std_logic_vector(4 downto 0);
+
 	-- The magnificent combinatorial ALU! All hail the ALU!
 	component ALU 
     	port(
@@ -55,7 +62,7 @@ architecture default of wolfcore is
 
 begin
 
-	ALU: ALU port map( 
+	mainALU: ALU port map( 
 		instr => opcExecute,
 		inputA => inputA,
 		inputB => inputB,
@@ -69,9 +76,9 @@ process(clk, rst) begin
 		inputA	<= X"0000_0000";	
 		inputB	<= X"0000_0000";	
 		pc		<= X"0000_0000";	
-		for i in regFile'range loop
-			regFile(i)	<= X"0000_0000";
-		end loop;
+		--for i in regFile'range loop
+		--	regFile(i)	<= X"0000_0000";
+		--end loop;
 		instrDecode	<= X"0000_0000";
 		instrExecute <= X"0000_0000";
 		instrWB		<= X"0000_0000";
@@ -79,26 +86,25 @@ process(clk, rst) begin
 		immEn	<= '0';
 		regA	<= X"0";
 		regB	<= X"0";
-		inputImm <= "00_0000_0000";
-		opcExecute	<= "0_0000";
+		inputImm <= std_logic_vector(to_unsigned(0, 14));
+		opcExecute	<= "00000";
 		wbReg	<= X"0";
 		wbCond	<= "000";
 		wbEn	<= '0';
-	elseif(clk'event and clk = '1') then
+	elsif (clk'event and clk='1') then
 		-- FETCH
 		immEn	<= instrInput(31);
 		regA	<= instrInput(30 downto 27);
 		regB	<= instrInput(26 downto 23);
 		inputImm <= instrInput(26 downto 13);
 
-		-- DECODE
 		instrDecode	<= instrInput;
-		if(immEn) then
-			inputB	<= resize(unsigned(inputImm), 32);
+
+		-- DECODE
+		if(immEn = '1') then
+			inputB	<= std_logic_vector(to_unsigned(0, 18)) & inputImm;
 		else
-			case conv_integer(unsigned(regB))
-				when 0 to 12 =>
-					inputB	<= regFile(conv_integer(unsigned(regB)));
+			case to_integer(unsigned(regB)) is
 				when 13 =>
 					inputB	<= pc;
 				when 14 =>
@@ -106,12 +112,11 @@ process(clk, rst) begin
 				when 15 =>
 					inputB	<= CPU_Status;
 				when others =>
-					inputB	<= X"0000_0000";
+					inputB	<= regFile(to_integer(unsigned(regB)));
 			end case;
-		endif;
-		case conv_integer(unsigned(regA))
-			when 0 to 12 =>
-				inputA	<= regFile(conv_integer(unsigned(regA)));
+		end if;
+
+		case to_integer(unsigned(regA)) is
 			when 13 =>
 				inputA	<= pc;
 			when 14 =>
@@ -119,36 +124,69 @@ process(clk, rst) begin
 			when 15 =>
 				inputA	<= CPU_Status;
 			when others =>
-				inputA	<= X"0000_0000";
+				inputA	<= regFile(to_integer(unsigned(regA)));
 		end case;
-		opcExecute <= instr(12 downto 8);
+		opcExecute		<= instrDecode(12 downto 8);
+		instrExecute	<= instrDecode;
 	
 		-- EXECUTE
-		instrExecute	<= instrDecode;
-		opcWriteBack	<= instrDecode(12 downto 0);
-		wbReg			<= instrDecode(7 downto 4);
-		wbCond			<= instrDecode(3 downto 1);
-		wbEn			<= instrDecode(0);
-		ALU_Result		<= ALU_Out;
-		wbA				<= inputA;
-		wbB				<= inputB;
+		-- Stuff that ripples through the ALU gets copied into a flipflop
+		ALU_reg			<= ALU_Out;
+		ALU_Overflow_reg <= ALU_Overflow;
+		ALU_Status_reg	<= ALU_Status;
 
-		-- WRITEBACK
+		-- If it's a load/store operation, we need to do something besides the ALU operation
 		-- If STORE operation
-		if( opcWriteBack = "00010" ) then
+		if( opcExecute = "00010" ) then
 			dataWrEn	<= '1';	
-			dataOutput	<= wbA;
-			dataAddr	<= wbB;
+			dataOutput	<= inputA;
+			dataAddr	<= inputB;
 		-- Perhaps LOAD then?
-		elseif ( opcWriteBack = "00001" ) then
+		elsif ( opcExecute = "00001" ) then
 			dataWrEn	<= '0';
-			dataAddr	<= wbB;
+			dataAddr	<= inputB;
 		else
 			dataWrEn	<= '0';
 			dataOutput	<= X"0000_0000";
 			dataAddr	<= X"0000_0000";
 		end if;
 
-	end if;	
+		-- We take along important information for the writeback
+		instrWriteBack	<= instrExecute;
+		opcWriteBack	<= instrExecute(12 downto 8);
+		wbReg			<= instrExecute(7 downto 4);
+		wbCond			<= instrExecute(3 downto 1);
+		wbEn			<= instrExecute(0);
+
+		-- WRITEBACK
+		if(opcWriteBack = "00001") then
+			case to_integer(unsigned(wbReg)) is
+				when 0 to 12 =>
+					regFile(to_integer(unsigned(wbReg))) <= dataInput;
+				when 13 =>
+					pc <= dataInput;
+				when others =>
+
+			end case;
+		else
+			case(wbCond) is
+				when "001" => 
+					case to_integer(unsigned(wbReg)) is
+						when 0 to 12 =>
+							regFile(to_integer(unsigned(wbReg))) <= ALU_reg;
+						when 13 =>
+							pc <= ALU_reg;
+						when others =>
+
+					end case;
+				when others =>
+						
+			end case;			
+		end if;
+
+		if(wbEn = '1') then
+			CPU_Status(7 downto 0)	<= ALU_Status_reg;
+		end if;
+	end if;
 end process;
 end architecture;
