@@ -1,22 +1,11 @@
-/home/mathias/Projects/WolfCoreOne/logic/tb/tb_alu.vhd {1 {vcom -work work -2002 -explicit -stats=none /home/mathias/Projects/WolfCoreOne/logic/tb/tb_alu.vhd
+/home/mathias/Projects/WolfCoreOne/logic/tb/tb_alu.vhd {0 {vcom -work work -2002 -explicit -stats=none /home/mathias/Projects/WolfCoreOne/logic/tb/tb_alu.vhd
 Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
--- Loading package STANDARD
--- Loading package TEXTIO
--- Loading package std_logic_1164
--- Loading package std_logic_arith
--- Loading package STD_LOGIC_UNSIGNED
--- Compiling entity tb_alu
--- Compiling architecture behavior of tb_alu
+** Error: (vcom-66) Execution of vlib failed. Please check the error log for more details.
+sh: 1: /opt/intelFPGA/16.1/modelsim_ase/linuxpe/vlib: not found
 
-} {} {}} /home/mathias/Projects/WolfCoreOne/logic/src/alu.vhd {1 {vcom -work work -2002 -explicit -stats=none /home/mathias/Projects/WolfCoreOne/logic/src/alu.vhd
+} {3.0 4.0} {}} /home/mathias/Projects/WolfCoreOne/logic/src/alu.vhd {0 {vcom -work work -2002 -explicit -stats=none /home/mathias/Projects/WolfCoreOne/logic/src/alu.vhd
 Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
--- Loading package STANDARD
--- Loading package TEXTIO
--- Loading package std_logic_1164
--- Loading package std_logic_arith
--- Loading package STD_LOGIC_UNSIGNED
--- Loading package NUMERIC_STD
--- Compiling entity ALU
--- Compiling architecture default of ALU
+** Error: (vcom-66) Execution of vlib failed. Please check the error log for more details.
+sh: 1: /opt/intelFPGA/16.1/modelsim_ase/linuxpe/vlib: not found
 
-} {} {}}
+} {3.0 4.0} {}}

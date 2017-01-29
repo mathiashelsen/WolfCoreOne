@@ -52,12 +52,57 @@ begin
   stim_proc: process
    begin         
         wait for 5 ns;
-		instr <= "00011";
-		inputA <= X"0000_FFFF";
-		inputB <= X"FFFF_0000";
+		instr <= "00000";
+		inputA <= X"0000_0001";
+		inputB <= X"0000_0001";
 		wait for 10 ns;
-		inputB <= X"0000_FFFF";
-        wait;
+		instr <= instr + '1';
+		wait for 10 ns;
+		instr <= instr + '1';
+		wait for 10 ns;
+		instr <= instr + '1';
+		wait for 10 ns;
+		instr <= instr + '1';
+		wait for 10 ns;
+		instr <= instr + '1';
+		wait for 10 ns;
+		instr <= instr + '1';
+		wait for 10 ns;
+		inputA <= inputA + '1';
+		wait for 10 ns;
+		inputA <= inputA + '1';
+		wait for 10 ns;
+		inputA <= inputA + '1';
+		wait for 10 ns;
+		inputA <= inputA + '1';
+		wait for 10 ns;
+		inputA <= inputA + '1';
+		wait for 10 ns;
+		inputA <= inputA + '1';
+		wait for 10 ns;
+		inputA <= inputA + '1';
+		wait for 10 ns;
+		inputA <= X"FFFF_FFFF";
+		inputB <= X"0000_0001";
+		wait for 10 ns;
+		instr <= instr + '1';
+		wait for 10 ns;
+		inputA <= X"0000_0001";
+		inputB <= X"FFFF_FFFF";
+		wait for 10 ns;
+		inputB <= X"0000_0011";
+		wait for 10 ns;
+		inputA <= X"0000_0111";
+		inputB <= X"0000_0010";
+		wait for 10 ns;
+		instr <= instr + '1';
+		wait for 10 ns;
+		inputA <= X"0000_0111";
+		inputB <= "11111111111111111111111111101100";	 -- '-20 (dec)'
+		wait for 10 ns;
+		inputA <= "11111111111111111111111111101100";	 -- '-20 (dec)'
+		inputB <= X"7FFF_FFFF";
+		wait;
   end process;
 
 end;

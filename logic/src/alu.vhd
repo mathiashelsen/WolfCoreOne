@@ -1,6 +1,6 @@
 library ieee;
 use ieee.std_logic_1164.all;
-use ieee.std_logic_unsigned.all;
+--use ieee.std_logic_unsigned.all;
 use ieee.numeric_std.all;
 
 entity ALU is
@@ -9,8 +9,8 @@ entity ALU is
 	inputA		    : in std_logic_vector(31 downto 0);	    -- input data A
 	inputB		    : in std_logic_vector(31 downto 0);	    -- input data B
 	ALU_Out		    : buffer std_logic_vector(31 downto 0);    -- ALU results 
-	ALU_Overflow    : out std_logic_vector(31 downto 0);    -- ALU overflow results 
-	ALU_Status		: out std_logic_vector(31 downto 0)		-- Status of the ALU
+	ALU_Overflow    : buffer std_logic_vector(31 downto 0);    -- ALU overflow results 
+	ALU_Status		: buffer std_logic_vector(31 downto 0)		-- Status of the ALU
     );
 end ALU;
 
@@ -29,11 +29,11 @@ architecture default of ALU is
 	signal sgndB	: signed(31 downto 0);
 	signal resTmp	: std_logic_vector(32 downto 0);
 begin
-	process(inputA, inputB, instr, resTmp, unsgndA, unsgndB, sgndA, sgndB) begin
+	process(inputA, inputB, instr, resTmp, unsgndA, unsgndB, sgndA, sgndB, ALU_Out, ALU_Overflow, ALU_Status) begin
 		unsgndA	<= unsigned(inputA);	
-		unsgndB	<= unsigned(inputA);	
+		unsgndB	<= unsigned(inputB);	
 		sgndA	<= signed(inputA);	
-		sgndB	<= signed(inputA);
+		sgndB	<= signed(inputB);
 	
 		ALU_Overflow <= X"0000_0000";
 	
@@ -69,6 +69,7 @@ begin
 			ALU_Out <= inputA xor inputB;
 		when ADD =>
 			resTmp	<= std_logic_vector(resize(unsgndA, unsgndA'length+1) + resize(unsgndB, unsgndB'length+1));
+			--resTmp	<= std_logic_vector(('0' & unsgndA) + ('0' & unsgndB));
 			ALU_Out	<= resTmp(31 downto 0);
 		when SUB =>
 			resTmp	<= std_logic_vector(resize(unsgndA, unsgndA'length+1) - resize(unsgndB, unsgndB'length+1));
