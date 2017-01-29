@@ -463,3 +463,5 @@ restart
 # ** Warning: (vsim-8683) Uninitialized out port /tb_alu/uut/ALU_Status(28 downto 0) has no driver.
 # This port will contribute value (UUUUUUUUUUUUUUUUUUUUUUUUUUUUU) to the signal network.
 run
+# End time: 08:03:43 on Jan 29,2017, Elapsed time: 19:18:28
+# Errors: 11, Warnings: 79

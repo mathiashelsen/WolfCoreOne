@@ -10,7 +10,7 @@ entity ALU is
 	inputB		    : in std_logic_vector(31 downto 0);	    -- input data B
 	ALU_Out		    : buffer std_logic_vector(31 downto 0);    -- ALU results 
 	ALU_Overflow    : buffer std_logic_vector(31 downto 0);    -- ALU overflow results 
-	ALU_Status		: buffer std_logic_vector(31 downto 0)		-- Status of the ALU
+	ALU_Status		: buffer std_logic_vector(7 downto 0)		-- Status of the ALU
     );
 end ALU;
 
@@ -39,24 +39,26 @@ begin
 	
 		-- Check for all zeros output result
 		if (ALU_Out = X"0000_0000") then
-			ALU_Status(31) <= '1';
+			ALU_Status(7) <= '1';
 		else
-			ALU_Status(31) <= '0';
+			ALU_Status(7) <= '0';
 		end if;
 	
 		-- Check if the left-most bit is '1'
 		if( ALU_Out(31) = '1' ) then
-			ALU_Status(30) <= '1';
+			ALU_Status(6) <= '1';
 		else
-			ALU_Status(30)	<= '0';
+			ALU_Status(6)	<= '0';
 		end if;
 	
 		-- Under/overflow when ADD, SUB or SUBS
 		if( instr = ADD or instr = SUB or instr = SUBS ) then
-			ALU_Status(29)	<= resTmp(32);
+			ALU_Status(5)	<= resTmp(32);
 		else
-			ALU_Status(29)	<= '0';
+			ALU_Status(5)	<= '0';
 		end if;
+
+		ALU_Status(4 downto 0)	<= "0_0000";
 	
 		case instr is
 		when STORE =>
