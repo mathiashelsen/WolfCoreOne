@@ -78,16 +78,22 @@ process(opcWriteBack, CPU_Status) begin
 		wbEn <= '1';
 	else 	
 		case wbCond is
+			-- Always
 			when "000" =>
 				wbEn <= '1';
+			-- Never
 			when "001" =>
 				wbEn <= '0';
+			-- When 0
 			when "010" =>
 				wbEn <= CPU_Status(7);
+			-- When not 0
 			when "011" =>
 				wbEn <= not CPU_Status(7);
+			-- When "positive" -> MSB = 0
 			when "100" =>
 				wbEn <= not CPU_Status(6);
+			-- When "negative" -> MSB = 1
 			when "101" =>
 				wbEn <= CPU_Status(6);
 			when others =>
@@ -191,7 +197,7 @@ process(clk, rst) begin
 		-- WRITEBACK
 		if(wbEn='1' and opcWriteBack="00001") then
 			case to_integer(unsigned(wbReg)) is
-				when 0 to 12 =>
+				when 0 to 11 =>
 					regFile(to_integer(unsigned(wbReg))) <= dataInput;
 					pc <= std_logic_vector(unsigned(pc) + to_unsigned(1, pc'length));
 				when 13 =>
@@ -201,7 +207,7 @@ process(clk, rst) begin
 			end case;
 		elsif(wbEn = '1') then
 			case to_integer(unsigned(wbReg)) is
-				when 0 to 12 =>
+				when 0 to 11 =>
 				regFile(to_integer(unsigned(wbReg))) <= ALU_reg;
 				pc <= std_logic_vector(unsigned(pc) + to_unsigned(1, pc'length));
 				when 13 =>
