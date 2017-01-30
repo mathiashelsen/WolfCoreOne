@@ -9,7 +9,7 @@ entity wolfcore is
 		dataAddr	: out std_logic_vector(31 downto 0);
 		dataWrEn	: out std_logic;
 		instrInput	: in std_logic_vector(31 downto 0);
-		instrAddr	: out std_logic_Vector(31 downto 0);
+		pc			: buffer std_logic_Vector(31 downto 0);
 		CPU_Status	: buffer std_logic_vector(31 downto 0);
 		rst			: in std_logic;
 		clk			: in std_logic
@@ -21,7 +21,7 @@ architecture default of wolfcore is
 	signal inputA	: std_logic_vector(31 downto 0);
 	signal inputB	: std_logic_vector(31 downto 0);
 	signal regFile	: regFileType;
-	signal pc		: std_logic_vector(31 downto 0);
+	--signal pc		: std_logic_vector(31 downto 0);
 	signal ALU_Overflow : std_logic_vector(31 downto 0);
 	signal ALU_Out	: std_logic_vector(31 downto 0);
 	signal ALU_Status	: std_logic_vector(7 downto 0);
@@ -37,12 +37,14 @@ architecture default of wolfcore is
 	signal regA		: std_logic_vector(3 downto 0);
 	signal regB		: std_logic_vector(3 downto 0);
 	signal inputImm	: std_logic_vector(13 downto 0);
+	signal shadowPC	: std_logic_vector(31 downto 0);
 
 	-- Used during execute
 	signal opcExecute: std_logic_vector(4 downto 0);
 	signal wbReg	: std_logic_vector(3 downto 0);
 	signal wbCond	: std_logic_vector(2 downto 0);
 	signal wbEn		: std_logic;
+	signal updateStatus : std_logic;
 
 	signal instrWriteBack : std_logic_vector(31 downto 0);
 	signal opcWriteBack : std_logic_vector(4 downto 0);
@@ -57,8 +59,8 @@ architecture default of wolfcore is
 		ALU_Overflow    : buffer std_logic_vector(31 downto 0);    -- ALU overflow results 
 		ALU_Status		: buffer std_logic_vector(7 downto 0)		-- Status of the ALU
     	);
-
 	end component;	
+
 
 begin
 
@@ -70,6 +72,29 @@ begin
 		ALU_Overflow => ALU_Overflow,
 		ALU_Status => CPU_Status(7 downto 0)
 		);
+
+process(opcWriteBack, CPU_Status) begin
+	if(opcWriteBack = "00001") then
+		wbEn <= '1';
+	else 	
+		case wbCond is
+			when "000" =>
+				wbEn <= '1';
+			when "001" =>
+				wbEn <= '0';
+			when "010" =>
+				wbEn <= CPU_Status(7);
+			when "011" =>
+				wbEn <= not CPU_Status(7);
+			when "100" =>
+				wbEn <= not CPU_Status(6);
+			when "101" =>
+				wbEn <= CPU_Status(6);
+			when others =>
+				wbEn <= '0';
+		end case;
+	end if;
+end process;
 
 process(clk, rst) begin
 	if(rst = '1') then
@@ -97,6 +122,7 @@ process(clk, rst) begin
 		regA	<= instrInput(30 downto 27);
 		regB	<= instrInput(26 downto 23);
 		inputImm <= instrInput(26 downto 13);
+		shadowPC <= pc;
 
 		instrDecode	<= instrInput;
 
@@ -105,8 +131,10 @@ process(clk, rst) begin
 			inputB	<= std_logic_vector(to_unsigned(0, 18)) & inputImm;
 		else
 			case to_integer(unsigned(regB)) is
+				when 12 =>
+					inputB	<= ALU_Out;
 				when 13 =>
-					inputB	<= pc;
+					inputB	<= shadowPC;
 				when 14 =>
 					inputB	<= ALU_Overflow;
 				when 15 =>
@@ -117,8 +145,10 @@ process(clk, rst) begin
 		end if;
 
 		case to_integer(unsigned(regA)) is
+			when 12 =>
+				inputA	<= ALU_Out;
 			when 13 =>
-				inputA	<= pc;
+				inputA	<= shadowPC;
 			when 14 =>
 				inputA	<= ALU_Overflow;
 			when 15 =>
@@ -156,35 +186,34 @@ process(clk, rst) begin
 		opcWriteBack	<= instrExecute(12 downto 8);
 		wbReg			<= instrExecute(7 downto 4);
 		wbCond			<= instrExecute(3 downto 1);
-		wbEn			<= instrExecute(0);
+		updateStatus	<= instrExecute(0);
 
 		-- WRITEBACK
-		if(opcWriteBack = "00001") then
+		if(wbEn='1' and opcWriteBack="00001") then
 			case to_integer(unsigned(wbReg)) is
 				when 0 to 12 =>
 					regFile(to_integer(unsigned(wbReg))) <= dataInput;
+					pc <= std_logic_vector(unsigned(pc) + to_unsigned(1, pc'length));
 				when 13 =>
 					pc <= dataInput;
 				when others =>
-
+					pc <= std_logic_vector(unsigned(pc) + to_unsigned(1, pc'length));
 			end case;
-		else
-			case(wbCond) is
-				when "001" => 
-					case to_integer(unsigned(wbReg)) is
-						when 0 to 12 =>
-							regFile(to_integer(unsigned(wbReg))) <= ALU_reg;
-						when 13 =>
-							pc <= ALU_reg;
-						when others =>
-
-					end case;
+		elsif(wbEn = '1') then
+			case to_integer(unsigned(wbReg)) is
+				when 0 to 12 =>
+				regFile(to_integer(unsigned(wbReg))) <= ALU_reg;
+				pc <= std_logic_vector(unsigned(pc) + to_unsigned(1, pc'length));
+				when 13 =>
+				pc <= ALU_reg;
 				when others =>
-						
+				pc <= std_logic_vector(unsigned(pc) + to_unsigned(1, pc'length));
 			end case;			
+		else
+			pc <= std_logic_vector(unsigned(pc) + to_unsigned(1, pc'length));
 		end if;
 
-		if(wbEn = '1') then
+		if(updateStatus = '1') then
 			CPU_Status(7 downto 0)	<= ALU_Status_reg;
 		end if;
 	end if;
