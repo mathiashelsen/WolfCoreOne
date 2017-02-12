@@ -70,19 +70,19 @@ begin
 		inputB => inputB,
 		ALU_Out => ALU_Out,
 		ALU_Overflow => ALU_Overflow,
-		ALU_Status => CPU_Status(7 downto 0)
+		ALU_Status => ALU_Status
 		);
 
-process(opcWriteBack, CPU_Status) begin
+process(opcWriteBack, CPU_Status, wbCond) begin
 	if(opcWriteBack = "00001") then
 		wbEn <= '1';
 	else 	
 		case wbCond is
 			-- Always
-			when "000" =>
+			when "001" =>
 				wbEn <= '1';
 			-- Never
-			when "001" =>
+			when "000" =>
 				wbEn <= '0';
 			-- When 0
 			when "010" =>
@@ -107,9 +107,10 @@ process(clk, rst) begin
 		inputA	<= X"0000_0000";	
 		inputB	<= X"0000_0000";	
 		pc		<= X"0000_0000";	
-		--for i in regFile'range loop
-		--	regFile(i)	<= X"0000_0000";
-		--end loop;
+		CPU_Status <= X"0000_0000";
+		for i in regFile'range loop
+			regFile(i)	<= X"0000_0000";
+		end loop;
 		instrDecode	<= X"0000_0000";
 		instrExecute <= X"0000_0000";
 		instrWB		<= X"0000_0000";
@@ -121,7 +122,9 @@ process(clk, rst) begin
 		opcExecute	<= "00000";
 		wbReg	<= X"0";
 		wbCond	<= "000";
-		wbEn	<= '0';
+		
+		instrWriteBack	<= X"0000_0000";
+		opcWriteBack	<= "00000";
 	elsif (clk'event and clk='1') then
 		-- FETCH
 		immEn	<= instrInput(31);
