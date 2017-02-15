@@ -17,7 +17,7 @@ entity wolfcore is
 end entity;
 
 architecture default of wolfcore is
-	type regFileType is array(11 downto 0) of std_logic_vector(31 downto 0);
+	type regFileType is array(12 downto 0) of std_logic_vector(31 downto 0);
 	signal inputA	: std_logic_vector(31 downto 0);
 	signal inputB	: std_logic_vector(31 downto 0);
 	signal regFile	: regFileType;
@@ -48,7 +48,6 @@ architecture default of wolfcore is
 
 	signal instrWriteBack : std_logic_vector(31 downto 0);
 	signal opcWriteBack : std_logic_vector(4 downto 0);
-	signal delayWriteBack : std_logic;
 
 	-- The magnificent combinatorial ALU! All hail the ALU!
 	component ALU 
@@ -73,40 +72,6 @@ begin
 		ALU_Overflow => ALU_Overflow,
 		ALU_Status => ALU_Status
 		);
-
-process(immEn, inputImm, regB, regA, ALU_Out, shadowPC,
-	ALU_Overflow, CPU_Status, regFile) begin
-	-- DECODE
-	if(immEn = '1') then
-		inputB	<= std_logic_vector(to_unsigned(0, 18)) & inputImm;
-	else
-		case to_integer(unsigned(regB)) is
-			when 12 =>
-				inputB	<= ALU_Out;
-			when 13 =>
-				inputB	<= shadowPC;
-			when 14 =>
-				inputB	<= ALU_Overflow;
-			when 15 =>
-				inputB	<= CPU_Status;
-			when others =>
-				inputB	<= regFile(to_integer(unsigned(regB)));
-		end case;
-	end if;
-
-	case to_integer(unsigned(regA)) is
-		when 12 =>
-			inputA	<= ALU_Out;
-		when 13 =>
-			inputA	<= shadowPC;
-		when 14 =>
-			inputA	<= ALU_Overflow;
-		when 15 =>
-			inputA	<= CPU_Status;
-		when others =>
-			inputA	<= regFile(to_integer(unsigned(regA)));
-	end case;
-end process;
 
 process(opcWriteBack, CPU_Status, wbCond) begin
 	if(opcWriteBack = "00001") then
@@ -139,8 +104,8 @@ end process;
 
 process(clk, rst) begin
 	if(rst = '1') then
-		--inputA	<= X"0000_0000";	
-		--inputB	<= X"0000_0000";	
+		inputA	<= X"0000_0000";	
+		inputB	<= X"0000_0000";	
 		pc		<= X"0000_0000";	
 		CPU_Status <= X"0000_0000";
 		for i in regFile'range loop
@@ -168,8 +133,36 @@ process(clk, rst) begin
 		inputImm <= instrInput(26 downto 13);
 		shadowPC <= pc;
 
-		opcExecute		<= instrInput(12 downto 8);
-		instrExecute	<= instrInput;
+		instrDecode	<= instrInput;
+
+		-- DECODE
+		if(immEn = '1') then
+			inputB	<= std_logic_vector(to_unsigned(0, 18)) & inputImm;
+		else
+			case to_integer(unsigned(regB)) is
+				when 13 =>
+					inputB	<= shadowPC;
+				when 14 =>
+					inputB	<= ALU_Overflow;
+				when 15 =>
+					inputB	<= CPU_Status;
+				when others =>
+					inputB	<= regFile(to_integer(unsigned(regB)));
+			end case;
+		end if;
+
+		case to_integer(unsigned(regA)) is
+			when 13 =>
+				inputA	<= shadowPC;
+			when 14 =>
+				inputA	<= ALU_Overflow;
+			when 15 =>
+				inputA	<= CPU_Status;
+			when others =>
+				inputA	<= regFile(to_integer(unsigned(regA)));
+		end case;
+		opcExecute		<= instrDecode(12 downto 8);
+		instrExecute	<= instrDecode;
 	
 		-- EXECUTE
 		-- Stuff that ripples through the ALU gets copied into a flipflop
@@ -194,43 +187,35 @@ process(clk, rst) begin
 		end if;
 
 		-- We take along important information for the writeback
-		instrWriteBack	<= instrInput;
-		opcWriteBack	<= instrInput(12 downto 8);
-		wbReg			<= instrInput(7 downto 4);
-		wbCond			<= instrInput(3 downto 1);
-		updateStatus	<= instrInput(0);
+		instrWriteBack	<= instrExecute;
+		opcWriteBack	<= instrExecute(12 downto 8);
+		wbReg			<= instrExecute(7 downto 4);
+		wbCond			<= instrExecute(3 downto 1);
+		updateStatus	<= instrExecute(0);
 
 		-- WRITEBACK
-		if(opcWriteBack="00001") then
-			delayWriteBack <= '1';
-		else
-			delayWriteBack <= '0';
-
-			if(wbEn = '1' and delayWriteBack = '0') then
-				case to_integer(unsigned(wbReg)) is
-					when 0 to 11 =>
-					regFile(to_integer(unsigned(wbReg))) <= ALU_Out;
-					pc <= std_logic_vector(unsigned(pc) + to_unsigned(1, pc'length));
-					when 13 =>
-					pc <= ALU_Out;
-					when others =>
-					pc <= std_logic_vector(unsigned(pc) + to_unsigned(1, pc'length));
-				end case;			
-			else
-				pc <= std_logic_vector(unsigned(pc) + to_unsigned(1, pc'length));
-			end if;
-		end if;
-
-		if(delayWriteBack = '1') then
+		if(wbEn='1' and opcWriteBack="00001") then
 			case to_integer(unsigned(wbReg)) is
-				when 0 to 11 =>
+				when 0 to 12 =>
 					regFile(to_integer(unsigned(wbReg))) <= dataInput;
+					pc <= std_logic_vector(unsigned(pc) + to_unsigned(1, pc'length));
 				when 13 =>
 					pc <= dataInput;
 				when others =>
+					pc <= std_logic_vector(unsigned(pc) + to_unsigned(1, pc'length));
 			end case;
+		elsif(wbEn = '1') then
+			case to_integer(unsigned(wbReg)) is
+				when 0 to 12 =>
+				regFile(to_integer(unsigned(wbReg))) <= ALU_reg;
+				pc <= std_logic_vector(unsigned(pc) + to_unsigned(1, pc'length));
+				when 13 =>
+				pc <= ALU_reg;
+				when others =>
+				pc <= std_logic_vector(unsigned(pc) + to_unsigned(1, pc'length));
+			end case;			
 		else
-
+			pc <= std_logic_vector(unsigned(pc) + to_unsigned(1, pc'length));
 		end if;
 
 		if(updateStatus = '1') then

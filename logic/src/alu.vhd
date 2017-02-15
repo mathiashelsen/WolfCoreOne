@@ -37,28 +37,28 @@ begin
 		ALU_Overflow <= X"0000_0000";
 	
 		-- Check for all zeros output result
-	--	if (ALU_Out = X"0000_0000") then
-	--		ALU_Status(7) <= '1';
-	--	else
-	--		ALU_Status(7) <= '0';
-	--	end if;
-	--
-	--	-- Check if the left-most bit is '1'
-	--	if( ALU_Out(31) = '1' ) then
-	--		ALU_Status(6) <= '1';
-	--	else
-	--		ALU_Status(6)	<= '0';
-	--	end if;
-	--
-	--	-- Under/overflow when ADD, SUB or SUBS
-	--	if( instr = ADD or instr = SUB or instr = SUBS ) then
-	--		ALU_Status(5)	<= resTmp(32);
-	--	else
-	--		ALU_Status(5)	<= '0';
-	--	end if;
+		if (ALU_Out = X"0000_0000") then
+			ALU_Status(7) <= '1';
+		else
+			ALU_Status(7) <= '0';
+		end if;
+	
+		-- Check if the left-most bit is '1'
+		if( ALU_Out(31) = '1' ) then
+			ALU_Status(6) <= '1';
+		else
+			ALU_Status(6)	<= '0';
+		end if;
+	
+		-- Under/overflow when ADD, SUB or SUBS
+		if( instr = ADD or instr = SUB or instr = SUBS ) then
+			ALU_Status(5)	<= resTmp(32);
+		else
+			ALU_Status(5)	<= '0';
+		end if;
 
-	--	ALU_Status(4 downto 0)	<= "00000";
-		ALU_Status <= X"00";
+		ALU_Status(4 downto 0)	<= "00000";
+		--	ALU_Status <= X"00";
 	
 		case instr is
 		when STORE =>

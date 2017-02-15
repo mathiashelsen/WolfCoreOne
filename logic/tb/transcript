@@ -1,467 +1,90 @@
-# Loading project tb_cpu
-# Compile of tb_alu.vhd failed with 1 errors.
-# Compile of alu.vhd failed with 1 errors.
-# 2 compiles, 2 failed with 2 errors.
-# reading /opt/intelFPGA/16.1/modelsim_ase/linux/../modelsim.ini
-file mkdir /home/mathias/Projects/WolfCoreOne/logic/tb/modelsim_prj
-# Loading project wolfcoreone_tb
-# Compile of tb_alu.vhd was successful.
+# Compile of tb_wolfcore.vhd was successful.
 # Compile of alu.vhd was successful.
-# 2 compiles, 0 failed with no errors.
-vsim work.tb_alu
-# vsim work.tb_alu 
-# Start time: 12:45:15 on Jan 28,2017
+# Compile of progMem.vhd was successful.
+# Compile of wolfcore.vhd was successful.
+# 4 compiles, 0 failed with no errors.
+vsim work.tb_wolfcore
+# vsim work.tb_wolfcore 
+# Start time: 18:25:25 on Feb 15,2017
 # Loading std.standard
 # Loading std.textio(body)
 # Loading ieee.std_logic_1164(body)
 # Loading ieee.std_logic_arith(body)
 # Loading ieee.std_logic_unsigned(body)
-# Loading work.tb_alu(behavior)
+# Loading work.tb_wolfcore(behavior)
 # Loading ieee.numeric_std(body)
+# Loading work.wolfcore(default)
 # Loading work.alu(default)
-# ** Warning: (vsim-8684) No drivers exist on out port /tb_alu/uut/ALU_Status(28 downto 0), and its initial value is not used.
-# Therefore, simulation behavior may occur that is not in compliance with
-# the VHDL standard as the initial values come from the base signal /tb_alu/ALU_Status(28 downto 0).
+# Loading work.progmem(default)
+add wave -position insertpoint  \
+sim:/tb_wolfcore/uut/dataOutput \
+sim:/tb_wolfcore/uut/dataInput \
+sim:/tb_wolfcore/uut/dataAddr \
+sim:/tb_wolfcore/uut/dataWrEn \
+sim:/tb_wolfcore/uut/instrInput \
+sim:/tb_wolfcore/uut/pc \
+sim:/tb_wolfcore/uut/CPU_Status \
+sim:/tb_wolfcore/uut/rst \
+sim:/tb_wolfcore/uut/clk \
+sim:/tb_wolfcore/uut/inputA \
+sim:/tb_wolfcore/uut/inputB \
+sim:/tb_wolfcore/uut/regFile \
+sim:/tb_wolfcore/uut/ALU_Overflow \
+sim:/tb_wolfcore/uut/ALU_Out \
+sim:/tb_wolfcore/uut/ALU_Status \
+sim:/tb_wolfcore/uut/ALU_reg \
+sim:/tb_wolfcore/uut/ALU_Overflow_reg \
+sim:/tb_wolfcore/uut/ALU_Status_reg \
+sim:/tb_wolfcore/uut/instrDecode \
+sim:/tb_wolfcore/uut/instrExecute \
+sim:/tb_wolfcore/uut/instrWB \
+sim:/tb_wolfcore/uut/immEn \
+sim:/tb_wolfcore/uut/regA \
+sim:/tb_wolfcore/uut/regB \
+sim:/tb_wolfcore/uut/inputImm \
+sim:/tb_wolfcore/uut/shadowPC \
+sim:/tb_wolfcore/uut/opcExecute \
+sim:/tb_wolfcore/uut/wbReg \
+sim:/tb_wolfcore/uut/wbCond \
+sim:/tb_wolfcore/uut/wbEn \
+sim:/tb_wolfcore/uut/updateStatus \
+sim:/tb_wolfcore/uut/instrWriteBack \
+sim:/tb_wolfcore/uut/opcWriteBack
 restart
-# ** Warning: (vsim-8684) No drivers exist on out port /tb_alu/uut/ALU_Status(28 downto 0), and its initial value is not used.
-# Therefore, simulation behavior may occur that is not in compliance with
-# the VHDL standard as the initial values come from the base signal /tb_alu/ALU_Status(28 downto 0).
 run
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 0  Instance: /tb_alu/uut
-add wave -position end  sim:/tb_alu/instr
-add wave -position end  sim:/tb_alu/inputA
-add wave -position end  sim:/tb_alu/inputB
-add wave -position end  sim:/tb_alu/ALU_Out
-add wave -position end  sim:/tb_alu/ALU_Overflow
-add wave -position end  sim:/tb_alu/ALU_Status
-restart
-# ** Warning: (vsim-8684) No drivers exist on out port /tb_alu/uut/ALU_Status(28 downto 0), and its initial value is not used.
-# Therefore, simulation behavior may occur that is not in compliance with
-# the VHDL standard as the initial values come from the base signal /tb_alu/ALU_Status(28 downto 0).
-run
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 0  Instance: /tb_alu/uut
-# Compile of tb_alu.vhd was successful.
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 500 ps  Iteration: 1  Instance: /tb_wolfcore/uut
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 500 ps  Iteration: 1  Instance: /tb_wolfcore/uut
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 500 ps  Iteration: 1  Instance: /tb_wolfcore/uut
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 500 ps  Iteration: 1  Instance: /tb_wolfcore/uut
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1500 ps  Iteration: 1  Instance: /tb_wolfcore/uut
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1500 ps  Iteration: 1  Instance: /tb_wolfcore/uut
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1500 ps  Iteration: 1  Instance: /tb_wolfcore/uut
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1500 ps  Iteration: 1  Instance: /tb_wolfcore/uut
 # Compile of alu.vhd was successful.
-# 2 compiles, 0 failed with no errors.
 restart
-# Loading work.tb_alu(behavior)
 # Loading work.alu(default)
-# ** Warning: (vsim-8684) No drivers exist on out port /tb_alu/uut/ALU_Status(28 downto 0), and its initial value is not used.
-# Therefore, simulation behavior may occur that is not in compliance with
-# the VHDL standard as the initial values come from the base signal /tb_alu/ALU_Status(28 downto 0).
 run
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 0  Instance: /tb_alu/uut
-# Compile of tb_alu.vhd was successful.
-# Compile of alu.vhd was successful.
-# 2 compiles, 0 failed with no errors.
-run
-restart
-# Loading work.tb_alu(behavior)
-# Loading work.alu(default)
-# ** Warning: (vsim-8684) No drivers exist on out port /tb_alu/uut/ALU_Status(28 downto 0), and its initial value is not used.
-# Therefore, simulation behavior may occur that is not in compliance with
-# the VHDL standard as the initial values come from the base signal /tb_alu/ALU_Status(28 downto 0).
-run
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 0  Instance: /tb_alu/uut
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 25 ns  Iteration: 2  Instance: /tb_alu/uut
-# Compile of tb_alu.vhd was successful.
-# Compile of alu.vhd failed with 3 errors.
-# 2 compiles, 1 failed with 3 errors.
-restart -f
-# Loading work.tb_alu(behavior)
-# ** Warning: (vsim-8684) No drivers exist on out port /tb_alu/uut/ALU_Status(28 downto 0), and its initial value is not used.
-# Therefore, simulation behavior may occur that is not in compliance with
-# the VHDL standard as the initial values come from the base signal /tb_alu/ALU_Status(28 downto 0).
-run
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 0  Instance: /tb_alu/uut
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 25 ns  Iteration: 2  Instance: /tb_alu/uut
-# Compile of tb_alu.vhd was successful.
-# Compile of alu.vhd failed with 3 errors.
-# 2 compiles, 1 failed with 3 errors.
-# Compile of tb_alu.vhd was successful.
-# Compile of alu.vhd was successful.
-# 2 compiles, 0 failed with no errors.
-restart
-# Loading work.tb_alu(behavior)
-# Loading work.alu(default)
-# ** Warning: (vsim-8683) Uninitialized out port /tb_alu/uut/ALU_Status(28 downto 0) has no driver.
-# This port will contribute value (UUUUUUUUUUUUUUUUUUUUUUUUUUUUU) to the signal network.
-run
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 0  Instance: /tb_alu/uut
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 25 ns  Iteration: 2  Instance: /tb_alu/uut
-restart
-# ** Warning: (vsim-8683) Uninitialized out port /tb_alu/uut/ALU_Status(28 downto 0) has no driver.
-# This port will contribute value (UUUUUUUUUUUUUUUUUUUUUUUUUUUUU) to the signal network.
-run
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 0  Instance: /tb_alu/uut
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 25 ns  Iteration: 2  Instance: /tb_alu/uut
-restart
-# ** Warning: (vsim-8683) Uninitialized out port /tb_alu/uut/ALU_Status(28 downto 0) has no driver.
-# This port will contribute value (UUUUUUUUUUUUUUUUUUUUUUUUUUUUU) to the signal network.
-run
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 0  Instance: /tb_alu/uut
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 25 ns  Iteration: 2  Instance: /tb_alu/uut
-# Compile of tb_alu.vhd was successful.
-# Compile of alu.vhd was successful.
-# 2 compiles, 0 failed with no errors.
-restart
-# Loading work.tb_alu(behavior)
-# Loading work.alu(default)
-# ** Warning: (vsim-8683) Uninitialized out port /tb_alu/uut/ALU_Status(28 downto 0) has no driver.
-# This port will contribute value (UUUUUUUUUUUUUUUUUUUUUUUUUUUUU) to the signal network.
-run
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 0  Instance: /tb_alu/uut
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 25 ns  Iteration: 2  Instance: /tb_alu/uut
-compile all
-# wrong # args: should be "compile w cmd ..."
-compile
-# wrong # args: should be "compile w cmd ..."
-# Compile of tb_alu.vhd was successful.
-# Compile of alu.vhd was successful.
-# 2 compiles, 0 failed with no errors.
-restart
-# Loading work.tb_alu(behavior)
-# Loading work.alu(default)
-# ** Warning: (vsim-8683) Uninitialized out port /tb_alu/uut/ALU_Status(28 downto 0) has no driver.
-# This port will contribute value (UUUUUUUUUUUUUUUUUUUUUUUUUUUUU) to the signal network.
-run
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 0  Instance: /tb_alu/uut
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 25 ns  Iteration: 2  Instance: /tb_alu/uut
-# Compile of tb_alu.vhd was successful.
-# Compile of alu.vhd was successful.
-# 2 compiles, 0 failed with no errors.
-restart
-# Loading work.tb_alu(behavior)
-# Loading work.alu(default)
-# ** Warning: (vsim-8683) Uninitialized out port /tb_alu/uut/ALU_Status(28 downto 0) has no driver.
-# This port will contribute value (UUUUUUUUUUUUUUUUUUUUUUUUUUUUU) to the signal network.
-run
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 0  Instance: /tb_alu/uut
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 25 ns  Iteration: 2  Instance: /tb_alu/uut
-# Compile of tb_alu.vhd was successful.
-# Compile of alu.vhd was successful.
-# 2 compiles, 0 failed with no errors.
-restart
-# Loading work.tb_alu(behavior)
-# Loading work.alu(default)
-# ** Warning: (vsim-8683) Uninitialized out port /tb_alu/uut/ALU_Status(28 downto 0) has no driver.
-# This port will contribute value (UUUUUUUUUUUUUUUUUUUUUUUUUUUUU) to the signal network.
-run
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 0  Instance: /tb_alu/uut
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 25 ns  Iteration: 2  Instance: /tb_alu/uut
-# Compile of tb_alu.vhd was successful.
-# Compile of alu.vhd was successful.
-# 2 compiles, 0 failed with no errors.
-restart
-# Loading work.tb_alu(behavior)
-# Loading work.alu(default)
-# ** Warning: (vsim-8683) Uninitialized out port /tb_alu/uut/ALU_Status(28 downto 0) has no driver.
-# This port will contribute value (UUUUUUUUUUUUUUUUUUUUUUUUUUUUU) to the signal network.
-run
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 0  Instance: /tb_alu/uut
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 25 ns  Iteration: 2  Instance: /tb_alu/uut
-restart
-# ** Warning: (vsim-8683) Uninitialized out port /tb_alu/uut/ALU_Status(28 downto 0) has no driver.
-# This port will contribute value (UUUUUUUUUUUUUUUUUUUUUUUUUUUUU) to the signal network.
-run
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 0  Instance: /tb_alu/uut
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 25 ns  Iteration: 2  Instance: /tb_alu/uut
-# Compile of tb_alu.vhd was successful.
-# Compile of alu.vhd was successful.
-# 2 compiles, 0 failed with no errors.
-restart
-# Loading work.tb_alu(behavior)
-# Loading work.alu(default)
-# ** Warning: (vsim-8683) Uninitialized out port /tb_alu/uut/ALU_Status(28 downto 0) has no driver.
-# This port will contribute value (UUUUUUUUUUUUUUUUUUUUUUUUUUUUU) to the signal network.
-run
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 0  Instance: /tb_alu/uut
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 65 ns  Iteration: 2  Instance: /tb_alu/uut
-# Compile of tb_alu.vhd was successful.
-# Compile of alu.vhd was successful.
-# 2 compiles, 0 failed with no errors.
-restart
-# Loading work.tb_alu(behavior)
-# Loading work.alu(default)
-# ** Warning: (vsim-8683) Uninitialized out port /tb_alu/uut/ALU_Status(28 downto 0) has no driver.
-# This port will contribute value (UUUUUUUUUUUUUUUUUUUUUUUUUUUUU) to the signal network.
-run
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 0  Instance: /tb_alu/uut
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 65 ns  Iteration: 2  Instance: /tb_alu/uut
-# Compile of tb_alu.vhd was successful.
-# Compile of alu.vhd was successful with warnings.
-# 2 compiles, 0 failed with no errors.
-restart
-# Loading work.tb_alu(behavior)
-# Loading work.alu(default)
-# ** Warning: (vsim-8683) Uninitialized out port /tb_alu/uut/ALU_Status(28 downto 0) has no driver.
-# This port will contribute value (UUUUUUUUUUUUUUUUUUUUUUUUUUUUU) to the signal network.
-run
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 0  Instance: /tb_alu/uut
-# ** Fatal: (vsim-3420) Array lengths do not match. Left is 33 (32 downto 0). Right is 32 (31 downto 0).
-#    Time: 65 ns  Iteration: 1  Process: /tb_alu/uut/line__32 File: /home/mathias/Projects/WolfCoreOne/logic/src/alu.vhd
-# Fatal error in Process line__32 at /home/mathias/Projects/WolfCoreOne/logic/src/alu.vhd line 72
-# 
-# HDL call sequence:
-# Stopped at /home/mathias/Projects/WolfCoreOne/logic/src/alu.vhd 72 Process line__32
-# 
-run
-# Cannot continue because of fatal error.
-# HDL call sequence:
-# Stopped at /home/mathias/Projects/WolfCoreOne/logic/src/alu.vhd 72 Process line__32
-# 
-restart
-# ** Warning: (vsim-8683) Uninitialized out port /tb_alu/uut/ALU_Status(28 downto 0) has no driver.
-# This port will contribute value (UUUUUUUUUUUUUUUUUUUUUUUUUUUUU) to the signal network.
-run
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 0  Instance: /tb_alu/uut
-# ** Fatal: (vsim-3420) Array lengths do not match. Left is 33 (32 downto 0). Right is 32 (31 downto 0).
-#    Time: 65 ns  Iteration: 1  Process: /tb_alu/uut/line__32 File: /home/mathias/Projects/WolfCoreOne/logic/src/alu.vhd
-# Fatal error in Process line__32 at /home/mathias/Projects/WolfCoreOne/logic/src/alu.vhd line 72
-# 
-# HDL call sequence:
-# Stopped at /home/mathias/Projects/WolfCoreOne/logic/src/alu.vhd 72 Process line__32
-# 
-run
-# Cannot continue because of fatal error.
-# HDL call sequence:
-# Stopped at /home/mathias/Projects/WolfCoreOne/logic/src/alu.vhd 72 Process line__32
-# 
-run
-# Cannot continue because of fatal error.
-# HDL call sequence:
-# Stopped at /home/mathias/Projects/WolfCoreOne/logic/src/alu.vhd 72 Process line__32
-# 
-restart
-# ** Warning: (vsim-8683) Uninitialized out port /tb_alu/uut/ALU_Status(28 downto 0) has no driver.
-# This port will contribute value (UUUUUUUUUUUUUUUUUUUUUUUUUUUUU) to the signal network.
-run
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 0  Instance: /tb_alu/uut
-# ** Fatal: (vsim-3420) Array lengths do not match. Left is 33 (32 downto 0). Right is 32 (31 downto 0).
-#    Time: 65 ns  Iteration: 1  Process: /tb_alu/uut/line__32 File: /home/mathias/Projects/WolfCoreOne/logic/src/alu.vhd
-# Fatal error in Process line__32 at /home/mathias/Projects/WolfCoreOne/logic/src/alu.vhd line 72
-# 
-# HDL call sequence:
-# Stopped at /home/mathias/Projects/WolfCoreOne/logic/src/alu.vhd 72 Process line__32
-# 
-# Compile of tb_alu.vhd was successful.
-# Compile of alu.vhd was successful.
-# 2 compiles, 0 failed with no errors.
-restart
-# Loading work.tb_alu(behavior)
-# Loading work.alu(default)
-# ** Warning: (vsim-8683) Uninitialized out port /tb_alu/uut/ALU_Status(28 downto 0) has no driver.
-# This port will contribute value (UUUUUUUUUUUUUUUUUUUUUUUUUUUUU) to the signal network.
-run
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 0  Instance: /tb_alu/uut
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 65 ns  Iteration: 2  Instance: /tb_alu/uut
-add wave -position end  sim:/tb_alu/ALU_Out
-# Compile of tb_alu.vhd was successful.
-# Compile of alu.vhd was successful.
-# 2 compiles, 0 failed with no errors.
-restart
-# Loading work.tb_alu(behavior)
-# Loading work.alu(default)
-# ** Warning: (vsim-8683) Uninitialized out port /tb_alu/uut/ALU_Status(28 downto 0) has no driver.
-# This port will contribute value (UUUUUUUUUUUUUUUUUUUUUUUUUUUUU) to the signal network.
-run
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 0  Instance: /tb_alu/uut
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 65 ns  Iteration: 2  Instance: /tb_alu/uut
-# Compile of tb_alu.vhd failed with 3 errors.
-# Compile of alu.vhd failed with 3 errors.
-# 2 compiles, 2 failed with 6 errors.
-# Compile of tb_alu.vhd failed with 1 errors.
-# Compile of alu.vhd failed with 1 errors.
-# 2 compiles, 2 failed with 2 errors.
-# Compile of tb_alu.vhd was successful.
-# Compile of alu.vhd was successful.
-# 2 compiles, 0 failed with no errors.
-restart -f
-# Loading work.tb_alu(behavior)
-# Loading work.alu(default)
-# ** Warning: (vsim-8683) Uninitialized out port /tb_alu/uut/ALU_Status(28 downto 0) has no driver.
-# This port will contribute value (UUUUUUUUUUUUUUUUUUUUUUUUUUUUU) to the signal network.
-add wave -position end  sim:/tb_alu/resTmp
-run
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 0  Instance: /tb_alu/uut
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 65 ns  Iteration: 2  Instance: /tb_alu/uut
-# Compile of tb_alu.vhd was successful.
-# Compile of alu.vhd was successful.
-# 2 compiles, 0 failed with no errors.
-restart
-# Loading work.tb_alu(behavior)
-# Loading work.alu(default)
-# ** Warning: (vsim-8683) Uninitialized out port /tb_alu/uut/ALU_Status(28 downto 0) has no driver.
-# This port will contribute value (UUUUUUUUUUUUUUUUUUUUUUUUUUUUU) to the signal network.
-run
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 0  Instance: /tb_alu/uut
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 65 ns  Iteration: 2  Instance: /tb_alu/uut
-# Compile of tb_alu.vhd was successful.
-# Compile of alu.vhd was successful.
-# 2 compiles, 0 failed with no errors.
-restart
-# Loading work.tb_alu(behavior)
-# Loading work.alu(default)
-# ** Warning: (vsim-8683) Uninitialized out port /tb_alu/uut/ALU_Status(28 downto 0) has no driver.
-# This port will contribute value (UUUUUUUUUUUUUUUUUUUUUUUUUUUUU) to the signal network.
-run
-add wave -position end  sim:/tb_alu/uut/unsgndA
-add wave -position end  sim:/tb_alu/uut/unsgndB
-restart
-# ** Warning: (vsim-8683) Uninitialized out port /tb_alu/uut/ALU_Status(28 downto 0) has no driver.
-# This port will contribute value (UUUUUUUUUUUUUUUUUUUUUUUUUUUUU) to the signal network.
-run
-# Compile of tb_alu.vhd was successful.
-# Compile of alu.vhd was successful.
-# 2 compiles, 0 failed with no errors.
-restart
-# Loading work.tb_alu(behavior)
-# Loading work.alu(default)
-# ** Warning: (vsim-8683) Uninitialized out port /tb_alu/uut/ALU_Status(28 downto 0) has no driver.
-# This port will contribute value (UUUUUUUUUUUUUUUUUUUUUUUUUUUUU) to the signal network.
-run
-restart
-# ** Warning: (vsim-8683) Uninitialized out port /tb_alu/uut/ALU_Status(28 downto 0) has no driver.
-# This port will contribute value (UUUUUUUUUUUUUUUUUUUUUUUUUUUUU) to the signal network.
-run
-# Compile of tb_alu.vhd was successful.
-# Compile of alu.vhd was successful.
-# 2 compiles, 0 failed with no errors.
-restart
-# Loading work.tb_alu(behavior)
-# Loading work.alu(default)
-# ** Warning: (vsim-8683) Uninitialized out port /tb_alu/uut/ALU_Status(28 downto 0) has no driver.
-# This port will contribute value (UUUUUUUUUUUUUUUUUUUUUUUUUUUUU) to the signal network.
-run
-# Compile of tb_alu.vhd was successful.
-# Compile of alu.vhd was successful.
-# 2 compiles, 0 failed with no errors.
-restart
-# Loading work.tb_alu(behavior)
-# Loading work.alu(default)
-# ** Warning: (vsim-8683) Uninitialized out port /tb_alu/uut/ALU_Status(28 downto 0) has no driver.
-# This port will contribute value (UUUUUUUUUUUUUUUUUUUUUUUUUUUUU) to the signal network.
-run
-# Compile of tb_alu.vhd was successful.
-# Compile of alu.vhd was successful.
-# 2 compiles, 0 failed with no errors.
-restart
-# Loading work.tb_alu(behavior)
-# Loading work.alu(default)
-# ** Warning: (vsim-8683) Uninitialized out port /tb_alu/uut/ALU_Status(28 downto 0) has no driver.
-# This port will contribute value (UUUUUUUUUUUUUUUUUUUUUUUUUUUUU) to the signal network.
-run
-# Compile of tb_alu.vhd was successful.
-# Compile of alu.vhd was successful.
-# 2 compiles, 0 failed with no errors.
-restart
-# Loading work.tb_alu(behavior)
-# Loading work.alu(default)
-# ** Warning: (vsim-8683) Uninitialized out port /tb_alu/uut/ALU_Status(28 downto 0) has no driver.
-# This port will contribute value (UUUUUUUUUUUUUUUUUUUUUUUUUUUUU) to the signal network.
-run
-# Compile of tb_alu.vhd was successful.
-# Compile of alu.vhd was successful.
-# 2 compiles, 0 failed with no errors.
-restart
-# Loading work.tb_alu(behavior)
-# Loading work.alu(default)
-# ** Warning: (vsim-8683) Uninitialized out port /tb_alu/uut/ALU_Status(28 downto 0) has no driver.
-# This port will contribute value (UUUUUUUUUUUUUUUUUUUUUUUUUUUUU) to the signal network.
-run
-# Compile of tb_alu.vhd was successful.
-# Compile of alu.vhd was successful.
-# 2 compiles, 0 failed with no errors.
-restart
-# Loading work.tb_alu(behavior)
-# Loading work.alu(default)
-# ** Warning: (vsim-8683) Uninitialized out port /tb_alu/uut/ALU_Status(28 downto 0) has no driver.
-# This port will contribute value (UUUUUUUUUUUUUUUUUUUUUUUUUUUUU) to the signal network.
-run
-# Compile of tb_alu.vhd was successful.
-# Compile of alu.vhd was successful.
-# 2 compiles, 0 failed with no errors.
-restart
-# Loading work.tb_alu(behavior)
-# Loading work.alu(default)
-# ** Warning: (vsim-8683) Uninitialized out port /tb_alu/uut/ALU_Status(28 downto 0) has no driver.
-# This port will contribute value (UUUUUUUUUUUUUUUUUUUUUUUUUUUUU) to the signal network.
-run
-# Compile of tb_alu.vhd was successful.
-# Compile of alu.vhd was successful.
-# 2 compiles, 0 failed with no errors.
-restart
-# Loading work.tb_alu(behavior)
-# Loading work.alu(default)
-# ** Warning: (vsim-8683) Uninitialized out port /tb_alu/uut/ALU_Status(28 downto 0) has no driver.
-# This port will contribute value (UUUUUUUUUUUUUUUUUUUUUUUUUUUUU) to the signal network.
-run
-# Compile of tb_alu.vhd was successful.
-# Compile of alu.vhd was successful.
-# 2 compiles, 0 failed with no errors.
-restart
-# Loading work.tb_alu(behavior)
-# Loading work.alu(default)
-# ** Warning: (vsim-8683) Uninitialized out port /tb_alu/uut/ALU_Status(28 downto 0) has no driver.
-# This port will contribute value (UUUUUUUUUUUUUUUUUUUUUUUUUUUUU) to the signal network.
-run
-# Compile of tb_alu.vhd was successful.
-# Compile of alu.vhd was successful.
-# 2 compiles, 0 failed with no errors.
-restart
-# Loading work.tb_alu(behavior)
-# Loading work.alu(default)
-# ** Warning: (vsim-8683) Uninitialized out port /tb_alu/uut/ALU_Status(28 downto 0) has no driver.
-# This port will contribute value (UUUUUUUUUUUUUUUUUUUUUUUUUUUUU) to the signal network.
-run
-# Compile of tb_alu.vhd was successful.
-# Compile of alu.vhd was successful.
-# 2 compiles, 0 failed with no errors.
-restart
-# Loading work.tb_alu(behavior)
-# Loading work.alu(default)
-# ** Warning: (vsim-8683) Uninitialized out port /tb_alu/uut/ALU_Status(28 downto 0) has no driver.
-# This port will contribute value (UUUUUUUUUUUUUUUUUUUUUUUUUUUUU) to the signal network.
-run
-# End time: 08:03:43 on Jan 29,2017, Elapsed time: 19:18:28
-# Errors: 11, Warnings: 79
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 500 ps  Iteration: 1  Instance: /tb_wolfcore/uut
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 500 ps  Iteration: 1  Instance: /tb_wolfcore/uut
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 500 ps  Iteration: 1  Instance: /tb_wolfcore/uut
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 500 ps  Iteration: 1  Instance: /tb_wolfcore/uut
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1500 ps  Iteration: 1  Instance: /tb_wolfcore/uut
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1500 ps  Iteration: 1  Instance: /tb_wolfcore/uut
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1500 ps  Iteration: 1  Instance: /tb_wolfcore/uut
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1500 ps  Iteration: 1  Instance: /tb_wolfcore/uut
