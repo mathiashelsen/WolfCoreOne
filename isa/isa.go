@@ -12,8 +12,8 @@ const (
 	NREG         = 16         // number of registers
 	MAXREG       = NREG - 1   // highest register for RA, RC
 	MAXREGB      = MAXREG - 2 // highest register for RB
-	PCREG        = 14         // register holding program counter
-	OVERFLOWREG  = 15         // register holding overflow of mul, div
+	PCREG        = 13         // register holding program counter
+	OVERFLOWREG  = 14         // register holding overflow of mul, div
 	PERI_DISPLAY = 0x3FFF     // memory-mapped address of 7-segment display
 )
 
@@ -51,6 +51,8 @@ const (
 	NZ     = 3 // write back if last compare was nonzero
 	GE     = 4 // write back if last compare was >= 0
 	LT     = 5 // write back if last compare was < 0
+	OF	   = 6 // write back on overflow
+	NOF    = 7 // write back on not overflow
 )
 
 // ALU Opcodes
@@ -61,11 +63,8 @@ const (
 	OR    = 0x04 //  C <= Ra | Rb
 	XOR   = 0x05 //  C <= Ra ^ Rb
 	ADD   = 0x06 //  C <= Ra + Rb
-	ADDC  = 0x07 //  C <= Ra + Rb + carry_bit
-	SUB   = 0x08 //  C <= Ra - Rb
-	MUL   = 0x09 //  C <= (Ra*Rb)[31:0], Roverflow = (Ra*Rb)[63:32]
-	DIV   = 0x0A //  C = Ra/Rb, Roverflow = Ra%Rb (unsigned)
-	SDIV  = 0x0B //  C = Ra/Rb, Roverflow = Ra%Rb (signed)
+	SUB   = 0x07 //  C <= Ra - Rb, unsigned
+	SUBS  = 0x08 //  C <= Ra - Rb, signed
 )
 
 // Human-readable strings for Conditions
@@ -76,6 +75,8 @@ var CondStr = map[uint32]string{
 	NZ:     "NZ",
 	GE:     "GE",
 	LT:     "LT",
+	OF:		"OF",
+	NOF:	"NOF",
 }
 
 // Human-readable strings for Opcodes
@@ -86,11 +87,8 @@ var OpcodeStr = map[uint32]string{
 	OR:    "OR",
 	XOR:   "XOR",
 	ADD:   "ADD",
-	ADDC:  "ADDC",
 	SUB:   "SUB",
-	MUL:   "MUL",
-	DIV:   "DIV",
-	SDIV:  "SDIV",
+	SUBS:   "SUBS",
 }
 
 // Parses opcodes

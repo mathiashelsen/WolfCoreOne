@@ -36,7 +36,7 @@ architecture behavior of tb_wolfcore IS
    signal instrBus : std_logic_vector(31 downto 0);
 	signal addrBus : std_logic_vector(31 downto 0);
    -- Clock period definitions
-   constant clk_period : time := 1 ns;
+   constant clk_period : time := 100 ps;
 BEGIN
     -- Instantiate the Unit Under Test (UUT)
    uut: wolfcore PORT MAP (

@@ -17,7 +17,11 @@ process(clk) begin
 	if (clk'event and clk='0') then
 		case instrAddress is
 			when X"0000_0004" =>
-				instrOutput <= X"8000_6603";
+				instrOutput <= X"00000502";
+			when X"0000_0005" =>
+				instrOutput <= X"88002612";
+			when X"0000_0006" =>
+				instrOutput <= X"e80047d2";
 			when others =>
 				instrOutput <= X"0000_0000";
 		end case;

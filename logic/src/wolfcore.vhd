@@ -96,6 +96,10 @@ process(opcWriteBack, CPU_Status, wbCond) begin
 			-- When "negative" -> MSB = 1
 			when "101" =>
 				wbEn <= CPU_Status(6);
+			when "110" =>
+				wbEn <= CPU_Status(5);
+			when "111" =>
+				wbEn <= not CPU_Status(5);
 			when others =>
 				wbEn <= '0';
 		end case;
