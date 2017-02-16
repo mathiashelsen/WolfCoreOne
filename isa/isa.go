@@ -57,6 +57,7 @@ const (
 
 // ALU Opcodes
 const (
+	NOP	  = 0x00
 	LOAD  = 0x01 //  C <= mem[Ra+BBus]
 	STORE = 0x02 //  mem[B] = Ra, C <= Ra-1
 	AND   = 0x03 //  C <= Ra & B
@@ -65,6 +66,7 @@ const (
 	ADD   = 0x06 //  C <= Ra + Rb
 	SUB   = 0x07 //  C <= Ra - Rb, unsigned
 	SUBS  = 0x08 //  C <= Ra - Rb, signed
+	MOV   = 0x09
 )
 
 // Human-readable strings for Conditions
@@ -81,6 +83,7 @@ var CondStr = map[uint32]string{
 
 // Human-readable strings for Opcodes
 var OpcodeStr = map[uint32]string{
+	NOP:	"NOP",
 	LOAD:  "LOAD",
 	STORE: "STORE",
 	AND:   "AND",
@@ -89,6 +92,7 @@ var OpcodeStr = map[uint32]string{
 	ADD:   "ADD",
 	SUB:   "SUB",
 	SUBS:   "SUBS",
+	MOV:	"MOV",
 }
 
 // Parses opcodes

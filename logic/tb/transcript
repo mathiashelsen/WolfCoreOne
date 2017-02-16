@@ -2,16 +2,11 @@
 # Compile of tb_wolfcore.vhd was successful.
 # Compile of alu.vhd was successful.
 # Compile of progMem.vhd was successful.
-# Compile of wolfcore.vhd failed with 2 errors.
-# 4 compiles, 1 failed with 2 errors.
-# Compile of tb_wolfcore.vhd was successful.
-# Compile of alu.vhd was successful.
-# Compile of progMem.vhd was successful.
 # Compile of wolfcore.vhd was successful.
 # 4 compiles, 0 failed with no errors.
 vsim work.tb_wolfcore
 # vsim work.tb_wolfcore 
-# Start time: 19:13:51 on Feb 15,2017
+# Start time: 18:46:14 on Feb 16,2017
 # Loading std.standard
 # Loading std.textio(body)
 # Loading ieee.std_logic_1164(body)
@@ -22,6 +17,8 @@ vsim work.tb_wolfcore
 # Loading work.wolfcore(default)
 # Loading work.alu(default)
 # Loading work.progmem(default)
+add wave -position insertpoint  \
+sim:/tb_wolfcore/uut/clk
 add wave -position insertpoint  \
 sim:/tb_wolfcore/uut/dataOutput \
 sim:/tb_wolfcore/uut/dataInput \
@@ -56,34 +53,6 @@ sim:/tb_wolfcore/uut/wbEn \
 sim:/tb_wolfcore/uut/updateStatus \
 sim:/tb_wolfcore/uut/instrWriteBack \
 sim:/tb_wolfcore/uut/opcWriteBack
-restart
-run
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 500 ps  Iteration: 1  Instance: /tb_wolfcore/uut
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 500 ps  Iteration: 1  Instance: /tb_wolfcore/uut
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 500 ps  Iteration: 1  Instance: /tb_wolfcore/uut
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 500 ps  Iteration: 1  Instance: /tb_wolfcore/uut
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 1500 ps  Iteration: 1  Instance: /tb_wolfcore/uut
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 1500 ps  Iteration: 1  Instance: /tb_wolfcore/uut
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 1500 ps  Iteration: 1  Instance: /tb_wolfcore/uut
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 1500 ps  Iteration: 1  Instance: /tb_wolfcore/uut
-# Compile of tb_wolfcore.vhd was successful.
-# Compile of alu.vhd was successful.
-# Compile of progMem.vhd was successful.
-# Compile of wolfcore.vhd was successful.
-# 4 compiles, 0 failed with no errors.
-restart
-# Loading work.tb_wolfcore(behavior)
-# Loading work.wolfcore(default)
-# Loading work.alu(default)
-# Loading work.progmem(default)
 run
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
 #    Time: 50 ps  Iteration: 1  Instance: /tb_wolfcore/uut
@@ -155,6 +124,32 @@ run
 #    Time: 150 ps  Iteration: 1  Instance: /tb_wolfcore/uut
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
 #    Time: 150 ps  Iteration: 1  Instance: /tb_wolfcore/uut
-quit
-# End time: 19:21:41 on Feb 15,2017, Elapsed time: 0:07:50
-# Errors: 0, Warnings: 32
+# Compile of progMem.vhd was successful.
+# Compile of tb_wolfcore.vhd was successful.
+# Compile of alu.vhd was successful.
+# Compile of progMem.vhd was successful.
+# Compile of wolfcore.vhd was successful.
+# 4 compiles, 0 failed with no errors.
+restart
+# Loading work.tb_wolfcore(behavior)
+# Loading work.wolfcore(default)
+# Loading work.alu(default)
+# Loading work.progmem(default)
+run
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 50 ps  Iteration: 1  Instance: /tb_wolfcore/uut
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 50 ps  Iteration: 1  Instance: /tb_wolfcore/uut
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 50 ps  Iteration: 1  Instance: /tb_wolfcore/uut
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 50 ps  Iteration: 1  Instance: /tb_wolfcore/uut
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 150 ps  Iteration: 1  Instance: /tb_wolfcore/uut
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 150 ps  Iteration: 1  Instance: /tb_wolfcore/uut
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 150 ps  Iteration: 1  Instance: /tb_wolfcore/uut
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 150 ps  Iteration: 1  Instance: /tb_wolfcore/uut
+write format wave -window .main_pane.wave.interior.cs.body.pw.wf /home/mathias/Projects/WolfCoreOne/logic/tb/waveDivide.do

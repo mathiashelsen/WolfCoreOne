@@ -22,6 +22,7 @@ architecture default of ALU is
 	constant ADD	: std_logic_vector(4 downto 0) := "00110";
 	constant SUB	: std_logic_vector(4 downto 0) := "00111";
 	constant SUBS	: std_logic_vector(4 downto 0) := "01000";
+	constant MOV	: std_logic_vector(4 downto 0) := "01001";
 	signal unsgndA	: unsigned(31 downto 0);
 	signal unsgndB	: unsigned(31 downto 0);
 	signal sgndA	: signed(31 downto 0);
@@ -79,6 +80,8 @@ begin
 		when SUBS =>
 			resTmp	<= std_logic_vector(resize(sgndA, sgndA'length+1) - resize(sgndB, sgndB'length+1));
 			ALU_Out	<= resTmp(31 downto 0);
+		when MOV =>
+			ALU_Out <= inputB;
 		when others =>
 		    ALU_Out	<= X"0000_0000";
 		end case;

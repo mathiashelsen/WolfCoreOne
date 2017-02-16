@@ -9,7 +9,7 @@ z2
 cModel Technology
 Z0 d/home/mathias/Projects/WolfCoreOne/logic/tb
 Ealu
-Z1 w1487181854
+Z1 w1487264382
 Z2 DPx4 ieee 11 numeric_std 0 22 :ASDNFgHXf_ih3J@9F3Ze1
 Z3 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
 Z4 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
@@ -22,9 +22,9 @@ Vbh6lQ02DgU:_B4:T;4DT33
 !s100 j_UZOmQj5A4m1YG`mbaB31
 Z7 OV;C;10.5b;63
 32
-Z8 !s110 1487182822
+Z8 !s110 1487268163
 !i10b 1
-Z9 !s108 1487182822.000000
+Z9 !s108 1487268163.000000
 Z10 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|/home/mathias/Projects/WolfCoreOne/logic/src/alu.vhd|
 Z11 !s107 /home/mathias/Projects/WolfCoreOne/logic/src/alu.vhd|
 !i113 1
@@ -35,10 +35,10 @@ R2
 R3
 R4
 DEx4 work 3 alu 0 22 bh6lQ02DgU:_B4:T;4DT33
-l30
+l31
 L16
-VABQUXN;JRPX_dBl9KZmje1
-!s100 ii^NYA`e4[?iGN5ZAkF@Q0
+VXBF?W10X;RVWJaJc>I:i21
+!s100 oia;ETQB2C9>GdX<6^dcR2
 R7
 32
 R8
@@ -50,7 +50,7 @@ R11
 R12
 R13
 Eprogmem
-Z14 w1487182811
+Z14 w1487268153
 R2
 R3
 R4
@@ -78,8 +78,8 @@ R4
 DEx4 work 7 progmem 0 22 _c@[i4^>ah9BLJ;5H[jng0
 l15
 L13
-V?ngZLzbal>0j7WT]0nENE0
-!s100 7AB[BCo]@V6>B<m`b?;6m0
+VH13H@6C^K9OhTmA[FlMcX0
+!s100 2AT:iK=RF;g]8jZc7=:Id0
 R7
 32
 R8
