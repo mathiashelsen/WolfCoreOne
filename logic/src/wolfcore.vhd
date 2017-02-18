@@ -12,7 +12,8 @@ entity wolfcore is
 		pc			: buffer std_logic_Vector(31 downto 0);
 		CPU_Status	: buffer std_logic_vector(31 downto 0);
 		rst			: in std_logic;
-		clk			: in std_logic
+		clk			: in std_logic;
+		forceRoot	: in std_logic
 	);
 end entity;
 
@@ -20,7 +21,7 @@ architecture default of wolfcore is
 	type regFileType is array(12 downto 0) of std_logic_vector(31 downto 0);
 	signal inputA	: std_logic_vector(31 downto 0);
 	signal inputB	: std_logic_vector(31 downto 0);
-	signal regFile	: regFileType;
+	signal regFile : regFileType;
 	--signal pc		: std_logic_vector(31 downto 0);
 	signal ALU_Overflow : std_logic_vector(31 downto 0);
 	signal ALU_Out	: std_logic_vector(31 downto 0);
@@ -51,14 +52,14 @@ architecture default of wolfcore is
 
 	-- The magnificent combinatorial ALU! All hail the ALU!
 	component ALU 
-    	port(
-		instr		    : in std_logic_vector(4 downto 0);	    -- instruction (decoded)
-		inputA		    : in std_logic_vector(31 downto 0);	    -- input data A
-		inputB		    : in std_logic_vector(31 downto 0);	    -- input data B
-		ALU_Out		    : buffer std_logic_vector(31 downto 0);    -- ALU results 
+		port(
+		instr			: in std_logic_vector(4 downto 0);		-- instruction (decoded)
+		inputA			: in std_logic_vector(31 downto 0);		-- input data A
+		inputB			: in std_logic_vector(31 downto 0);		-- input data B
+		ALU_Out			: buffer std_logic_vector(31 downto 0);    -- ALU results 
 		ALU_Overflow    : buffer std_logic_vector(31 downto 0);    -- ALU overflow results 
 		ALU_Status		: buffer std_logic_vector(7 downto 0)		-- Status of the ALU
-    	);
+		);
 	end component;	
 
 
@@ -76,7 +77,7 @@ begin
 process(opcWriteBack, CPU_Status, wbCond) begin
 	if(opcWriteBack = "00001") then
 		wbEn <= '1';
-	else 	
+	else	
 		case wbCond is
 			-- Always
 			when "001" =>
@@ -222,7 +223,11 @@ process(clk, rst) begin
 			pc <= std_logic_vector(unsigned(pc) + to_unsigned(1, pc'length));
 		end if;
 
-		if(updateStatus = '1') then
+		if( (forceRoot = '1' or CPU_Status(31 downto 30) = "00") 
+			and wbReg = X"F" 
+			and wbEn = '1') then
+			CPU_Status <= ALU_reg;
+		elsif(updateStatus = '1') then
 			CPU_Status(7 downto 0)	<= ALU_Status_reg;
 		end if;
 	end if;
