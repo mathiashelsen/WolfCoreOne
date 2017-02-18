@@ -1,155 +1,239 @@
 # Loading project TB_WolfCoreOne
-# Compile of tb_wolfcore.vhd was successful.
-# Compile of alu.vhd was successful.
+# reading /opt/intelFPGA/16.1/modelsim_ase/linux/../modelsim.ini
+# Loading project tb_flowCtrl
+# Compile of tb_flowctrl.vhd failed with 1 errors.
+# Compile of flowController.vhd failed with 1 errors.
 # Compile of progMem.vhd was successful.
-# Compile of wolfcore.vhd was successful.
-# 4 compiles, 0 failed with no errors.
-vsim work.tb_wolfcore
-# vsim work.tb_wolfcore 
-# Start time: 18:46:14 on Feb 16,2017
+# 3 compiles, 2 failed with 2 errors.
+# Compile of tb_flowctrl.vhd failed with 1 errors.
+# Compile of flowController.vhd failed with 21 errors.
+# Compile of progMem.vhd was successful.
+# 3 compiles, 2 failed with 22 errors.
+# Compile of tb_flowctrl.vhd failed with 1 errors.
+# Compile of flowController.vhd failed with 5 errors.
+# Compile of progMem.vhd was successful.
+# 3 compiles, 2 failed with 6 errors.
+# Compile of tb_flowctrl.vhd failed with 1 errors.
+# Compile of flowController.vhd failed with 3 errors.
+# Compile of progMem.vhd was successful.
+# 3 compiles, 2 failed with 4 errors.
+# Compile of tb_flowctrl.vhd failed with 1 errors.
+# Compile of flowController.vhd was successful with warnings.
+# Compile of progMem.vhd was successful.
+# 3 compiles, 1 failed with 1 error.
+# Compile of tb_flowctrl.vhd was successful.
+# Compile of flowController.vhd was successful with warnings.
+# Compile of progMem.vhd was successful.
+# 3 compiles, 0 failed with no errors.
+# Compile of tb_flowctrl.vhd was successful.
+# Compile of flowController.vhd was successful.
+# Compile of progMem.vhd was successful.
+# 3 compiles, 0 failed with no errors.
+vsim work.tb_flowctrl
+# vsim work.tb_flowctrl 
+# Start time: 13:43:06 on Feb 18,2017
 # Loading std.standard
 # Loading std.textio(body)
 # Loading ieee.std_logic_1164(body)
 # Loading ieee.std_logic_arith(body)
 # Loading ieee.std_logic_unsigned(body)
-# Loading work.tb_wolfcore(behavior)
+# Loading work.tb_flowctrl(behavior)
 # Loading ieee.numeric_std(body)
-# Loading work.wolfcore(default)
-# Loading work.alu(default)
+# Loading work.flowcontroller(default)
 # Loading work.progmem(default)
+# ** Warning: (vsim-8683) Uninitialized out port /tb_flowctrl/uut/forceRoot has no driver.
+# This port will contribute value (U) to the signal network.
 add wave -position insertpoint  \
-sim:/tb_wolfcore/uut/clk
+sim:/tb_flowctrl/uut/rst \
+sim:/tb_flowctrl/uut/clk \
+sim:/tb_flowctrl/uut/pc \
+sim:/tb_flowctrl/uut/CPU_Status \
+sim:/tb_flowctrl/uut/instrOut \
+sim:/tb_flowctrl/uut/forceRoot \
+sim:/tb_flowctrl/uut/memAddr \
+sim:/tb_flowctrl/uut/instrIn \
+sim:/tb_flowctrl/uut/IRQBus \
+sim:/tb_flowctrl/uut/regAddr \
+sim:/tb_flowctrl/uut/regData \
+sim:/tb_flowctrl/uut/regOutput \
+sim:/tb_flowctrl/uut/regWrEn \
+sim:/tb_flowctrl/uut/flowCtrlState \
+sim:/tb_flowctrl/uut/instrGen \
+sim:/tb_flowctrl/uut/pcCopy \
+sim:/tb_flowctrl/uut/CPU_StatusCopy \
+sim:/tb_flowctrl/uut/irqAddrReg
+run
+# Compile of tb_flowctrl.vhd was successful.
+# Compile of flowController.vhd was successful.
+# Compile of progMem.vhd was successful.
+# 3 compiles, 0 failed with no errors.
 add wave -position insertpoint  \
-sim:/tb_wolfcore/uut/dataOutput \
-sim:/tb_wolfcore/uut/dataInput \
-sim:/tb_wolfcore/uut/dataAddr \
-sim:/tb_wolfcore/uut/dataWrEn \
-sim:/tb_wolfcore/uut/instrInput \
-sim:/tb_wolfcore/uut/pc \
-sim:/tb_wolfcore/uut/CPU_Status \
-sim:/tb_wolfcore/uut/rst \
-sim:/tb_wolfcore/uut/clk \
-sim:/tb_wolfcore/uut/inputA \
-sim:/tb_wolfcore/uut/inputB \
-sim:/tb_wolfcore/uut/regFile \
-sim:/tb_wolfcore/uut/ALU_Overflow \
-sim:/tb_wolfcore/uut/ALU_Out \
-sim:/tb_wolfcore/uut/ALU_Status \
-sim:/tb_wolfcore/uut/ALU_reg \
-sim:/tb_wolfcore/uut/ALU_Overflow_reg \
-sim:/tb_wolfcore/uut/ALU_Status_reg \
-sim:/tb_wolfcore/uut/instrDecode \
-sim:/tb_wolfcore/uut/instrExecute \
-sim:/tb_wolfcore/uut/instrWB \
-sim:/tb_wolfcore/uut/immEn \
-sim:/tb_wolfcore/uut/regA \
-sim:/tb_wolfcore/uut/regB \
-sim:/tb_wolfcore/uut/inputImm \
-sim:/tb_wolfcore/uut/shadowPC \
-sim:/tb_wolfcore/uut/opcExecute \
-sim:/tb_wolfcore/uut/wbReg \
-sim:/tb_wolfcore/uut/wbCond \
-sim:/tb_wolfcore/uut/wbEn \
-sim:/tb_wolfcore/uut/updateStatus \
-sim:/tb_wolfcore/uut/instrWriteBack \
-sim:/tb_wolfcore/uut/opcWriteBack
+sim:/tb_flowctrl/uut/rst \
+sim:/tb_flowctrl/uut/clk \
+sim:/tb_flowctrl/uut/pc \
+sim:/tb_flowctrl/uut/CPU_Status \
+sim:/tb_flowctrl/uut/instrOut \
+sim:/tb_flowctrl/uut/forceRoot \
+sim:/tb_flowctrl/uut/memAddr \
+sim:/tb_flowctrl/uut/instrIn \
+sim:/tb_flowctrl/uut/IRQBus \
+sim:/tb_flowctrl/uut/regAddr \
+sim:/tb_flowctrl/uut/regData \
+sim:/tb_flowctrl/uut/regOutput \
+sim:/tb_flowctrl/uut/regWrEn \
+sim:/tb_flowctrl/uut/flowCtrlState \
+sim:/tb_flowctrl/uut/instrGen \
+sim:/tb_flowctrl/uut/pcCopy \
+sim:/tb_flowctrl/uut/CPU_StatusCopy \
+sim:/tb_flowctrl/uut/irqAddrReg
+restart
+# Loading work.tb_flowctrl(behavior)
+# Loading work.flowcontroller(default)
+# Loading work.progmem(default)
+# ** Warning: (vsim-8683) Uninitialized out port /tb_flowctrl/uut/forceRoot has no driver.
+# This port will contribute value (U) to the signal network.
+run
+add wave -position insertpoint  \
+sim:/tb_flowctrl/mem/instrOutput \
+sim:/tb_flowctrl/mem/instrAddress \
+sim:/tb_flowctrl/mem/clk
+# Compile of tb_flowctrl.vhd was successful.
+# Compile of flowController.vhd was successful.
+# Compile of progMem.vhd was successful.
+# 3 compiles, 0 failed with no errors.
+restart
+# Loading work.tb_flowctrl(behavior)
+# Loading work.flowcontroller(default)
+# Loading work.progmem(default)
+# ** Warning: (vsim-8683) Uninitialized out port /tb_flowctrl/uut/forceRoot has no driver.
+# This port will contribute value (U) to the signal network.
+run
+# Compile of tb_flowctrl.vhd was successful.
+# Compile of flowController.vhd was successful.
+# Compile of progMem.vhd was successful.
+# 3 compiles, 0 failed with no errors.
+restart
+# Loading work.tb_flowctrl(behavior)
+# Loading work.flowcontroller(default)
+# Loading work.progmem(default)
+# ** Warning: (vsim-8683) Uninitialized out port /tb_flowctrl/uut/forceRoot has no driver.
+# This port will contribute value (U) to the signal network.
+run
+# Compile of tb_flowctrl.vhd was successful.
+# Compile of tb_flowctrl.vhd was successful.
+# Compile of flowController.vhd failed with 3 errors.
+# Compile of progMem.vhd was successful.
+# 3 compiles, 1 failed with 3 errors.
+# Compile of tb_flowctrl.vhd was successful.
+# Compile of flowController.vhd was successful.
+# Compile of progMem.vhd was successful.
+# 3 compiles, 0 failed with no errors.
+restart
+# Loading work.tb_flowctrl(behavior)
+# Loading work.flowcontroller(default)
+# Loading work.progmem(default)
+# ** Warning: (vsim-8683) Uninitialized out port /tb_flowctrl/uut/forceRoot has no driver.
+# This port will contribute value (U) to the signal network.
+run
+# Compile of tb_flowctrl.vhd was successful.
+# Compile of flowController.vhd was successful.
+# Compile of progMem.vhd was successful.
+# 3 compiles, 0 failed with no errors.
+restart
+# Loading work.tb_flowctrl(behavior)
+# Loading work.flowcontroller(default)
+# Loading work.progmem(default)
+run
+# Compile of tb_flowctrl.vhd was successful.
+# Compile of flowController.vhd was successful.
+# Compile of progMem.vhd was successful.
+# 3 compiles, 0 failed with no errors.
+restart
+# Loading work.tb_flowctrl(behavior)
+# Loading work.flowcontroller(default)
+# Loading work.progmem(default)
+run
+add wave -position insertpoint  \
+sim:/tb_flowctrl/instrMem2Ctrl \
+sim:/tb_flowctrl/addrCtrl2Mem \
+sim:/tb_flowctrl/IRQBus \
+sim:/tb_flowctrl/instrCtrl2CPU
+# Compile of tb_flowctrl.vhd was successful.
+# Compile of flowController.vhd was successful.
+# Compile of progMem.vhd was successful.
+# 3 compiles, 0 failed with no errors.
+restart
+# Loading work.tb_flowctrl(behavior)
+# Loading work.flowcontroller(default)
+# Loading work.progmem(default)
+run
+# Compile of flowController.vhd was successful.
+# Compile of flowController.vhd was successful.
+# Compile of tb_flowctrl.vhd was successful.
+# Compile of flowController.vhd was successful.
+# Compile of progMem.vhd was successful.
+# 3 compiles, 0 failed with no errors.
+restart
+# Loading work.tb_flowctrl(behavior)
+# Loading work.flowcontroller(default)
+# Loading work.progmem(default)
+run
+# Compile of tb_flowctrl.vhd was successful.
+# Compile of flowController.vhd was successful.
+# Compile of progMem.vhd was successful.
+# 3 compiles, 0 failed with no errors.
+restart
+# Loading work.tb_flowctrl(behavior)
+# Loading work.flowcontroller(default)
+# Loading work.progmem(default)
+run
+# Compile of tb_flowctrl.vhd failed with 1 errors.
+# Compile of flowController.vhd was successful.
+# Compile of progMem.vhd was successful.
+# Compile of wolfcore.vhd was successful.
+# 4 compiles, 1 failed with 1 error.
+# Compile of tb_flowctrl.vhd failed with 3 errors.
+# Compile of flowController.vhd was successful.
+# Compile of progMem.vhd was successful.
+# Compile of wolfcore.vhd was successful.
+# 4 compiles, 1 failed with 3 errors.
+# Compile of tb_flowctrl.vhd was successful.
+# Compile of flowController.vhd was successful.
+# Compile of progMem.vhd was successful.
+# Compile of wolfcore.vhd was successful.
+# 4 compiles, 0 failed with no errors.
+run
+restart
+# Loading work.tb_flowctrl(behavior)
+# Loading work.flowcontroller(default)
+# Loading work.progmem(default)
+# Loading work.wolfcore(default)
+# Loading work.alu(default)
 run
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 50 ps  Iteration: 1  Instance: /tb_wolfcore/uut
+#    Time: 50 ps  Iteration: 1  Instance: /tb_flowctrl/cpu
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 50 ps  Iteration: 1  Instance: /tb_wolfcore/uut
+#    Time: 50 ps  Iteration: 1  Instance: /tb_flowctrl/cpu
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 50 ps  Iteration: 1  Instance: /tb_wolfcore/uut
+#    Time: 50 ps  Iteration: 1  Instance: /tb_flowctrl/cpu
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 50 ps  Iteration: 1  Instance: /tb_wolfcore/uut
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 150 ps  Iteration: 1  Instance: /tb_wolfcore/uut
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 150 ps  Iteration: 1  Instance: /tb_wolfcore/uut
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 150 ps  Iteration: 1  Instance: /tb_wolfcore/uut
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 150 ps  Iteration: 1  Instance: /tb_wolfcore/uut
-# Compile of tb_wolfcore.vhd was successful.
-# Compile of alu.vhd was successful.
+#    Time: 50 ps  Iteration: 1  Instance: /tb_flowctrl/cpu
+# Compile of tb_flowctrl.vhd was successful.
+# Compile of flowController.vhd was successful.
 # Compile of progMem.vhd was successful.
 # Compile of wolfcore.vhd was successful.
 # 4 compiles, 0 failed with no errors.
 restart
-# Loading work.tb_wolfcore(behavior)
-# Loading work.wolfcore(default)
-# Loading work.alu(default)
+# Loading work.tb_flowctrl(behavior)
+# Loading work.flowcontroller(default)
 # Loading work.progmem(default)
+# Loading work.wolfcore(default)
 run
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 50 ps  Iteration: 1  Instance: /tb_wolfcore/uut
+#    Time: 50 ps  Iteration: 1  Instance: /tb_flowctrl/cpu
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 50 ps  Iteration: 1  Instance: /tb_wolfcore/uut
+#    Time: 50 ps  Iteration: 1  Instance: /tb_flowctrl/cpu
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 50 ps  Iteration: 1  Instance: /tb_wolfcore/uut
+#    Time: 50 ps  Iteration: 1  Instance: /tb_flowctrl/cpu
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 50 ps  Iteration: 1  Instance: /tb_wolfcore/uut
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 150 ps  Iteration: 1  Instance: /tb_wolfcore/uut
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 150 ps  Iteration: 1  Instance: /tb_wolfcore/uut
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 150 ps  Iteration: 1  Instance: /tb_wolfcore/uut
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 150 ps  Iteration: 1  Instance: /tb_wolfcore/uut
-# Compile of tb_wolfcore.vhd was successful.
-# Compile of alu.vhd was successful.
-# Compile of progMem.vhd was successful.
-# Compile of wolfcore.vhd was successful.
-# 4 compiles, 0 failed with no errors.
-restart
-# Loading work.tb_wolfcore(behavior)
-# Loading work.wolfcore(default)
-# Loading work.alu(default)
-# Loading work.progmem(default)
-run
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 50 ps  Iteration: 1  Instance: /tb_wolfcore/uut
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 50 ps  Iteration: 1  Instance: /tb_wolfcore/uut
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 50 ps  Iteration: 1  Instance: /tb_wolfcore/uut
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 50 ps  Iteration: 1  Instance: /tb_wolfcore/uut
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 150 ps  Iteration: 1  Instance: /tb_wolfcore/uut
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 150 ps  Iteration: 1  Instance: /tb_wolfcore/uut
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 150 ps  Iteration: 1  Instance: /tb_wolfcore/uut
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 150 ps  Iteration: 1  Instance: /tb_wolfcore/uut
-# Compile of progMem.vhd was successful.
-# Compile of tb_wolfcore.vhd was successful.
-# Compile of alu.vhd was successful.
-# Compile of progMem.vhd was successful.
-# Compile of wolfcore.vhd was successful.
-# 4 compiles, 0 failed with no errors.
-restart
-# Loading work.tb_wolfcore(behavior)
-# Loading work.wolfcore(default)
-# Loading work.alu(default)
-# Loading work.progmem(default)
-run
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 50 ps  Iteration: 1  Instance: /tb_wolfcore/uut
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 50 ps  Iteration: 1  Instance: /tb_wolfcore/uut
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 50 ps  Iteration: 1  Instance: /tb_wolfcore/uut
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 50 ps  Iteration: 1  Instance: /tb_wolfcore/uut
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 150 ps  Iteration: 1  Instance: /tb_wolfcore/uut
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 150 ps  Iteration: 1  Instance: /tb_wolfcore/uut
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 150 ps  Iteration: 1  Instance: /tb_wolfcore/uut
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 150 ps  Iteration: 1  Instance: /tb_wolfcore/uut
-write format wave -window .main_pane.wave.interior.cs.body.pw.wf /home/mathias/Projects/WolfCoreOne/logic/tb/waveDivide.do
+#    Time: 50 ps  Iteration: 1  Instance: /tb_flowctrl/cpu
