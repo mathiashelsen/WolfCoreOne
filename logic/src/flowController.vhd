@@ -65,6 +65,7 @@ begin
         CPU_StatusCopy  <= X"0000_0000";
         forceRoot       <= '0';
         IRQ_Finished    <= X"0000_0000";
+        nopCtr          <= X"0000_0000";
         for i in irqAddrReg'range loop
             irqAddrReg(i) <= X"0000_0000";
         end loop;

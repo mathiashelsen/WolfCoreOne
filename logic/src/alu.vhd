@@ -85,9 +85,9 @@ begin
 		when MOV =>
 			ALU_Out <= inputB;
                 when BSL =>
-                        ALU_Out <= std_logic_vector(unsgndA srl to_integer(unsigned(inputB(4 downto 0))));
+                        ALU_Out <= std_logic_vector(shift_left(unsgndA, to_integer(unsigned(inputB(4 downto 0)))));
                 when BSR =>
-                        ALU_Out <= std_logic_vector(unsgndA sll to_integer(unsigned(inputB(4 downto 0))));
+                        ALU_Out <= std_logic_vector(shift_right(unsgndA, to_integer(unsigned(inputB(4 downto 0)))));
 		when others =>
 		    ALU_Out	<= X"0000_0000";
 		end case;
