@@ -41,6 +41,29 @@ architecture behavior of tb_flowctrl IS
     );
     end component;
 
+    component mmu
+    port(
+        -- Coming from the CPU
+        dataIn      : in    std_logic_vector(31 downto 0);
+        dataAddr    : in    std_logic_vector(31 downto 0);
+        wrEn        : in    std_logic;
+        -- Going to the CPU
+        dataOut     : out   std_logic_vector(31 downto 0);
+
+        -- I/O with data cache
+        memIn       : out   std_logic_vector(31 downto 0);
+        memAddr     : out   std_logic_vector(31 downto 0);
+        memWrEn     : out   std_logic;
+        memOut      : in    std_logic_vector(31 downto 0);
+
+        -- I/O with the flowController
+        flowCtrlIn      : out   std_logic_vector(31 downto 0);
+        flowCtrlAddr    : out   std_logic_vector(31 downto 0);
+        flowCtrlWrEn    : out   std_logic;
+        flowCtrlOut     : in    std_logic_vector(31 downto 0)
+    );
+    end component;
+
     component wolfcore
     port( 
         dataOutput  : out std_logic_vector(31 downto 0);
@@ -77,6 +100,14 @@ architecture behavior of tb_flowctrl IS
     signal  regWrEn     : std_logic;
 
     signal pcCPU2Ctrl   : std_logic_vector(31 downto 0);
+
+    signal dataCPU2MMU      : std_logic_vector(31 downto 0);
+    signal dataAddrCPU2MMU  : std_logic_vector(31 downto 0);
+    signal wrEnCPU2MMU      : std_logic;
+        -- Going to the CPU
+    signal dataMMU2CPU      : std_logic_vector(31 downto 0);
+
+
    -- Clock period definitions
    constant clk_period : time := 100 ps;
 
@@ -99,6 +130,22 @@ begin
         regWrEn =>regWrEn
         );       
 
+    mmu_uut: mmu port map(
+        -- Coming from the CPU
+        dataIn => dataCPU2MMU,
+        dataAddr => dataAddrCPU2MMU,
+        wrEn => wrEnCPU2MMU,
+        -- Going to the CPU
+        dataOut => dataMMU2CPU,
+        -- I/O with data cache
+        memOut => X"0000_0000",
+        -- I/O with the flowController
+        flowCtrlIn => regData,
+        flowCtrlAddr => regAddr,
+        flowCtrlWrEn => regWrEn,
+        flowCtrlOut => regOutput
+    );
+
 	mem: progMem port map(
 		clk => clk,
 		instrOutput => instrMem2Ctrl,
@@ -109,7 +156,10 @@ begin
             rst => reset,
             pc => pcCPU2Ctrl,
 	    instrInput => instrCtrl2CPU,
-	    dataInput => X"0000_0000",
+            dataOutput => dataCPU2MMU,
+	    dataInput => dataMMU2CPU,
+            dataAddr => dataAddrCPU2MMU,
+            dataWrEn => wrEnCPU2MMU,
             forceRoot   => forceRoot
         );       
 
@@ -125,21 +175,12 @@ begin
   stim_proc: process
    begin
         IRQBus      <= X"0000_0000";
-        regAddr     <= X"0000_0000";
-        regData     <= X"0000_0000";
-        regWrEn     <= '0';
 
         wait for clk_period;
         reset <='1';
         wait for clk_period;
         reset <= '0';
         wait for clk_period;
-        regData     <= X"0000_000B";
-        regWrEn     <= '1';
-        wait for clk_period;
-        regWrEn     <= '0';
-        wait for clk_period;
-        IRQBus      <= X"0000_0001";
         wait for 20 ns;
         wait;
   end process;

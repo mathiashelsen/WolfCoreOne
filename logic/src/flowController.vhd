@@ -29,7 +29,8 @@ end entity;
 
 architecture default of flowController is
     type flowCtrlStates is (IDLE, IRQ_Init_0, IRQ_Init_1, 
-        IRQ_Init_2, IRQ_Init_3, IRQ_Init_4, IRQ_Active, IRQ_Done);
+        IRQ_Init_2, IRQ_Init_3, IRQ_Init_4, IRQ_Active,
+        IRQ_Finished_0, IRQ_Finished_1, IRQ_Finished_2, IRQ_Finished_3);
     signal flowCtrlState    : flowCtrlStates;
 
 
@@ -67,8 +68,7 @@ begin
         for i in irqAddrReg'range loop
             irqAddrReg(i) <= X"0000_0000";
         end loop;
-    elsif(clk'event and clk='1') then
-
+    elsif(clk'event and clk='0') then
         if(regWrEn = '1') then
             case regAddr(8 downto 5) is
                 when "0000" =>
@@ -86,7 +86,7 @@ begin
             end case;
 
         end if;
-
+    elsif(clk'event and clk='1') then
         case flowCtrlState is
             when IDLE =>
                 if(IRQBus /= X"0000_0000") then
@@ -116,7 +116,7 @@ begin
                     flowCtrlState   <= IRQ_Finished_0;
                 end if;
             when IRQ_Finished_0 =>
-                forceRoot       <= '1'
+                forceRoot       <= '1';
                 flowCtrlState   <= IRQ_Finished_1;
                 instrGen        <= "1" & "0000" & CPU_StatusCopy(13 downto 0) & "01001" & "1111" & "001" & "0";
             when IRQ_Finished_1 =>

@@ -67,6 +67,8 @@ const (
 	SUB   = 0x07 //  C <= Ra - Rb, unsigned
 	SUBS  = 0x08 //  C <= Ra - Rb, signed
 	MOV   = 0x09
+	BSL   = 0x0A
+	BSR   = 0x0B
 )
 
 // Human-readable strings for Conditions
@@ -93,6 +95,8 @@ var OpcodeStr = map[uint32]string{
 	SUB:   "SUB",
 	SUBS:   "SUBS",
 	MOV:	"MOV",
+	BSL:	"BSL",
+	BSR:	"BSR",
 }
 
 // Parses opcodes

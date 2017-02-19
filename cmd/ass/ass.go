@@ -26,9 +26,9 @@ func Assemble(in io.Reader, out io.Writer) {
 			continue
 		}
 
-		if pc%4 == 0 {
-			fmt.Println("\niaaaabbbbiiiiiiiiiioooooccccwww+")
-		}
+		//if pc%4 == 0 {
+		//	fmt.Println("\niaaaabbbbiiiiiiiiiioooooccccwww+")
+		//}
 		var bits uint32
 
 		if words[0] == "DATA" {
@@ -58,7 +58,8 @@ func Assemble(in io.Reader, out io.Writer) {
 			bits = isa.SetBits(bits, isa.WCl, isa.WCh, cond)
 			bits = isa.SetBits(bits, isa.CMP, isa.CMP, comp)
 		}
-		fmt.Printf("%08x\n", bits)
+                fmt.Printf("when X\"%08x\" =>\n", pc)
+		fmt.Printf("\t instrOutput <= %08x\n", bits)
 		ihex.WriteUint32(out, pc, bits)
 		pc++
 	}

@@ -35,3 +35,9 @@ NOP R0 R0 N R0
 
 #label _finish
 ADD wr den A mod +cmp
+NOP R0 R0 N R0
+NOP R0 R0 N R0
+
+#label _isr
+MOV R6 20 A R6
+STORE 
