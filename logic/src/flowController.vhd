@@ -39,6 +39,7 @@ architecture default of flowController is
 
     signal IRQ_Finished     : std_logic_vector(31 downto 0);
     signal instrGen         : std_logic_vector(31 downto 0);
+    signal addrGen          : std_logic_vector(31 downto 0);
     signal pcCopy           : std_logic_vector(31 downto 0);
     signal CPU_StatusCopy   : std_logic_vector(31 downto 0);
     signal nopCtr           : unsigned(31 downto 0);
@@ -49,7 +50,7 @@ process(pc, pcCopy, instrIn, instrGen, flowCtrlState) begin
         memAddr     <= pc;
         instrOut    <= instrIn;
     else
-        memAddr     <= pcCopy;
+        memAddr     <= addrGen;
         instrOut    <= instrGen;
     end if;
 end process;
@@ -93,6 +94,7 @@ begin
                 if(IRQBus /= X"0000_0000") then
                     flowCtrlState   <= IRQ_Init_0;
                     instrGen        <= X"0000_0000";
+                    addrGen         <= X"0000_0000";
                     pcCopy          <= pc;
 
                     for i in IRQBus'range loop
@@ -103,8 +105,9 @@ begin
                 end if;
             when IRQ_Init_0 =>
                 instrGen        <= "1" & "0000" & irqAddrReg(irqRunning)(13 downto 0) & "01001" & "1101" & "001" & "0";
+                addrGen         <= irqAddrReg(irqRunning);
                 flowCtrlState   <= IRQ_Init_1;
-                nopCtr          <= X"0000_0004";
+                nopCtr          <= X"0000_0003";
             when IRQ_Init_1 =>
                 instrGen        <= X"0000_0000";
                 if(nopCtr = X"0000_0000") then
@@ -114,6 +117,7 @@ begin
                 end if;
             when IRQ_Active =>
                 if(IRQ_Finished(irqRunning) = '1') then
+                    IRQ_Finished(irqRunning) <= '0';
                     flowCtrlState   <= IRQ_Finished_0;
                 end if;
             when IRQ_Finished_0 =>
