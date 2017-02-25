@@ -16,6 +16,7 @@ architecture behavior of tb_flowctrl IS
         -- Input from the CPU
         pc          : in    std_logic_vector(31 downto 0);
         CPU_Status  : in    std_logic_vector(31 downto 0);
+        flushing    : in    std_logic;
         -- Output to the CPU
         instrOut    : out   std_logic_vector(31 downto 0);
         forceRoot   : out   std_logic;
@@ -75,7 +76,8 @@ architecture behavior of tb_flowctrl IS
         CPU_Status  : buffer std_logic_vector(31 downto 0);
         rst         : in std_logic;
         clk         : in std_logic;
-        forceRoot   : in std_logic
+        forceRoot   : in std_logic;
+        flushing    : out std_logic
         );
     end component;
 
@@ -89,6 +91,7 @@ architecture behavior of tb_flowctrl IS
     signal IRQBus       : std_logic_vector(31 downto 0);
     
     signal CPU_Status   : std_logic_vector(31 downto 0);
+    signal flushCPU2Ctrl : std_logic;
     -- Output to the CPU
     signal instrCtrl2CPU     : std_logic_vector(31 downto 0);
     signal forceRoot    : std_logic;
@@ -127,7 +130,8 @@ begin
         regAddr => regAddr,
         regData => regData,
         regOutput => regOutput,
-        regWrEn =>regWrEn
+        regWrEn =>regWrEn,
+        flushing => flushCPU2Ctrl
         );       
 
     mmu_uut: mmu port map(
@@ -161,7 +165,8 @@ begin
             dataAddr => dataAddrCPU2MMU,
             dataWrEn => wrEnCPU2MMU,
             forceRoot   => forceRoot,
-            CPU_Status  => CPU_Status
+            CPU_Status  => CPU_Status,
+            flushing    => flushCPU2Ctrl
         );       
 
    -- Clock process definitions( clock with 50% duty cycle is generated here.
@@ -182,7 +187,7 @@ begin
         wait for clk_period;
         reset <= '0';
         wait for clk_period;
-        wait for (60 ns+clk_period);
+        wait for (60 ns);
         IRQBus      <= X"0000_0001";
         wait for clk_period;
         wait for clk_period;

@@ -784,3 +784,222 @@ run
 #    Time: 50 ps  Iteration: 1  Instance: /tb_flowctrl/cpu
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
 #    Time: 50 ps  Iteration: 1  Instance: /tb_flowctrl/cpu
+# Compile of tb_flowctrl.vhd was successful.
+# Compile of flowController.vhd failed with 5 errors.
+# Compile of progMem.vhd was successful.
+# Compile of wolfcore.vhd was successful.
+# Compile of mmu.vhd was successful.
+# Compile of alu.vhd was successful.
+# 6 compiles, 1 failed with 5 errors.
+# Compile of tb_flowctrl.vhd was successful.
+# Compile of flowController.vhd failed with 5 errors.
+# Compile of progMem.vhd was successful.
+# Compile of wolfcore.vhd was successful.
+# Compile of mmu.vhd was successful.
+# Compile of alu.vhd was successful.
+# 6 compiles, 1 failed with 5 errors.
+# Compile of tb_flowctrl.vhd was successful.
+# Compile of flowController.vhd was successful.
+# Compile of progMem.vhd was successful.
+# Compile of wolfcore.vhd was successful.
+# Compile of mmu.vhd was successful.
+# Compile of alu.vhd was successful.
+# 6 compiles, 0 failed with no errors.
+# Compile of tb_flowctrl.vhd was successful.
+# Compile of flowController.vhd was successful.
+# Compile of progMem.vhd was successful.
+# Compile of wolfcore.vhd was successful.
+# Compile of mmu.vhd was successful.
+# Compile of alu.vhd was successful.
+# 6 compiles, 0 failed with no errors.
+restart
+# Loading work.tb_flowctrl(behavior)
+# Loading work.flowcontroller(default)
+# Loading work.mmu(default)
+# Loading work.progmem(default)
+# Loading work.wolfcore(default)
+# Loading work.alu(default)
+run
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 50 ps  Iteration: 1  Instance: /tb_flowctrl/cpu
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 50 ps  Iteration: 1  Instance: /tb_flowctrl/cpu
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 50 ps  Iteration: 1  Instance: /tb_flowctrl/cpu
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 50 ps  Iteration: 1  Instance: /tb_flowctrl/cpu
+add wave -position insertpoint  \
+sim:/tb_flowctrl/cpu/regFile(0)
+add wave -position insertpoint  \
+sim:/tb_flowctrl/uut/IRQBus(0)
+# Compile of tb_flowctrl.vhd was successful.
+# Compile of flowController.vhd was successful.
+# Compile of progMem.vhd was successful.
+# Compile of wolfcore.vhd was successful.
+# Compile of mmu.vhd was successful.
+# Compile of alu.vhd was successful.
+# 6 compiles, 0 failed with no errors.
+restart
+# Loading work.tb_flowctrl(behavior)
+# Loading work.flowcontroller(default)
+# Loading work.mmu(default)
+# Loading work.progmem(default)
+# Loading work.wolfcore(default)
+# Loading work.alu(default)
+run
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 50 ps  Iteration: 1  Instance: /tb_flowctrl/cpu
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 50 ps  Iteration: 1  Instance: /tb_flowctrl/cpu
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 50 ps  Iteration: 1  Instance: /tb_flowctrl/cpu
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 50 ps  Iteration: 1  Instance: /tb_flowctrl/cpu
+restart
+run
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 50 ps  Iteration: 1  Instance: /tb_flowctrl/cpu
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 50 ps  Iteration: 1  Instance: /tb_flowctrl/cpu
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 50 ps  Iteration: 1  Instance: /tb_flowctrl/cpu
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 50 ps  Iteration: 1  Instance: /tb_flowctrl/cpu
+# Compile of tb_flowctrl.vhd was successful.
+# Compile of flowController.vhd was successful.
+# Compile of progMem.vhd was successful.
+# Compile of wolfcore.vhd was successful.
+# Compile of mmu.vhd was successful.
+# Compile of alu.vhd was successful.
+# 6 compiles, 0 failed with no errors.
+restart
+# Loading work.tb_flowctrl(behavior)
+# Loading work.flowcontroller(default)
+# Loading work.mmu(default)
+# Loading work.progmem(default)
+# Loading work.wolfcore(default)
+# Loading work.alu(default)
+run
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 50 ps  Iteration: 1  Instance: /tb_flowctrl/cpu
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 50 ps  Iteration: 1  Instance: /tb_flowctrl/cpu
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 50 ps  Iteration: 1  Instance: /tb_flowctrl/cpu
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 50 ps  Iteration: 1  Instance: /tb_flowctrl/cpu
+restart
+run
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 50 ps  Iteration: 1  Instance: /tb_flowctrl/cpu
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 50 ps  Iteration: 1  Instance: /tb_flowctrl/cpu
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 50 ps  Iteration: 1  Instance: /tb_flowctrl/cpu
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 50 ps  Iteration: 1  Instance: /tb_flowctrl/cpu
+# Compile of tb_flowctrl.vhd was successful.
+# Compile of flowController.vhd was successful.
+# Compile of progMem.vhd was successful.
+# Compile of wolfcore.vhd was successful.
+# Compile of mmu.vhd was successful.
+# Compile of alu.vhd was successful.
+# 6 compiles, 0 failed with no errors.
+restart
+# Loading work.tb_flowctrl(behavior)
+# Loading work.flowcontroller(default)
+# Loading work.mmu(default)
+# Loading work.progmem(default)
+# Loading work.wolfcore(default)
+# Loading work.alu(default)
+run
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 50 ps  Iteration: 1  Instance: /tb_flowctrl/cpu
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 50 ps  Iteration: 1  Instance: /tb_flowctrl/cpu
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 50 ps  Iteration: 1  Instance: /tb_flowctrl/cpu
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 50 ps  Iteration: 1  Instance: /tb_flowctrl/cpu
+# Compile of tb_flowctrl.vhd was successful.
+# Compile of flowController.vhd was successful.
+# Compile of progMem.vhd was successful.
+# Compile of wolfcore.vhd was successful.
+# Compile of mmu.vhd was successful.
+# Compile of alu.vhd was successful.
+# 6 compiles, 0 failed with no errors.
+restart
+# Loading work.tb_flowctrl(behavior)
+# Loading work.flowcontroller(default)
+# Loading work.mmu(default)
+# Loading work.progmem(default)
+# Loading work.wolfcore(default)
+# Loading work.alu(default)
+run
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 50 ps  Iteration: 1  Instance: /tb_flowctrl/cpu
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 50 ps  Iteration: 1  Instance: /tb_flowctrl/cpu
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 50 ps  Iteration: 1  Instance: /tb_flowctrl/cpu
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 50 ps  Iteration: 1  Instance: /tb_flowctrl/cpu
+restart
+# Compile of tb_flowctrl.vhd was successful.
+# Compile of flowController.vhd was successful.
+# Compile of progMem.vhd was successful.
+# Compile of wolfcore.vhd was successful.
+# Compile of mmu.vhd was successful.
+# Compile of alu.vhd was successful.
+# 6 compiles, 0 failed with no errors.
+run
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 50 ps  Iteration: 1  Instance: /tb_flowctrl/cpu
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 50 ps  Iteration: 1  Instance: /tb_flowctrl/cpu
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 50 ps  Iteration: 1  Instance: /tb_flowctrl/cpu
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 50 ps  Iteration: 1  Instance: /tb_flowctrl/cpu
+# Compile of tb_flowctrl.vhd was successful.
+# Compile of flowController.vhd was successful.
+# Compile of progMem.vhd was successful.
+# Compile of wolfcore.vhd was successful.
+# Compile of mmu.vhd was successful.
+# Compile of alu.vhd was successful.
+# 6 compiles, 0 failed with no errors.
+# Compile of tb_flowctrl.vhd was successful.
+# Compile of flowController.vhd was successful.
+# Compile of progMem.vhd was successful.
+# Compile of wolfcore.vhd was successful.
+# Compile of mmu.vhd was successful.
+# Compile of alu.vhd was successful.
+# 6 compiles, 0 failed with no errors.
+restart
+# Loading work.tb_flowctrl(behavior)
+# Loading work.flowcontroller(default)
+# Loading work.mmu(default)
+# Loading work.progmem(default)
+# Loading work.wolfcore(default)
+# Loading work.alu(default)
+run
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 50 ps  Iteration: 1  Instance: /tb_flowctrl/cpu
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 50 ps  Iteration: 1  Instance: /tb_flowctrl/cpu
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 50 ps  Iteration: 1  Instance: /tb_flowctrl/cpu
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 50 ps  Iteration: 1  Instance: /tb_flowctrl/cpu
+add wave -position insertpoint  \
+sim:/tb_flowctrl/uut/flushing
+restart
+run
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 50 ps  Iteration: 1  Instance: /tb_flowctrl/cpu
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 50 ps  Iteration: 1  Instance: /tb_flowctrl/cpu
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 50 ps  Iteration: 1  Instance: /tb_flowctrl/cpu
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 50 ps  Iteration: 1  Instance: /tb_flowctrl/cpu

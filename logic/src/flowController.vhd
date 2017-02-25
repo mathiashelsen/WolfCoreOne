@@ -10,6 +10,7 @@ entity flowController is
         -- Input from the CPU
         pc          : in    std_logic_vector(31 downto 0);
         CPU_Status  : in    std_logic_vector(31 downto 0);
+        flushing    : in    std_logic;
         -- Output to the CPU
         instrOut    : out   std_logic_vector(31 downto 0);
         forceRoot   : out   std_logic;
@@ -43,6 +44,7 @@ architecture default of flowController is
     signal pcCopy           : std_logic_vector(31 downto 0);
     signal CPU_StatusCopy   : std_logic_vector(31 downto 0);
     signal nopCtr           : unsigned(31 downto 0);
+    signal flushFlag        : std_logic;
 begin
 
 process(pc, pcCopy, instrIn, instrGen, flowCtrlState) begin
@@ -67,6 +69,7 @@ begin
         forceRoot       <= '0';
         IRQ_Finished    <= X"0000_0000";
         nopCtr          <= X"0000_0000";
+        flushFlag       <= '0';
         for i in irqAddrReg'range loop
             irqAddrReg(i) <= X"0000_0000";
         end loop;
@@ -95,8 +98,9 @@ begin
                     flowCtrlState   <= IRQ_Init_0;
                     instrGen        <= X"0000_0000";
                     addrGen         <= X"0000_0000";
-                    pcCopy          <= pc;
-                    --pcCopy          <= std_logic_vector(to_unsigned(pc) - to_unsigned(3, 32));
+                    flushFlag       <= '0';
+                    --pcCopy          <= pc;
+                    pcCopy          <= std_logic_vector(unsigned(pc) + to_unsigned(1, 32));
 
                     for i in IRQBus'range loop
                         if(IRQBus(i) = '1') then
@@ -105,17 +109,31 @@ begin
                     end loop;
                 end if;
             when IRQ_Init_0 =>
-                instrGen        <= "1" & "0000" & irqAddrReg(irqRunning)(13 downto 0) & "01001" & "1101" & "001" & "0";
-                addrGen         <= irqAddrReg(irqRunning);
+                instrGen        <= X"0000_0000";
                 flowCtrlState   <= IRQ_Init_1;
-                nopCtr          <= X"0000_0003";
+                if( flushing = '1' ) then
+                    -- Shit fuck, the cpu is going to flush!
+                    pcCopy          <= pc;
+                end if;
             when IRQ_Init_1 =>
-                if( CPU_Status(8) = '1' ) then
+                if( flushing = '1' ) then
                     -- Shit fuck, the cpu is going to flush!
                     pcCopy  <= pc;    
                 end if;
                 flowCtrlState <= IRQ_Init_2;
             when IRQ_Init_2 =>
+                if( flushing = '1' ) then
+                    -- Shit fuck, the cpu is going to flush!
+                    pcCopy  <= pc;    
+                end if;
+
+                instrGen        <= "1" & "0000" & irqAddrReg(irqRunning)(13 downto 0) & "01001" & "1101" & "001" & "0";
+                addrGen         <= irqAddrReg(irqRunning);
+                nopCtr          <= to_unsigned(2, 32);
+                
+                flowCtrlState   <= IRQ_Init_3;
+
+            when IRQ_Init_3 => 
                 instrGen        <= X"0000_0000";
                 if(nopCtr = X"0000_0000") then
                     flowCtrlState   <= IRQ_Active;

@@ -13,7 +13,8 @@ entity wolfcore is
                 CPU_Status      : buffer std_logic_vector(31 downto 0);
                 rst                     : in std_logic;
                 clk                     : in std_logic;
-                forceRoot       : in std_logic
+                forceRoot       : in std_logic;
+                flushing        : out std_logic
         );
 end entity;
 
@@ -108,6 +109,14 @@ process(opcWriteBack, CPU_Status, wbCond) begin
                                 wbEn <= '0';
                 end case;
         end if;
+end process;
+
+process(cpuState) begin
+    if(cpuState = Nominal) then
+        flushing <= '0';
+    else
+        flushing <= '1';
+    end if;
 end process;
 
 process(clk, rst) begin
@@ -258,9 +267,8 @@ process(clk, rst) begin
                                     pc <= std_logic_vector(unsigned(pc) + to_unsigned(1, pc'length));
                                     cpuState <= Nominal;
                         end case;                       
-                elsif(cpuState = Nominal) then
+                else
                         pc <= std_logic_vector(unsigned(pc) + to_unsigned(1, pc'length));
-                elsif(cpuState /= Nominal) then
                         cpuState <= Nominal;
                 end if;
 
@@ -269,19 +277,8 @@ process(clk, rst) begin
                         and wbEn = '1'
                         ) then
                         CPU_Status <= ALU_reg;
-                elsif(updateStatus = '0') then
-                        if(cpuState = Nominal) then
-                            CPU_Status(8) <= '0';
-                        else
-                            CPU_Status(8) <= '1';
-                        end if;
                 elsif(updateStatus = '1') then
                         CPU_Status(7 downto 0)  <= ALU_Status_reg;
-                        if(cpuState = Nominal) then
-                            CPU_Status(8) <= '0';
-                        else
-                            CPU_Status(8) <= '1';
-                        end if;
                 end if;
         end if;
 end process;
