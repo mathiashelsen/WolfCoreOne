@@ -96,6 +96,7 @@ begin
                     instrGen        <= X"0000_0000";
                     addrGen         <= X"0000_0000";
                     pcCopy          <= pc;
+                    --pcCopy          <= std_logic_vector(to_unsigned(pc) - to_unsigned(3, 32));
 
                     for i in IRQBus'range loop
                         if(IRQBus(i) = '1') then
@@ -109,6 +110,12 @@ begin
                 flowCtrlState   <= IRQ_Init_1;
                 nopCtr          <= X"0000_0003";
             when IRQ_Init_1 =>
+                if( CPU_Status(8) = '1' ) then
+                    -- Shit fuck, the cpu is going to flush!
+                    pcCopy  <= pc;    
+                end if;
+                flowCtrlState <= IRQ_Init_2;
+            when IRQ_Init_2 =>
                 instrGen        <= X"0000_0000";
                 if(nopCtr = X"0000_0000") then
                     flowCtrlState   <= IRQ_Active;
@@ -127,7 +134,7 @@ begin
             when IRQ_Finished_1 =>
                 flowCtrlState   <= IRQ_Finished_2;
                 instrGen        <= "1" & "0000" & pcCopy(13 downto 0) & "01001" & "1101" & "001" & "0";
-                nopCtr          <= to_unsigned(2, 32);
+                nopCtr          <= to_unsigned(1, 32);
             when IRQ_Finished_2 =>
                 instrGen        <= X"0000_0000";
                 if(nopCtr = X"0000_0000") then

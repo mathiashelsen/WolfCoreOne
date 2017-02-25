@@ -258,18 +258,30 @@ process(clk, rst) begin
                                     pc <= std_logic_vector(unsigned(pc) + to_unsigned(1, pc'length));
                                     cpuState <= Nominal;
                         end case;                       
-                else
+                elsif(cpuState = Nominal) then
                         pc <= std_logic_vector(unsigned(pc) + to_unsigned(1, pc'length));
+                elsif(cpuState /= Nominal) then
                         cpuState <= Nominal;
                 end if;
 
                 if( (forceRoot = '1' or CPU_Status(31 downto 30) = "00") 
                         and wbReg = X"F" 
                         and wbEn = '1'
-                        and cpuState = Nominal) then
+                        ) then
                         CPU_Status <= ALU_reg;
-                elsif(updateStatus = '1' and cpuState = Nominal) then
+                elsif(updateStatus = '0') then
+                        if(cpuState = Nominal) then
+                            CPU_Status(8) <= '0';
+                        else
+                            CPU_Status(8) <= '1';
+                        end if;
+                elsif(updateStatus = '1') then
                         CPU_Status(7 downto 0)  <= ALU_Status_reg;
+                        if(cpuState = Nominal) then
+                            CPU_Status(8) <= '0';
+                        else
+                            CPU_Status(8) <= '1';
+                        end if;
                 end if;
         end if;
 end process;

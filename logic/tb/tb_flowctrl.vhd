@@ -160,7 +160,8 @@ begin
 	    dataInput => dataMMU2CPU,
             dataAddr => dataAddrCPU2MMU,
             dataWrEn => wrEnCPU2MMU,
-            forceRoot   => forceRoot
+            forceRoot   => forceRoot,
+            CPU_Status  => CPU_Status
         );       
 
    -- Clock process definitions( clock with 50% duty cycle is generated here.
@@ -181,8 +182,8 @@ begin
         wait for clk_period;
         reset <= '0';
         wait for clk_period;
-        wait for 60 ns;
-        --IRQBus      <= X"0000_0001";
+        wait for (60 ns-clk_period);
+        IRQBus      <= X"0000_0001";
         wait for clk_period;
         wait for clk_period;
         IRQBus      <= X"0000_0000";
