@@ -22,6 +22,9 @@ architecture default of wolfcore is
         signal inputA   : std_logic_vector(31 downto 0);
         signal inputB   : std_logic_vector(31 downto 0);
         signal regFile : regFileType;
+
+        type cpuStateType is ( Nominal, Flush );
+        signal cpuState :   cpuStateType;
         --signal pc             : std_logic_vector(31 downto 0);
         signal ALU_Overflow : std_logic_vector(31 downto 0);
         signal ALU_Out  : std_logic_vector(31 downto 0);
@@ -127,18 +130,30 @@ process(clk, rst) begin
                 opcExecute      <= "00000";
                 wbReg   <= X"0";
                 wbCond  <= "000";
+
+                cpuState    <= Nominal;
                 
                 instrWriteBack  <= X"0000_0000";
                 opcWriteBack    <= "00000";
         elsif (clk'event and clk='1') then
                 -- FETCH
-                immEn   <= instrInput(31);
-                regA    <= instrInput(30 downto 27);
-                regB    <= instrInput(26 downto 23);
-                inputImm <= instrInput(26 downto 13);
-                shadowPC <= pc;
+                --if( cpuState = Nominal ) then
+                    immEn       <= instrInput(31);
+                    regA        <= instrInput(30 downto 27);
+                    regB        <= instrInput(26 downto 23);
+                    inputImm    <= instrInput(26 downto 13);
+                    shadowPC    <= pc;
 
-                instrDecode     <= instrInput;
+                    instrDecode <= instrInput;
+                --else
+                --    immEn       <= '0';
+                --    regA        <= "0000";
+                --    regB        <= "0000";
+                --    inputImm    <= std_logic_vector(to_unsigned(0, 14));
+                --    shadowPC    <= X"0000_0000";
+
+                --    instrDecode <= X"0000_0000";
+                --end if;
 
                 -- DECODE
                 if(immEn = '1') then
@@ -166,68 +181,94 @@ process(clk, rst) begin
                         when others =>
                                 inputA  <= regFile(to_integer(unsigned(regA)));
                 end case;
-                opcExecute              <= instrDecode(12 downto 8);
-                instrExecute    <= instrDecode;
+    
+                if( cpuState = Nominal ) then
+                    opcExecute      <= instrDecode(12 downto 8);
+                    instrExecute    <= instrDecode;
+                else
+                    opcExecute      <= "00000";
+                    instrExecute    <= X"0000_0000"; 
+                end if;
         
                 -- EXECUTE
                 -- Stuff that ripples through the ALU gets copied into a flipflop
-                ALU_reg                 <= ALU_Out;
-                ALU_Overflow_reg <= ALU_Overflow;
-                ALU_Status_reg  <= ALU_Status;
+                if( cpuState = Nominal ) then
+                    ALU_reg                 <= ALU_Out;
+                    ALU_Overflow_reg <= ALU_Overflow;
+                    ALU_Status_reg  <= ALU_Status;
 
-                -- If it's a load/store operation, we need to do something besides the ALU operation
-                -- If STORE operation
-                if( opcExecute = "00010" ) then
-                        dataWrEn        <= '1'; 
-                        dataOutput      <= inputA;
-                        dataAddr        <= inputB;
-                -- Perhaps LOAD then?
-                elsif ( opcExecute = "00001" ) then
-                        dataWrEn        <= '0';
-                        dataAddr        <= inputB;
+                    -- If it's a load/store operation, we need to do something besides the ALU operation
+                    -- If STORE operation
+                    if( opcExecute = "00010" ) then
+                            dataWrEn        <= '1'; 
+                            dataOutput      <= inputA;
+                            dataAddr        <= inputB;
+                    -- Perhaps LOAD then?
+                    elsif ( opcExecute = "00001" ) then
+                            dataWrEn        <= '0';
+                            dataAddr        <= inputB;
+                    else
+                            dataWrEn        <= '0';
+                            dataOutput      <= X"0000_0000";
+                            dataAddr        <= X"0000_0000";
+                    end if;
+
+                    -- We take along important information for the writeback
+                    instrWriteBack  <= instrExecute;
+                    opcWriteBack    <= instrExecute(12 downto 8);
+                    wbReg           <= instrExecute(7 downto 4);
+                    wbCond          <= instrExecute(3 downto 1);
+                    updateStatus    <= instrExecute(0);
                 else
-                        dataWrEn        <= '0';
-                        dataOutput      <= X"0000_0000";
-                        dataAddr        <= X"0000_0000";
+                    instrWriteBack  <= X"0000_0000";
+                    opcWriteBack    <= "00000";
+                    wbReg           <= "0000";
+                    wbCond          <= "000";
+                    updateStatus    <= '0';
+
+                    ALU_reg         <= X"0000_0000";
+                    ALU_Overflow_reg <= X"0000_0000";
+                    ALU_Status_reg  <= X"00";
                 end if;
 
-                -- We take along important information for the writeback
-                instrWriteBack  <= instrExecute;
-                opcWriteBack    <= instrExecute(12 downto 8);
-                wbReg                   <= instrExecute(7 downto 4);
-                wbCond                  <= instrExecute(3 downto 1);
-                updateStatus    <= instrExecute(0);
-
                 -- WRITEBACK
-                if(wbEn='1' and opcWriteBack="00001") then
+                if(wbEn='1' and opcWriteBack="00001" and cpuState = Nominal) then
                         case to_integer(unsigned(wbReg)) is
                                 when 0 to 12 =>
                                         regFile(to_integer(unsigned(wbReg))) <= dataInput;
                                         pc <= std_logic_vector(unsigned(pc) + to_unsigned(1, pc'length));
+                                        cpuState <= Nominal;
                                 when 13 =>
                                         pc <= dataInput;
+                                        cpuState <= Flush;
                                 when others =>
                                         pc <= std_logic_vector(unsigned(pc) + to_unsigned(1, pc'length));
+                                        cpuState <= Nominal;
                         end case;
-                elsif(wbEn = '1') then
+                elsif(wbEn = '1' and cpuState = Nominal) then
                         case to_integer(unsigned(wbReg)) is
                                 when 0 to 12 =>
                                 regFile(to_integer(unsigned(wbReg))) <= ALU_reg;
-                                pc <= std_logic_vector(unsigned(pc) + to_unsigned(1, pc'length));
+                                    pc <= std_logic_vector(unsigned(pc) + to_unsigned(1, pc'length));
+                                    cpuState <= Nominal;
                                 when 13 =>
-                                pc <= ALU_reg;
+                                    pc <= ALU_reg;
+                                    cpuState <= Flush;
                                 when others =>
-                                pc <= std_logic_vector(unsigned(pc) + to_unsigned(1, pc'length));
+                                    pc <= std_logic_vector(unsigned(pc) + to_unsigned(1, pc'length));
+                                    cpuState <= Nominal;
                         end case;                       
                 else
                         pc <= std_logic_vector(unsigned(pc) + to_unsigned(1, pc'length));
+                        cpuState <= Nominal;
                 end if;
 
                 if( (forceRoot = '1' or CPU_Status(31 downto 30) = "00") 
                         and wbReg = X"F" 
-                        and wbEn = '1') then
+                        and wbEn = '1'
+                        and cpuState = Nominal) then
                         CPU_Status <= ALU_reg;
-                elsif(updateStatus = '1') then
+                elsif(updateStatus = '1' and cpuState = Nominal) then
                         CPU_Status(7 downto 0)  <= ALU_Status_reg;
                 end if;
         end if;
