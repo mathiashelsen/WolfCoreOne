@@ -112,18 +112,15 @@ begin
                 instrGen        <= X"0000_0000";
                 flowCtrlState   <= IRQ_Init_1;
                 if( flushing = '1' ) then
-                    -- Shit fuck, the cpu is going to flush!
                     pcCopy          <= pc;
                 end if;
             when IRQ_Init_1 =>
                 if( flushing = '1' ) then
-                    -- Shit fuck, the cpu is going to flush!
                     pcCopy  <= pc;    
                 end if;
                 flowCtrlState <= IRQ_Init_2;
             when IRQ_Init_2 =>
                 if( flushing = '1' ) then
-                    -- Shit fuck, the cpu is going to flush!
                     pcCopy  <= pc;    
                 end if;
 
@@ -134,12 +131,17 @@ begin
                 flowCtrlState   <= IRQ_Init_3;
 
             when IRQ_Init_3 => 
+                if( flushing = '1' ) then
+                    pcCopy  <= pc;    
+                end if;
+                
                 instrGen        <= X"0000_0000";
                 if(nopCtr = X"0000_0000") then
                     flowCtrlState   <= IRQ_Active;
                 else
                     nopCtr      <= nopCtr - to_unsigned(1, 32);
                 end if;
+                CPU_StatusCopy <= CPU_Status;
             when IRQ_Active =>
                 if(IRQ_Finished(irqRunning) = '1') then
                     IRQ_Finished(irqRunning) <= '0';

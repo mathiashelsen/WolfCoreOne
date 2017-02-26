@@ -187,7 +187,7 @@ begin
         wait for clk_period;
         reset <= '0';
         wait for clk_period;
-        wait for (60 ns);
+        wait for (49900 ps - 3.5*clk_period);
         IRQBus      <= X"0000_0001";
         wait for clk_period;
         wait for clk_period;

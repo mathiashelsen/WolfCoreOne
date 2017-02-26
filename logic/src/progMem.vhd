@@ -67,9 +67,9 @@ when X"0000000f" =>
 -- [MOV R0 _init Z PC -cmp]
 when X"00000010" =>
      instrOutput <= X"8000e9d4";
--- [ADD R0 5 A R0 -cmp]
+-- [ADD R0 5 A R7 +cmp]
 when X"00000011" =>
-     instrOutput <= X"8000a602";
+     instrOutput <= X"8000a673";
 -- [MOV R0 1 A R1 -cmp]
 when X"00000012" =>
      instrOutput <= X"80002912";
@@ -106,6 +106,7 @@ when X"0000001c" =>
 -- [NOP R0 0 N R0 -cmp]
 when X"0000001d" =>
      instrOutput <= X"80000000";
+
 			when others =>
 				instrOutput <= X"0000_0000";
 		end case;

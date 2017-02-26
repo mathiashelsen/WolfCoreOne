@@ -27,7 +27,7 @@ MOV R0  _loop   NZ PC
 MOV R0  _init   Z  PC
 
 #label _ISR
-ADD R0  5   A   R0
+ADD R0  5   A   R7 +cmp
 MOV R0  1   A   R1
 NOP R0  0   N   R0
 NOP R0  0   N   R0
