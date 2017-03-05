@@ -29,6 +29,19 @@ architecture behavior of tb_wolfcore IS
 		clk			: in std_logic
 	);
 	end component;
+
+    component data_cache
+    port(
+        clock   : IN STD_LOGIC  := '1';
+        data    : IN STD_LOGIC_VECTOR (31 DOWNTO 0);
+        rdaddress   : IN STD_LOGIC_VECTOR (13 DOWNTO 0);
+        wraddress   : IN STD_LOGIC_VECTOR (13 DOWNTO 0);
+        wren    : IN STD_LOGIC  := '0';
+        q       : OUT STD_LOGIC_VECTOR (31 DOWNTO 0)
+    );
+    end component;
+
+
    --declare inputs and initialize them
    signal clk : std_logic := '0';
    signal reset : std_logic := '0';
@@ -52,6 +65,13 @@ BEGIN
 		instrOutput => instrBus,
 		instrAddress => addrBus
 	); 
+
+        mem_d: data_cache port map(
+            clock => ~clk,
+            data => dataCPU2MMU,
+            rdaddress => 
+            
+        );
 
    -- Clock process definitions( clock with 50% duty cycle is generated here.
    clk_process :process

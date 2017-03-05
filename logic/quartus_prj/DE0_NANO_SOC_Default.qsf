@@ -425,3 +425,4 @@ set_global_assignment -name VHDL_FILE runningLED.vhd
 set_global_assignment -name QIP_FILE mainPLL.qip
 set_global_assignment -name SIP_FILE mainPLL.sip
 set_global_assignment -name VERILOG_FILE DE0_NANO_SOC_Default.v
+set_global_assignment -name QIP_FILE data_cache.qip

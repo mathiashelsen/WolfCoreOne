@@ -22,9 +22,9 @@ Vbh6lQ02DgU:_B4:T;4DT33
 !s100 j_UZOmQj5A4m1YG`mbaB31
 Z7 OV;C;10.5b;63
 32
-Z8 !s110 1488726413
+Z8 !s110 1488728906
 !i10b 1
-Z9 !s108 1488726413.000000
+Z9 !s108 1488728906.000000
 Z10 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|/home/mathias/Projects/WolfCoreOne/logic/src/alu.vhd|
 Z11 !s107 /home/mathias/Projects/WolfCoreOne/logic/src/alu.vhd|
 !i113 1
@@ -34,11 +34,11 @@ Adefault
 R2
 R3
 R4
-Z14 DEx4 work 3 alu 0 22 bh6lQ02DgU:_B4:T;4DT33
+DEx4 work 3 alu 0 22 bh6lQ02DgU:_B4:T;4DT33
 l33
 L16
-Z15 VcLb6V=zFJ=F7AMlccaQAV1
-Z16 !s100 U0z^k<d@8Nf7:k<f;g:m@2
+VcLb6V=zFJ=F7AMlccaQAV1
+!s100 U0z^k<d@8Nf7:k<f;g:m@2
 R7
 32
 R8
@@ -49,14 +49,55 @@ R11
 !i113 1
 R12
 R13
+Edata_cache
+Z14 w1488728809
+Z15 DPx9 altera_mf 20 altera_mf_components 0 22 m2K6F5NmQKkFhQa^^]15g3
+R3
+R4
+R0
+Z16 8/home/mathias/Projects/WolfCoreOne/logic/quartus_prj/data_cache.vhd
+Z17 F/home/mathias/Projects/WolfCoreOne/logic/quartus_prj/data_cache.vhd
+l0
+L43
+V==49T3a_OVHI?64:`l=7`0
+!s100 >=jKKD:mUZOTlWG[8]WXl3
+R7
+32
+R8
+!i10b 1
+R9
+Z18 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|/home/mathias/Projects/WolfCoreOne/logic/quartus_prj/data_cache.vhd|
+Z19 !s107 /home/mathias/Projects/WolfCoreOne/logic/quartus_prj/data_cache.vhd|
+!i113 1
+R12
+R13
+Asyn
+R15
+R3
+R4
+Z20 DEx4 work 10 data_cache 0 22 ==49T3a_OVHI?64:`l=7`0
+l60
+L56
+Z21 VMB43=_;h7<VkkkUk??L7i3
+Z22 !s100 TBbeQhG8Knaj[?Hk:^Ai=2
+R7
+32
+R8
+!i10b 1
+R9
+R18
+R19
+!i113 1
+R12
+R13
 Eflowcontroller
-Z17 w1488095911
+Z23 w1488095911
 R2
 R3
 R4
 R0
-Z18 8/home/mathias/Projects/WolfCoreOne/logic/src/flowController.vhd
-Z19 F/home/mathias/Projects/WolfCoreOne/logic/src/flowController.vhd
+Z24 8/home/mathias/Projects/WolfCoreOne/logic/src/flowController.vhd
+Z25 F/home/mathias/Projects/WolfCoreOne/logic/src/flowController.vhd
 l0
 L5
 V:`kd^I^Y0cjJk]Cd;chRM0
@@ -66,8 +107,8 @@ R7
 R8
 !i10b 1
 R9
-Z20 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|/home/mathias/Projects/WolfCoreOne/logic/src/flowController.vhd|
-Z21 !s107 /home/mathias/Projects/WolfCoreOne/logic/src/flowController.vhd|
+Z26 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|/home/mathias/Projects/WolfCoreOne/logic/src/flowController.vhd|
+Z27 !s107 /home/mathias/Projects/WolfCoreOne/logic/src/flowController.vhd|
 !i113 1
 R12
 R13
@@ -85,19 +126,19 @@ R7
 R8
 !i10b 1
 R9
-R20
-R21
+R26
+R27
 !i113 1
 R12
 R13
 Emmu
-Z22 w1487427409
+Z28 w1487427409
 R2
 R3
 R4
 R0
-Z23 8/home/mathias/Projects/WolfCoreOne/logic/src/mmu.vhd
-Z24 F/home/mathias/Projects/WolfCoreOne/logic/src/mmu.vhd
+Z29 8/home/mathias/Projects/WolfCoreOne/logic/src/mmu.vhd
+Z30 F/home/mathias/Projects/WolfCoreOne/logic/src/mmu.vhd
 l0
 L5
 VX?SPIWEf4z^za]RTNz1Ye1
@@ -107,8 +148,8 @@ R7
 R8
 !i10b 1
 R9
-Z25 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|/home/mathias/Projects/WolfCoreOne/logic/src/mmu.vhd|
-Z26 !s107 /home/mathias/Projects/WolfCoreOne/logic/src/mmu.vhd|
+Z31 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|/home/mathias/Projects/WolfCoreOne/logic/src/mmu.vhd|
+Z32 !s107 /home/mathias/Projects/WolfCoreOne/logic/src/mmu.vhd|
 !i113 1
 R12
 R13
@@ -126,19 +167,19 @@ R7
 R8
 !i10b 1
 R9
-R25
-R26
+R31
+R32
 !i113 1
 R12
 R13
 Eprogmem
-Z27 w1488096111
+Z33 w1488096111
 R2
 R3
 R4
 R0
-Z28 8/home/mathias/Projects/WolfCoreOne/logic/src/progMem.vhd
-Z29 F/home/mathias/Projects/WolfCoreOne/logic/src/progMem.vhd
+Z34 8/home/mathias/Projects/WolfCoreOne/logic/src/progMem.vhd
+Z35 F/home/mathias/Projects/WolfCoreOne/logic/src/progMem.vhd
 l0
 L5
 V_c@[i4^>ah9BLJ;5H[jng0
@@ -148,8 +189,8 @@ R7
 R8
 !i10b 1
 R9
-Z30 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|/home/mathias/Projects/WolfCoreOne/logic/src/progMem.vhd|
-Z31 !s107 /home/mathias/Projects/WolfCoreOne/logic/src/progMem.vhd|
+Z36 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|/home/mathias/Projects/WolfCoreOne/logic/src/progMem.vhd|
+Z37 !s107 /home/mathias/Projects/WolfCoreOne/logic/src/progMem.vhd|
 !i113 1
 R12
 R13
@@ -167,20 +208,20 @@ R7
 R8
 !i10b 1
 R9
-R30
-R31
+R36
+R37
 !i113 1
 R12
 R13
 Etb_flowctrl
-Z32 w1488095946
-Z33 DPx4 ieee 15 std_logic_arith 0 22 [G314=:2zXJ`VORJe1J@Z1
-Z34 DPx4 ieee 18 std_logic_unsigned 0 22 ;eZjO2D4ZDz<]0>8AL<ne1
+Z38 w1488728901
+Z39 DPx4 ieee 15 std_logic_arith 0 22 [G314=:2zXJ`VORJe1J@Z1
+Z40 DPx4 ieee 18 std_logic_unsigned 0 22 ;eZjO2D4ZDz<]0>8AL<ne1
 R3
 R4
 R0
-Z35 8/home/mathias/Projects/WolfCoreOne/logic/tb/tb_flowctrl.vhd
-Z36 F/home/mathias/Projects/WolfCoreOne/logic/tb/tb_flowctrl.vhd
+Z41 8/home/mathias/Projects/WolfCoreOne/logic/tb/tb_flowctrl.vhd
+Z42 F/home/mathias/Projects/WolfCoreOne/logic/tb/tb_flowctrl.vhd
 l0
 L6
 V>o`O:dB_l24cTQU:nNTNY1
@@ -190,57 +231,57 @@ R7
 R8
 !i10b 1
 R9
-Z37 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|/home/mathias/Projects/WolfCoreOne/logic/tb/tb_flowctrl.vhd|
-Z38 !s107 /home/mathias/Projects/WolfCoreOne/logic/tb/tb_flowctrl.vhd|
+Z43 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|/home/mathias/Projects/WolfCoreOne/logic/tb/tb_flowctrl.vhd|
+Z44 !s107 /home/mathias/Projects/WolfCoreOne/logic/tb/tb_flowctrl.vhd|
 !i113 1
 R12
 R13
 Abehavior
-R33
-R34
+R39
+R40
 R3
 R4
 DEx4 work 11 tb_flowctrl 0 22 >o`O:dB_l24cTQU:nNTNY1
-l118
+l132
 L9
-VEPAHBl_U<>oo^g_iF>IBm2
-!s100 Ij?a[lPPe@AbW4[cP6h833
+V_V;g?cLMeABjFGCd>@UiD0
+!s100 ^f4ImCSz[9lYCH`DoHYzb1
 R7
 32
 R8
 !i10b 1
 R9
-R37
-R38
+R43
+R44
 !i113 1
 R12
 R13
 Etb_wolfcore
-Z39 w1487182575
-R33
-R34
+Z45 w1487182575
+R39
+R40
 R3
 R4
 R0
-Z40 8/home/mathias/Projects/WolfCoreOne/logic/tb/tb_wolfcore.vhd
-Z41 F/home/mathias/Projects/WolfCoreOne/logic/tb/tb_wolfcore.vhd
+Z46 8/home/mathias/Projects/WolfCoreOne/logic/tb/tb_wolfcore.vhd
+Z47 F/home/mathias/Projects/WolfCoreOne/logic/tb/tb_wolfcore.vhd
 l0
 L6
 VfW[X7aYlo4L4YEnRIRV]m0
 !s100 1m]D[41dk?HlzDJSkA=:S0
 R7
 32
-Z42 !s110 1487268163
+Z48 !s110 1487268163
 !i10b 1
-Z43 !s108 1487268163.000000
-Z44 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|/home/mathias/Projects/WolfCoreOne/logic/tb/tb_wolfcore.vhd|
-Z45 !s107 /home/mathias/Projects/WolfCoreOne/logic/tb/tb_wolfcore.vhd|
+Z49 !s108 1487268163.000000
+Z50 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|/home/mathias/Projects/WolfCoreOne/logic/tb/tb_wolfcore.vhd|
+Z51 !s107 /home/mathias/Projects/WolfCoreOne/logic/tb/tb_wolfcore.vhd|
 !i113 1
 R12
 R13
 Abehavior
-R33
-R34
+R39
+R40
 R3
 R4
 DEx4 work 11 tb_wolfcore 0 22 fW[X7aYlo4L4YEnRIRV]m0
@@ -250,22 +291,22 @@ Vdh5=@@3169aTW3]3:WL]12
 !s100 be2S[n7jfZ:HkZGP_U>IJ3
 R7
 32
-R42
+R48
 !i10b 1
-R43
-R44
-R45
+R49
+R50
+R51
 !i113 1
 R12
 R13
 Ewolfcore
-Z46 w1488726408
+Z52 w1488726408
 R2
 R3
 R4
 R0
-Z47 8/home/mathias/Projects/WolfCoreOne/logic/src/wolfcore.vhd
-Z48 F/home/mathias/Projects/WolfCoreOne/logic/src/wolfcore.vhd
+Z53 8/home/mathias/Projects/WolfCoreOne/logic/src/wolfcore.vhd
+Z54 F/home/mathias/Projects/WolfCoreOne/logic/src/wolfcore.vhd
 l0
 L5
 V2RL^]aUAL7C`CMNakdHEz3
@@ -275,8 +316,8 @@ R7
 R8
 !i10b 1
 R9
-Z49 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|/home/mathias/Projects/WolfCoreOne/logic/src/wolfcore.vhd|
-Z50 !s107 /home/mathias/Projects/WolfCoreOne/logic/src/wolfcore.vhd|
+Z55 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|/home/mathias/Projects/WolfCoreOne/logic/src/wolfcore.vhd|
+Z56 !s107 /home/mathias/Projects/WolfCoreOne/logic/src/wolfcore.vhd|
 !i113 1
 R12
 R13
@@ -294,8 +335,8 @@ R7
 R8
 !i10b 1
 R9
-R49
-R50
+R55
+R56
 !i113 1
 R12
 R13

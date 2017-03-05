@@ -69,7 +69,8 @@ architecture behavior of tb_flowctrl IS
     port( 
         dataOutput  : out std_logic_vector(31 downto 0);
         dataInput   : in std_logic_vector(31 downto 0);
-        dataAddr    : out std_logic_vector(31 downto 0);
+        dataInAddr  : out std_logic_vector(31 downto 0);
+        dataOutAddr : out std_logic_vector(31 downto 0);
         dataWrEn    : out std_logic;
         instrInput  : in std_logic_vector(31 downto 0);
         pc          : buffer std_logic_Vector(31 downto 0);
@@ -79,6 +80,18 @@ architecture behavior of tb_flowctrl IS
         forceRoot   : in std_logic;
         flushing    : out std_logic
         );
+    end component;
+
+    component data_cache
+        PORT
+    (
+        clock_y       : IN STD_LOGIC  := '1';
+        data        : IN STD_LOGIC_VECTOR (31 DOWNTO 0);
+        rdaddress       : IN STD_LOGIC_VECTOR (13 DOWNTO 0);
+        wraddress       : IN STD_LOGIC_VECTOR (13 DOWNTO 0);
+        wren        : IN STD_LOGIC  := '0';
+        q       : OUT STD_LOGIC_VECTOR (31 DOWNTO 0)
+    );
     end component;
 
     --declare inputs and initialize them
@@ -105,7 +118,8 @@ architecture behavior of tb_flowctrl IS
     signal pcCPU2Ctrl   : std_logic_vector(31 downto 0);
 
     signal dataCPU2MMU      : std_logic_vector(31 downto 0);
-    signal dataAddrCPU2MMU  : std_logic_vector(31 downto 0);
+    signal dataAddrInCPU2MMU  : std_logic_vector(31 downto 0);
+    signal dataAddrOutCPU2MMU  : std_logic_vector(31 downto 0);
     signal wrEnCPU2MMU      : std_logic;
         -- Going to the CPU
     signal dataMMU2CPU      : std_logic_vector(31 downto 0);
@@ -137,7 +151,7 @@ begin
     mmu_uut: mmu port map(
         -- Coming from the CPU
         dataIn => dataCPU2MMU,
-        dataAddr => dataAddrCPU2MMU,
+        dataAddr => dataAddrOutCPU2MMU,
         wrEn => wrEnCPU2MMU,
         -- Going to the CPU
         dataOut => dataMMU2CPU,
@@ -155,6 +169,16 @@ begin
 		instrOutput => instrMem2Ctrl,
 		instrAddress => addrCtrl2Mem 
 	); 
+
+        mem_d: data_cache port map(
+            clock_y => "not"(clk),
+            data => dataCPU2MMU,
+            rdaddress => dataAddrInCPU2MMU(13 downto 0),
+            wraddress => dataAddrOutCPU2MMU(13 downto 0),
+            wren => wrencpu2mmu,
+            q => dataMMU2CPU
+        );
+
         cpu: wolfcore port map (
             clk => clk,
             rst => reset,
@@ -162,7 +186,8 @@ begin
 	    instrInput => instrCtrl2CPU,
             dataOutput => dataCPU2MMU,
 	    dataInput => dataMMU2CPU,
-            dataAddr => dataAddrCPU2MMU,
+            dataInAddr  => dataAddrInCPU2MMU,
+            dataOutAddr => dataAddrOutCPU2MMU,
             dataWrEn => wrEnCPU2MMU,
             forceRoot   => forceRoot,
             CPU_Status  => CPU_Status,
