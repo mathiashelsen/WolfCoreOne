@@ -93,14 +93,6 @@ func Print(bits uint32, words []string) {
 	fmt.Println()
 }
 
-func reverse(x string) string {
-	r := ""
-	for i := len(x) - 1; i >= 0; i-- {
-		r += string(x[i])
-	}
-	return r
-}
-
 func ParseOpcode(x string) uint32 {
 	if op, ok := isa.Opcodes[x]; ok {
 		return op
