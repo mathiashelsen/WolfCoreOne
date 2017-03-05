@@ -17,9 +17,9 @@ const (
 	PERI_DISPLAY = 0x3FFF     // memory-mapped address of 7-segment display
 )
 
-// micro-instruction LSB positions:
+// Instruction layout:
 //  31  30 29 28 27 26 25 24 23 22 21 20 19 18 17 16 15 14 13
-//  IB  ----RA---   ---RB--- -----------------IL-------------
+//  IB  ----RA----- -----RB---- ------IL------------ ---PT---
 //
 //  12  11 10  9  8  7  6  5  4  3  2  1  0
 //   -----OPC------  ---RC-----  -Cond--  cmp
@@ -29,8 +29,10 @@ const (
 	RAl = 27 // register A
 	RBh = 26 // register B, or 4 MSB's of immediate value when ImmB=1
 	RBl = 23 // register B, or 4 MSB's of immediate value when ImmB=1
-	ILh = 22 // 10 LSB's of immediate value
-	ILl = 13 // 10 LSB's of immediate value
+	ILh = 22 // 7 bits immediate value
+	ILl = 16 // 7 bits immediate value
+	PTh = 15 // dereference registers?
+	PTl = 13 // dereference registers?
 	OPh = 12 // Opcode selector for ALU/Memory
 	OPl = 8  // Opcode selector for ALU/Memory
 	RCh = 7  // register C
@@ -51,13 +53,13 @@ const (
 	NZ     = 3 // write back if last compare was nonzero
 	GE     = 4 // write back if last compare was >= 0
 	LT     = 5 // write back if last compare was < 0
-	OF	   = 6 // write back on overflow
+	OF     = 6 // write back on overflow
 	NOF    = 7 // write back on not overflow
 )
 
 // ALU Opcodes
 const (
-	NOP	  = 0x00
+	NOP   = 0x00
 	LOAD  = 0x01 //  C <= mem[Ra+BBus]
 	STORE = 0x02 //  mem[B] = Ra, C <= Ra-1
 	AND   = 0x03 //  C <= Ra & B
@@ -79,13 +81,13 @@ var CondStr = map[uint32]string{
 	NZ:     "NZ",
 	GE:     "GE",
 	LT:     "LT",
-	OF:		"OF",
-	NOF:	"NOF",
+	OF:     "OF",
+	NOF:    "NOF",
 }
 
 // Human-readable strings for Opcodes
 var OpcodeStr = map[uint32]string{
-	NOP:	"NOP",
+	NOP:   "NOP",
 	LOAD:  "LOAD",
 	STORE: "STORE",
 	AND:   "AND",
@@ -93,10 +95,10 @@ var OpcodeStr = map[uint32]string{
 	XOR:   "XOR",
 	ADD:   "ADD",
 	SUB:   "SUB",
-	SUBS:   "SUBS",
-	MOV:	"MOV",
-	BSL:	"BSL",
-	BSR:	"BSR",
+	SUBS:  "SUBS",
+	MOV:   "MOV",
+	BSL:   "BSL",
+	BSR:   "BSR",
 }
 
 // Parses opcodes
