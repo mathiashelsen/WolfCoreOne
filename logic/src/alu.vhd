@@ -74,7 +74,6 @@ begin
 			ALU_Out <= inputA xor inputB;
 		when ADD =>
 			resTmp	<= std_logic_vector(resize(unsgndA, unsgndA'length+1) + resize(unsgndB, unsgndB'length+1));
-			--resTmp	<= std_logic_vector(('0' & unsgndA) + ('0' & unsgndB));
 			ALU_Out	<= resTmp(31 downto 0);
 		when SUB =>
 			resTmp	<= std_logic_vector(resize(unsgndA, unsgndA'length+1) - resize(unsgndB, unsgndB'length+1));

@@ -87,11 +87,6 @@ module DE0_NANO_SOC_Default(
 //=======================================================
 //  REG/WIRE declarations
 //=======================================================
-reg  [31:0]	Cont;
-wire uartClk;
-wire busyTx;
-reg startTx;
-reg [7:0] dataTx;
 
 //=======================================================
 //  Structural coding
@@ -107,41 +102,53 @@ always@(posedge FPGA_CLK1_50 or negedge KEY[0])
         else
 			 Cont	<=	Cont+1;
     end
-
-runningLED led_test ( FPGA_CLK1_50, LED ); 								
+				
 mainPLL pll_unit( FPGA_CLK1_50, 1'b1, uartClk );
+				
+wolfcore cpu( data_CPU_MMU,
+					data_MMU_CPU,
+					addr_CPU_MMU,
+					dataWrEn_CPU_MMU,
+					instr_flowCtrl_CPU,
+					pc_CPU_flowCtrl,
+					CPU_Status_CPU_flowCtrl,
+					rst,
+					FPGA_CLK1_50,
+					forceRoot_flowCtrl_CPU,
+					flushing_CPU_flowCtrl );
 
-always@(posedge FPGA_CLK1_50 )
-begin
-	if(busyTx)
-	begin
-		startTx <= 1'b0;
-	end
-	else
-	begin
-		dataTx <= 8'h41;
-		startTx <= 1'b1;
-	end
-end
-UART uart_test ( .baudRtClk(uartClk), 
-						.rst(1'b0),
-						.RxD(GPIO_0[1]),
-						.TxD(GPIO_0[2]),
-						.inputData(dataTx),
-						.TxEnable(startTx),
-						.TxActive(busyTx)
-						);
-						
-reg [31:0] inputA;
-reg [31:0] inputB;
-reg [4:0] instr;
+flowController fcu(
+					rst,
+					FPGA_CLK1_50,
+					pc_CPU_flowCtrl,
+					CPU_Status_CPU_flowCtrl,
+					flushing_CPU_flowCtrl,
+					instr_flowCtrl_CPU,
+					forceRoot_flowCtrl_CPU,
+					
 
-always@(posedge FPGA_CLK1_50) begin
-	inputA <= 32'h0000FFFF;
-	inputB <= 32'hFFFF0000;
-	instr <= 5'b00011;
-end					
-						
-ALU alu_test ( instr, inputA, inputB );						
 
+        -- Basic reset and clock
+        rst         : in    std_logic;
+        clk         : in    std_logic;
+        -- Input from the CPU
+        pc          : in    std_logic_vector(31 downto 0);
+        CPU_Status  : in    std_logic_vector(31 downto 0);
+        flushing    : in    std_logic;
+        -- Output to the CPU
+        instrOut    : out   std_logic_vector(31 downto 0);
+        forceRoot   : out   std_logic;
+        -- I/O with the program cache memory
+        memAddr     : out   std_logic_vector(31 downto 0);
+        instrIn     : in    std_logic_vector(31 downto 0);
+        -- The bus on which the IRQ's arrive
+        IRQBus      : in    std_logic_vector(31 downto 0);
+
+        -- Control register input
+        regAddr     : in    std_logic_vector(31 downto 0);
+        regData     : in    std_logic_vector(31 downto 0);
+        regOutput   : out   std_logic_vector(31 downto 0);
+        regWrEn     : in    std_logic
+
+				
 endmodule
