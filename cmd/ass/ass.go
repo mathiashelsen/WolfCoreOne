@@ -12,9 +12,12 @@ import (
 	"../../isa"
 )
 
-const COMMENT = "//"
+const (
+	COMMENT = "//"
+	DEREF   = "*"
+)
 
-func Assemble(in io.Reader, out io.Writer) {
+func Assemble(in io.Reader, out, vhdout io.Writer) {
 	reader := bufio.NewReader(in)
 	var pc uint16
 	for words, ok := ParseLine(reader); ok; words, ok = ParseLine(reader) {
@@ -25,10 +28,10 @@ func Assemble(in io.Reader, out io.Writer) {
 		if strings.HasPrefix(words[0], "#") {
 			continue
 		}
+		if pc == 0 {
+			fmt.Println("i aaaa bbbb iiiiiii ppp ooooo cccc www c")
+		}
 
-		//if pc%4 == 0 {
-		//	fmt.Println("\niaaaabbbbiiiiiiiiiioooooccccwww+")
-		//}
 		var bits uint32
 
 		if words[0] == "DATA" {
@@ -43,28 +46,59 @@ func Assemble(in io.Reader, out io.Writer) {
 				Err("need 5 operands")
 			}
 			opc := ParseOpcode(words[0])
-			ra := ParseReg(transl(words[1]))
-			immb, rb, imml := ParseBVal(transl(words[2]))
+			ra, ptra := ParseReg(transl(words[1]))
+			immb, rb, imml, ptrb := ParseBVal(transl(words[2]))
 			cond := ParseCond(words[3])
-			rc := ParseReg(transl(words[4]))
+			rc, ptrc := ParseReg(transl(words[4]))
 			comp := ParseCmp(words[5])
+
+			ptr := (ptra << 0) | (ptrb << 1) | (ptrc << 2)
 
 			bits = isa.SetBits(bits, isa.IB, isa.IB, immb)
 			bits = isa.SetBits(bits, isa.RAl, isa.RAh, ra)
 			bits = isa.SetBits(bits, isa.RBl, isa.RBh, rb)
 			bits = isa.SetBits(bits, isa.ILl, isa.ILh, imml)
+			bits = isa.SetBits(bits, isa.PTl, isa.PTh, ptr)
 			bits = isa.SetBits(bits, isa.OPl, isa.OPh, opc)
 			bits = isa.SetBits(bits, isa.RCl, isa.RCh, rc)
 			bits = isa.SetBits(bits, isa.WCl, isa.WCh, cond)
 			bits = isa.SetBits(bits, isa.CMP, isa.CMP, comp)
 		}
-                fmt.Printf("-- %s\n", words)
-                fmt.Printf("when X\"%08x\" =>\n", pc)
-		fmt.Printf("\t instrOutput <= X\"%08x\";\n", bits)
+		fmt.Fprintf(vhdout, "-- %s\n", words)
+		fmt.Fprintf(vhdout, "when X\"%08x\" =>\n", pc)
+		fmt.Fprintf(vhdout, "\t instrOutput <= X\"%08x\";\n", bits)
 		ihex.WriteUint32(out, pc, bits)
+
+		Print(bits, words)
+
 		pc++
 	}
 	ihex.WriteEOF(out)
+}
+
+func Print(bits uint32, words []string) {
+	fmt.Printf("%01b ", isa.GetBits(bits, isa.IB, isa.IB))
+	fmt.Printf("%04b ", isa.GetBits(bits, isa.RAl, isa.RAh))
+	fmt.Printf("%04b ", isa.GetBits(bits, isa.RBl, isa.RBh))
+	fmt.Printf("%07b ", isa.GetBits(bits, isa.ILl, isa.ILh))
+	fmt.Printf("%03b ", isa.GetBits(bits, isa.PTl, isa.PTh))
+	fmt.Printf("%05b ", isa.GetBits(bits, isa.OPl, isa.OPh))
+	fmt.Printf("%04b ", isa.GetBits(bits, isa.RCl, isa.RCh))
+	fmt.Printf("%03b ", isa.GetBits(bits, isa.WCl, isa.WCh))
+	fmt.Printf("%01b ", isa.GetBits(bits, isa.CMP, isa.CMP))
+
+	for _, w := range words {
+		fmt.Print(w, " ")
+	}
+	fmt.Println()
+}
+
+func reverse(x string) string {
+	r := ""
+	for i := len(x) - 1; i >= 0; i-- {
+		r += string(x[i])
+	}
+	return r
 }
 
 func ParseOpcode(x string) uint32 {
@@ -85,14 +119,18 @@ func ParseCond(x string) uint32 {
 	}
 }
 
-func ParseReg(x string) uint32 {
+func ParseReg(x string) (reg uint32, ptr uint32) {
 	if x == "PC" {
-		return isa.PCREG
+		return isa.PCREG, 0
 	}
 	if x == "Rx" {
-		return isa.OVERFLOWREG
+		return isa.OVERFLOWREG, 0
 	}
 
+	if strings.HasPrefix(x, DEREF) {
+		ptr = 1
+		x = x[1:]
+	}
 	r := transl(x)
 	if !strings.HasPrefix(r, "R") {
 		Err("expected register, got: ", r)
@@ -103,26 +141,27 @@ func ParseReg(x string) uint32 {
 		Err("malformed register name: R", r)
 	}
 	if rN == isa.PCREG {
-		Err("the program counter is explictly called PC")
+		Err("the program counter is explicitly called PC")
 	}
 	if rN == isa.OVERFLOWREG {
-		Err("the overflow register is explictly called Rx")
+		Err("the overflow register is explicitly called Rx")
 	}
 	if rN > isa.MAXREG || rN < 0 {
 		Err("no such register: R", r)
 	}
-	return uint32(rN)
+	return uint32(rN), ptr
 }
 
-func ParseBVal(x string) (immb, regb, immv uint32) {
-	if strings.HasPrefix(x, "R") {
-		return 0, ParseReg(x), 0
+func ParseBVal(x string) (immb, regb, immv, ptr uint32) {
+	if strings.HasPrefix(x, "R") || strings.HasPrefix(x, DEREF+"R") {
+		r, p := ParseReg(x)
+		return 0, r, 0, p
 	} else {
-		immv := ParseInt(x, 14)
-		regb := (immv & 0xFC00) >> 10
-		imml := (immv & 0x03FF)
+		immv := ParseInt(x, 11)
+		regb := (immv & 0xFF80) >> 4
+		imml := (immv & 0x007F)
 		assert(regb < isa.NREG)
-		return 1, regb, imml
+		return 1, regb, imml, 0
 	}
 }
 

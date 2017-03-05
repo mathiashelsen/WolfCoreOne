@@ -26,11 +26,16 @@ func main() {
 		out, err := os.Create(outfname)
 		Check(err)
 
+		vhdfname := fname[:len(fname)-len(path.Ext(fname))] + ".vhd"
+		vhdout, err := os.Create(vhdfname)
+		Check(err)
+
 		ScanMacros(bytes.NewReader(input))
 		linenumber = 0
-		Assemble(bytes.NewReader(input), out)
+		Assemble(bytes.NewReader(input), out, vhdout)
 
 		out.Close()
+		vhdout.Close()
 	}
 }
 

@@ -17,7 +17,7 @@ const (
 	PERI_DISPLAY = 0x3FFF     // memory-mapped address of 7-segment display
 )
 
-// micro-instruction LSB positions:
+// Instruction layout:
 //  31  30 29 28 27 26 25 24 23 22 21 20 19 18 17 16 15 14 13
 //  IB  ----RA----- -----RB---- ------IL------------ ---PT---
 //
