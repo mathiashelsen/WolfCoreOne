@@ -148,21 +148,21 @@ begin
         flushing => flushCPU2Ctrl
         );       
 
-    mmu_uut: mmu port map(
-        -- Coming from the CPU
-        dataIn => dataCPU2MMU,
-        dataAddr => dataAddrOutCPU2MMU,
-        wrEn => wrEnCPU2MMU,
-        -- Going to the CPU
-        dataOut => dataMMU2CPU,
-        -- I/O with data cache
-        memOut => X"0000_0000",
-        -- I/O with the flowController
-        flowCtrlIn => regData,
-        flowCtrlAddr => regAddr,
-        flowCtrlWrEn => regWrEn,
-        flowCtrlOut => regOutput
-    );
+    --mmu_uut: mmu port map(
+    --    -- Coming from the CPU
+    --    dataIn => dataCPU2MMU,
+    --    dataAddr => dataAddrOutCPU2MMU,
+    --    wrEn => wrEnCPU2MMU,
+    --    -- Going to the CPU
+    --    dataOut => dataMMU2CPU,
+    --    -- I/O with data cache
+    --    memOut => X"0000_0000",
+    --    -- I/O with the flowController
+    --    flowCtrlIn => regData,
+    --    flowCtrlAddr => regAddr,
+    --    flowCtrlWrEn => regWrEn,
+    --    flowCtrlOut => regOutput
+    --);
 
 	mem: progMem port map(
 		clk => clk,

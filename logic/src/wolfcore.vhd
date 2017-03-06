@@ -60,7 +60,7 @@ architecture default of wolfcore is
 begin
 
         mainALU: ALU port map( 
-                instr   => instrExecute(12 downto 8),
+                instr   => instrWriteBack(12 downto 8),
                 inputA  => inputA,
                 inputB  => inputB,
                 ALU_Out => ALU_Out,
@@ -121,11 +121,16 @@ process(clk, rst) begin
                 instrWriteBack  <= X"0000_0000";
 
                 cpuState    <= Nominal;
+
+                dataWrEn    <= '0';
+                dataInAddr  <= X"0000_0000";
+                dataOutAddr <= X"0000_0000";
+                dataOutput  <= X"0000_0000";
                 
         elsif (clk'event and clk='1') then
                 -- FETCH-A
                 if( cpuState = Nominal ) then
-                    if(instrInput(15) = '1') then
+                    if(instrInput(13) = '1') then
                         dataInAddr  <= regFile(to_integer(unsigned(instrInput(29 downto 27))));
                     end if;
                     shadowPC_FA     <= pc;
@@ -138,14 +143,14 @@ process(clk, rst) begin
                 -- FETCH-B
                 if( cpuState = Nominal ) then
                     
-                    if(instrFetchB(15) = '1') then
+                    if(instrFetchB(13) = '1') then
                         inputFA <= dataInput;
                     end if;
                     shadowPC_FB <= shadowPC_FB;
 
                     if(instrFetchB(14) = '1') then
                         if(instrFetchB(31) = '1') then
-                            dataInAddr  <= std_logic_vector(to_unsigned(0, 22)) & instrFetchB(26 downto 23);
+                            dataInAddr  <= std_logic_vector(to_unsigned(0, 21)) & instrFetchB(26 downto 16);
                         else
                             dataInAddr  <= regFile(to_integer(unsigned(instrFetchB(25 downto 23))));
                         end if;
@@ -159,7 +164,7 @@ process(clk, rst) begin
         
                 -- EXECUTE
                 if( cpuState = Nominal ) then
-                    if(instrExecute(15) = '1') then
+                    if(instrExecute(13) = '1') then
                         inputA      <= inputFA;
                     else
                         case to_integer(unsigned(instrExecute(30 downto 27))) is
@@ -177,17 +182,20 @@ process(clk, rst) begin
                     if(instrExecute(14) = '1') then
                         inputB      <= dataInput;
                     else
-                        case to_integer(unsigned(instrExecute(26 downto 23))) is
-                        when 13 =>
-                            inputB  <= shadowPC_FB;
-                        when 14 =>
-                            inputB  <= ALU_Overflow;
-                        when 15 =>
-                            inputB  <= CPU_Status;
-                        when others =>
-                            inputB  <= regFile(to_integer(unsigned(instrExecute(26 downto 23))));
-                        end case;
-
+                        if(instrExecute(31) = '1') then
+                            inputB  <= std_logic_vector(to_unsigned(0, 21)) & instrExecute(26 downto 16);
+                        else
+                            case to_integer(unsigned(instrExecute(26 downto 23))) is
+                            when 13 =>
+                                inputB  <= shadowPC_FB;
+                            when 14 =>
+                                inputB  <= ALU_Overflow;
+                            when 15 =>
+                                inputB  <= CPU_Status;
+                            when others =>
+                                inputB  <= regFile(to_integer(unsigned(instrExecute(26 downto 23))));
+                            end case;
+                        end if;
                     end if;
 
                     -- We take along important information for the writeback
@@ -200,7 +208,7 @@ process(clk, rst) begin
 
                 -- WRITEBACK
                 if(wbEn='1' and cpuState = Nominal) then
-                    if(instrWriteBack(13) = '1') then
+                    if(instrWriteBack(15) = '1') then
                         dataOutAddr <=  regFile(to_integer(unsigned(instrWriteBack(6 downto 4))));
                         dataOutput  <=  ALU_Out;
                         dataWrEn    <= '1';
@@ -221,6 +229,7 @@ process(clk, rst) begin
                         end case;                       
                     end if;
                 else
+                    dataWrEn    <= '0';
                     pc          <= std_logic_vector(unsigned(pc) + to_unsigned(1, pc'length));
                     cpuState    <= Nominal;
                 end if;

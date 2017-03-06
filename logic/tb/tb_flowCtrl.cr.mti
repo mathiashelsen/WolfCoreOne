@@ -1,16 +1,4 @@
-/home/mathias/Projects/WolfCoreOne/logic/tb/tb_flowctrl.vhd {0 {vcom -work work -2002 -explicit -stats=none /home/mathias/Projects/WolfCoreOne/logic/tb/tb_flowctrl.vhd
-Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
--- Loading package STANDARD
--- Loading package TEXTIO
--- Loading package std_logic_1164
--- Loading package std_logic_arith
--- Loading package STD_LOGIC_UNSIGNED
--- Compiling entity tb_flowctrl
--- Compiling architecture behavior of tb_flowctrl
-** Error: /home/mathias/Projects/WolfCoreOne/logic/tb/tb_flowctrl.vhd(174): (vcom-1436) Actual expression (prefix expression) of formal "clock" is not globally static.
-** Error: /home/mathias/Projects/WolfCoreOne/logic/tb/tb_flowctrl.vhd(223): VHDL Compiler exiting
-
-} {10.0 12.0} {}} /home/mathias/Projects/WolfCoreOne/logic/src/flowController.vhd {1 {vcom -work work -2002 -explicit -stats=none /home/mathias/Projects/WolfCoreOne/logic/src/flowController.vhd
+/home/mathias/Projects/WolfCoreOne/logic/src/flowController.vhd {1 {vcom -work work -2002 -explicit -stats=none /home/mathias/Projects/WolfCoreOne/logic/src/flowController.vhd
 Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
 -- Loading package STANDARD
 -- Loading package TEXTIO
@@ -19,14 +7,24 @@ Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  
 -- Compiling entity flowController
 -- Compiling architecture default of flowController
 
-} {} {}} /home/mathias/Projects/WolfCoreOne/logic/src/wolfcore.vhd {1 {vcom -work work -2002 -explicit -stats=none /home/mathias/Projects/WolfCoreOne/logic/src/wolfcore.vhd
+} {} {}} /home/mathias/Projects/WolfCoreOne/logic/tb/tb_flowctrl.vhd {1 {vcom -work work -2002 -explicit -stats=none /home/mathias/Projects/WolfCoreOne/logic/tb/tb_flowctrl.vhd
 Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
 -- Loading package STANDARD
 -- Loading package TEXTIO
 -- Loading package std_logic_1164
--- Loading package NUMERIC_STD
--- Compiling entity wolfcore
--- Compiling architecture default of wolfcore
+-- Loading package std_logic_arith
+-- Loading package STD_LOGIC_UNSIGNED
+-- Compiling entity tb_flowctrl
+-- Compiling architecture behavior of tb_flowctrl
+
+} {} {}} /home/mathias/Projects/WolfCoreOne/logic/quartus_prj/data_cache.vhd {1 {vcom -work work -2002 -explicit -stats=none /home/mathias/Projects/WolfCoreOne/logic/quartus_prj/data_cache.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package altera_mf_components
+-- Compiling entity data_cache
+-- Compiling architecture SYN of data_cache
 
 } {} {}} /home/mathias/Projects/WolfCoreOne/logic/src/alu.vhd {1 {vcom -work work -2002 -explicit -stats=none /home/mathias/Projects/WolfCoreOne/logic/src/alu.vhd
 Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
@@ -37,15 +35,6 @@ Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  
 -- Compiling entity ALU
 -- Compiling architecture default of ALU
 
-} {} {}} /home/mathias/Projects/WolfCoreOne/logic/src/mmu.vhd {1 {vcom -work work -2002 -explicit -stats=none /home/mathias/Projects/WolfCoreOne/logic/src/mmu.vhd
-Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
--- Loading package STANDARD
--- Loading package TEXTIO
--- Loading package std_logic_1164
--- Loading package NUMERIC_STD
--- Compiling entity mmu
--- Compiling architecture default of mmu
-
 } {} {}} /home/mathias/Projects/WolfCoreOne/logic/src/progMem.vhd {1 {vcom -work work -2002 -explicit -stats=none /home/mathias/Projects/WolfCoreOne/logic/src/progMem.vhd
 Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
 -- Loading package STANDARD
@@ -54,5 +43,14 @@ Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  
 -- Loading package NUMERIC_STD
 -- Compiling entity progMem
 -- Compiling architecture default of progMem
+
+} {} {}} /home/mathias/Projects/WolfCoreOne/logic/src/mmu.vhd {1 {vcom -work work -2002 -explicit -stats=none /home/mathias/Projects/WolfCoreOne/logic/src/mmu.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity mmu
+-- Compiling architecture default of mmu
 
 } {} {}}
