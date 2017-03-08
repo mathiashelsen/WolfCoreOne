@@ -34,20 +34,25 @@ architecture default of flowController is
         IRQ_Finished_0, IRQ_Finished_1, IRQ_Finished_2, IRQ_Finished_3);
     signal flowCtrlState    : flowCtrlStates;
 
-
     type regFile is array(31 downto 0) of std_logic_vector(31 downto 0);
     signal irqAddrReg       : regFile;
+    signal retAddrStack     : regFile;
+    signal CPU_StatusStack  : regFile;
+
+    signal tmpPC            : std_logic_vector(31 downto 0);
+
+    type smallRegFile is array(31 downto 0) of unsigned(4 downto 0);
+    signal activeIRQStack   : smallRegFile;
+    signal IRQDepth         : unsigned(5 downto 0);
 
     signal IRQ_Finished     : std_logic_vector(31 downto 0);
     signal instrGen         : std_logic_vector(31 downto 0);
     signal addrGen          : std_logic_vector(31 downto 0);
-    signal pcCopy           : std_logic_vector(31 downto 0);
-    signal CPU_StatusCopy   : std_logic_vector(31 downto 0);
     signal nopCtr           : unsigned(31 downto 0);
     signal flushFlag        : std_logic;
 begin
 
-process(pc, pcCopy, instrIn, instrGen, flowCtrlState) begin
+process(pc, instrIn, instrGen, flowCtrlState) begin
     if(flowCtrlState = IDLE or flowCtrlState = IRQ_Active) then
         memAddr     <= pc;
         instrOut    <= instrIn;
@@ -64,8 +69,6 @@ begin
     if(rst = '1') then
         flowCtrlState   <= IDLE;
         instrGen        <= X"0000_0000";
-        pcCopy          <= X"0000_0000";
-        CPU_StatusCopy  <= X"0000_0000";
         forceRoot       <= '0';
         IRQ_Finished    <= X"0000_0000";
         nopCtr          <= X"0000_0000";
@@ -73,6 +76,8 @@ begin
         for i in irqAddrReg'range loop
             irqAddrReg(i) <= X"0000_0000";
         end loop;
+
+        IRQDepth        <= "111111";
     elsif(clk'event and clk='0') then
         if(regWrEn = '1') then
             case regAddr(8 downto 5) is
@@ -99,8 +104,8 @@ begin
                     instrGen        <= X"0000_0000";
                     addrGen         <= X"0000_0000";
                     flushFlag       <= '0';
-                    --pcCopy          <= pc;
-                    pcCopy          <= std_logic_vector(unsigned(pc) + to_unsigned(1, 32));
+                    IRQDepth        <= IRQDepth + to_unsigned(1, 6);
+                    tmpPC           <= std_logic_vector(unsigned(pc) + to_unsigned(1, 32));
 
                     for i in IRQBus'range loop
                         if(IRQBus(i) = '1') then
@@ -112,27 +117,32 @@ begin
                 instrGen        <= X"0000_0000";
                 flowCtrlState   <= IRQ_Init_1;
                 if( flushing = '1' ) then
-                    pcCopy          <= pc;
+                    tmpPC       <= pc;
                 end if;
             when IRQ_Init_1 =>
                 if( flushing = '1' ) then
-                    pcCopy  <= pc;    
+                    tmpPC       <= pc;    
                 end if;
                 flowCtrlState <= IRQ_Init_2;
             when IRQ_Init_2 =>
                 if( flushing = '1' ) then
-                    pcCopy  <= pc;    
+                    tmpPC       <= pc;    
+                end if;
+                flowCtrlState <= IRQ_Init_3;
+            when IRQ_Init_3 =>
+                if( flushing = '1' ) then
+                    tmpPC       <= pc;    
                 end if;
 
                 instrGen        <= "1" & "0000" & irqAddrReg(irqRunning)(13 downto 0) & "01001" & "1101" & "001" & "0";
                 addrGen         <= irqAddrReg(irqRunning);
                 nopCtr          <= to_unsigned(2, 32);
                 
-                flowCtrlState   <= IRQ_Init_3;
+                flowCtrlState   <= IRQ_Init_4;
 
-            when IRQ_Init_3 => 
+            when IRQ_Init_4 => 
                 if( flushing = '1' ) then
-                    pcCopy  <= pc;    
+                    tmpPC   <= pc;    
                 end if;
                 
                 instrGen        <= X"0000_0000";
@@ -141,19 +151,35 @@ begin
                 else
                     nopCtr      <= nopCtr - to_unsigned(1, 32);
                 end if;
-                CPU_StatusCopy <= CPU_Status;
+
+                -- Save PC, CPU_Status and active IRQ on the stack
+                retAddrStack(to_integer(IRQDepth))  <=  tmpPC;
+                CPU_StatusStack(to_integer(IRQDepth))   <= CPU_Status;
+                activeIRQStack(to_integer(IRQDepth))    <= to_unsigned(irqRunning, 5);
+
             when IRQ_Active =>
-                if(IRQ_Finished(irqRunning) = '1') then
-                    IRQ_Finished(irqRunning) <= '0';
+                if(IRQ_Finished(0) = '1') then
+                    IRQ_Finished(0) <= '0';
                     flowCtrlState   <= IRQ_Finished_0;
+                else
+                    for i in IRQBus'range loop
+                        if(IRQBus(i) = '1') then
+                            irqRunning := i;
+                        end if; 
+                    end loop;
+                    if( to_unsigned(irqRunning, 5) /= activeIRQStack(to_integer(IRQDepth))) then
+                        flowCtrlState   <= IRQ_Init_0; 
+                        IRQDepth    <= IRQDepth + to_unsigned(1, 6);
+                        tmpPC       <= std_logic_vector(unsigned(pc) + to_unsigned(1, 32));
+                    end if;
                 end if;
             when IRQ_Finished_0 =>
                 forceRoot       <= '1';
                 flowCtrlState   <= IRQ_Finished_1;
-                instrGen        <= "1" & "0000" & CPU_StatusCopy(13 downto 0) & "01001" & "1111" & "001" & "0";
+                instrGen        <= "1" & "0000" & CPU_StatusStack(to_integer(IRQDepth))(13 downto 0) & "01001" & "1111" & "001" & "0";
             when IRQ_Finished_1 =>
                 flowCtrlState   <= IRQ_Finished_2;
-                instrGen        <= "1" & "0000" & pcCopy(13 downto 0) & "01001" & "1101" & "001" & "0";
+                instrGen        <= "1" & "0000" & retAddrStack(to_integer(IRQDepth))(13 downto 0) & "01001" & "1101" & "001" & "0";
                 nopCtr          <= to_unsigned(1, 32);
             when IRQ_Finished_2 =>
                 instrGen        <= X"0000_0000";
@@ -165,6 +191,7 @@ begin
             when IRQ_Finished_3 =>
                 forceRoot       <= '0';
                 flowCtrlState   <= IDLE;
+                IRQDepth        <= IRQDepth - to_unsigned(1, IRQDepth'length);
             when others =>
                 flowCtrlState <= IDLE;
         end case; 
