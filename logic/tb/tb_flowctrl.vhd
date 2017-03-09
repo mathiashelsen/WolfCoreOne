@@ -141,10 +141,10 @@ begin
         memAddr => addrCtrl2Mem,
         instrIn => instrMem2Ctrl,
         IRQBus => IRQBus,
-        regAddr => regAddr,
-        regData => regData,
-        regOutput => regOutput,
-        regWrEn =>regWrEn,
+        regAddr => dataAddrOutCPU2MMU,
+        regData => dataCPU2MMU,
+        regOutput => dataMMU2CPU,
+        regWrEn =>wrencpu2mmu,
         flushing => flushCPU2Ctrl
         );       
 

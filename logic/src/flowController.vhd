@@ -79,22 +79,27 @@ begin
 
         IRQDepth        <= "111111";
     elsif(clk'event and clk='0') then
-        if(regWrEn = '1') then
-            case regAddr(8 downto 5) is
-                when "0000" =>
-                    irqAddrReg(to_integer(unsigned(regAddr(4 downto 0)))) <= regData;
-                when "0001" =>
-                    IRQ_Finished  <= regData;
-                when others =>
-            end case;
+        if( unsigned(regAddr) > X"0000_FFFF" and 
+            unsigned(regAddr) < X"0002_0000"
+        ) then
+            if(regWrEn = '1') then
+                case regAddr(8 downto 5) is
+                    when "0000" =>
+                        irqAddrReg(to_integer(unsigned(regAddr(4 downto 0)))) <= regData;
+                    when "0001" =>
+                        IRQ_Finished  <= regData;
+                    when others =>
+                end case;
+            else
+                case regAddr(8 downto 5) is
+                    when "0000" =>
+                        regOutput <= irqAddrReg(to_integer(unsigned(regAddr(4 downto 0))));
+                    when others =>
+                        regOutput <= X"0000_0000";
+                end case;
+            end if;
         else
-            case regAddr(8 downto 5) is
-                when "0000" =>
-                    regOutput <= irqAddrReg(to_integer(unsigned(regAddr(4 downto 0))));
-                when others =>
-                    regOutput <= X"0000_0000";
-            end case;
-
+            regOutput   <= (others => 'Z');
         end if;
     elsif(clk'event and clk='1') then
         case flowCtrlState is
@@ -134,7 +139,7 @@ begin
                     tmpPC       <= pc;    
                 end if;
 
-                instrGen        <= "1" & "0000" & irqAddrReg(irqRunning)(13 downto 0) & "01001" & "1101" & "001" & "0";
+                instrGen        <= "1" & "0000" & irqAddrReg(irqRunning)(10 downto 0) & "000" & "01001" & "1101" & "001" & "0";
                 addrGen         <= irqAddrReg(irqRunning);
                 nopCtr          <= to_unsigned(2, 32);
                 
@@ -176,10 +181,10 @@ begin
             when IRQ_Finished_0 =>
                 forceRoot       <= '1';
                 flowCtrlState   <= IRQ_Finished_1;
-                instrGen        <= "1" & "0000" & CPU_StatusStack(to_integer(IRQDepth))(13 downto 0) & "01001" & "1111" & "001" & "0";
+                instrGen        <= "1" & "0000" & CPU_StatusStack(to_integer(IRQDepth))(10 downto 0) & "000" & "01001" & "1111" & "001" & "0";
             when IRQ_Finished_1 =>
                 flowCtrlState   <= IRQ_Finished_2;
-                instrGen        <= "1" & "0000" & retAddrStack(to_integer(IRQDepth))(13 downto 0) & "01001" & "1101" & "001" & "0";
+                instrGen        <= "1" & "0000" & retAddrStack(to_integer(IRQDepth))(10 downto 0) & "000" & "01001" & "1101" & "001" & "0";
                 nopCtr          <= to_unsigned(1, 32);
             when IRQ_Finished_2 =>
                 instrGen        <= X"0000_0000";

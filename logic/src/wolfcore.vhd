@@ -129,16 +129,12 @@ process(clk, rst) begin
                 
         elsif (clk'event and clk='1') then
                 -- FETCH-A
-                if( cpuState = Nominal ) then
-                    if(instrInput(13) = '1') then
-                        dataInAddr  <= regFile(to_integer(unsigned(instrInput(29 downto 27))));
-                    end if;
-                    shadowPC_FA     <= pc;
-
-                    instrFetchB <= instrInput;
-                else
-                    instrFetchB <= X"0000_0000";
+                if(instrInput(13) = '1') then
+                    dataInAddr  <= regFile(to_integer(unsigned(instrInput(29 downto 27))));
                 end if;
+                shadowPC_FA     <= pc;
+
+                instrFetchB <= instrInput;
 
                 -- FETCH-B
                 if( cpuState = Nominal ) then
