@@ -5,70 +5,81 @@ use ieee.numeric_std.all;
 
 entity UART is
     port(
-	baudRtClk	    : in std_logic;			    			-- clock running at X10 the baud rate clock
-	rst			    : in std_logic;			    			-- async reset
-	RxD				: in std_logic;							-- serial input for the UART
-	TxD				: out std_logic;						-- output from the UART
-	inputData		: in std_logic_vector(7 downto 0);		-- 8-bit input data
-	TxEnable		: in std_logic;							-- start sending
-	TxActive		: out std_logic;						-- sending is active
-
-	outputData		: out std_logic_vector(7 downto 0);		-- 8-bit data that was received
-	RxActive		: out std_logic;						-- new data is available
-	RxClearFlag		: in std_logic							-- reset the above flag
+	clk         : in std_logic;
+	rst         : in std_logic;          -- async reset
+	RxD         : in std_logic;          -- serial input for the UART
+	TxD         : out std_logic;         -- output from the UART
+	inputData   : in std_logic_vector(31 downto 0);
+        inputAddr   : in std_logic_Vector(31 downto 0); 
+        outputData  : out std_logic_vector(31 downto 0);
+        outputAddr  : in std_logic_vector(31 downto 0);
+        wrEn        : in std_logic;
+        UART_IRQ    : out std_logic;
     );
 end UART;
 
 architecture default of UART is
     type txState is ( IDLE, SENDING );
 	signal txCurrent: txState;
-	signal outputBuffer : std_logic_vector(9 downto 0);
-	signal txBitCtr : unsigned(3 downto 0);
-	signal txClkDivCtr : unsigned(3 downto 0);
+    signal outputBuffer : std_logic_vector(9 downto 0);
+    signal txReq        : std_logic;
+    signal clkDiv       : unsigned(31 downto 0);
+    signal clkDivCtr    : unsigned(31 downto 0);
+    signal bitCtr       : unsigned(4 downto 0);
 begin
 
-	-- UART TX MODULE --
-	process(baudRtClk, rst)
-	begin
-		if(rst = '1') then
-			txCurrent	<= IDLE;
-			txClkDivCtr <= to_unsigned(0, txClkDivCtr'length);
-			TxActive	<= '0';
-			TxD			<= '1';
-		elsif (baudRtClk'event and baudRtClk = '1') then
-			case txCurrent is
-				----------------
-				-- IDLE STATE --
-				----------------
-				when IDLE =>
-					TxActive	<= '0';
-					if(TxEnable = '1') then
-						outputBuffer 	<= '1' & inputData & '0';
-						txBitCtr 		<= to_unsigned(0, txBitCtr'length);
-						txClkDivCtr 	<= to_unsigned(0, txClkDivCtr'length);
-						txCurrent		<= SENDING;
-					end if;	
+process(clk, rst) begin
+    if(rst = '1') then
+        outputBuffer    <= "1_0000_0000_0"; 
+        TxD             <= '1';
+        txReq           <= '0';
+        outputData      <= (others => 'Z');
+    else
+    elsif(clk'event and clk='0') then
+        if( unsigned(inputAddr) > X"0001_FFFF" and 
+            unsigned(inputAddr) < X"0002_00FF"
+        ) then
+            if(wrEn) then
+                case(inputAddr(7 downto 0) is
+                    when X"0" =>
+                        outputData(8 downto 1) <= inputData(7 downto 0);
+                    when X"1" =>
+                        txReq   <= inputData(0);
+                    when X"2" =>
+                        clkDiv  <= unsigned(inputData);
+                    when others =>
 
-				-------------------
-				-- SENDING STATE --
-				-------------------
-				when SENDING =>
-					TxActive	<= '1';
-					-- Last bit has been sent...
-					if(txBitCtr = 9 and txClkDivCtr = 9) then
-						TxD				<= '1';
-						txCurrent		<= IDLE;
-					-- Still bits to send...
-					elsif(txClkDivCtr = 9) then
-						txBitCtr 		<= txBitCtr + 1;				-- one bit out
-						TxD 			<= outputBuffer(0);				-- bit on the output line
-						outputBuffer	<= '0' & outputBuffer(9 downto 1);-- bitshift to the right
-						txClkDivCtr 	<= to_unsigned(0, txClkDivCtr'length);	-- reset baud rate divider
-					-- Just some clk dividing...
-					else
-						txClkDivCtr		<= txClkDivCtr + 1;
-					end if;
-			end case;
-		end if;
-	end process;
+                end case;
+            end if; 
+        end if;
+    end if;
+end process;
+
+process(clk, rst) begin
+    if(rst = '1') then
+        txCurrent   <= IDLE;
+        clkDivCtr   <= to_unsigned(0, 32);
+    elsif(clk'event and clk='1') then
+        
+        if(txReq = '1' and txCurrent = IDLE) then
+            txCurrent   <= SENDING;
+            clkDivCtr   <= clkDiv;
+            bitCtr      <= to_unsigned(9, 4);
+        end if;
+
+        if(txCurrent = SENDING) then
+            if(clkDivCtr = X"0000_0000") then
+                if(bitCtr = to_unsigned(0, 4)) then
+
+                else
+                bitCtr  <= bitCtr - to_unsigned(1, 4);
+
+                end if;
+            else
+
+            end if; 
+        end if;
+    end if;
+end process;
+
 end architecture;
