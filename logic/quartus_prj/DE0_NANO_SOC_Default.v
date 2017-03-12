@@ -94,61 +94,91 @@ module DE0_NANO_SOC_Default(
 
 assign GPIO_0  		=	36'hzzzzzzzz;
 assign GPIO_1  		=	36'hzzzzzzzz;
+			
+wire uartClk;
+wire [31:0] cpuDataOut;
+wire [31:0] cpuDataIn;
+wire [31:0] cpuDataInAddr;
+wire [31:0] cpuDataOutAddr;
+wire cpuWrEn;
+wire [31:0] instrBus;
+wire [31:0] pcBus;
+wire [31:0] CPU_StatusBus;
+wire forceRoot;
+wire flushing;
 
-always@(posedge FPGA_CLK1_50 or negedge KEY[0])
-    begin
-        if(!KEY[0])
-			 Cont	<=	0;
-        else
-			 Cont	<=	Cont+1;
-    end
-				
-mainPLL pll_unit( FPGA_CLK1_50, 1'b1, uartClk );
-				
-wolfcore cpu( data_CPU_MMU,
-					data_MMU_CPU,
-					addr_CPU_MMU,
-					dataWrEn_CPU_MMU,
-					instr_flowCtrl_CPU,
-					pc_CPU_flowCtrl,
-					CPU_Status_CPU_flowCtrl,
-					rst,
-					FPGA_CLK1_50,
-					forceRoot_flowCtrl_CPU,
-					flushing_CPU_flowCtrl );
+wire [31:0] instrCacheAddr;
+wire [31:0] instrCacheData;			
+			
+wire [31:0] dataOutFlowCtrl;
+wire [31:0] dataOutDataCache;
+			
+mainPLL PLL( FPGA_CLK1_50, SW[2], uartClk );
 
-flowController fcu(
-					rst,
-					FPGA_CLK1_50,
-					pc_CPU_flowCtrl,
-					CPU_Status_CPU_flowCtrl,
-					flushing_CPU_flowCtrl,
-					instr_flowCtrl_CPU,
-					forceRoot_flowCtrl_CPU,
-					
+wire clk;
+wire rst;
 
+assign clk = FPGA_CLK1_50;
+assign rst = KEY[0];
 
-        -- Basic reset and clock
-        rst         : in    std_logic;
-        clk         : in    std_logic;
-        -- Input from the CPU
-        pc          : in    std_logic_vector(31 downto 0);
-        CPU_Status  : in    std_logic_vector(31 downto 0);
-        flushing    : in    std_logic;
-        -- Output to the CPU
-        instrOut    : out   std_logic_vector(31 downto 0);
-        forceRoot   : out   std_logic;
-        -- I/O with the program cache memory
-        memAddr     : out   std_logic_vector(31 downto 0);
-        instrIn     : in    std_logic_vector(31 downto 0);
-        -- The bus on which the IRQ's arrive
-        IRQBus      : in    std_logic_vector(31 downto 0);
+assign LED = CPU_StatusBus[7:0];
 
-        -- Control register input
-        regAddr     : in    std_logic_vector(31 downto 0);
-        regData     : in    std_logic_vector(31 downto 0);
-        regOutput   : out   std_logic_vector(31 downto 0);
-        regWrEn     : in    std_logic
+assign GPIO_0[0] = dataOutDataCache[0];
+
+wolfcore CPU(
+	.dataOutput(cpuDataOut),
+	.dataInput(cpuDataIn),
+	.dataInAddr(cpuDataInAddr),
+	.dataOutAddr(cpuDataOutAddr),
+	.dataWrEn(cpuWrEn),
+	.instrInput(instrBus),
+	.pc(pcBus),
+	.CPU_Status(CPU_StatusBus),
+	.rst(KEY[0]),
+	.clk(uartClk),
+	.forceRoot(forceRoot),
+	.flushing(flushing)
+	);
+	
+flowController instrCtrl(
+	.rst(KEY[0]),
+	.clk(uartClk),
+	.pc(pcBus),
+	.CPU_Status(CPU_StatusBus),
+	.flushing(flushing),
+	.instrOut(instrBus),
+	.forceRoot(forceRoot),
+	.memAddr(instrCacheAddr),
+	.instrIn(instrCacheData),
+	.IRQ(32'h00000000 | KEY[1]),
+	.inputAddr(cpuDataOutAddr),
+	.outputAddr(cpuDataInAddr),
+	.inputData(cpuDataOut),
+	.outputData(dataOutFlowCtrl),
+	.wrEn(cpuWrEn)
+);	
+	
+progMem instrCache(
+	.instrOutput(instrCacheData),
+	.instrAddress(instrCacheAddr),
+	.clk(uartClk)
+);
+
+mmu dataCache(
+	.dataIn(cpuDataOut),
+	.dataInAddr(cpuDataOutAddr),
+	.dataOut(dataOutDataCache),
+	.dataOutAddr(cpuDataInAddr),
+	.wren(cpuWrEn),
+	.clk(uartClk)
+);
+
+outputDataMux dataMux(
+	.outputAddr(cpuDataInAddr),
+	.outputDataFlowCtrl(dataOutFlowCtrl),
+	.outputDataDataCache(dataOutDataCache),
+	.outputData(cpuDataIn)
+	);
 
 				
 endmodule

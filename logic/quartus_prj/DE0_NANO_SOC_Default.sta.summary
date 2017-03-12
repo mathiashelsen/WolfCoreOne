@@ -2,116 +2,132 @@
 TimeQuest Timing Analyzer Summary
 ------------------------------------------------------------
 
-Type  : Slow 1100mV 85C Model Setup 'FPGA_CLK1_50'
-Slack : -8.855
-TNS   : -8.855
+Type  : Slow 1100mV 85C Model Setup 'wolfcore:CPU|instrWriteBack[10]'
+Slack : -10.513
+TNS   : -273.488
 
-Type  : Slow 1100mV 85C Model Setup 'pll_unit|mainpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk'
-Slack : -1.891
-TNS   : -35.304
+Type  : Slow 1100mV 85C Model Setup 'PLL|mainpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk'
+Slack : -7.441
+TNS   : -2712.476
 
-Type  : Slow 1100mV 85C Model Hold 'pll_unit|mainpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk'
-Slack : 0.309
+Type  : Slow 1100mV 85C Model Hold 'PLL|mainpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk'
+Slack : -5.090
+TNS   : -1171.772
+
+Type  : Slow 1100mV 85C Model Hold 'wolfcore:CPU|instrWriteBack[10]'
+Slack : 1.837
 TNS   : 0.000
 
-Type  : Slow 1100mV 85C Model Hold 'FPGA_CLK1_50'
-Slack : 0.396
-TNS   : 0.000
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'wolfcore:CPU|instrWriteBack[10]'
+Slack : -0.034
+TNS   : -0.034
 
-Type  : Slow 1100mV 85C Model Minimum Pulse Width 'pll_unit|mainpll_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0]'
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'PLL|mainpll_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0]'
 Slack : 1.240
 TNS   : 0.000
 
 Type  : Slow 1100mV 85C Model Minimum Pulse Width 'FPGA_CLK1_50'
-Slack : 9.205
+Slack : 9.670
 TNS   : 0.000
 
-Type  : Slow 1100mV 85C Model Minimum Pulse Width 'pll_unit|mainpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk'
-Slack : 433.335
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'PLL|mainpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk'
+Slack : 433.159
 TNS   : 0.000
 
-Type  : Slow 1100mV 0C Model Setup 'FPGA_CLK1_50'
-Slack : -8.486
-TNS   : -8.486
+Type  : Slow 1100mV 0C Model Setup 'wolfcore:CPU|instrWriteBack[10]'
+Slack : -10.508
+TNS   : -272.599
 
-Type  : Slow 1100mV 0C Model Setup 'pll_unit|mainpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk'
-Slack : -1.896
-TNS   : -34.675
+Type  : Slow 1100mV 0C Model Setup 'PLL|mainpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk'
+Slack : -6.945
+TNS   : -2505.054
 
-Type  : Slow 1100mV 0C Model Hold 'pll_unit|mainpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk'
-Slack : 0.291
+Type  : Slow 1100mV 0C Model Hold 'PLL|mainpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk'
+Slack : -5.066
+TNS   : -1225.176
+
+Type  : Slow 1100mV 0C Model Hold 'wolfcore:CPU|instrWriteBack[10]'
+Slack : 1.847
 TNS   : 0.000
 
-Type  : Slow 1100mV 0C Model Hold 'FPGA_CLK1_50'
-Slack : 0.390
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'wolfcore:CPU|instrWriteBack[10]'
+Slack : 0.030
 TNS   : 0.000
 
-Type  : Slow 1100mV 0C Model Minimum Pulse Width 'pll_unit|mainpll_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0]'
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'PLL|mainpll_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0]'
 Slack : 1.240
 TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Minimum Pulse Width 'FPGA_CLK1_50'
-Slack : 9.279
+Slack : 9.673
 TNS   : 0.000
 
-Type  : Slow 1100mV 0C Model Minimum Pulse Width 'pll_unit|mainpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk'
-Slack : 433.268
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'PLL|mainpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk'
+Slack : 433.157
 TNS   : 0.000
 
-Type  : Fast 1100mV 85C Model Setup 'FPGA_CLK1_50'
-Slack : -5.508
-TNS   : -5.508
+Type  : Fast 1100mV 85C Model Setup 'wolfcore:CPU|instrWriteBack[10]'
+Slack : -5.571
+TNS   : -142.172
 
-Type  : Fast 1100mV 85C Model Setup 'pll_unit|mainpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk'
-Slack : -2.140
-TNS   : -40.018
+Type  : Fast 1100mV 85C Model Setup 'PLL|mainpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk'
+Slack : -5.460
+TNS   : -2015.396
 
-Type  : Fast 1100mV 85C Model Hold 'pll_unit|mainpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk'
-Slack : 0.179
+Type  : Fast 1100mV 85C Model Hold 'PLL|mainpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk'
+Slack : -2.655
+TNS   : -479.632
+
+Type  : Fast 1100mV 85C Model Hold 'wolfcore:CPU|instrWriteBack[10]'
+Slack : 1.161
 TNS   : 0.000
 
-Type  : Fast 1100mV 85C Model Hold 'FPGA_CLK1_50'
-Slack : 0.210
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'wolfcore:CPU|instrWriteBack[10]'
+Slack : 0.008
 TNS   : 0.000
 
-Type  : Fast 1100mV 85C Model Minimum Pulse Width 'pll_unit|mainpll_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0]'
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'PLL|mainpll_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0]'
 Slack : 1.240
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Minimum Pulse Width 'FPGA_CLK1_50'
-Slack : 9.078
+Slack : 9.336
 TNS   : 0.000
 
-Type  : Fast 1100mV 85C Model Minimum Pulse Width 'pll_unit|mainpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk'
-Slack : 433.587
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'PLL|mainpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk'
+Slack : 433.537
 TNS   : 0.000
 
-Type  : Fast 1100mV 0C Model Setup 'FPGA_CLK1_50'
-Slack : -4.882
-TNS   : -4.882
+Type  : Fast 1100mV 0C Model Setup 'wolfcore:CPU|instrWriteBack[10]'
+Slack : -5.217
+TNS   : -134.455
 
-Type  : Fast 1100mV 0C Model Setup 'pll_unit|mainpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk'
-Slack : -2.107
-TNS   : -39.173
+Type  : Fast 1100mV 0C Model Setup 'PLL|mainpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk'
+Slack : -4.410
+TNS   : -1593.045
 
-Type  : Fast 1100mV 0C Model Hold 'FPGA_CLK1_50'
-Slack : 0.100
+Type  : Fast 1100mV 0C Model Hold 'PLL|mainpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk'
+Slack : -2.601
+TNS   : -525.479
+
+Type  : Fast 1100mV 0C Model Hold 'wolfcore:CPU|instrWriteBack[10]'
+Slack : 1.060
 TNS   : 0.000
 
-Type  : Fast 1100mV 0C Model Hold 'pll_unit|mainpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk'
-Slack : 0.164
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'wolfcore:CPU|instrWriteBack[10]'
+Slack : 0.128
 TNS   : 0.000
 
-Type  : Fast 1100mV 0C Model Minimum Pulse Width 'pll_unit|mainpll_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0]'
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'PLL|mainpll_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0]'
 Slack : 1.240
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Minimum Pulse Width 'FPGA_CLK1_50'
-Slack : 9.041
+Slack : 9.286
 TNS   : 0.000
 
-Type  : Fast 1100mV 0C Model Minimum Pulse Width 'pll_unit|mainpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk'
-Slack : 433.577
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'PLL|mainpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk'
+Slack : 433.543
 TNS   : 0.000
 
 ------------------------------------------------------------

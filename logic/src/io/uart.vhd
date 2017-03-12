@@ -14,7 +14,7 @@ entity UART is
         outputData  : out std_logic_vector(31 downto 0);
         outputAddr  : in std_logic_vector(31 downto 0);
         wrEn        : in std_logic;
-        UART_IRQ    : out std_logic;
+        UART_IRQ    : out std_logic
     );
 end UART;
 
@@ -22,6 +22,7 @@ architecture default of UART is
     type txState is ( IDLE, SENDING );
 	signal txCurrent: txState;
     signal outputBuffer : std_logic_vector(9 downto 0);
+    signal inputBuffer  : std_logic_vector(9 downto 0);
     signal txReq        : std_logic;
     signal clkDiv       : unsigned(31 downto 0);
     signal clkDivCtr    : unsigned(31 downto 0);
@@ -30,19 +31,18 @@ begin
 
 process(clk, rst) begin
     if(rst = '1') then
-        outputBuffer    <= "1_0000_0000_0"; 
+        outputBuffer    <= "1000000000"; 
         TxD             <= '1';
         txReq           <= '0';
-        outputData      <= (others => 'Z');
-    else
+        inputBuffer     <= "0000000000";
     elsif(clk'event and clk='0') then
         if( unsigned(inputAddr) > X"0001_FFFF" and 
-            unsigned(inputAddr) < X"0002_00FF"
+            unsigned(inputAddr) < X"0002_0100"
         ) then
-            if(wrEn) then
-                case(inputAddr(7 downto 0) is
+            if(wrEn = '1') then
+                case inputAddr(7 downto 0) is
                     when X"0" =>
-                        outputData(8 downto 1) <= inputData(7 downto 0);
+                        outputBuffer(8 downto 1) <= inputData(7 downto 0);
                     when X"1" =>
                         txReq   <= inputData(0);
                     when X"2" =>
@@ -51,6 +51,19 @@ process(clk, rst) begin
 
                 end case;
             end if; 
+        end if;
+
+        if( unsigned(outputAddr) > X"0001_FFFF" and
+            unsigned(outputAddr) < X"0002_0100") then
+            case outputAddr(7 downto 0) is
+                when X"0" =>
+                    --outputData  <= to_unsigned(0, 22) & outputBuffer;
+                    outputData  <= std_logic_vector(to_unsigned(0, 32));
+                when X"2" =>
+                    outputData  <=  std_logic_vector(clkDiv);
+                when X"10" =>
+                    outputData  <= std_logic_vector(to_unsigned(0, 22)) & inputBuffer;
+            end case;  
         end if;
     end if;
 end process;
