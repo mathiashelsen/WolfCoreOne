@@ -2,6 +2,8 @@ library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 
+use work.mainArch.all;
+
 entity wolfcore is
         port(
                 dataOutput      : out std_logic_vector(31 downto 0);
@@ -145,7 +147,7 @@ process(clk, rst) begin
                     shadowPC_FB <= shadowPC_FB;
 
                     if(instrFetchB(14) = '1') then
-                        if(instrFetchB(31) = '1') then
+                        if(instrFetchB(IMM) = '1') then
                             dataInAddr  <= std_logic_vector(to_unsigned(0, 21)) & instrFetchB(26 downto 16);
                         else
                             dataInAddr  <= regFile(to_integer(unsigned(instrFetchB(25 downto 23))));
@@ -178,7 +180,7 @@ process(clk, rst) begin
                     if(instrExecute(14) = '1') then
                         inputB      <= dataInput;
                     else
-                        if(instrExecute(31) = '1') then
+                        if(instrExecute(IMM) = '1') then
                             inputB  <= std_logic_vector(to_unsigned(0, 21)) & instrExecute(26 downto 16);
                         else
                             case to_integer(unsigned(instrExecute(26 downto 23))) is

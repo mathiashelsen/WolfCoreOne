@@ -1,5 +1,5 @@
 Analysis & Synthesis report for DE0_NANO_SOC_Default
-Sun Mar 12 17:33:56 2017
+Mon Mar 13 17:09:16 2017
 Quartus Prime Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
 
 
@@ -58,7 +58,7 @@ agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Sun Mar 12 17:33:56 2017       ;
+; Analysis & Synthesis Status     ; Successful - Mon Mar 13 17:09:16 2017       ;
 ; Quartus Prime Version           ; 16.0.0 Build 211 04/27/2016 SJ Lite Edition ;
 ; Revision Name                   ; DE0_NANO_SOC_Default                        ;
 ; Top-level Entity Name           ; DE0_NANO_SOC_Default                        ;
@@ -190,6 +190,7 @@ agreement for further details.
 +----------------------------------+-----------------+------------------------------+-----------------------------------------------------------------------------+---------+
 ; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                ; Library ;
 +----------------------------------+-----------------+------------------------------+-----------------------------------------------------------------------------+---------+
+; ../src/mainArch.vhd              ; yes             ; User VHDL File               ; /home/mathias/Projects/WolfCoreOne/logic/src/mainArch.vhd                   ;         ;
 ; ../src/outputDataMux.vhd         ; yes             ; User VHDL File               ; /home/mathias/Projects/WolfCoreOne/logic/src/outputDataMux.vhd              ;         ;
 ; ../src/wolfcore.vhd              ; yes             ; User VHDL File               ; /home/mathias/Projects/WolfCoreOne/logic/src/wolfcore.vhd                   ;         ;
 ; ../src/progMem.vhd               ; yes             ; User VHDL File               ; /home/mathias/Projects/WolfCoreOne/logic/src/progMem.vhd                    ;         ;
@@ -224,12 +225,12 @@ agreement for further details.
 +---------------------------------------------+------------------------------------------------------------------------------+
 ; Estimate of Logic utilization (ALMs needed) ; 1665                                                                         ;
 ;                                             ;                                                                              ;
-; Combinational ALUT usage for logic          ; 2245                                                                         ;
+; Combinational ALUT usage for logic          ; 2244                                                                         ;
 ;     -- 7 input functions                    ; 9                                                                            ;
 ;     -- 6 input functions                    ; 819                                                                          ;
 ;     -- 5 input functions                    ; 29                                                                           ;
 ;     -- 4 input functions                    ; 1089                                                                         ;
-;     -- <=3 input functions                  ; 299                                                                          ;
+;     -- <=3 input functions                  ; 298                                                                          ;
 ;                                             ;                                                                              ;
 ; Dedicated logic registers                   ; 2372                                                                         ;
 ;                                             ;                                                                              ;
@@ -244,7 +245,7 @@ agreement for further details.
 ;                                             ;                                                                              ;
 ; Maximum fan-out node                        ; mainPLL:PLL|mainPLL_0002:mainpll_inst|altera_pll:altera_pll_i|outclk_wire[0] ;
 ; Maximum fan-out                             ; 2437                                                                         ;
-; Total fan-out                               ; 20957                                                                        ;
+; Total fan-out                               ; 20953                                                                        ;
 ; Average fan-out                             ; 4.24                                                                         ;
 +---------------------------------------------+------------------------------------------------------------------------------+
 
@@ -254,17 +255,16 @@ agreement for further details.
 +----------------------------------------------+-------------------+--------------+-------------------+------------+------+--------------+------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------+--------------+
 ; Compilation Hierarchy Node                   ; LC Combinationals ; LC Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                                  ; Entity Name          ; Library Name ;
 +----------------------------------------------+-------------------+--------------+-------------------+------------+------+--------------+------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------+--------------+
-; |DE0_NANO_SOC_Default                        ; 2245 (1)          ; 2372 (0)     ; 524288            ; 0          ; 93   ; 0            ; |DE0_NANO_SOC_Default                                                                                                                                ; DE0_NANO_SOC_Default ; work         ;
+; |DE0_NANO_SOC_Default                        ; 2244 (1)          ; 2372 (0)     ; 524288            ; 0          ; 93   ; 0            ; |DE0_NANO_SOC_Default                                                                                                                                ; DE0_NANO_SOC_Default ; work         ;
 ;    |flowController:instrCtrl|                ; 1855 (1855)       ; 1901 (1901)  ; 0                 ; 0          ; 0    ; 0            ; |DE0_NANO_SOC_Default|flowController:instrCtrl                                                                                                       ; flowController       ; work         ;
 ;    |mainPLL:PLL|                             ; 0 (0)             ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |DE0_NANO_SOC_Default|mainPLL:PLL                                                                                                                    ; mainPLL              ; mainPLL      ;
 ;       |mainPLL_0002:mainpll_inst|            ; 0 (0)             ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |DE0_NANO_SOC_Default|mainPLL:PLL|mainPLL_0002:mainpll_inst                                                                                          ; mainPLL_0002         ; mainPLL      ;
 ;          |altera_pll:altera_pll_i|           ; 0 (0)             ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |DE0_NANO_SOC_Default|mainPLL:PLL|mainPLL_0002:mainpll_inst|altera_pll:altera_pll_i                                                                  ; altera_pll           ; work         ;
-;    |mmu:dataCache|                           ; 7 (4)             ; 1 (0)        ; 524288            ; 0          ; 0    ; 0            ; |DE0_NANO_SOC_Default|mmu:dataCache                                                                                                                  ; mmu                  ; work         ;
-;       |data_cache:data_cache_instance|       ; 3 (0)             ; 1 (0)        ; 524288            ; 0          ; 0    ; 0            ; |DE0_NANO_SOC_Default|mmu:dataCache|data_cache:data_cache_instance                                                                                   ; data_cache           ; work         ;
-;          |altsyncram:altsyncram_component|   ; 3 (0)             ; 1 (0)        ; 524288            ; 0          ; 0    ; 0            ; |DE0_NANO_SOC_Default|mmu:dataCache|data_cache:data_cache_instance|altsyncram:altsyncram_component                                                   ; altsyncram           ; work         ;
-;             |altsyncram_u5v3:auto_generated| ; 3 (0)             ; 1 (1)        ; 524288            ; 0          ; 0    ; 0            ; |DE0_NANO_SOC_Default|mmu:dataCache|data_cache:data_cache_instance|altsyncram:altsyncram_component|altsyncram_u5v3:auto_generated                    ; altsyncram_u5v3      ; work         ;
+;    |mmu:dataCache|                           ; 6 (4)             ; 1 (0)        ; 524288            ; 0          ; 0    ; 0            ; |DE0_NANO_SOC_Default|mmu:dataCache                                                                                                                  ; mmu                  ; work         ;
+;       |data_cache:data_cache_instance|       ; 2 (0)             ; 1 (0)        ; 524288            ; 0          ; 0    ; 0            ; |DE0_NANO_SOC_Default|mmu:dataCache|data_cache:data_cache_instance                                                                                   ; data_cache           ; work         ;
+;          |altsyncram:altsyncram_component|   ; 2 (0)             ; 1 (0)        ; 524288            ; 0          ; 0    ; 0            ; |DE0_NANO_SOC_Default|mmu:dataCache|data_cache:data_cache_instance|altsyncram:altsyncram_component                                                   ; altsyncram           ; work         ;
+;             |altsyncram_u5v3:auto_generated| ; 2 (0)             ; 1 (1)        ; 524288            ; 0          ; 0    ; 0            ; |DE0_NANO_SOC_Default|mmu:dataCache|data_cache:data_cache_instance|altsyncram:altsyncram_component|altsyncram_u5v3:auto_generated                    ; altsyncram_u5v3      ; work         ;
 ;                |decode_5la:decode2|          ; 2 (2)             ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |DE0_NANO_SOC_Default|mmu:dataCache|data_cache:data_cache_instance|altsyncram:altsyncram_component|altsyncram_u5v3:auto_generated|decode_5la:decode2 ; decode_5la           ; work         ;
-;                |mux_2hb:mux3|                ; 1 (1)             ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |DE0_NANO_SOC_Default|mmu:dataCache|data_cache:data_cache_instance|altsyncram:altsyncram_component|altsyncram_u5v3:auto_generated|mux_2hb:mux3       ; mux_2hb              ; work         ;
 ;    |outputDataMux:dataMux|                   ; 38 (38)           ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |DE0_NANO_SOC_Default|outputDataMux:dataMux                                                                                                          ; outputDataMux        ; work         ;
 ;    |progMem:instrCache|                      ; 29 (29)           ; 9 (9)        ; 0                 ; 0          ; 0    ; 0            ; |DE0_NANO_SOC_Default|progMem:instrCache                                                                                                             ; progMem              ; work         ;
 ;    |wolfcore:CPU|                            ; 315 (218)         ; 461 (461)    ; 0                 ; 0          ; 0    ; 0            ; |DE0_NANO_SOC_Default|wolfcore:CPU                                                                                                                   ; wolfcore             ; work         ;
@@ -329,8 +329,6 @@ Encoding Type:  One-Hot
 ; wolfcore:CPU|ALU:mainALU|resTmp[30]                 ; wolfcore:CPU|ALU:mainALU|Equal1 ; yes                    ;
 ; wolfcore:CPU|ALU:mainALU|resTmp[22]                 ; wolfcore:CPU|ALU:mainALU|Equal1 ; yes                    ;
 ; wolfcore:CPU|ALU:mainALU|resTmp[23]                 ; wolfcore:CPU|ALU:mainALU|Equal1 ; yes                    ;
-; wolfcore:CPU|ALU:mainALU|resTmp[14]                 ; wolfcore:CPU|ALU:mainALU|Equal1 ; yes                    ;
-; wolfcore:CPU|ALU:mainALU|resTmp[15]                 ; wolfcore:CPU|ALU:mainALU|Equal1 ; yes                    ;
 ; wolfcore:CPU|ALU:mainALU|resTmp[16]                 ; wolfcore:CPU|ALU:mainALU|Equal1 ; yes                    ;
 ; wolfcore:CPU|ALU:mainALU|resTmp[17]                 ; wolfcore:CPU|ALU:mainALU|Equal1 ; yes                    ;
 ; wolfcore:CPU|ALU:mainALU|resTmp[18]                 ; wolfcore:CPU|ALU:mainALU|Equal1 ; yes                    ;
@@ -343,12 +341,14 @@ Encoding Type:  One-Hot
 ; wolfcore:CPU|ALU:mainALU|resTmp[26]                 ; wolfcore:CPU|ALU:mainALU|Equal1 ; yes                    ;
 ; wolfcore:CPU|ALU:mainALU|resTmp[25]                 ; wolfcore:CPU|ALU:mainALU|Equal1 ; yes                    ;
 ; wolfcore:CPU|ALU:mainALU|resTmp[24]                 ; wolfcore:CPU|ALU:mainALU|Equal1 ; yes                    ;
-; wolfcore:CPU|ALU:mainALU|resTmp[13]                 ; wolfcore:CPU|ALU:mainALU|Equal1 ; yes                    ;
+; wolfcore:CPU|ALU:mainALU|resTmp[14]                 ; wolfcore:CPU|ALU:mainALU|Equal1 ; yes                    ;
+; wolfcore:CPU|ALU:mainALU|resTmp[15]                 ; wolfcore:CPU|ALU:mainALU|Equal1 ; yes                    ;
 ; wolfcore:CPU|ALU:mainALU|resTmp[8]                  ; wolfcore:CPU|ALU:mainALU|Equal1 ; yes                    ;
 ; wolfcore:CPU|ALU:mainALU|resTmp[9]                  ; wolfcore:CPU|ALU:mainALU|Equal1 ; yes                    ;
 ; wolfcore:CPU|ALU:mainALU|resTmp[10]                 ; wolfcore:CPU|ALU:mainALU|Equal1 ; yes                    ;
 ; wolfcore:CPU|ALU:mainALU|resTmp[11]                 ; wolfcore:CPU|ALU:mainALU|Equal1 ; yes                    ;
 ; wolfcore:CPU|ALU:mainALU|resTmp[12]                 ; wolfcore:CPU|ALU:mainALU|Equal1 ; yes                    ;
+; wolfcore:CPU|ALU:mainALU|resTmp[13]                 ; wolfcore:CPU|ALU:mainALU|Equal1 ; yes                    ;
 ; Number of user-specified and inferred latches = 32  ;                                 ;                        ;
 +-----------------------------------------------------+---------------------------------+------------------------+
 Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
@@ -823,11 +823,11 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |DE0_NANO_SOC_Default|wolfcore:CPU|CPU_Status[7]             ;
 ; 3:1                ; 32 bits   ; 64 LEs        ; 0 LEs                ; 64 LEs                 ; Yes        ; |DE0_NANO_SOC_Default|wolfcore:CPU|pc[25]                    ;
 ; 3:1                ; 32 bits   ; 64 LEs        ; 0 LEs                ; 64 LEs                 ; Yes        ; |DE0_NANO_SOC_Default|wolfcore:CPU|inputFA[0]                ;
-; 8:1                ; 32 bits   ; 160 LEs       ; 64 LEs               ; 96 LEs                 ; Yes        ; |DE0_NANO_SOC_Default|wolfcore:CPU|dataOutAddr[9]            ;
-; 4:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; Yes        ; |DE0_NANO_SOC_Default|wolfcore:CPU|inputA[19]                ;
+; 8:1                ; 32 bits   ; 160 LEs       ; 64 LEs               ; 96 LEs                 ; Yes        ; |DE0_NANO_SOC_Default|wolfcore:CPU|dataOutAddr[3]            ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; Yes        ; |DE0_NANO_SOC_Default|wolfcore:CPU|inputA[11]                ;
 ; 4:1                ; 11 bits   ; 22 LEs        ; 0 LEs                ; 22 LEs                 ; Yes        ; |DE0_NANO_SOC_Default|flowController:instrCtrl|addrGen[1]    ;
-; 4:1                ; 30 bits   ; 60 LEs        ; 0 LEs                ; 60 LEs                 ; Yes        ; |DE0_NANO_SOC_Default|flowController:instrCtrl|nopCtr[18]    ;
-; 5:1                ; 21 bits   ; 63 LEs        ; 0 LEs                ; 63 LEs                 ; Yes        ; |DE0_NANO_SOC_Default|flowController:instrCtrl|addrGen[30]   ;
+; 4:1                ; 30 bits   ; 60 LEs        ; 0 LEs                ; 60 LEs                 ; Yes        ; |DE0_NANO_SOC_Default|flowController:instrCtrl|nopCtr[9]     ;
+; 5:1                ; 21 bits   ; 63 LEs        ; 0 LEs                ; 63 LEs                 ; Yes        ; |DE0_NANO_SOC_Default|flowController:instrCtrl|addrGen[27]   ;
 ; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; Yes        ; |DE0_NANO_SOC_Default|flowController:instrCtrl|nopCtr[1]     ;
 ; 33:1               ; 32 bits   ; 704 LEs       ; 672 LEs              ; 32 LEs                 ; Yes        ; |DE0_NANO_SOC_Default|flowController:instrCtrl|outputData[2] ;
 ; 12:1               ; 21 bits   ; 168 LEs       ; 42 LEs               ; 126 LEs                ; Yes        ; |DE0_NANO_SOC_Default|wolfcore:CPU|dataInAddr[22]            ;
@@ -837,9 +837,9 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; 19:1               ; 11 bits   ; 132 LEs       ; 44 LEs               ; 88 LEs                 ; Yes        ; |DE0_NANO_SOC_Default|wolfcore:CPU|inputB[8]                 ;
 ; 69:1               ; 11 bits   ; 506 LEs       ; 473 LEs              ; 33 LEs                 ; Yes        ; |DE0_NANO_SOC_Default|flowController:instrCtrl|instrGen[17]  ;
 ; 6:1                ; 6 bits    ; 24 LEs        ; 6 LEs                ; 18 LEs                 ; Yes        ; |DE0_NANO_SOC_Default|flowController:instrCtrl|IRQDepth[0]   ;
-; 8:1                ; 32 bits   ; 160 LEs       ; 96 LEs               ; 64 LEs                 ; No         ; |DE0_NANO_SOC_Default|wolfcore:CPU|ALU:mainALU|Mux11         ;
-; 1:1                ; 33 bits   ; 0 LEs         ; 0 LEs                ; 0 LEs                  ; No         ; |DE0_NANO_SOC_Default|wolfcore:CPU|ALU:mainALU|Mux55         ;
-; 4:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; No         ; |DE0_NANO_SOC_Default|outputDataMux:dataMux|outputData[20]   ;
+; 8:1                ; 32 bits   ; 160 LEs       ; 96 LEs               ; 64 LEs                 ; No         ; |DE0_NANO_SOC_Default|wolfcore:CPU|ALU:mainALU|Mux10         ;
+; 1:1                ; 33 bits   ; 0 LEs         ; 0 LEs                ; 0 LEs                  ; No         ; |DE0_NANO_SOC_Default|wolfcore:CPU|ALU:mainALU|Mux47         ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |DE0_NANO_SOC_Default|outputDataMux:dataMux|outputData[21]   ;
 ; 8:1                ; 2 bits    ; 10 LEs        ; 6 LEs                ; 4 LEs                  ; No         ; |DE0_NANO_SOC_Default|flowController:instrCtrl|Selector7     ;
 ; 10:1               ; 2 bits    ; 12 LEs        ; 8 LEs                ; 4 LEs                  ; No         ; |DE0_NANO_SOC_Default|flowController:instrCtrl|Selector6     ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------+
@@ -1219,17 +1219,17 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;     ENA SLD           ; 11                          ;
 ;     plain             ; 11                          ;
 ; arriav_io_obuf        ; 72                          ;
-; arriav_lcell_comb     ; 2245                        ;
+; arriav_lcell_comb     ; 2244                        ;
 ;     arith             ; 112                         ;
 ;         1 data inputs ; 76                          ;
 ;         2 data inputs ; 36                          ;
 ;     extend            ; 9                           ;
 ;         7 data inputs ; 9                           ;
-;     normal            ; 2124                        ;
+;     normal            ; 2123                        ;
 ;         0 data inputs ; 1                           ;
 ;         1 data inputs ; 37                          ;
 ;         2 data inputs ; 18                          ;
-;         3 data inputs ; 131                         ;
+;         3 data inputs ; 130                         ;
 ;         4 data inputs ; 1089                        ;
 ;         5 data inputs ; 29                          ;
 ;         6 data inputs ; 819                         ;
@@ -1257,16 +1257,18 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
-    Info: Processing started: Sun Mar 12 17:33:39 2017
+    Info: Processing started: Mon Mar 13 17:08:59 2017
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off DE0_NANO_SOC_Default -c DE0_NANO_SOC_Default
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (12021): Found 1 design units, including 0 entities, in source file /home/mathias/Projects/WolfCoreOne/logic/src/mainArch.vhd
+    Info (12022): Found design unit 1: mainArch File: /home/mathias/Projects/WolfCoreOne/logic/src/mainArch.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file /home/mathias/Projects/WolfCoreOne/logic/src/outputDataMux.vhd
     Info (12022): Found design unit 1: outputDataMux-default File: /home/mathias/Projects/WolfCoreOne/logic/src/outputDataMux.vhd Line: 16
     Info (12023): Found entity 1: outputDataMux File: /home/mathias/Projects/WolfCoreOne/logic/src/outputDataMux.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file /home/mathias/Projects/WolfCoreOne/logic/src/wolfcore.vhd
-    Info (12022): Found design unit 1: wolfcore-default File: /home/mathias/Projects/WolfCoreOne/logic/src/wolfcore.vhd Line: 22
-    Info (12023): Found entity 1: wolfcore File: /home/mathias/Projects/WolfCoreOne/logic/src/wolfcore.vhd Line: 5
+    Info (12022): Found design unit 1: wolfcore-default File: /home/mathias/Projects/WolfCoreOne/logic/src/wolfcore.vhd Line: 24
+    Info (12023): Found entity 1: wolfcore File: /home/mathias/Projects/WolfCoreOne/logic/src/wolfcore.vhd Line: 7
 Info (12021): Found 2 design units, including 1 entities, in source file /home/mathias/Projects/WolfCoreOne/logic/src/progMem.vhd
     Info (12022): Found design unit 1: progMem-default File: /home/mathias/Projects/WolfCoreOne/logic/src/progMem.vhd Line: 13
     Info (12023): Found entity 1: progMem File: /home/mathias/Projects/WolfCoreOne/logic/src/progMem.vhd Line: 5
@@ -1370,10 +1372,10 @@ Info (12133): Instantiated megafunction "mainPLL:PLL|mainPLL_0002:mainpll_inst|a
     Info (12134): Parameter "duty_cycle17" = "50"
     Info (12134): Parameter "pll_type" = "General"
     Info (12134): Parameter "pll_subtype" = "General"
-Info (12128): Elaborating entity "wolfcore" for hierarchy "wolfcore:CPU" File: /home/mathias/Projects/WolfCoreOne/logic/quartus_prj/DE0_NANO_SOC_Default.v Line: 141
-Warning (10036): Verilog HDL or VHDL warning at wolfcore.vhd(40): object "shadowPC_FA" assigned a value but never read File: /home/mathias/Projects/WolfCoreOne/logic/src/wolfcore.vhd Line: 40
-Warning (10873): Using initial value X (don't care) for net "shadowPC_FB" at wolfcore.vhd(41) File: /home/mathias/Projects/WolfCoreOne/logic/src/wolfcore.vhd Line: 41
-Info (12128): Elaborating entity "ALU" for hierarchy "wolfcore:CPU|ALU:mainALU" File: /home/mathias/Projects/WolfCoreOne/logic/src/wolfcore.vhd Line: 62
+Info (12128): Elaborating entity "wolfcore" for hierarchy "wolfcore:CPU" File: /home/mathias/Projects/WolfCoreOne/logic/quartus_prj/DE0_NANO_SOC_Default.v Line: 139
+Warning (10036): Verilog HDL or VHDL warning at wolfcore.vhd(42): object "shadowPC_FA" assigned a value but never read File: /home/mathias/Projects/WolfCoreOne/logic/src/wolfcore.vhd Line: 42
+Warning (10873): Using initial value X (don't care) for net "shadowPC_FB" at wolfcore.vhd(43) File: /home/mathias/Projects/WolfCoreOne/logic/src/wolfcore.vhd Line: 43
+Info (12128): Elaborating entity "ALU" for hierarchy "wolfcore:CPU|ALU:mainALU" File: /home/mathias/Projects/WolfCoreOne/logic/src/wolfcore.vhd Line: 64
 Warning (10631): VHDL Process Statement warning at alu.vhd(34): inferring latch(es) for signal or variable "resTmp", which holds its previous value in one or more paths through the process File: /home/mathias/Projects/WolfCoreOne/logic/src/alu.vhd Line: 34
 Info (10041): Inferred latch for "resTmp[0]" at alu.vhd(34) File: /home/mathias/Projects/WolfCoreOne/logic/src/alu.vhd Line: 34
 Info (10041): Inferred latch for "resTmp[1]" at alu.vhd(34) File: /home/mathias/Projects/WolfCoreOne/logic/src/alu.vhd Line: 34
@@ -1408,10 +1410,10 @@ Info (10041): Inferred latch for "resTmp[29]" at alu.vhd(34) File: /home/mathias
 Info (10041): Inferred latch for "resTmp[30]" at alu.vhd(34) File: /home/mathias/Projects/WolfCoreOne/logic/src/alu.vhd Line: 34
 Info (10041): Inferred latch for "resTmp[31]" at alu.vhd(34) File: /home/mathias/Projects/WolfCoreOne/logic/src/alu.vhd Line: 34
 Info (10041): Inferred latch for "resTmp[32]" at alu.vhd(34) File: /home/mathias/Projects/WolfCoreOne/logic/src/alu.vhd Line: 34
-Info (12128): Elaborating entity "flowController" for hierarchy "flowController:instrCtrl" File: /home/mathias/Projects/WolfCoreOne/logic/quartus_prj/DE0_NANO_SOC_Default.v Line: 159
+Info (12128): Elaborating entity "flowController" for hierarchy "flowController:instrCtrl" File: /home/mathias/Projects/WolfCoreOne/logic/quartus_prj/DE0_NANO_SOC_Default.v Line: 157
 Warning (10036): Verilog HDL or VHDL warning at flowController.vhd(55): object "flushFlag" assigned a value but never read File: /home/mathias/Projects/WolfCoreOne/logic/src/flowController.vhd Line: 55
-Info (12128): Elaborating entity "progMem" for hierarchy "progMem:instrCache" File: /home/mathias/Projects/WolfCoreOne/logic/quartus_prj/DE0_NANO_SOC_Default.v Line: 165
-Info (12128): Elaborating entity "mmu" for hierarchy "mmu:dataCache" File: /home/mathias/Projects/WolfCoreOne/logic/quartus_prj/DE0_NANO_SOC_Default.v Line: 174
+Info (12128): Elaborating entity "progMem" for hierarchy "progMem:instrCache" File: /home/mathias/Projects/WolfCoreOne/logic/quartus_prj/DE0_NANO_SOC_Default.v Line: 163
+Info (12128): Elaborating entity "mmu" for hierarchy "mmu:dataCache" File: /home/mathias/Projects/WolfCoreOne/logic/quartus_prj/DE0_NANO_SOC_Default.v Line: 172
 Info (12128): Elaborating entity "data_cache" for hierarchy "mmu:dataCache|data_cache:data_cache_instance" File: /home/mathias/Projects/WolfCoreOne/logic/src/mmu.vhd Line: 35
 Info (12128): Elaborating entity "altsyncram" for hierarchy "mmu:dataCache|data_cache:data_cache_instance|altsyncram:altsyncram_component" File: /home/mathias/Projects/WolfCoreOne/logic/quartus_prj/data_cache.vhd Line: 63
 Info (12130): Elaborated megafunction instantiation "mmu:dataCache|data_cache:data_cache_instance|altsyncram:altsyncram_component" File: /home/mathias/Projects/WolfCoreOne/logic/quartus_prj/data_cache.vhd Line: 63
@@ -1478,14 +1480,8 @@ Info (12128): Elaborating entity "decode_u0a" for hierarchy "mmu:dataCache|data_
 Info (12021): Found 1 design units, including 1 entities, in source file db/mux_2hb.tdf
     Info (12023): Found entity 1: mux_2hb File: /home/mathias/Projects/WolfCoreOne/logic/quartus_prj/db/mux_2hb.tdf Line: 23
 Info (12128): Elaborating entity "mux_2hb" for hierarchy "mmu:dataCache|data_cache:data_cache_instance|altsyncram:altsyncram_component|altsyncram_u5v3:auto_generated|mux_2hb:mux3" File: /home/mathias/Projects/WolfCoreOne/logic/quartus_prj/db/altsyncram_u5v3.tdf Line: 48
-Info (12128): Elaborating entity "outputDataMux" for hierarchy "outputDataMux:dataMux" File: /home/mathias/Projects/WolfCoreOne/logic/quartus_prj/DE0_NANO_SOC_Default.v Line: 181
+Info (12128): Elaborating entity "outputDataMux" for hierarchy "outputDataMux:dataMux" File: /home/mathias/Projects/WolfCoreOne/logic/quartus_prj/DE0_NANO_SOC_Default.v Line: 179
 Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
-Warning (13034): The following nodes have both tri-state and non-tri-state drivers
-    Warning (13035): Inserted always-enabled tri-state buffer between "GPIO_0[0]" and its non-tri-state driver. File: /home/mathias/Projects/WolfCoreOne/logic/quartus_prj/DE0_NANO_SOC_Default.v Line: 81
-Warning (13027): Removed fan-outs from the following always-disabled I/O buffers
-    Warning (13028): Removed fan-out from the always-disabled I/O buffer "GPIO_0[0]" to the node "GPIO_0[0]" File: /home/mathias/Projects/WolfCoreOne/logic/quartus_prj/DE0_NANO_SOC_Default.v Line: 81
-Warning (13009): TRI or OPNDRN buffers permanently enabled
-    Warning (13010): Node "GPIO_0[0]~synth" File: /home/mathias/Projects/WolfCoreOne/logic/quartus_prj/DE0_NANO_SOC_Default.v Line: 81
 Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "ADC_CONVST" is stuck at GND File: /home/mathias/Projects/WolfCoreOne/logic/quartus_prj/DE0_NANO_SOC_Default.v Line: 10
     Warning (13410): Pin "ADC_SCK" is stuck at GND File: /home/mathias/Projects/WolfCoreOne/logic/quartus_prj/DE0_NANO_SOC_Default.v Line: 11
@@ -1502,18 +1498,18 @@ Warning (21074): Design contains 6 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "SW[0]" File: /home/mathias/Projects/WolfCoreOne/logic/quartus_prj/DE0_NANO_SOC_Default.v Line: 78
     Warning (15610): No output dependent on input pin "SW[1]" File: /home/mathias/Projects/WolfCoreOne/logic/quartus_prj/DE0_NANO_SOC_Default.v Line: 78
     Warning (15610): No output dependent on input pin "SW[3]" File: /home/mathias/Projects/WolfCoreOne/logic/quartus_prj/DE0_NANO_SOC_Default.v Line: 78
-Info (21057): Implemented 3430 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 3429 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 10 input pins
     Info (21059): Implemented 11 output pins
     Info (21060): Implemented 72 bidirectional pins
-    Info (21061): Implemented 3272 logic cells
+    Info (21061): Implemented 3271 logic cells
     Info (21064): Implemented 64 RAM segments
     Info (21065): Implemented 1 PLLs
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 29 warnings
-    Info: Peak virtual memory: 1448 megabytes
-    Info: Processing ended: Sun Mar 12 17:33:56 2017
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 23 warnings
+    Info: Peak virtual memory: 1431 megabytes
+    Info: Processing ended: Mon Mar 13 17:09:16 2017
     Info: Elapsed time: 00:00:17
-    Info: Total CPU time (on all processors): 00:00:35
+    Info: Total CPU time (on all processors): 00:00:36
 
 
 +------------------------------------------+

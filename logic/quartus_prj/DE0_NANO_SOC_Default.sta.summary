@@ -3,24 +3,24 @@ TimeQuest Timing Analyzer Summary
 ------------------------------------------------------------
 
 Type  : Slow 1100mV 85C Model Setup 'wolfcore:CPU|instrWriteBack[10]'
-Slack : -10.513
-TNS   : -273.488
+Slack : -9.751
+TNS   : -248.964
 
 Type  : Slow 1100mV 85C Model Setup 'PLL|mainpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk'
-Slack : -7.441
-TNS   : -2712.476
+Slack : -7.669
+TNS   : -1530.321
 
 Type  : Slow 1100mV 85C Model Hold 'PLL|mainpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk'
-Slack : -5.090
-TNS   : -1171.772
+Slack : 0.213
+TNS   : 0.000
 
 Type  : Slow 1100mV 85C Model Hold 'wolfcore:CPU|instrWriteBack[10]'
-Slack : 1.837
+Slack : 4.196
 TNS   : 0.000
 
 Type  : Slow 1100mV 85C Model Minimum Pulse Width 'wolfcore:CPU|instrWriteBack[10]'
-Slack : -0.034
-TNS   : -0.034
+Slack : 0.235
+TNS   : 0.000
 
 Type  : Slow 1100mV 85C Model Minimum Pulse Width 'PLL|mainpll_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0]'
 Slack : 1.240
@@ -31,27 +31,27 @@ Slack : 9.670
 TNS   : 0.000
 
 Type  : Slow 1100mV 85C Model Minimum Pulse Width 'PLL|mainpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk'
-Slack : 433.159
+Slack : 432.771
 TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Setup 'wolfcore:CPU|instrWriteBack[10]'
-Slack : -10.508
-TNS   : -272.599
+Slack : -9.668
+TNS   : -250.041
 
 Type  : Slow 1100mV 0C Model Setup 'PLL|mainpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk'
-Slack : -6.945
-TNS   : -2505.054
+Slack : -7.143
+TNS   : -1414.641
 
 Type  : Slow 1100mV 0C Model Hold 'PLL|mainpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk'
-Slack : -5.066
-TNS   : -1225.176
+Slack : 0.269
+TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Hold 'wolfcore:CPU|instrWriteBack[10]'
-Slack : 1.847
+Slack : 4.178
 TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Minimum Pulse Width 'wolfcore:CPU|instrWriteBack[10]'
-Slack : 0.030
+Slack : 0.217
 TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Minimum Pulse Width 'PLL|mainpll_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0]'
@@ -63,27 +63,27 @@ Slack : 9.673
 TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Minimum Pulse Width 'PLL|mainpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk'
-Slack : 433.157
+Slack : 432.738
 TNS   : 0.000
 
-Type  : Fast 1100mV 85C Model Setup 'wolfcore:CPU|instrWriteBack[10]'
-Slack : -5.571
-TNS   : -142.172
-
 Type  : Fast 1100mV 85C Model Setup 'PLL|mainpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk'
-Slack : -5.460
-TNS   : -2015.396
+Slack : -5.891
+TNS   : -1164.345
+
+Type  : Fast 1100mV 85C Model Setup 'wolfcore:CPU|instrWriteBack[10]'
+Slack : -5.355
+TNS   : -124.049
 
 Type  : Fast 1100mV 85C Model Hold 'PLL|mainpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk'
-Slack : -2.655
-TNS   : -479.632
+Slack : 0.138
+TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Hold 'wolfcore:CPU|instrWriteBack[10]'
-Slack : 1.161
+Slack : 2.344
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Minimum Pulse Width 'wolfcore:CPU|instrWriteBack[10]'
-Slack : 0.008
+Slack : 0.250
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Minimum Pulse Width 'PLL|mainpll_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0]'
@@ -95,27 +95,27 @@ Slack : 9.336
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Minimum Pulse Width 'PLL|mainpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk'
-Slack : 433.537
+Slack : 432.890
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Setup 'wolfcore:CPU|instrWriteBack[10]'
-Slack : -5.217
-TNS   : -134.455
+Slack : -4.980
+TNS   : -118.564
 
 Type  : Fast 1100mV 0C Model Setup 'PLL|mainpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk'
-Slack : -4.410
-TNS   : -1593.045
+Slack : -4.808
+TNS   : -930.811
 
 Type  : Fast 1100mV 0C Model Hold 'PLL|mainpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk'
-Slack : -2.601
-TNS   : -525.479
+Slack : 0.142
+TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Hold 'wolfcore:CPU|instrWriteBack[10]'
-Slack : 1.060
+Slack : 2.303
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Minimum Pulse Width 'wolfcore:CPU|instrWriteBack[10]'
-Slack : 0.128
+Slack : 0.282
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Minimum Pulse Width 'PLL|mainpll_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0]'
@@ -127,7 +127,7 @@ Slack : 9.286
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Minimum Pulse Width 'PLL|mainpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk'
-Slack : 433.543
+Slack : 432.893
 TNS   : 0.000
 
 ------------------------------------------------------------

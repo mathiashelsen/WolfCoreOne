@@ -123,8 +123,6 @@ assign rst = KEY[0];
 
 assign LED = CPU_StatusBus[7:0];
 
-assign GPIO_0[0] = dataOutDataCache[0];
-
 wolfcore CPU(
 	.dataOutput(cpuDataOut),
 	.dataInput(cpuDataIn),

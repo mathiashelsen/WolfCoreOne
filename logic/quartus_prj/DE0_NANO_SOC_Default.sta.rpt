@@ -1,5 +1,5 @@
 TimeQuest Timing Analyzer report for DE0_NANO_SOC_Default
-Sun Mar 12 17:17:11 2017
+Sun Mar 12 17:39:26 2017
 Quartus Prime Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
 
 
@@ -100,14 +100,14 @@ agreement for further details.
 ; Number detected on machine ; 8           ;
 ; Maximum allowed            ; 4           ;
 ;                            ;             ;
-; Average used               ; 1.10        ;
+; Average used               ; 1.90        ;
 ; Maximum used               ; 4           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   3.7%      ;
-;     Processor 3            ;   3.1%      ;
-;     Processor 4            ;   2.7%      ;
+;     Processor 2            ;  30.1%      ;
+;     Processor 3            ;  29.9%      ;
+;     Processor 4            ;  29.7%      ;
 +----------------------------+-------------+
 
 
@@ -123,14 +123,13 @@ agreement for further details.
 +-------------------------------------------------------------------------+-----------+---------+------------+-------+---------+------------+-----------+-------------+-------+--------+-----------+------------+----------+-----------------------------------------------------------------------+----------------------------------------------------------------------------+-----------------------------------------------------------------------------+
 
 
-+---------------------------------------------------------------------------------------------------------------+
-; Slow 1100mV 85C Model Fmax Summary                                                                            ;
-+------------+-----------------+-------------------------------------------------------------------------+------+
-; Fmax       ; Restricted Fmax ; Clock Name                                                              ; Note ;
-+------------+-----------------+-------------------------------------------------------------------------+------+
-; 61.64 MHz  ; 61.64 MHz       ; PLL|mainpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;      ;
-; 115.71 MHz ; 115.71 MHz      ; wolfcore:CPU|instrWriteBack[10]                                         ;      ;
-+------------+-----------------+-------------------------------------------------------------------------+------+
++--------------------------------------------------------------------------------------------------------------+
+; Slow 1100mV 85C Model Fmax Summary                                                                           ;
++-----------+-----------------+-------------------------------------------------------------------------+------+
+; Fmax      ; Restricted Fmax ; Clock Name                                                              ; Note ;
++-----------+-----------------+-------------------------------------------------------------------------+------+
+; 52.14 MHz ; 52.14 MHz       ; PLL|mainpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;      ;
++-----------+-----------------+-------------------------------------------------------------------------+------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
 
@@ -140,24 +139,24 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 HTML report is unavailable in plain text report export.
 
 
-+---------------------------------------------------------------------------------------------------+
-; Slow 1100mV 85C Model Setup Summary                                                               ;
-+-------------------------------------------------------------------------+---------+---------------+
-; Clock                                                                   ; Slack   ; End Point TNS ;
-+-------------------------------------------------------------------------+---------+---------------+
-; wolfcore:CPU|instrWriteBack[10]                                         ; -10.513 ; -273.488      ;
-; PLL|mainpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; -7.441  ; -2712.476     ;
-+-------------------------------------------------------------------------+---------+---------------+
-
-
 +--------------------------------------------------------------------------------------------------+
-; Slow 1100mV 85C Model Hold Summary                                                               ;
+; Slow 1100mV 85C Model Setup Summary                                                              ;
 +-------------------------------------------------------------------------+--------+---------------+
 ; Clock                                                                   ; Slack  ; End Point TNS ;
 +-------------------------------------------------------------------------+--------+---------------+
-; PLL|mainpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; -5.090 ; -1171.772     ;
-; wolfcore:CPU|instrWriteBack[10]                                         ; 1.837  ; 0.000         ;
+; wolfcore:CPU|instrWriteBack[10]                                         ; -9.751 ; -248.964      ;
+; PLL|mainpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; -7.669 ; -1530.321     ;
 +-------------------------------------------------------------------------+--------+---------------+
+
+
++-------------------------------------------------------------------------------------------------+
+; Slow 1100mV 85C Model Hold Summary                                                              ;
++-------------------------------------------------------------------------+-------+---------------+
+; Clock                                                                   ; Slack ; End Point TNS ;
++-------------------------------------------------------------------------+-------+---------------+
+; PLL|mainpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 0.213 ; 0.000         ;
+; wolfcore:CPU|instrWriteBack[10]                                         ; 4.196 ; 0.000         ;
++-------------------------------------------------------------------------+-------+---------------+
 
 
 ------------------------------------------
@@ -177,10 +176,10 @@ No paths to report.
 +-------------------------------------------------------------------------+---------+---------------+
 ; Clock                                                                   ; Slack   ; End Point TNS ;
 +-------------------------------------------------------------------------+---------+---------------+
-; wolfcore:CPU|instrWriteBack[10]                                         ; -0.034  ; -0.034        ;
+; wolfcore:CPU|instrWriteBack[10]                                         ; 0.235   ; 0.000         ;
 ; PLL|mainpll_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0]   ; 1.240   ; 0.000         ;
 ; FPGA_CLK1_50                                                            ; 9.670   ; 0.000         ;
-; PLL|mainpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 433.159 ; 0.000         ;
+; PLL|mainpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 432.771 ; 0.000         ;
 +-------------------------------------------------------------------------+---------+---------------+
 
 
@@ -190,35 +189,34 @@ No paths to report.
 No synchronizer chains to report.
 
 
-+---------------------------------------------------------------------------------------------------------------+
-; Slow 1100mV 0C Model Fmax Summary                                                                             ;
-+------------+-----------------+-------------------------------------------------------------------------+------+
-; Fmax       ; Restricted Fmax ; Clock Name                                                              ; Note ;
-+------------+-----------------+-------------------------------------------------------------------------+------+
-; 63.54 MHz  ; 63.54 MHz       ; PLL|mainpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;      ;
-; 117.23 MHz ; 117.23 MHz      ; wolfcore:CPU|instrWriteBack[10]                                         ;      ;
-+------------+-----------------+-------------------------------------------------------------------------+------+
++--------------------------------------------------------------------------------------------------------------+
+; Slow 1100mV 0C Model Fmax Summary                                                                            ;
++-----------+-----------------+-------------------------------------------------------------------------+------+
+; Fmax      ; Restricted Fmax ; Clock Name                                                              ; Note ;
++-----------+-----------------+-------------------------------------------------------------------------+------+
+; 53.93 MHz ; 53.93 MHz       ; PLL|mainpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;      ;
++-----------+-----------------+-------------------------------------------------------------------------+------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
 
-+---------------------------------------------------------------------------------------------------+
-; Slow 1100mV 0C Model Setup Summary                                                                ;
-+-------------------------------------------------------------------------+---------+---------------+
-; Clock                                                                   ; Slack   ; End Point TNS ;
-+-------------------------------------------------------------------------+---------+---------------+
-; wolfcore:CPU|instrWriteBack[10]                                         ; -10.508 ; -272.599      ;
-; PLL|mainpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; -6.945  ; -2505.054     ;
-+-------------------------------------------------------------------------+---------+---------------+
-
-
 +--------------------------------------------------------------------------------------------------+
-; Slow 1100mV 0C Model Hold Summary                                                                ;
+; Slow 1100mV 0C Model Setup Summary                                                               ;
 +-------------------------------------------------------------------------+--------+---------------+
 ; Clock                                                                   ; Slack  ; End Point TNS ;
 +-------------------------------------------------------------------------+--------+---------------+
-; PLL|mainpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; -5.066 ; -1225.176     ;
-; wolfcore:CPU|instrWriteBack[10]                                         ; 1.847  ; 0.000         ;
+; wolfcore:CPU|instrWriteBack[10]                                         ; -9.668 ; -250.041      ;
+; PLL|mainpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; -7.143 ; -1414.641     ;
 +-------------------------------------------------------------------------+--------+---------------+
+
+
++-------------------------------------------------------------------------------------------------+
+; Slow 1100mV 0C Model Hold Summary                                                               ;
++-------------------------------------------------------------------------+-------+---------------+
+; Clock                                                                   ; Slack ; End Point TNS ;
++-------------------------------------------------------------------------+-------+---------------+
+; PLL|mainpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 0.269 ; 0.000         ;
+; wolfcore:CPU|instrWriteBack[10]                                         ; 4.178 ; 0.000         ;
++-------------------------------------------------------------------------+-------+---------------+
 
 
 -----------------------------------------
@@ -238,10 +236,10 @@ No paths to report.
 +-------------------------------------------------------------------------+---------+---------------+
 ; Clock                                                                   ; Slack   ; End Point TNS ;
 +-------------------------------------------------------------------------+---------+---------------+
-; wolfcore:CPU|instrWriteBack[10]                                         ; 0.030   ; 0.000         ;
+; wolfcore:CPU|instrWriteBack[10]                                         ; 0.217   ; 0.000         ;
 ; PLL|mainpll_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0]   ; 1.240   ; 0.000         ;
 ; FPGA_CLK1_50                                                            ; 9.673   ; 0.000         ;
-; PLL|mainpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 433.157 ; 0.000         ;
+; PLL|mainpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 432.738 ; 0.000         ;
 +-------------------------------------------------------------------------+---------+---------------+
 
 
@@ -256,19 +254,19 @@ No synchronizer chains to report.
 +-------------------------------------------------------------------------+--------+---------------+
 ; Clock                                                                   ; Slack  ; End Point TNS ;
 +-------------------------------------------------------------------------+--------+---------------+
-; wolfcore:CPU|instrWriteBack[10]                                         ; -5.571 ; -142.172      ;
-; PLL|mainpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; -5.460 ; -2015.396     ;
+; PLL|mainpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; -5.891 ; -1164.345     ;
+; wolfcore:CPU|instrWriteBack[10]                                         ; -5.355 ; -124.049      ;
 +-------------------------------------------------------------------------+--------+---------------+
 
 
-+--------------------------------------------------------------------------------------------------+
-; Fast 1100mV 85C Model Hold Summary                                                               ;
-+-------------------------------------------------------------------------+--------+---------------+
-; Clock                                                                   ; Slack  ; End Point TNS ;
-+-------------------------------------------------------------------------+--------+---------------+
-; PLL|mainpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; -2.655 ; -479.632      ;
-; wolfcore:CPU|instrWriteBack[10]                                         ; 1.161  ; 0.000         ;
-+-------------------------------------------------------------------------+--------+---------------+
++-------------------------------------------------------------------------------------------------+
+; Fast 1100mV 85C Model Hold Summary                                                              ;
++-------------------------------------------------------------------------+-------+---------------+
+; Clock                                                                   ; Slack ; End Point TNS ;
++-------------------------------------------------------------------------+-------+---------------+
+; PLL|mainpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 0.138 ; 0.000         ;
+; wolfcore:CPU|instrWriteBack[10]                                         ; 2.344 ; 0.000         ;
++-------------------------------------------------------------------------+-------+---------------+
 
 
 ------------------------------------------
@@ -288,10 +286,10 @@ No paths to report.
 +-------------------------------------------------------------------------+---------+---------------+
 ; Clock                                                                   ; Slack   ; End Point TNS ;
 +-------------------------------------------------------------------------+---------+---------------+
-; wolfcore:CPU|instrWriteBack[10]                                         ; 0.008   ; 0.000         ;
+; wolfcore:CPU|instrWriteBack[10]                                         ; 0.250   ; 0.000         ;
 ; PLL|mainpll_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0]   ; 1.240   ; 0.000         ;
 ; FPGA_CLK1_50                                                            ; 9.336   ; 0.000         ;
-; PLL|mainpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 433.537 ; 0.000         ;
+; PLL|mainpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 432.890 ; 0.000         ;
 +-------------------------------------------------------------------------+---------+---------------+
 
 
@@ -306,19 +304,19 @@ No synchronizer chains to report.
 +-------------------------------------------------------------------------+--------+---------------+
 ; Clock                                                                   ; Slack  ; End Point TNS ;
 +-------------------------------------------------------------------------+--------+---------------+
-; wolfcore:CPU|instrWriteBack[10]                                         ; -5.217 ; -134.455      ;
-; PLL|mainpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; -4.410 ; -1593.045     ;
+; wolfcore:CPU|instrWriteBack[10]                                         ; -4.980 ; -118.564      ;
+; PLL|mainpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; -4.808 ; -930.811      ;
 +-------------------------------------------------------------------------+--------+---------------+
 
 
-+--------------------------------------------------------------------------------------------------+
-; Fast 1100mV 0C Model Hold Summary                                                                ;
-+-------------------------------------------------------------------------+--------+---------------+
-; Clock                                                                   ; Slack  ; End Point TNS ;
-+-------------------------------------------------------------------------+--------+---------------+
-; PLL|mainpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; -2.601 ; -525.479      ;
-; wolfcore:CPU|instrWriteBack[10]                                         ; 1.060  ; 0.000         ;
-+-------------------------------------------------------------------------+--------+---------------+
++-------------------------------------------------------------------------------------------------+
+; Fast 1100mV 0C Model Hold Summary                                                               ;
++-------------------------------------------------------------------------+-------+---------------+
+; Clock                                                                   ; Slack ; End Point TNS ;
++-------------------------------------------------------------------------+-------+---------------+
+; PLL|mainpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 0.142 ; 0.000         ;
+; wolfcore:CPU|instrWriteBack[10]                                         ; 2.303 ; 0.000         ;
++-------------------------------------------------------------------------+-------+---------------+
 
 
 -----------------------------------------
@@ -338,10 +336,10 @@ No paths to report.
 +-------------------------------------------------------------------------+---------+---------------+
 ; Clock                                                                   ; Slack   ; End Point TNS ;
 +-------------------------------------------------------------------------+---------+---------------+
-; wolfcore:CPU|instrWriteBack[10]                                         ; 0.128   ; 0.000         ;
+; wolfcore:CPU|instrWriteBack[10]                                         ; 0.282   ; 0.000         ;
 ; PLL|mainpll_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0]   ; 1.240   ; 0.000         ;
 ; FPGA_CLK1_50                                                            ; 9.286   ; 0.000         ;
-; PLL|mainpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 433.543 ; 0.000         ;
+; PLL|mainpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 432.893 ; 0.000         ;
 +-------------------------------------------------------------------------+---------+---------------+
 
 
@@ -351,22 +349,22 @@ No paths to report.
 No synchronizer chains to report.
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------+
-; Multicorner Timing Analysis Summary                                                                                                         ;
-+--------------------------------------------------------------------------+-----------+-----------+----------+---------+---------------------+
-; Clock                                                                    ; Setup     ; Hold      ; Recovery ; Removal ; Minimum Pulse Width ;
-+--------------------------------------------------------------------------+-----------+-----------+----------+---------+---------------------+
-; Worst-case Slack                                                         ; -10.513   ; -5.090    ; N/A      ; N/A     ; -0.034              ;
-;  FPGA_CLK1_50                                                            ; N/A       ; N/A       ; N/A      ; N/A     ; 9.286               ;
-;  PLL|mainpll_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0]   ; N/A       ; N/A       ; N/A      ; N/A     ; 1.240               ;
-;  PLL|mainpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; -7.441    ; -5.090    ; N/A      ; N/A     ; 433.157             ;
-;  wolfcore:CPU|instrWriteBack[10]                                         ; -10.513   ; 1.060     ; N/A      ; N/A     ; -0.034              ;
-; Design-wide TNS                                                          ; -2985.964 ; -1225.176 ; 0.0      ; 0.0     ; -0.034              ;
-;  FPGA_CLK1_50                                                            ; N/A       ; N/A       ; N/A      ; N/A     ; 0.000               ;
-;  PLL|mainpll_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0]   ; N/A       ; N/A       ; N/A      ; N/A     ; 0.000               ;
-;  PLL|mainpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; -2712.476 ; -1225.176 ; N/A      ; N/A     ; 0.000               ;
-;  wolfcore:CPU|instrWriteBack[10]                                         ; -273.488  ; 0.000     ; N/A      ; N/A     ; -0.034              ;
-+--------------------------------------------------------------------------+-----------+-----------+----------+---------+---------------------+
++-----------------------------------------------------------------------------------------------------------------------------------------+
+; Multicorner Timing Analysis Summary                                                                                                     ;
++--------------------------------------------------------------------------+-----------+-------+----------+---------+---------------------+
+; Clock                                                                    ; Setup     ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
++--------------------------------------------------------------------------+-----------+-------+----------+---------+---------------------+
+; Worst-case Slack                                                         ; -9.751    ; 0.138 ; N/A      ; N/A     ; 0.217               ;
+;  FPGA_CLK1_50                                                            ; N/A       ; N/A   ; N/A      ; N/A     ; 9.286               ;
+;  PLL|mainpll_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0]   ; N/A       ; N/A   ; N/A      ; N/A     ; 1.240               ;
+;  PLL|mainpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; -7.669    ; 0.138 ; N/A      ; N/A     ; 432.738             ;
+;  wolfcore:CPU|instrWriteBack[10]                                         ; -9.751    ; 2.303 ; N/A      ; N/A     ; 0.217               ;
+; Design-wide TNS                                                          ; -1779.285 ; 0.0   ; 0.0      ; 0.0     ; 0.0                 ;
+;  FPGA_CLK1_50                                                            ; N/A       ; N/A   ; N/A      ; N/A     ; 0.000               ;
+;  PLL|mainpll_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0]   ; N/A       ; N/A   ; N/A      ; N/A     ; 0.000               ;
+;  PLL|mainpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; -1530.321 ; 0.000 ; N/A      ; N/A     ; 0.000               ;
+;  wolfcore:CPU|instrWriteBack[10]                                         ; -250.041  ; 0.000 ; N/A      ; N/A     ; 0.000               ;
++--------------------------------------------------------------------------+-----------+-------+----------+---------+---------------------+
 
 
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -919,10 +917,9 @@ No synchronizer chains to report.
 +-------------------------------------------------------------------------+-------------------------------------------------------------------------+----------+----------+----------+----------+
 ; From Clock                                                              ; To Clock                                                                ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
 +-------------------------------------------------------------------------+-------------------------------------------------------------------------+----------+----------+----------+----------+
-; PLL|mainpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; PLL|mainpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 75306    ; 136      ; 3991     ; 1        ;
-; wolfcore:CPU|instrWriteBack[10]                                         ; PLL|mainpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 4354     ; 4900     ; 0        ; 0        ;
-; PLL|mainpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; wolfcore:CPU|instrWriteBack[10]                                         ; 0        ; 0        ; 2314     ; 0        ;
-; wolfcore:CPU|instrWriteBack[10]                                         ; wolfcore:CPU|instrWriteBack[10]                                         ; 0        ; 0        ; 2        ; 2        ;
+; PLL|mainpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; PLL|mainpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 17726    ; 450      ; 35400    ; 2053     ;
+; wolfcore:CPU|instrWriteBack[10]                                         ; PLL|mainpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 256      ; 512      ; 0        ; 0        ;
+; PLL|mainpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; wolfcore:CPU|instrWriteBack[10]                                         ; 0        ; 0        ; 1056     ; 0        ;
 +-------------------------------------------------------------------------+-------------------------------------------------------------------------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
@@ -932,10 +929,9 @@ Entries labeled "false path" only account for clock-to-clock false paths and not
 +-------------------------------------------------------------------------+-------------------------------------------------------------------------+----------+----------+----------+----------+
 ; From Clock                                                              ; To Clock                                                                ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
 +-------------------------------------------------------------------------+-------------------------------------------------------------------------+----------+----------+----------+----------+
-; PLL|mainpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; PLL|mainpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 75306    ; 136      ; 3991     ; 1        ;
-; wolfcore:CPU|instrWriteBack[10]                                         ; PLL|mainpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 4354     ; 4900     ; 0        ; 0        ;
-; PLL|mainpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; wolfcore:CPU|instrWriteBack[10]                                         ; 0        ; 0        ; 2314     ; 0        ;
-; wolfcore:CPU|instrWriteBack[10]                                         ; wolfcore:CPU|instrWriteBack[10]                                         ; 0        ; 0        ; 2        ; 2        ;
+; PLL|mainpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; PLL|mainpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 17726    ; 450      ; 35400    ; 2053     ;
+; wolfcore:CPU|instrWriteBack[10]                                         ; PLL|mainpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 256      ; 512      ; 0        ; 0        ;
+; PLL|mainpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; wolfcore:CPU|instrWriteBack[10]                                         ; 0        ; 0        ; 1056     ; 0        ;
 +-------------------------------------------------------------------------+-------------------------------------------------------------------------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
@@ -960,7 +956,7 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 ; Illegal Clocks                  ; 0     ; 0    ;
 ; Unconstrained Clocks            ; 0     ; 0    ;
 ; Unconstrained Input Ports       ; 2     ; 2    ;
-; Unconstrained Input Port Paths  ; 1614  ; 1614 ;
+; Unconstrained Input Port Paths  ; 2390  ; 2390 ;
 ; Unconstrained Output Ports      ; 8     ; 8    ;
 ; Unconstrained Output Port Paths ; 8     ; 8    ;
 +---------------------------------+-------+------+
@@ -1036,13 +1032,14 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 Info: *******************************************************************
 Info: Running Quartus Prime TimeQuest Timing Analyzer
     Info: Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
-    Info: Processing started: Sun Mar 12 17:17:06 2017
+    Info: Processing started: Sun Mar 12 17:39:12 2017
 Info: Command: quartus_sta DE0_NANO_SOC_Default -c DE0_NANO_SOC_Default
 Info: qsta_default_script.tcl version: #1
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (21077): Low junction temperature is 0 degrees C
 Info (21077): High junction temperature is 85 degrees C
+Warning (335093): TimeQuest Timing Analyzer is analyzing 32 combinational loops as latches. For more details, run the Check Timing command in the TimeQuest Timing Analyzer or view the "User-Specified and Inferred Latches" table in the Analysis & Synthesis report.
 Critical Warning (332012): Synopsys Design Constraints File file not found: 'DE0_NANO_SOC_Default.SDC'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
 Info (332142): No user constrained generated clocks found in the design. Calling "derive_pll_clocks -create_base_clocks"
 Info (332110): Deriving PLL clocks
@@ -1053,7 +1050,6 @@ Info (332142): No user constrained base clocks found in the design. Calling "der
 Info (332105): Deriving Clocks
     Info (332105): create_clock -period 1.000 -name wolfcore:CPU|instrWriteBack[10] wolfcore:CPU|instrWriteBack[10]
 Info (332097): The following timing edges are non-unate.  TimeQuest will assume pos-unate behavior for these edges in the clock network.
-    Info (332098): Cell: CPU|mainALU|Mux1~0  from: datab  to: combout
     Info (332098): Cell: PLL|mainpll_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL  from: refclkin  to: fbclk
     Info (332098): Cell: PLL|mainpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER  from: vco0ph[0]  to: divclk
     Info (332098): Cell: PLL|mainpll_inst|altera_pll_i|general[0].gpll~PLL_REFCLK_SELECT  from: clkin[0]  to: clkout
@@ -1063,119 +1059,120 @@ Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
 Info: Analyzing Slow 1100mV 85C Model
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the TimeQuest Timing Analyzer.
-Info (332146): Worst-case setup slack is -10.513
+Info (332146): Worst-case setup slack is -9.751
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):   -10.513            -273.488 wolfcore:CPU|instrWriteBack[10] 
-    Info (332119):    -7.441           -2712.476 PLL|mainpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
-Info (332146): Worst-case hold slack is -5.090
+    Info (332119):    -9.751            -248.964 wolfcore:CPU|instrWriteBack[10] 
+    Info (332119):    -7.669           -1530.321 PLL|mainpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
+Info (332146): Worst-case hold slack is 0.213
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -5.090           -1171.772 PLL|mainpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
-    Info (332119):     1.837               0.000 wolfcore:CPU|instrWriteBack[10] 
+    Info (332119):     0.213               0.000 PLL|mainpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
+    Info (332119):     4.196               0.000 wolfcore:CPU|instrWriteBack[10] 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
-Info (332146): Worst-case minimum pulse width slack is -0.034
+Info (332146): Worst-case minimum pulse width slack is 0.235
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -0.034              -0.034 wolfcore:CPU|instrWriteBack[10] 
+    Info (332119):     0.235               0.000 wolfcore:CPU|instrWriteBack[10] 
     Info (332119):     1.240               0.000 PLL|mainpll_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0] 
     Info (332119):     9.670               0.000 FPGA_CLK1_50 
-    Info (332119):   433.159               0.000 PLL|mainpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
+    Info (332119):   432.771               0.000 PLL|mainpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
 Warning (18330): Ignoring Synchronizer Identification setting Off, and using Auto instead.
 Info: Analyzing Slow 1100mV 0C Model
+Info (334003): Started post-fitting delay annotation
+Info (334004): Delay annotation completed successfully
 Info (332097): The following timing edges are non-unate.  TimeQuest will assume pos-unate behavior for these edges in the clock network.
-    Info (332098): Cell: CPU|mainALU|Mux1~0  from: datab  to: combout
     Info (332098): Cell: PLL|mainpll_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL  from: refclkin  to: fbclk
     Info (332098): Cell: PLL|mainpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER  from: vco0ph[0]  to: divclk
     Info (332098): Cell: PLL|mainpll_inst|altera_pll_i|general[0].gpll~PLL_REFCLK_SELECT  from: clkin[0]  to: clkout
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the TimeQuest Timing Analyzer.
-Info (332146): Worst-case setup slack is -10.508
+Info (332146): Worst-case setup slack is -9.668
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):   -10.508            -272.599 wolfcore:CPU|instrWriteBack[10] 
-    Info (332119):    -6.945           -2505.054 PLL|mainpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
-Info (332146): Worst-case hold slack is -5.066
+    Info (332119):    -9.668            -250.041 wolfcore:CPU|instrWriteBack[10] 
+    Info (332119):    -7.143           -1414.641 PLL|mainpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
+Info (332146): Worst-case hold slack is 0.269
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -5.066           -1225.176 PLL|mainpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
-    Info (332119):     1.847               0.000 wolfcore:CPU|instrWriteBack[10] 
+    Info (332119):     0.269               0.000 PLL|mainpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
+    Info (332119):     4.178               0.000 wolfcore:CPU|instrWriteBack[10] 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
-Info (332146): Worst-case minimum pulse width slack is 0.030
+Info (332146): Worst-case minimum pulse width slack is 0.217
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.030               0.000 wolfcore:CPU|instrWriteBack[10] 
+    Info (332119):     0.217               0.000 wolfcore:CPU|instrWriteBack[10] 
     Info (332119):     1.240               0.000 PLL|mainpll_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0] 
     Info (332119):     9.673               0.000 FPGA_CLK1_50 
-    Info (332119):   433.157               0.000 PLL|mainpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
+    Info (332119):   432.738               0.000 PLL|mainpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
 Warning (18330): Ignoring Synchronizer Identification setting Off, and using Auto instead.
 Info: Analyzing Fast 1100mV 85C Model
+Info (334003): Started post-fitting delay annotation
+Info (334004): Delay annotation completed successfully
 Info (332097): The following timing edges are non-unate.  TimeQuest will assume pos-unate behavior for these edges in the clock network.
-    Info (332098): Cell: CPU|mainALU|Mux1~0  from: datab  to: combout
     Info (332098): Cell: PLL|mainpll_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL  from: refclkin  to: fbclk
     Info (332098): Cell: PLL|mainpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER  from: vco0ph[0]  to: divclk
     Info (332098): Cell: PLL|mainpll_inst|altera_pll_i|general[0].gpll~PLL_REFCLK_SELECT  from: clkin[0]  to: clkout
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the TimeQuest Timing Analyzer.
-Info (332146): Worst-case setup slack is -5.571
+Info (332146): Worst-case setup slack is -5.891
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -5.571            -142.172 wolfcore:CPU|instrWriteBack[10] 
-    Info (332119):    -5.460           -2015.396 PLL|mainpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
-Info (332146): Worst-case hold slack is -2.655
+    Info (332119):    -5.891           -1164.345 PLL|mainpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
+    Info (332119):    -5.355            -124.049 wolfcore:CPU|instrWriteBack[10] 
+Info (332146): Worst-case hold slack is 0.138
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -2.655            -479.632 PLL|mainpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
-    Info (332119):     1.161               0.000 wolfcore:CPU|instrWriteBack[10] 
+    Info (332119):     0.138               0.000 PLL|mainpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
+    Info (332119):     2.344               0.000 wolfcore:CPU|instrWriteBack[10] 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
-Info (332146): Worst-case minimum pulse width slack is 0.008
+Info (332146): Worst-case minimum pulse width slack is 0.250
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.008               0.000 wolfcore:CPU|instrWriteBack[10] 
+    Info (332119):     0.250               0.000 wolfcore:CPU|instrWriteBack[10] 
     Info (332119):     1.240               0.000 PLL|mainpll_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0] 
     Info (332119):     9.336               0.000 FPGA_CLK1_50 
-    Info (332119):   433.537               0.000 PLL|mainpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
+    Info (332119):   432.890               0.000 PLL|mainpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
 Warning (18330): Ignoring Synchronizer Identification setting Off, and using Auto instead.
 Info: Analyzing Fast 1100mV 0C Model
 Info (332097): The following timing edges are non-unate.  TimeQuest will assume pos-unate behavior for these edges in the clock network.
-    Info (332098): Cell: CPU|mainALU|Mux1~0  from: datab  to: combout
     Info (332098): Cell: PLL|mainpll_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL  from: refclkin  to: fbclk
     Info (332098): Cell: PLL|mainpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER  from: vco0ph[0]  to: divclk
     Info (332098): Cell: PLL|mainpll_inst|altera_pll_i|general[0].gpll~PLL_REFCLK_SELECT  from: clkin[0]  to: clkout
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the TimeQuest Timing Analyzer.
-Info (332146): Worst-case setup slack is -5.217
+Info (332146): Worst-case setup slack is -4.980
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -5.217            -134.455 wolfcore:CPU|instrWriteBack[10] 
-    Info (332119):    -4.410           -1593.045 PLL|mainpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
-Info (332146): Worst-case hold slack is -2.601
+    Info (332119):    -4.980            -118.564 wolfcore:CPU|instrWriteBack[10] 
+    Info (332119):    -4.808            -930.811 PLL|mainpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
+Info (332146): Worst-case hold slack is 0.142
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -2.601            -525.479 PLL|mainpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
-    Info (332119):     1.060               0.000 wolfcore:CPU|instrWriteBack[10] 
+    Info (332119):     0.142               0.000 PLL|mainpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
+    Info (332119):     2.303               0.000 wolfcore:CPU|instrWriteBack[10] 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
-Info (332146): Worst-case minimum pulse width slack is 0.128
+Info (332146): Worst-case minimum pulse width slack is 0.282
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.128               0.000 wolfcore:CPU|instrWriteBack[10] 
+    Info (332119):     0.282               0.000 wolfcore:CPU|instrWriteBack[10] 
     Info (332119):     1.240               0.000 PLL|mainpll_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0] 
     Info (332119):     9.286               0.000 FPGA_CLK1_50 
-    Info (332119):   433.543               0.000 PLL|mainpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
+    Info (332119):   432.893               0.000 PLL|mainpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
 Warning (18330): Ignoring Synchronizer Identification setting Off, and using Auto instead.
 Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
-Info: Quartus Prime TimeQuest Timing Analyzer was successful. 0 errors, 10 warnings
-    Info: Peak virtual memory: 1337 megabytes
-    Info: Processing ended: Sun Mar 12 17:17:11 2017
-    Info: Elapsed time: 00:00:05
-    Info: Total CPU time (on all processors): 00:00:05
+Info: Quartus Prime TimeQuest Timing Analyzer was successful. 0 errors, 11 warnings
+    Info: Peak virtual memory: 1580 megabytes
+    Info: Processing ended: Sun Mar 12 17:39:26 2017
+    Info: Elapsed time: 00:00:14
+    Info: Total CPU time (on all processors): 00:00:24
 
 
