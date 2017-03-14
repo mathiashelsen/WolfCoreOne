@@ -71,7 +71,7 @@ begin
                 );
 
 process(instrWriteBack, CPU_Status) begin
-case instrWriteBack(3 downto 1) is
+case instrWriteBack(COND) is
         -- Always
         when "001" =>
                 wbEn <= '1';
@@ -131,8 +131,8 @@ process(clk, rst) begin
                 
         elsif (clk'event and clk='1') then
                 -- FETCH-A
-                if(instrInput(13) = '1') then
-                    dataInAddr  <= regFile(to_integer(unsigned(instrInput(29 downto 27))));
+                if(instrInput(PTRa) = '1') then
+                    dataInAddr  <= regFile(to_integer(unsigned(instrInput(REGA))));
                 end if;
                 shadowPC_FA     <= pc;
 
@@ -141,16 +141,16 @@ process(clk, rst) begin
                 -- FETCH-B
                 if( cpuState = Nominal ) then
                     
-                    if(instrFetchB(13) = '1') then
+                    if(instrFetchB(PTRa) = '1') then
                         inputFA <= dataInput;
                     end if;
                     shadowPC_FB <= shadowPC_FB;
 
-                    if(instrFetchB(14) = '1') then
-                        if(instrFetchB(IMM) = '1') then
-                            dataInAddr  <= std_logic_vector(to_unsigned(0, 21)) & instrFetchB(26 downto 16);
+                    if(instrFetchB(PTRb) = '1') then
+                        if(instrFetchB(IMMb) = '1') then
+                            dataInAddr  <= std_logic_vector(to_unsigned(0, 21)) & instrFetchB(IMMv);
                         else
-                            dataInAddr  <= regFile(to_integer(unsigned(instrFetchB(25 downto 23))));
+                            dataInAddr  <= regFile(to_integer(unsigned(instrFetchB(REGb))));
                         end if;
                     end if;
 
@@ -162,10 +162,10 @@ process(clk, rst) begin
         
                 -- EXECUTE
                 if( cpuState = Nominal ) then
-                    if(instrExecute(13) = '1') then
+                    if(instrExecute(PTRa) = '1') then
                         inputA      <= inputFA;
                     else
-                        case to_integer(unsigned(instrExecute(30 downto 27))) is
+                        case to_integer(unsigned(instrExecute(REGa))) is
                         when 13 =>
                             inputA  <= shadowPC_FB;
                         when 14 =>
@@ -173,17 +173,17 @@ process(clk, rst) begin
                         when 15 =>
                             inputA  <= CPU_Status;
                         when others =>
-                            inputA  <= regFile(to_integer(unsigned(instrExecute(30 downto 27))));
+                            inputA  <= regFile(to_integer(unsigned(instrExecute(REGa))));
                         end case;
                     end if;
 
-                    if(instrExecute(14) = '1') then
+                    if(instrExecute(PTRb) = '1') then
                         inputB      <= dataInput;
                     else
-                        if(instrExecute(IMM) = '1') then
-                            inputB  <= std_logic_vector(to_unsigned(0, 21)) & instrExecute(26 downto 16);
+                        if(instrExecute(IMMb) = '1') then
+                            inputB  <= std_logic_vector(to_unsigned(0, 21)) & instrExecute(IMMv);
                         else
-                            case to_integer(unsigned(instrExecute(26 downto 23))) is
+                            case to_integer(unsigned(instrExecute(REGb))) is
                             when 13 =>
                                 inputB  <= shadowPC_FB;
                             when 14 =>
@@ -191,7 +191,7 @@ process(clk, rst) begin
                             when 15 =>
                                 inputB  <= CPU_Status;
                             when others =>
-                                inputB  <= regFile(to_integer(unsigned(instrExecute(26 downto 23))));
+                                inputB  <= regFile(to_integer(unsigned(instrExecute(REGb))));
                             end case;
                         end if;
                     end if;
@@ -206,16 +206,16 @@ process(clk, rst) begin
 
                 -- WRITEBACK
                 if(wbEn='1' and cpuState = Nominal) then
-                    if(instrWriteBack(15) = '1') then
-                        dataOutAddr <=  regFile(to_integer(unsigned(instrWriteBack(6 downto 4))));
+                    if(instrWriteBack(PTRc) = '1') then
+                        dataOutAddr <=  regFile(to_integer(unsigned(instrWriteBack(REGc))));
                         dataOutput  <=  ALU_Out;
                         dataWrEn    <= '1';
                         pc          <= std_logic_vector(unsigned(pc) + to_unsigned(1, pc'length));
                     else
                         dataWrEn    <= '0';
-                        case to_integer(unsigned(instrWriteBack(7 downto 4))) is
+                        case to_integer(unsigned(instrWriteBack(REGc))) is
                         when 0 to 12 =>
-                            regFile(to_integer(unsigned(instrWriteBack(7 downto 4)))) <= ALU_out;
+                            regFile(to_integer(unsigned(instrWriteBack(REGc)))) <= ALU_out;
                             pc          <= std_logic_vector(unsigned(pc) + to_unsigned(1, pc'length));
                             cpuState    <= Nominal;
                         when 13 =>
@@ -233,7 +233,7 @@ process(clk, rst) begin
                 end if;
 
                 if( (forceRoot = '1' or CPU_Status(31 downto 30) = "00") 
-                        and instrWriteBack(7 downto 4) = X"F" 
+                        and instrWriteBack(REGc) = X"F" 
                         and wbEn = '1'
                         ) then
                         CPU_Status              <= ALU_Out;
