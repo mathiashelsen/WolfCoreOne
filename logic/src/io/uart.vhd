@@ -27,6 +27,8 @@ architecture default of UART is
     signal clkDiv       : unsigned(31 downto 0);
     signal clkDivCtr    : unsigned(31 downto 0);
     signal bitCtr       : unsigned(4 downto 0);
+
+    signal uartStatus   : std_logic_vector(31 downto 0);
 begin
 
 process(clk, rst) begin
@@ -35,63 +37,75 @@ process(clk, rst) begin
         TxD             <= '1';
         txReq           <= '0';
         inputBuffer     <= "0000000000";
+        outputBuffer    <= "1000000000";
+        uartStatus      <= X"0000_0000";
+        txCurrent       <= IDLE;
+        clkDivCtr       <= to_unsigned(0, 32);
     elsif(clk'event and clk='0') then
+        -- Incoming data from bus --
         if( unsigned(inputAddr) > X"0001_FFFF" and 
             unsigned(inputAddr) < X"0002_0100"
         ) then
             if(wrEn = '1') then
                 case inputAddr(7 downto 0) is
                     when X"0" =>
-                        outputBuffer(8 downto 1) <= inputData(7 downto 0);
+                        -- Bit set register --
+                        uartStatus  <= uartStatus or inputData;
                     when X"1" =>
-                        txReq   <= inputData(0);
+                        -- Bit reset register --
+                        uartStatus  <= uartStatus and (not inputData);
                     when X"2" =>
                         clkDiv  <= unsigned(inputData);
+                    when X"3" =>
+                        outputBuffer(8 downto 1) <= inputData(7 downto 0);
                     when others =>
 
                 end case;
             end if; 
         end if;
-
+    
+        -- Outgoing data to bus --
         if( unsigned(outputAddr) > X"0001_FFFF" and
             unsigned(outputAddr) < X"0002_0100") then
             case outputAddr(7 downto 0) is
                 when X"0" =>
-                    --outputData  <= to_unsigned(0, 22) & outputBuffer;
-                    outputData  <= std_logic_vector(to_unsigned(0, 32));
+                    outputData  <= uartStatus;
+                when X"1" =>
+                    outputData  <= uartStatus;
                 when X"2" =>
-                    outputData  <=  std_logic_vector(clkDiv);
+                    outputData  <= std_logic_vector(clkDiv);
+                when X"3" =>
+                    outputData  <= std_logic_vector(to_unsigned(0, 24)) & outputBuffer(8 downto 1);
                 when X"10" =>
-                    outputData  <= std_logic_vector(to_unsigned(0, 22)) & inputBuffer;
+                    outputData  <= std_logic_vector(to_unsigned(0, 24)) & inputBuffer(8 downto 1);
             end case;  
         end if;
     end if;
-end process;
-
-process(clk, rst) begin
-    if(rst = '1') then
-        txCurrent   <= IDLE;
-        clkDivCtr   <= to_unsigned(0, 32);
-    elsif(clk'event and clk='1') then
-        
-        if(txReq = '1' and txCurrent = IDLE) then
-            txCurrent   <= SENDING;
-            clkDivCtr   <= clkDiv;
-            bitCtr      <= to_unsigned(9, 4);
-        end if;
-
-        if(txCurrent = SENDING) then
-            if(clkDivCtr = X"0000_0000") then
-                if(bitCtr = to_unsigned(0, 4)) then
-
-                else
-                bitCtr  <= bitCtr - to_unsigned(1, 4);
-
+      
+        case txCurrent is
+            when IDLE =>
+                if(uartStatus(0) = '1') then
+                    txCurrent   <= SENDING;
+                    clkDivCtr   <= clkDiv;
+                    bitCtr      <= to_unsigned(9, 4);
+                    uartStatus(0) <= '0';
                 end if;
-            else
 
-            end if; 
-        end if;
+            when SENDING =>
+                if(clkDivCtr = X"0000_0000") then
+                    if(bitCtr = to_unsigned(0, 4)) then
+                        uartStatus(1)   <= '1';
+                    else
+                        bitCtr  <= bitCtr - to_unsigned(1, 4);
+
+                    end if;
+                else
+
+                end if; 
+
+            when others =>
+
+        end case;  
     end if;
 end process;
 
