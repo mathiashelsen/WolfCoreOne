@@ -29,6 +29,8 @@ architecture default of UART is
     signal bitCtr       : unsigned(4 downto 0);
 
     signal uartStatus   : std_logic_vector(31 downto 0);
+    signal uartStatusC  : std_logic_vector(31 downto 0);
+    signal outputCache  : std_logic_vector(7 downto 0);
 begin
 
 process(clk, rst) begin
@@ -49,15 +51,11 @@ process(clk, rst) begin
             if(wrEn = '1') then
                 case inputAddr(7 downto 0) is
                     when X"0" =>
-                        -- Bit set register --
-                        uartStatus  <= uartStatus or inputData;
+                        uartStatusC <= inputData;
                     when X"1" =>
-                        -- Bit reset register --
-                        uartStatus  <= uartStatus and (not inputData);
+                        clkDiv      <= unsigned(inputData);
                     when X"2" =>
-                        clkDiv  <= unsigned(inputData);
-                    when X"3" =>
-                        outputBuffer(8 downto 1) <= inputData(7 downto 0);
+                        outputCache <= inputData(7 downto 0);
                     when others =>
 
                 end case;
@@ -71,36 +69,44 @@ process(clk, rst) begin
                 when X"0" =>
                     outputData  <= uartStatus;
                 when X"1" =>
-                    outputData  <= uartStatus;
-                when X"2" =>
                     outputData  <= std_logic_vector(clkDiv);
-                when X"3" =>
-                    outputData  <= std_logic_vector(to_unsigned(0, 24)) & outputBuffer(8 downto 1);
-                when X"10" =>
-                    outputData  <= std_logic_vector(to_unsigned(0, 24)) & inputBuffer(8 downto 1);
+                when X"2" =>
+                    outputData  <= std_logic_vector(to_unsigned(0, 24)) & outputCache;
+                when others =>
+
             end case;  
         end if;
     end if;
       
         case txCurrent is
             when IDLE =>
-                if(uartStatus(0) = '1') then
-                    txCurrent   <= SENDING;
-                    clkDivCtr   <= clkDiv;
-                    bitCtr      <= to_unsigned(9, 4);
-                    uartStatus(0) <= '0';
+                if(uartStatusC(0) = '1') then
+                    txCurrent                   <= SENDING;
+                    clkDivCtr                   <= clkDiv;
+                    bitCtr                      <= to_unsigned(9, 4);
+                    uartStatus(0)               <= '1';
+                    outputBuffer(8 downto 1)    <= outputCache;
                 end if;
 
             when SENDING =>
                 if(clkDivCtr = X"0000_0000") then
-                    if(bitCtr = to_unsigned(0, 4)) then
-                        uartStatus(1)   <= '1';
-                    else
-                        bitCtr  <= bitCtr - to_unsigned(1, 4);
+                    -- Reset the prescaler counter
+                    clkDivCtr       <= clkDiv;
 
+                    if(bitCtr = to_unsigned(0, 4)) then
+                        uartStatus(0)   <= '0';
+                        uartStatus(1)   <= '1'; 
+                        txCurrent       <= IDLE;
+                    else
+                        -- Another bit bites the dust (you have to sing this comment line)
+                        bitCtr  <= bitCtr - to_unsigned(1, 4);
+                        -- Bit away! (Requires pirate voice library)
+                        TxD             <= outputBuffer(0);
+                        -- Shift register on the outputBuffer (there is nothing funny about this)
+                        outputBuffer    <= '0' & outputBuffer(9 downto 0);
                     end if;
                 else
-
+                    clkDivCtr   <= clkDivCtr - to_unsigned(1, 32);
                 end if; 
 
             when others =>
