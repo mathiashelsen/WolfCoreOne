@@ -14,7 +14,7 @@ entity UART is
         outputData  : out std_logic_vector(31 downto 0);
         outputAddr  : in std_logic_vector(31 downto 0);
         wrEn        : in std_logic;
-        UART_IRQ    : out std_logic
+        uartStatus  : buffer std_logic_vector(31 downto 0);
     );
 end UART;
 
@@ -28,7 +28,6 @@ architecture default of UART is
     signal clkDivCtr    : unsigned(31 downto 0);
     signal bitCtr       : unsigned(4 downto 0);
 
-    signal uartStatus   : std_logic_vector(31 downto 0);
     signal uartStatusC  : std_logic_vector(31 downto 0);
     signal outputCache  : std_logic_vector(7 downto 0);
 begin
@@ -77,7 +76,8 @@ process(clk, rst) begin
             end case;  
         end if;
     end if;
-      
+    
+    if(clk'event and clk='1') then
         case txCurrent is
             when IDLE =>
                 if(uartStatusC(0) = '1') then
@@ -85,7 +85,7 @@ process(clk, rst) begin
                     clkDivCtr                   <= clkDiv;
                     bitCtr                      <= to_unsigned(9, 4);
                     uartStatus(0)               <= '1';
-                    outputBuffer(8 downto 1)    <= outputCache;
+                    outputBuffer                <= '1' & outputCache & '0';
                 end if;
 
             when SENDING =>
@@ -97,13 +97,14 @@ process(clk, rst) begin
                         uartStatus(0)   <= '0';
                         uartStatus(1)   <= '1'; 
                         txCurrent       <= IDLE;
+                        TxD             <= '1';
                     else
                         -- Another bit bites the dust (you have to sing this comment line)
                         bitCtr  <= bitCtr - to_unsigned(1, 4);
                         -- Bit away! (Requires pirate voice library)
                         TxD             <= outputBuffer(0);
                         -- Shift register on the outputBuffer (there is nothing funny about this)
-                        outputBuffer    <= '0' & outputBuffer(9 downto 0);
+                        outputBuffer    <= '0' & outputBuffer(9 downto 1);
                     end if;
                 else
                     clkDivCtr   <= clkDivCtr - to_unsigned(1, 32);
