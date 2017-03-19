@@ -33,7 +33,7 @@ architecture default of mmu is
 
 begin
     data_cache_instance: data_cache port map(
-        clock_y     => not(clk),
+        clock_y     => "not"(clk),
         data        => dataIn,
         rdaddress   => dataOutAddr(13 downto 0),
         wraddress   => dataInAddr(13 downto 0),

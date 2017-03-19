@@ -1,13 +1,205 @@
 # Loading project tb_flowCtrl
-# Compile of wolfcore.vhd failed with 4 errors.
-# Compile of mainArch.vhd was successful.
-# Compile of wolfcore.vhd failed with 3 errors.
-# Compile of wolfcore.vhd failed with 3 errors.
-# Compile of wolfcore.vhd failed with 3 errors.
-# Compile of mainArch.vhd was successful.
+# Compile of flowController.vhd was successful.
+# Compile of progMem.vhd was successful.
 # Compile of wolfcore.vhd was successful.
+# Compile of mmu.vhd failed with 2 errors.
+# Compile of alu.vhd was successful.
+# Compile of data_cache.vhd was successful.
 # Compile of mainArch.vhd was successful.
+# Compile of tb_complete.v failed with 1 errors.
+# 8 compiles, 2 failed with 3 errors.
+# Compile of flowController.vhd was successful.
+# Compile of progMem.vhd was successful.
 # Compile of wolfcore.vhd was successful.
-# Compile of mainArch.vhd failed with 2 errors.
+# Compile of mmu.vhd was successful.
+# Compile of alu.vhd was successful.
+# Compile of data_cache.vhd was successful.
 # Compile of mainArch.vhd was successful.
+# Compile of tb_complete.v failed with 4 errors.
+# 8 compiles, 1 failed with 4 errors.
+# Compile of flowController.vhd was successful.
+# Compile of progMem.vhd was successful.
 # Compile of wolfcore.vhd was successful.
+# Compile of mmu.vhd was successful.
+# Compile of alu.vhd was successful.
+# Compile of data_cache.vhd was successful.
+# Compile of mainArch.vhd was successful.
+# Compile of tb_complete.v was successful.
+# 8 compiles, 0 failed with no errors.
+# Compile of flowController.vhd was successful.
+# Compile of progMem.vhd was successful.
+# Compile of wolfcore.vhd was successful.
+# Compile of mmu.vhd was successful.
+# Compile of alu.vhd was successful.
+# Compile of data_cache.vhd was successful.
+# Compile of mainArch.vhd was successful.
+# Compile of tb_complete.v was successful.
+# 8 compiles, 0 failed with no errors.
+vsim work.DE0_NANO_SOC_Default
+# vsim work.DE0_NANO_SOC_Default 
+# Start time: 08:32:23 on Mar 19,2017
+# Loading work.DE0_NANO_SOC_Default
+# ** Error: (vsim-3033) /home/mathias/Projects/WolfCoreOne/logic/tb/tb_complete.v(78): Instantiation of 'outputDataMux' failed. The design unit was not found.
+#    Time: 0 ps  Iteration: 0  Instance: /DE0_NANO_SOC_Default File: /home/mathias/Projects/WolfCoreOne/logic/tb/tb_complete.v
+#         Searched libraries:
+#             /home/mathias/Projects/WolfCoreOne/logic/tb/work
+# Error loading design
+# End time: 08:32:23 on Mar 19,2017, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+# Compile of flowController.vhd was successful.
+# Compile of progMem.vhd was successful.
+# Compile of wolfcore.vhd was successful.
+# Compile of mmu.vhd was successful.
+# Compile of alu.vhd was successful.
+# Compile of data_cache.vhd was successful.
+# Compile of mainArch.vhd was successful.
+# Compile of tb_complete.v was successful.
+# Compile of outputDataMux.vhd was successful.
+# 9 compiles, 0 failed with no errors.
+vsim work.DE0_NANO_SOC_Default
+# vsim work.DE0_NANO_SOC_Default 
+# Start time: 08:32:51 on Mar 19,2017
+# Loading work.DE0_NANO_SOC_Default
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.mainarch
+# Loading work.wolfcore(default)
+# Loading work.alu(default)
+# Loading work.flowcontroller(default)
+# Loading work.progmem(default)
+# Loading work.mmu(default)
+# Loading altera_mf.altera_mf_components
+# Loading work.data_cache(syn)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading altera_mf.altera_common_conversion(body)
+# Loading altera_mf.altera_device_families(body)
+# Loading altera_mf.altsyncram(translated)
+# Loading work.outputdatamux(default)
+add wave -position insertpoint  \
+sim:/DE0_NANO_SOC_Default/uartClk \
+sim:/DE0_NANO_SOC_Default/cpuDataOut \
+sim:/DE0_NANO_SOC_Default/cpuDataIn \
+sim:/DE0_NANO_SOC_Default/cpuDataInAddr \
+sim:/DE0_NANO_SOC_Default/cpuDataOutAddr \
+sim:/DE0_NANO_SOC_Default/cpuWrEn \
+sim:/DE0_NANO_SOC_Default/instrBus \
+sim:/DE0_NANO_SOC_Default/pcBus \
+sim:/DE0_NANO_SOC_Default/CPU_StatusBus \
+sim:/DE0_NANO_SOC_Default/forceRoot \
+sim:/DE0_NANO_SOC_Default/flushing \
+sim:/DE0_NANO_SOC_Default/instrCacheAddr \
+sim:/DE0_NANO_SOC_Default/instrCacheData \
+sim:/DE0_NANO_SOC_Default/dataOutFlowCtrl \
+sim:/DE0_NANO_SOC_Default/dataOutDataCache \
+sim:/DE0_NANO_SOC_Default/clk \
+sim:/DE0_NANO_SOC_Default/rst
+run
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /DE0_NANO_SOC_Default/dataMux
+add wave -position insertpoint  \
+sim:/DE0_NANO_SOC_Default/CPU/pc
+restart
+# Compile of flowController.vhd was successful.
+# Compile of progMem.vhd was successful.
+# Compile of wolfcore.vhd was successful.
+# Compile of mmu.vhd was successful.
+# Compile of alu.vhd was successful.
+# Compile of data_cache.vhd was successful.
+# Compile of mainArch.vhd was successful.
+# Compile of tb_complete.v was successful.
+# Compile of outputDataMux.vhd was successful.
+# 9 compiles, 0 failed with no errors.
+restart
+# Loading work.DE0_NANO_SOC_Default
+# Loading work.mainarch
+# Loading work.wolfcore(default)
+# Loading work.alu(default)
+# Loading work.flowcontroller(default)
+# Loading work.progmem(default)
+# Loading work.mmu(default)
+# Loading work.data_cache(syn)
+# Loading work.outputdatamux(default)
+run
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /DE0_NANO_SOC_Default/dataMux
+# Compile of flowController.vhd was successful.
+# Compile of progMem.vhd was successful.
+# Compile of wolfcore.vhd was successful.
+# Compile of mmu.vhd was successful.
+# Compile of alu.vhd was successful.
+# Compile of data_cache.vhd was successful.
+# Compile of mainArch.vhd was successful.
+# Compile of tb_complete.v was successful.
+# Compile of outputDataMux.vhd was successful.
+# 9 compiles, 0 failed with no errors.
+restart
+# Loading work.DE0_NANO_SOC_Default
+# Loading work.mainarch
+# Loading work.wolfcore(default)
+# Loading work.alu(default)
+# Loading work.flowcontroller(default)
+# Loading work.progmem(default)
+# Loading work.mmu(default)
+# Loading work.data_cache(syn)
+# Loading work.outputdatamux(default)
+run
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /DE0_NANO_SOC_Default/dataMux
+# Compile of flowController.vhd was successful.
+# Compile of progMem.vhd was successful.
+# Compile of wolfcore.vhd was successful.
+# Compile of mmu.vhd was successful.
+# Compile of alu.vhd was successful.
+# Compile of data_cache.vhd was successful.
+# Compile of mainArch.vhd was successful.
+# Compile of tb_complete.v was successful.
+# Compile of outputDataMux.vhd was successful.
+# 9 compiles, 0 failed with no errors.
+restart
+# Loading work.DE0_NANO_SOC_Default
+# Loading work.mainarch
+# Loading work.wolfcore(default)
+# Loading work.alu(default)
+# Loading work.flowcontroller(default)
+# Loading work.progmem(default)
+# Loading work.mmu(default)
+# Loading work.data_cache(syn)
+# Loading work.outputdatamux(default)
+run
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /DE0_NANO_SOC_Default/dataMux
+add wave -position insertpoint  \
+sim:/DE0_NANO_SOC_Default/instrCache/instrOutput \
+sim:/DE0_NANO_SOC_Default/instrCache/instrAddress \
+sim:/DE0_NANO_SOC_Default/instrCache/clk
+restart
+run
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /DE0_NANO_SOC_Default/dataMux
+# Compile of flowController.vhd was successful.
+# Compile of progMem.vhd was successful.
+# Compile of wolfcore.vhd was successful.
+# Compile of mmu.vhd was successful.
+# Compile of alu.vhd was successful.
+# Compile of data_cache.vhd was successful.
+# Compile of mainArch.vhd was successful.
+# Compile of tb_complete.v was successful.
+# Compile of outputDataMux.vhd was successful.
+# 9 compiles, 0 failed with no errors.
+restart
+# Loading work.DE0_NANO_SOC_Default
+# Loading work.mainarch
+# Loading work.wolfcore(default)
+# Loading work.alu(default)
+# Loading work.flowcontroller(default)
+# Loading work.progmem(default)
+# Loading work.mmu(default)
+# Loading work.data_cache(syn)
+# Loading work.outputdatamux(default)
+# Warning in wave window restart: (vish-4014) No objects found matching '/DE0_NANO_SOC_Default/uartClk'. 
+run
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /DE0_NANO_SOC_Default/dataMux
