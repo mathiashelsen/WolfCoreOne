@@ -1,17 +1,17 @@
-Analysis & Synthesis Status : Successful - Mon Mar 13 17:09:16 2017
+Analysis & Synthesis Status : Successful - Sun Mar 19 13:01:27 2017
 Quartus Prime Version : 16.0.0 Build 211 04/27/2016 SJ Lite Edition
 Revision Name : DE0_NANO_SOC_Default
 Top-level Entity Name : DE0_NANO_SOC_Default
 Family : Cyclone V
 Logic utilization (in ALMs) : N/A
-Total registers : 2372
+Total registers : 444
 Total pins : 93
 Total virtual pins : 0
-Total block memory bits : 524,288
+Total block memory bits : 0
 Total DSP Blocks : 0
 Total HSSI RX PCSs : 0
 Total HSSI PMA RX Deserializers : 0
 Total HSSI TX PCSs : 0
 Total HSSI PMA TX Serializers : 0
-Total PLLs : 1
+Total PLLs : 0
 Total DLLs : 0

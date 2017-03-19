@@ -7,73 +7,12 @@
 # Compile of data_cache.vhd was successful.
 # Compile of mainArch.vhd was successful.
 # Compile of tb_complete.v was successful.
-# Compile of outputDataMux.vhd failed with 3 errors.
-# Compile of uart.vhd failed with 7 errors.
-# 10 compiles, 2 failed with 10 errors.
-# Compile of flowController.vhd was successful.
-# Compile of progMem.vhd was successful.
-# Compile of wolfcore.vhd was successful.
-# Compile of mmu.vhd was successful.
-# Compile of alu.vhd was successful.
-# Compile of data_cache.vhd was successful.
-# Compile of mainArch.vhd was successful.
-# Compile of tb_complete.v was successful.
 # Compile of outputDataMux.vhd was successful.
 # Compile of uart.vhd was successful.
 # 10 compiles, 0 failed with no errors.
 vsim work.DE0_NANO_SOC_Default
 # vsim work.DE0_NANO_SOC_Default 
-# Start time: 11:11:52 on Mar 19,2017
-# Loading work.DE0_NANO_SOC_Default
-# Loading std.standard
-# Loading std.textio(body)
-# Loading ieee.std_logic_1164(body)
-# Loading ieee.numeric_std(body)
-# Loading work.mainarch
-# Loading work.wolfcore(default)
-# Loading work.alu(default)
-# Loading work.flowcontroller(default)
-# Loading work.progmem(default)
-# Loading work.mmu(default)
-# Loading altera_mf.altera_mf_components
-# Loading work.data_cache(syn)
-# Loading ieee.std_logic_arith(body)
-# Loading ieee.std_logic_unsigned(body)
-# Loading altera_mf.altera_common_conversion(body)
-# Loading altera_mf.altera_device_families(body)
-# Loading altera_mf.altsyncram(translated)
-# Loading work.uart(default)
-# ** Error: (vsim-3060) /home/mathias/Projects/WolfCoreOne/logic/tb/tb_complete.v(75): Port 'dataOutAddr' not found in VHDL entity (8th connection).
-#    Time: 0 ps  Iteration: 0  Instance: /DE0_NANO_SOC_Default/testUART File: /home/mathias/Projects/WolfCoreOne/logic/src/io/uart.vhd
-# Loading work.outputdatamux(default)
-# Error loading design
-# End time: 11:11:52 on Mar 19,2017, Elapsed time: 0:00:00
-# Errors: 1, Warnings: 0
-# Compile of flowController.vhd was successful.
-# Compile of progMem.vhd was successful.
-# Compile of wolfcore.vhd was successful.
-# Compile of mmu.vhd was successful.
-# Compile of alu.vhd was successful.
-# Compile of data_cache.vhd was successful.
-# Compile of mainArch.vhd was successful.
-# Compile of tb_complete.v was successful.
-# Compile of outputDataMux.vhd was successful.
-# Compile of uart.vhd was successful.
-# 10 compiles, 0 failed with no errors.
-# Compile of flowController.vhd was successful.
-# Compile of progMem.vhd was successful.
-# Compile of wolfcore.vhd was successful.
-# Compile of mmu.vhd was successful.
-# Compile of alu.vhd was successful.
-# Compile of data_cache.vhd was successful.
-# Compile of mainArch.vhd was successful.
-# Compile of tb_complete.v was successful.
-# Compile of outputDataMux.vhd was successful.
-# Compile of uart.vhd was successful.
-# 10 compiles, 0 failed with no errors.
-vsim work.DE0_NANO_SOC_Default
-# vsim work.DE0_NANO_SOC_Default 
-# Start time: 11:12:31 on Mar 19,2017
+# Start time: 12:37:07 on Mar 19,2017
 # Loading work.DE0_NANO_SOC_Default
 # Loading std.standard
 # Loading std.textio(body)
@@ -98,6 +37,966 @@ vsim work.DE0_NANO_SOC_Default
 #    Time: 0 ps  Iteration: 0  Instance: /DE0_NANO_SOC_Default/testUART File: /home/mathias/Projects/WolfCoreOne/logic/src/io/uart.vhd
 # ** Warning: (vsim-8822) /home/mathias/Projects/WolfCoreOne/logic/tb/tb_complete.v(87): [TFMPC] - Missing Verilog connection for formal VHDL port 'outputDataUART'.
 #    Time: 0 ps  Iteration: 0  Instance: /DE0_NANO_SOC_Default/dataMux File: /home/mathias/Projects/WolfCoreOne/logic/src/outputDataMux.vhd
+do /home/mathias/Projects/WolfCoreOne/logic/tb/wave_uart.do
+run
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /DE0_NANO_SOC_Default/dataMux
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /DE0_NANO_SOC_Default/dataMux
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 47 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 49 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 51 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 53 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 55 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 57 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 59 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 61 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 63 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 65 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 67 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 69 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 71 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 73 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 75 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 77 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 79 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 81 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 83 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 85 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 87 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 89 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 91 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 93 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 95 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 97 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 99 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 101 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 103 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 105 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 107 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 109 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 111 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 113 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 115 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 117 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 119 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 121 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 123 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 125 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 127 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 129 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 131 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 133 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 135 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 137 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 139 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 141 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 143 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 145 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 147 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 149 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 151 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 153 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 155 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 157 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 159 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 161 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 163 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 165 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 167 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 169 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 171 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 173 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 175 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 177 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 179 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 181 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 183 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 185 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 187 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 189 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 191 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 193 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 195 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 197 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 199 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 201 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 203 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 205 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 207 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 209 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 211 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 213 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 215 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 217 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 219 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 221 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 223 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 225 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 227 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 229 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 231 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 233 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 235 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 237 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 239 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 241 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 243 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 245 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 247 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 249 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 251 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 253 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 255 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 257 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 259 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 261 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 263 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 265 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 267 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 269 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 271 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 273 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 275 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 277 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 279 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 281 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 283 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 285 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 287 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 289 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 291 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 293 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 295 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 297 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 299 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 301 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 303 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 305 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 307 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 309 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 311 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 313 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 315 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 317 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 319 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 321 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 323 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 325 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 327 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 329 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 331 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 333 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 335 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 337 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 339 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 341 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 343 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 345 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 347 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 349 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 351 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 353 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 355 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 357 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 359 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 361 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 363 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 365 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 367 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 369 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 371 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 373 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 375 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 377 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 379 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 381 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 383 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 385 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 387 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 389 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 391 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 393 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 395 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 397 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 399 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 401 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 403 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 405 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 407 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 409 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 411 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 413 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 415 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 417 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 419 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 421 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 423 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 425 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 427 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 429 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 431 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 433 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 435 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 437 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 439 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 441 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 443 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 445 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 447 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 449 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 451 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 453 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 455 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 457 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 459 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 461 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 463 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 465 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 467 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 469 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 471 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 473 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 475 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 477 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 479 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 481 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 483 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 485 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 487 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 489 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 491 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 493 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 495 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 497 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 499 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 501 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 503 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 505 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 507 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 509 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 511 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 513 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 515 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 517 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 519 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 521 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 523 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 525 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 527 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 529 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 531 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 533 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 535 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 537 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 539 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 541 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 543 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 545 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 547 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 549 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 551 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 553 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 555 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 557 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 559 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 561 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 563 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 565 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 567 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 569 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 571 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 573 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 575 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 577 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 579 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 581 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 583 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 585 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 587 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 589 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 591 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 593 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 595 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 597 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 599 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 601 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 603 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 605 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 607 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 609 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 611 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 613 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 615 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 617 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 619 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 621 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 623 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 625 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 627 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 629 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 631 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 633 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 635 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 637 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 639 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 641 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 643 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 645 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 647 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 649 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 651 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 653 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 655 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 657 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 659 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 661 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 663 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 665 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 667 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 669 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 671 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 673 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 675 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 677 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 679 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 681 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 683 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 685 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 687 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 689 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 691 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 693 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 695 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 697 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 699 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 701 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 703 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 705 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 707 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 709 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 711 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 713 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 715 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 717 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 719 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 721 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 723 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 725 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 727 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 729 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 731 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 733 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 735 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 737 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 739 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 741 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 743 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 745 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 747 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 749 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 751 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 753 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 755 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 757 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 759 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 761 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 763 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 765 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 767 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 769 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 771 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 773 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 775 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 777 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 779 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 781 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 783 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 785 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 787 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 789 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 791 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 793 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 795 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 797 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 799 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 801 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 803 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 805 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 807 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 809 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 811 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 813 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 815 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 817 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 819 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 821 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 823 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 825 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 827 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 829 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 831 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 833 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 835 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 837 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 839 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 841 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 843 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 845 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 847 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 849 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 851 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 853 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 855 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 857 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 859 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 861 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 863 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 865 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 867 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 869 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 871 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 873 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 875 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 877 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 879 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 881 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 883 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 885 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 887 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 889 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 891 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 893 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 895 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 897 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 899 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 901 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 903 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 905 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 907 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 909 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 911 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 913 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 915 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 917 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 919 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 921 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 923 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 925 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 927 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 929 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 931 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 933 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 935 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 937 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 939 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 941 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 943 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 945 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 947 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 949 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 951 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 953 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 955 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 957 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 959 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 961 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 963 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 965 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 967 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 969 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 971 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 973 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 975 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 977 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 979 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 981 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 983 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 985 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 987 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 989 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 991 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 993 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 995 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 997 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 999 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
 # Compile of flowController.vhd was successful.
 # Compile of progMem.vhd was successful.
 # Compile of wolfcore.vhd was successful.
@@ -109,40 +1008,17 @@ vsim work.DE0_NANO_SOC_Default
 # Compile of outputDataMux.vhd was successful.
 # Compile of uart.vhd was successful.
 # 10 compiles, 0 failed with no errors.
-add wave -position insertpoint  \
-sim:/DE0_NANO_SOC_Default/CPU/pc
-add wave -position insertpoint  \
-sim:/DE0_NANO_SOC_Default/CPU/regFile
-add wave -position insertpoint  \
-sim:/DE0_NANO_SOC_Default/CPU/instrFetchB \
-sim:/DE0_NANO_SOC_Default/CPU/instrExecute \
-sim:/DE0_NANO_SOC_Default/CPU/instrWriteBack
-add wave -position insertpoint  \
-sim:/DE0_NANO_SOC_Default/CPU/wbEn
-add wave -position insertpoint  \
-sim:/DE0_NANO_SOC_Default/testUART/clk \
-sim:/DE0_NANO_SOC_Default/testUART/rst \
-sim:/DE0_NANO_SOC_Default/testUART/RxD \
-sim:/DE0_NANO_SOC_Default/testUART/TxD \
-sim:/DE0_NANO_SOC_Default/testUART/inputData \
-sim:/DE0_NANO_SOC_Default/testUART/inputAddr \
-sim:/DE0_NANO_SOC_Default/testUART/outputData \
-sim:/DE0_NANO_SOC_Default/testUART/outputAddr \
-sim:/DE0_NANO_SOC_Default/testUART/wrEn \
-sim:/DE0_NANO_SOC_Default/testUART/uartStatus \
-sim:/DE0_NANO_SOC_Default/testUART/txCurrent \
-sim:/DE0_NANO_SOC_Default/testUART/outputBuffer \
-sim:/DE0_NANO_SOC_Default/testUART/inputBuffer \
-sim:/DE0_NANO_SOC_Default/testUART/txReq \
-sim:/DE0_NANO_SOC_Default/testUART/clkDiv \
-sim:/DE0_NANO_SOC_Default/testUART/clkDivCtr \
-sim:/DE0_NANO_SOC_Default/testUART/bitCtr \
-sim:/DE0_NANO_SOC_Default/testUART/uartStatusC \
-sim:/DE0_NANO_SOC_Default/testUART/outputCache
-add wave -position insertpoint  \
-sim:/DE0_NANO_SOC_Default/clk
-add wave -position insertpoint  \
-sim:/DE0_NANO_SOC_Default/rst
+# Compile of flowController.vhd was successful.
+# Compile of progMem.vhd was successful.
+# Compile of wolfcore.vhd was successful.
+# Compile of mmu.vhd was successful.
+# Compile of alu.vhd was successful.
+# Compile of data_cache.vhd was successful.
+# Compile of mainArch.vhd was successful.
+# Compile of tb_complete.v was successful.
+# Compile of outputDataMux.vhd was successful.
+# Compile of uart.vhd was successful.
+# 10 compiles, 0 failed with no errors.
 restart
 # Loading work.DE0_NANO_SOC_Default
 # Loading work.mainarch
@@ -163,18 +1039,960 @@ run
 #    Time: 0 ps  Iteration: 0  Instance: /DE0_NANO_SOC_Default/dataMux
 # ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
 #    Time: 0 ps  Iteration: 0  Instance: /DE0_NANO_SOC_Default/dataMux
-add wave -position insertpoint  \
-sim:/DE0_NANO_SOC_Default/instrBus
-restart
-# ** Warning: (vsim-8822) /home/mathias/Projects/WolfCoreOne/logic/tb/tb_complete.v(75): [TFMPC] - Missing Verilog connection for formal VHDL port 'uartStatus'.
-#    Time: 0 ps  Iteration: 0  Instance: /DE0_NANO_SOC_Default/testUART File: /home/mathias/Projects/WolfCoreOne/logic/src/io/uart.vhd
-# ** Warning: (vsim-8822) /home/mathias/Projects/WolfCoreOne/logic/tb/tb_complete.v(87): [TFMPC] - Missing Verilog connection for formal VHDL port 'outputDataUART'.
-#    Time: 0 ps  Iteration: 0  Instance: /DE0_NANO_SOC_Default/dataMux File: /home/mathias/Projects/WolfCoreOne/logic/src/outputDataMux.vhd
-run
-# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: /DE0_NANO_SOC_Default/dataMux
-# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: /DE0_NANO_SOC_Default/dataMux
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 47 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 49 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 51 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 53 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 55 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 57 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 59 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 61 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 63 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 65 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 67 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 69 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 71 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 73 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 75 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 77 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 79 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 81 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 83 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 85 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 87 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 89 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 91 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 93 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 95 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 97 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 99 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 101 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 103 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 105 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 107 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 109 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 111 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 113 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 115 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 117 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 119 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 121 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 123 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 125 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 127 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 129 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 131 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 133 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 135 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 137 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 139 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 141 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 143 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 145 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 147 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 149 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 151 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 153 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 155 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 157 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 159 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 161 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 163 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 165 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 167 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 169 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 171 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 173 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 175 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 177 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 179 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 181 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 183 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 185 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 187 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 189 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 191 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 193 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 195 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 197 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 199 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 201 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 203 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 205 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 207 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 209 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 211 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 213 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 215 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 217 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 219 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 221 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 223 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 225 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 227 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 229 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 231 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 233 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 235 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 237 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 239 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 241 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 243 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 245 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 247 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 249 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 251 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 253 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 255 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 257 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 259 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 261 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 263 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 265 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 267 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 269 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 271 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 273 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 275 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 277 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 279 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 281 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 283 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 285 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 287 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 289 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 291 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 293 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 295 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 297 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 299 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 301 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 303 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 305 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 307 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 309 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 311 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 313 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 315 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 317 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 319 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 321 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 323 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 325 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 327 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 329 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 331 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 333 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 335 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 337 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 339 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 341 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 343 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 345 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 347 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 349 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 351 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 353 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 355 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 357 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 359 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 361 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 363 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 365 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 367 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 369 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 371 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 373 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 375 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 377 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 379 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 381 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 383 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 385 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 387 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 389 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 391 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 393 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 395 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 397 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 399 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 401 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 403 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 405 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 407 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 409 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 411 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 413 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 415 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 417 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 419 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 421 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 423 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 425 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 427 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 429 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 431 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 433 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 435 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 437 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 439 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 441 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 443 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 445 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 447 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 449 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 451 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 453 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 455 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 457 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 459 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 461 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 463 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 465 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 467 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 469 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 471 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 473 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 475 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 477 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 479 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 481 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 483 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 485 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 487 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 489 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 491 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 493 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 495 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 497 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 499 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 501 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 503 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 505 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 507 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 509 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 511 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 513 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 515 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 517 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 519 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 521 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 523 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 525 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 527 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 529 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 531 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 533 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 535 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 537 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 539 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 541 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 543 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 545 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 547 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 549 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 551 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 553 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 555 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 557 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 559 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 561 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 563 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 565 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 567 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 569 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 571 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 573 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 575 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 577 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 579 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 581 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 583 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 585 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 587 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 589 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 591 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 593 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 595 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 597 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 599 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 601 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 603 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 605 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 607 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 609 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 611 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 613 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 615 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 617 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 619 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 621 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 623 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 625 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 627 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 629 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 631 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 633 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 635 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 637 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 639 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 641 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 643 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 645 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 647 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 649 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 651 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 653 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 655 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 657 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 659 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 661 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 663 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 665 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 667 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 669 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 671 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 673 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 675 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 677 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 679 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 681 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 683 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 685 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 687 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 689 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 691 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 693 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 695 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 697 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 699 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 701 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 703 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 705 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 707 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 709 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 711 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 713 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 715 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 717 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 719 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 721 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 723 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 725 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 727 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 729 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 731 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 733 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 735 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 737 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 739 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 741 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 743 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 745 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 747 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 749 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 751 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 753 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 755 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 757 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 759 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 761 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 763 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 765 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 767 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 769 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 771 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 773 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 775 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 777 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 779 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 781 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 783 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 785 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 787 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 789 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 791 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 793 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 795 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 797 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 799 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 801 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 803 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 805 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 807 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 809 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 811 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 813 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 815 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 817 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 819 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 821 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 823 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 825 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 827 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 829 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 831 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 833 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 835 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 837 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 839 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 841 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 843 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 845 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 847 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 849 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 851 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 853 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 855 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 857 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 859 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 861 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 863 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 865 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 867 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 869 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 871 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 873 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 875 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 877 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 879 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 881 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 883 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 885 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 887 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 889 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 891 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 893 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 895 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 897 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 899 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 901 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 903 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 905 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 907 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 909 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 911 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 913 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 915 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 917 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 919 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 921 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 923 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 925 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 927 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 929 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 931 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 933 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 935 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 937 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 939 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 941 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 943 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 945 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 947 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 949 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 951 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 953 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 955 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 957 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 959 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 961 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 963 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 965 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 967 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 969 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 971 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 973 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 975 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 977 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 979 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 981 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 983 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 985 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 987 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 989 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 991 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 993 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 995 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 997 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 999 ns  Iteration: 1  Instance: /DE0_NANO_SOC_Default/testUART
 # Compile of flowController.vhd was successful.
 # Compile of progMem.vhd was successful.
 # Compile of wolfcore.vhd was successful.
@@ -217,215 +2035,3 @@ run
 #    Time: 0 ps  Iteration: 0  Instance: /DE0_NANO_SOC_Default/dataMux
 # ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
 #    Time: 0 ps  Iteration: 0  Instance: /DE0_NANO_SOC_Default/dataMux
-add wave -position insertpoint  \
-sim:/DE0_NANO_SOC_Default/instrCache/instrOutput \
-sim:/DE0_NANO_SOC_Default/instrCache/instrAddress \
-sim:/DE0_NANO_SOC_Default/instrCache/clk
-restart
-# ** Warning: (vsim-8822) /home/mathias/Projects/WolfCoreOne/logic/tb/tb_complete.v(75): [TFMPC] - Missing Verilog connection for formal VHDL port 'uartStatus'.
-#    Time: 0 ps  Iteration: 0  Instance: /DE0_NANO_SOC_Default/testUART File: /home/mathias/Projects/WolfCoreOne/logic/src/io/uart.vhd
-# ** Warning: (vsim-8822) /home/mathias/Projects/WolfCoreOne/logic/tb/tb_complete.v(87): [TFMPC] - Missing Verilog connection for formal VHDL port 'outputDataUART'.
-#    Time: 0 ps  Iteration: 0  Instance: /DE0_NANO_SOC_Default/dataMux File: /home/mathias/Projects/WolfCoreOne/logic/src/outputDataMux.vhd
-run
-# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: /DE0_NANO_SOC_Default/dataMux
-# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: /DE0_NANO_SOC_Default/dataMux
-add wave -position insertpoint  \
-sim:/DE0_NANO_SOC_Default/instrCtrl/instrOut \
-sim:/DE0_NANO_SOC_Default/instrCtrl/instrIn \
-sim:/DE0_NANO_SOC_Default/instrCtrl/IRQ \
-sim:/DE0_NANO_SOC_Default/instrCtrl/flowCtrlState \
-sim:/DE0_NANO_SOC_Default/instrCtrl/instrGen
-restart
-# ** Warning: (vsim-8822) /home/mathias/Projects/WolfCoreOne/logic/tb/tb_complete.v(75): [TFMPC] - Missing Verilog connection for formal VHDL port 'uartStatus'.
-#    Time: 0 ps  Iteration: 0  Instance: /DE0_NANO_SOC_Default/testUART File: /home/mathias/Projects/WolfCoreOne/logic/src/io/uart.vhd
-# ** Warning: (vsim-8822) /home/mathias/Projects/WolfCoreOne/logic/tb/tb_complete.v(87): [TFMPC] - Missing Verilog connection for formal VHDL port 'outputDataUART'.
-#    Time: 0 ps  Iteration: 0  Instance: /DE0_NANO_SOC_Default/dataMux File: /home/mathias/Projects/WolfCoreOne/logic/src/outputDataMux.vhd
-run
-# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: /DE0_NANO_SOC_Default/dataMux
-# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: /DE0_NANO_SOC_Default/dataMux
-# Compile of flowController.vhd was successful.
-# Compile of progMem.vhd was successful.
-# Compile of wolfcore.vhd was successful.
-# Compile of mmu.vhd was successful.
-# Compile of alu.vhd was successful.
-# Compile of data_cache.vhd was successful.
-# Compile of mainArch.vhd was successful.
-# Compile of tb_complete.v was successful.
-# Compile of outputDataMux.vhd was successful.
-# Compile of uart.vhd was successful.
-# 10 compiles, 0 failed with no errors.
-restart
-# Loading work.DE0_NANO_SOC_Default
-# Loading work.mainarch
-# Loading work.wolfcore(default)
-# Loading work.alu(default)
-# Loading work.flowcontroller(default)
-# Loading work.progmem(default)
-# Loading work.mmu(default)
-# Loading work.data_cache(syn)
-# Loading work.uart(default)
-# Loading work.outputdatamux(default)
-# ** Warning: (vsim-8822) /home/mathias/Projects/WolfCoreOne/logic/tb/tb_complete.v(75): [TFMPC] - Missing Verilog connection for formal VHDL port 'uartStatus'.
-#    Time: 0 ps  Iteration: 0  Instance: /DE0_NANO_SOC_Default/testUART File: /home/mathias/Projects/WolfCoreOne/logic/src/io/uart.vhd
-# ** Warning: (vsim-8822) /home/mathias/Projects/WolfCoreOne/logic/tb/tb_complete.v(87): [TFMPC] - Missing Verilog connection for formal VHDL port 'outputDataUART'.
-#    Time: 0 ps  Iteration: 0  Instance: /DE0_NANO_SOC_Default/dataMux File: /home/mathias/Projects/WolfCoreOne/logic/src/outputDataMux.vhd
-run
-# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: /DE0_NANO_SOC_Default/dataMux
-# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: /DE0_NANO_SOC_Default/dataMux
-add wave -position insertpoint  \
-sim:/DE0_NANO_SOC_Default/CPU/wbEn
-add wave -position insertpoint  \
-sim:/DE0_NANO_SOC_Default/CPU/dataWrEn
-restart
-# ** Warning: (vsim-8822) /home/mathias/Projects/WolfCoreOne/logic/tb/tb_complete.v(75): [TFMPC] - Missing Verilog connection for formal VHDL port 'uartStatus'.
-#    Time: 0 ps  Iteration: 0  Instance: /DE0_NANO_SOC_Default/testUART File: /home/mathias/Projects/WolfCoreOne/logic/src/io/uart.vhd
-# ** Warning: (vsim-8822) /home/mathias/Projects/WolfCoreOne/logic/tb/tb_complete.v(87): [TFMPC] - Missing Verilog connection for formal VHDL port 'outputDataUART'.
-#    Time: 0 ps  Iteration: 0  Instance: /DE0_NANO_SOC_Default/dataMux File: /home/mathias/Projects/WolfCoreOne/logic/src/outputDataMux.vhd
-run
-# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: /DE0_NANO_SOC_Default/dataMux
-# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: /DE0_NANO_SOC_Default/dataMux
-# Compile of flowController.vhd was successful.
-# Compile of progMem.vhd failed with 3 errors.
-# Compile of wolfcore.vhd was successful.
-# Compile of mmu.vhd was successful.
-# Compile of alu.vhd was successful.
-# Compile of data_cache.vhd was successful.
-# Compile of mainArch.vhd was successful.
-# Compile of tb_complete.v was successful.
-# Compile of outputDataMux.vhd was successful.
-# Compile of uart.vhd was successful.
-# 10 compiles, 1 failed with 3 errors.
-add wave -position insertpoint  \
-sim:/DE0_NANO_SOC_Default/TxD
-restart
-# Loading work.DE0_NANO_SOC_Default
-# Loading work.mainarch
-# Loading work.wolfcore(default)
-# Loading work.alu(default)
-# Loading work.flowcontroller(default)
-# Loading work.mmu(default)
-# Loading work.data_cache(syn)
-# Loading work.uart(default)
-# Loading work.outputdatamux(default)
-# ** Warning: (vsim-8822) /home/mathias/Projects/WolfCoreOne/logic/tb/tb_complete.v(75): [TFMPC] - Missing Verilog connection for formal VHDL port 'uartStatus'.
-#    Time: 0 ps  Iteration: 0  Instance: /DE0_NANO_SOC_Default/testUART File: /home/mathias/Projects/WolfCoreOne/logic/src/io/uart.vhd
-# ** Warning: (vsim-8822) /home/mathias/Projects/WolfCoreOne/logic/tb/tb_complete.v(87): [TFMPC] - Missing Verilog connection for formal VHDL port 'outputDataUART'.
-#    Time: 0 ps  Iteration: 0  Instance: /DE0_NANO_SOC_Default/dataMux File: /home/mathias/Projects/WolfCoreOne/logic/src/outputDataMux.vhd
-run
-# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: /DE0_NANO_SOC_Default/dataMux
-# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: /DE0_NANO_SOC_Default/dataMux
-add wave -position insertpoint  \
-sim:/DE0_NANO_SOC_Default/testUART/txCurrent
-add wave -position insertpoint  \
-sim:/DE0_NANO_SOC_Default/testUART/outputBuffer
-add wave -position insertpoint  \
-sim:/DE0_NANO_SOC_Default/testUART/TxD
-restart
-# ** Warning: (vsim-8822) /home/mathias/Projects/WolfCoreOne/logic/tb/tb_complete.v(75): [TFMPC] - Missing Verilog connection for formal VHDL port 'uartStatus'.
-#    Time: 0 ps  Iteration: 0  Instance: /DE0_NANO_SOC_Default/testUART File: /home/mathias/Projects/WolfCoreOne/logic/src/io/uart.vhd
-# ** Warning: (vsim-8822) /home/mathias/Projects/WolfCoreOne/logic/tb/tb_complete.v(87): [TFMPC] - Missing Verilog connection for formal VHDL port 'outputDataUART'.
-#    Time: 0 ps  Iteration: 0  Instance: /DE0_NANO_SOC_Default/dataMux File: /home/mathias/Projects/WolfCoreOne/logic/src/outputDataMux.vhd
-run
-# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: /DE0_NANO_SOC_Default/dataMux
-# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: /DE0_NANO_SOC_Default/dataMux
-# Compile of flowController.vhd was successful.
-# Compile of progMem.vhd failed with 3 errors.
-# Compile of wolfcore.vhd was successful.
-# Compile of mmu.vhd was successful.
-# Compile of alu.vhd was successful.
-# Compile of data_cache.vhd was successful.
-# Compile of mainArch.vhd was successful.
-# Compile of tb_complete.v was successful.
-# Compile of outputDataMux.vhd was successful.
-# Compile of uart.vhd was successful.
-# 10 compiles, 1 failed with 3 errors.
-# Compile of flowController.vhd was successful.
-# Compile of progMem.vhd was successful.
-# Compile of wolfcore.vhd was successful.
-# Compile of mmu.vhd was successful.
-# Compile of alu.vhd was successful.
-# Compile of data_cache.vhd was successful.
-# Compile of mainArch.vhd was successful.
-# Compile of tb_complete.v was successful.
-# Compile of outputDataMux.vhd was successful.
-# Compile of uart.vhd was successful.
-# 10 compiles, 0 failed with no errors.
-restart
-# Loading work.DE0_NANO_SOC_Default
-# Loading work.mainarch
-# Loading work.wolfcore(default)
-# Loading work.alu(default)
-# Loading work.flowcontroller(default)
-# Loading work.progmem(default)
-# Loading work.mmu(default)
-# Loading work.data_cache(syn)
-# Loading work.uart(default)
-# Loading work.outputdatamux(default)
-# ** Warning: (vsim-8822) /home/mathias/Projects/WolfCoreOne/logic/tb/tb_complete.v(75): [TFMPC] - Missing Verilog connection for formal VHDL port 'uartStatus'.
-#    Time: 0 ps  Iteration: 0  Instance: /DE0_NANO_SOC_Default/testUART File: /home/mathias/Projects/WolfCoreOne/logic/src/io/uart.vhd
-# ** Warning: (vsim-8822) /home/mathias/Projects/WolfCoreOne/logic/tb/tb_complete.v(87): [TFMPC] - Missing Verilog connection for formal VHDL port 'outputDataUART'.
-#    Time: 0 ps  Iteration: 0  Instance: /DE0_NANO_SOC_Default/dataMux File: /home/mathias/Projects/WolfCoreOne/logic/src/outputDataMux.vhd
-run
-# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: /DE0_NANO_SOC_Default/dataMux
-# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: /DE0_NANO_SOC_Default/dataMux
-run
-# Compile of flowController.vhd was successful.
-# Compile of progMem.vhd was successful.
-# Compile of wolfcore.vhd was successful.
-# Compile of mmu.vhd was successful.
-# Compile of alu.vhd was successful.
-# Compile of data_cache.vhd was successful.
-# Compile of mainArch.vhd was successful.
-# Compile of tb_complete.v was successful.
-# Compile of outputDataMux.vhd was successful.
-# Compile of uart.vhd was successful.
-# 10 compiles, 0 failed with no errors.
-# Compile of flowController.vhd was successful.
-# Compile of progMem.vhd was successful.
-# Compile of wolfcore.vhd was successful.
-# Compile of mmu.vhd was successful.
-# Compile of alu.vhd was successful.
-# Compile of data_cache.vhd was successful.
-# Compile of mainArch.vhd was successful.
-# Compile of tb_complete.v was successful.
-# Compile of outputDataMux.vhd was successful.
-# Compile of uart.vhd was successful.
-# 10 compiles, 0 failed with no errors.
-restart
-# Loading work.DE0_NANO_SOC_Default
-# Loading work.mainarch
-# Loading work.wolfcore(default)
-# Loading work.alu(default)
-# Loading work.flowcontroller(default)
-# Loading work.progmem(default)
-# Loading work.mmu(default)
-# Loading work.data_cache(syn)
-# Loading work.uart(default)
-# Loading work.outputdatamux(default)
-# ** Warning: (vsim-8822) /home/mathias/Projects/WolfCoreOne/logic/tb/tb_complete.v(75): [TFMPC] - Missing Verilog connection for formal VHDL port 'uartStatus'.
-#    Time: 0 ps  Iteration: 0  Instance: /DE0_NANO_SOC_Default/testUART File: /home/mathias/Projects/WolfCoreOne/logic/src/io/uart.vhd
-# ** Warning: (vsim-8822) /home/mathias/Projects/WolfCoreOne/logic/tb/tb_complete.v(87): [TFMPC] - Missing Verilog connection for formal VHDL port 'outputDataUART'.
-#    Time: 0 ps  Iteration: 0  Instance: /DE0_NANO_SOC_Default/dataMux File: /home/mathias/Projects/WolfCoreOne/logic/src/outputDataMux.vhd
-run
-# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: /DE0_NANO_SOC_Default/dataMux
-# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: /DE0_NANO_SOC_Default/dataMux
-write format wave -window .main_pane.wave.interior.cs.body.pw.wf /home/mathias/Projects/WolfCoreOne/logic/tb/wave_uart.do
-quit
-# End time: 11:35:17 on Mar 19,2017, Elapsed time: 0:22:46
-# Errors: 0, Warnings: 46

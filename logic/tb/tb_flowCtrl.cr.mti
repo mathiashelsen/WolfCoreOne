@@ -1,4 +1,11 @@
-/home/mathias/Projects/WolfCoreOne/logic/src/flowController.vhd {1 {vcom -work work -2002 -explicit -stats=none /home/mathias/Projects/WolfCoreOne/logic/src/flowController.vhd
+/home/mathias/Projects/WolfCoreOne/logic/tb/tb_complete.v {1 {vlog -work work -stats=none /home/mathias/Projects/WolfCoreOne/logic/tb/tb_complete.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module DE0_NANO_SOC_Default
+
+Top level modules:
+	DE0_NANO_SOC_Default
+
+} {} {}} /home/mathias/Projects/WolfCoreOne/logic/src/flowController.vhd {1 {vcom -work work -2002 -explicit -stats=none /home/mathias/Projects/WolfCoreOne/logic/src/flowController.vhd
 Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
 -- Loading package STANDARD
 -- Loading package TEXTIO
@@ -7,21 +14,14 @@ Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  
 -- Compiling entity flowController
 -- Compiling architecture default of flowController
 
-} {} {}} /home/mathias/Projects/WolfCoreOne/logic/tb/tb_complete.v {1 {vlog -work work -stats=none /home/mathias/Projects/WolfCoreOne/logic/tb/tb_complete.v
-Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
--- Compiling module DE0_NANO_SOC_Default
-
-Top level modules:
-	DE0_NANO_SOC_Default
-
-} {} {}} /home/mathias/Projects/WolfCoreOne/logic/src/outputDataMux.vhd {1 {vcom -work work -2002 -explicit -stats=none /home/mathias/Projects/WolfCoreOne/logic/src/outputDataMux.vhd
+} {} {}} /home/mathias/Projects/WolfCoreOne/logic/quartus_prj/data_cache.vhd {1 {vcom -work work -2002 -explicit -stats=none /home/mathias/Projects/WolfCoreOne/logic/quartus_prj/data_cache.vhd
 Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
 -- Loading package STANDARD
 -- Loading package TEXTIO
 -- Loading package std_logic_1164
--- Loading package NUMERIC_STD
--- Compiling entity outputDataMux
--- Compiling architecture default of outputDataMux
+-- Loading package altera_mf_components
+-- Compiling entity data_cache
+-- Compiling architecture SYN of data_cache
 
 } {} {}} /home/mathias/Projects/WolfCoreOne/logic/src/wolfcore.vhd {1 {vcom -work work -2002 -explicit -stats=none /home/mathias/Projects/WolfCoreOne/logic/src/wolfcore.vhd
 Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
@@ -33,14 +33,14 @@ Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  
 -- Compiling entity wolfcore
 -- Compiling architecture default of wolfcore
 
-} {} {}} /home/mathias/Projects/WolfCoreOne/logic/quartus_prj/data_cache.vhd {1 {vcom -work work -2002 -explicit -stats=none /home/mathias/Projects/WolfCoreOne/logic/quartus_prj/data_cache.vhd
+} {} {}} /home/mathias/Projects/WolfCoreOne/logic/src/outputDataMux.vhd {1 {vcom -work work -2002 -explicit -stats=none /home/mathias/Projects/WolfCoreOne/logic/src/outputDataMux.vhd
 Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
 -- Loading package STANDARD
 -- Loading package TEXTIO
 -- Loading package std_logic_1164
--- Loading package altera_mf_components
--- Compiling entity data_cache
--- Compiling architecture SYN of data_cache
+-- Loading package NUMERIC_STD
+-- Compiling entity outputDataMux
+-- Compiling architecture default of outputDataMux
 
 } {} {}} /home/mathias/Projects/WolfCoreOne/logic/src/alu.vhd {1 {vcom -work work -2002 -explicit -stats=none /home/mathias/Projects/WolfCoreOne/logic/src/alu.vhd
 Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
@@ -50,15 +50,6 @@ Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  
 -- Loading package NUMERIC_STD
 -- Compiling entity ALU
 -- Compiling architecture default of ALU
-
-} {} {}} /home/mathias/Projects/WolfCoreOne/logic/src/progMem.vhd {1 {vcom -work work -2002 -explicit -stats=none /home/mathias/Projects/WolfCoreOne/logic/src/progMem.vhd
-Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
--- Loading package STANDARD
--- Loading package TEXTIO
--- Loading package std_logic_1164
--- Loading package NUMERIC_STD
--- Compiling entity progMem
--- Compiling architecture default of progMem
 
 } {} {}} /home/mathias/Projects/WolfCoreOne/logic/src/io/uart.vhd {1 {vcom -work work -2002 -explicit -stats=none /home/mathias/Projects/WolfCoreOne/logic/src/io/uart.vhd
 Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
@@ -71,6 +62,11 @@ Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  
 -- Compiling entity UART
 -- Compiling architecture default of UART
 
+} {} {}} /home/mathias/Projects/WolfCoreOne/logic/src/mainArch.vhd {1 {vcom -work work -2002 -explicit -stats=none /home/mathias/Projects/WolfCoreOne/logic/src/mainArch.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Compiling package mainArch
+
 } {} {}} /home/mathias/Projects/WolfCoreOne/logic/src/mmu.vhd {1 {vcom -work work -2002 -explicit -stats=none /home/mathias/Projects/WolfCoreOne/logic/src/mmu.vhd
 Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
 -- Loading package STANDARD
@@ -79,10 +75,5 @@ Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  
 -- Loading package NUMERIC_STD
 -- Compiling entity mmu
 -- Compiling architecture default of mmu
-
-} {} {}} /home/mathias/Projects/WolfCoreOne/logic/src/mainArch.vhd {1 {vcom -work work -2002 -explicit -stats=none /home/mathias/Projects/WolfCoreOne/logic/src/mainArch.vhd
-Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
--- Loading package STANDARD
--- Compiling package mainArch
 
 } {} {}}

@@ -95,7 +95,8 @@ module DE0_NANO_SOC_Default(
 assign GPIO_0  		=	36'hzzzzzzzz;
 assign GPIO_1  		=	36'hzzzzzzzz;
 			
-wire uartClk;
+//mainPLL PLL( FPGA_CLK1_50, SW[2], clk );
+
 wire [31:0] cpuDataOut;
 wire [31:0] cpuDataIn;
 wire [31:0] cpuDataInAddr;
@@ -111,17 +112,16 @@ wire [31:0] instrCacheAddr;
 wire [31:0] instrCacheData;			
 			
 wire [31:0] dataOutFlowCtrl;
+wire [31:0] dataOutUART;
 wire [31:0] dataOutDataCache;
 			
-mainPLL PLL( FPGA_CLK1_50, SW[2], uartClk );
-
 wire clk;
 wire rst;
+wire TxD;
 
+assign GPIO_0[0] = TxD;
+assign rst = SW[0];
 assign clk = FPGA_CLK1_50;
-assign rst = KEY[0];
-
-assign LED = CPU_StatusBus[7:0];
 
 wolfcore CPU(
 	.dataOutput(cpuDataOut),
@@ -132,15 +132,15 @@ wolfcore CPU(
 	.instrInput(instrBus),
 	.pc(pcBus),
 	.CPU_Status(CPU_StatusBus),
-	.rst(KEY[0]),
-	.clk(uartClk),
+	.rst(rst),
+	.clk(clk),
 	.forceRoot(forceRoot),
 	.flushing(flushing)
 	);
 	
 flowController instrCtrl(
-	.rst(KEY[0]),
-	.clk(uartClk),
+	.rst(rst),
+	.clk(clk),
 	.pc(pcBus),
 	.CPU_Status(CPU_StatusBus),
 	.flushing(flushing),
@@ -148,7 +148,7 @@ flowController instrCtrl(
 	.forceRoot(forceRoot),
 	.memAddr(instrCacheAddr),
 	.instrIn(instrCacheData),
-	.IRQ(32'h00000000 | KEY[1]),
+	.IRQ(32'h00000000),
 	.inputAddr(cpuDataOutAddr),
 	.outputAddr(cpuDataInAddr),
 	.inputData(cpuDataOut),
@@ -159,7 +159,7 @@ flowController instrCtrl(
 progMem instrCache(
 	.instrOutput(instrCacheData),
 	.instrAddress(instrCacheAddr),
-	.clk(uartClk)
+	.clk(clk)
 );
 
 mmu dataCache(
@@ -168,7 +168,19 @@ mmu dataCache(
 	.dataOut(dataOutDataCache),
 	.dataOutAddr(cpuDataInAddr),
 	.wren(cpuWrEn),
-	.clk(uartClk)
+	.clk(clk)
+);
+
+UART testUART(
+	.clk(clk),
+	.rst(rst),
+	.RxD(1'b0),
+	.TxD(TxD),
+	.inputData(cpuDataOut),
+        .inputAddr(cpuDataOutAddr),
+        .outputData(dataOutUART), 
+        .outputAddr(cpuDataInAddr),
+        .wren(cpuWrEn)
 );
 
 outputDataMux dataMux(
@@ -177,6 +189,5 @@ outputDataMux dataMux(
 	.outputDataDataCache(dataOutDataCache),
 	.outputData(cpuDataIn)
 	);
-
-				
+	
 endmodule

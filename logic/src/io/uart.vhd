@@ -75,9 +75,7 @@ process(clk, rst) begin
 
             end case;  
         end if;
-    end if;
-    
-    if(clk'event and clk='1') then
+    elsif(clk'event and clk='1') then
         case txCurrent is
             when IDLE =>
                 if(uartStatusC(0) = '1') then
