@@ -55,16 +55,48 @@ when X"0000000b" =>
 -- [MOV R0 R4 A *R6 -cmp]
 when X"0000000c" =>
      instrOutput <= X"02008962";
--- [MOV R0 0x61 A *R5 -cmp]
+-- [MOV R0 0x62 A *R5 -cmp]
 when X"0000000d" =>
-     instrOutput <= X"80618952";
+     instrOutput <= X"80628952";
 -- [MOV R0 1 A *R7 -cmp]
 when X"0000000e" =>
      instrOutput <= X"80018972";
 -- [MOV R0 0 A *R7 -cmp]
 when X"0000000f" =>
      instrOutput <= X"80008972";
-
+-- [MOV R0 R0 N R0 -cmp]
+when X"00000010" =>
+     instrOutput <= X"00000900";
+-- [MOV R0 R0 N R0 -cmp]
+when X"00000011" =>
+     instrOutput <= X"00000900";
+-- [MOV R0 R0 N R0 -cmp]
+when X"00000012" =>
+     instrOutput <= X"00000900";
+-- [MOV R0 R0 N R0 -cmp]
+when X"00000013" =>
+     instrOutput <= X"00000900";
+-- [MOV R0 R0 N R0 -cmp]
+when X"00000014" =>
+     instrOutput <= X"00000900";
+-- [MOV R0 R0 N R0 -cmp]
+when X"00000015" =>
+     instrOutput <= X"00000900";
+-- [MOV R0 *R7 A R1 -cmp]
+when X"00000016" =>
+     instrOutput <= X"03804912";
+-- [MOV R0 R0 N R0 -cmp]
+when X"00000017" =>
+     instrOutput <= X"00000900";
+-- [AND R1 1 A R1 +cmp]
+when X"00000018" =>
+     instrOutput <= X"88010313";
+-- [MOV R0 _sendChar Z PC -cmp]
+when X"00000019" =>
+     instrOutput <= X"800609d4";
+-- [MOV R0 _loop NZ PC -cmp]
+when X"0000001a" =>
+     instrOutput <= X"801609d6";
                 when others =>
                     instrOutput <= X"0000_0000";
 		end case;

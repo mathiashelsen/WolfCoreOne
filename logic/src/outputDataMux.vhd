@@ -17,7 +17,7 @@ end entity;
 architecture default of outputDataMux is
 begin
 
-process(outputAddr, outputDataFlowCtrl, outputDataDataCache) begin
+process(outputAddr, outputDataUART, outputDataFlowCtrl, outputDataDataCache) begin
     -- Flow control  can talk
     if( unsigned(outputAddr) > X"0000_FFFF" and 
         unsigned(outputAddr) < X"0002_0000" ) then

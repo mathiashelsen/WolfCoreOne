@@ -1,5 +1,5 @@
 TimeQuest Timing Analyzer report for DE0_NANO_SOC_Default
-Sun Mar 19 12:49:43 2017
+Sun Mar 19 13:40:25 2017
 Quartus Prime Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
 
 
@@ -100,14 +100,14 @@ agreement for further details.
 ; Number detected on machine ; 8           ;
 ; Maximum allowed            ; 4           ;
 ;                            ;             ;
-; Average used               ; 1.51        ;
+; Average used               ; 2.08        ;
 ; Maximum used               ; 4           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;  17.1%      ;
-;     Processor 3            ;  16.9%      ;
-;     Processor 4            ;  16.7%      ;
+;     Processor 2            ;  36.6%      ;
+;     Processor 3            ;  36.1%      ;
+;     Processor 4            ;  35.7%      ;
 +----------------------------+-------------+
 
 
@@ -121,13 +121,13 @@ agreement for further details.
 +---------------------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-------------------------------------+
 
 
-+----------------------------------------------------+
-; Slow 1100mV 85C Model Fmax Summary                 ;
-+------------+-----------------+--------------+------+
-; Fmax       ; Restricted Fmax ; Clock Name   ; Note ;
-+------------+-----------------+--------------+------+
-; 106.47 MHz ; 106.47 MHz      ; FPGA_CLK1_50 ;      ;
-+------------+-----------------+--------------+------+
++---------------------------------------------------+
+; Slow 1100mV 85C Model Fmax Summary                ;
++-----------+-----------------+--------------+------+
+; Fmax      ; Restricted Fmax ; Clock Name   ; Note ;
++-----------+-----------------+--------------+------+
+; 91.85 MHz ; 91.85 MHz       ; FPGA_CLK1_50 ;      ;
++-----------+-----------------+--------------+------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
 
@@ -142,8 +142,8 @@ HTML report is unavailable in plain text report export.
 +---------------------------------+--------+---------------+
 ; Clock                           ; Slack  ; End Point TNS ;
 +---------------------------------+--------+---------------+
-; FPGA_CLK1_50                    ; -8.392 ; -1771.408     ;
-; wolfcore:CPU|instrWriteBack[10] ; -6.304 ; -173.720      ;
+; FPGA_CLK1_50                    ; -9.887 ; -15300.812    ;
+; wolfcore:CPU|instrWriteBack[10] ; -5.858 ; -167.476      ;
 +---------------------------------+--------+---------------+
 
 
@@ -152,8 +152,8 @@ HTML report is unavailable in plain text report export.
 +---------------------------------+--------+---------------+
 ; Clock                           ; Slack  ; End Point TNS ;
 +---------------------------------+--------+---------------+
-; FPGA_CLK1_50                    ; -1.854 ; -61.527       ;
-; wolfcore:CPU|instrWriteBack[10] ; 2.142  ; 0.000         ;
+; FPGA_CLK1_50                    ; -0.919 ; -2.817        ;
+; wolfcore:CPU|instrWriteBack[10] ; 1.489  ; 0.000         ;
 +---------------------------------+--------+---------------+
 
 
@@ -174,25 +174,24 @@ No paths to report.
 +---------------------------------+--------+---------------+
 ; Clock                           ; Slack  ; End Point TNS ;
 +---------------------------------+--------+---------------+
-; FPGA_CLK1_50                    ; -0.394 ; -308.043      ;
-; wolfcore:CPU|instrWriteBack[10] ; 0.035  ; 0.000         ;
+; FPGA_CLK1_50                    ; -2.174 ; -10425.790    ;
+; wolfcore:CPU|instrWriteBack[10] ; -0.030 ; -0.066        ;
 +---------------------------------+--------+---------------+
 
 
 -----------------------------------------------
 ; Slow 1100mV 85C Model Metastability Summary ;
 -----------------------------------------------
-Design MTBF is not calculated because the design doesn't meet its timing requirements.
+No synchronizer chains to report.
 
 
-
-+----------------------------------------------------+
-; Slow 1100mV 0C Model Fmax Summary                  ;
-+------------+-----------------+--------------+------+
-; Fmax       ; Restricted Fmax ; Clock Name   ; Note ;
-+------------+-----------------+--------------+------+
-; 109.11 MHz ; 109.11 MHz      ; FPGA_CLK1_50 ;      ;
-+------------+-----------------+--------------+------+
++---------------------------------------------------+
+; Slow 1100mV 0C Model Fmax Summary                 ;
++-----------+-----------------+--------------+------+
+; Fmax      ; Restricted Fmax ; Clock Name   ; Note ;
++-----------+-----------------+--------------+------+
+; 94.23 MHz ; 94.23 MHz       ; FPGA_CLK1_50 ;      ;
++-----------+-----------------+--------------+------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
 
@@ -201,8 +200,8 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +---------------------------------+--------+---------------+
 ; Clock                           ; Slack  ; End Point TNS ;
 +---------------------------------+--------+---------------+
-; FPGA_CLK1_50                    ; -8.165 ; -1728.335     ;
-; wolfcore:CPU|instrWriteBack[10] ; -6.391 ; -178.623      ;
+; FPGA_CLK1_50                    ; -9.612 ; -14827.233    ;
+; wolfcore:CPU|instrWriteBack[10] ; -5.963 ; -171.331      ;
 +---------------------------------+--------+---------------+
 
 
@@ -211,8 +210,8 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +---------------------------------+--------+---------------+
 ; Clock                           ; Slack  ; End Point TNS ;
 +---------------------------------+--------+---------------+
-; FPGA_CLK1_50                    ; -1.912 ; -77.846       ;
-; wolfcore:CPU|instrWriteBack[10] ; 2.212  ; 0.000         ;
+; FPGA_CLK1_50                    ; -0.985 ; -3.899        ;
+; wolfcore:CPU|instrWriteBack[10] ; 1.620  ; 0.000         ;
 +---------------------------------+--------+---------------+
 
 
@@ -233,16 +232,15 @@ No paths to report.
 +---------------------------------+--------+---------------+
 ; Clock                           ; Slack  ; End Point TNS ;
 +---------------------------------+--------+---------------+
-; FPGA_CLK1_50                    ; -0.394 ; -276.197      ;
-; wolfcore:CPU|instrWriteBack[10] ; 0.067  ; 0.000         ;
+; FPGA_CLK1_50                    ; -2.174 ; -10362.807    ;
+; wolfcore:CPU|instrWriteBack[10] ; -0.008 ; -0.016        ;
 +---------------------------------+--------+---------------+
 
 
 ----------------------------------------------
 ; Slow 1100mV 0C Model Metastability Summary ;
 ----------------------------------------------
-Design MTBF is not calculated because the design doesn't meet its timing requirements.
-
+No synchronizer chains to report.
 
 
 +----------------------------------------------------------+
@@ -250,8 +248,8 @@ Design MTBF is not calculated because the design doesn't meet its timing require
 +---------------------------------+--------+---------------+
 ; Clock                           ; Slack  ; End Point TNS ;
 +---------------------------------+--------+---------------+
-; FPGA_CLK1_50                    ; -5.096 ; -936.696      ;
-; wolfcore:CPU|instrWriteBack[10] ; -3.217 ; -85.253       ;
+; FPGA_CLK1_50                    ; -6.134 ; -6985.415     ;
+; wolfcore:CPU|instrWriteBack[10] ; -3.086 ; -82.832       ;
 +---------------------------------+--------+---------------+
 
 
@@ -260,8 +258,8 @@ Design MTBF is not calculated because the design doesn't meet its timing require
 +---------------------------------+--------+---------------+
 ; Clock                           ; Slack  ; End Point TNS ;
 +---------------------------------+--------+---------------+
-; FPGA_CLK1_50                    ; -0.962 ; -18.154       ;
-; wolfcore:CPU|instrWriteBack[10] ; 1.209  ; 0.000         ;
+; FPGA_CLK1_50                    ; -0.330 ; -0.407        ;
+; wolfcore:CPU|instrWriteBack[10] ; 0.647  ; 0.000         ;
 +---------------------------------+--------+---------------+
 
 
@@ -282,16 +280,15 @@ No paths to report.
 +---------------------------------+--------+---------------+
 ; Clock                           ; Slack  ; End Point TNS ;
 +---------------------------------+--------+---------------+
-; FPGA_CLK1_50                    ; -0.393 ; -201.781      ;
-; wolfcore:CPU|instrWriteBack[10] ; 0.120  ; 0.000         ;
+; FPGA_CLK1_50                    ; -2.174 ; -10372.229    ;
+; wolfcore:CPU|instrWriteBack[10] ; 0.034  ; 0.000         ;
 +---------------------------------+--------+---------------+
 
 
 -----------------------------------------------
 ; Fast 1100mV 85C Model Metastability Summary ;
 -----------------------------------------------
-Design MTBF is not calculated because the design doesn't meet its timing requirements.
-
+No synchronizer chains to report.
 
 
 +----------------------------------------------------------+
@@ -299,8 +296,8 @@ Design MTBF is not calculated because the design doesn't meet its timing require
 +---------------------------------+--------+---------------+
 ; Clock                           ; Slack  ; End Point TNS ;
 +---------------------------------+--------+---------------+
-; FPGA_CLK1_50                    ; -4.399 ; -797.851      ;
-; wolfcore:CPU|instrWriteBack[10] ; -2.979 ; -80.632       ;
+; FPGA_CLK1_50                    ; -5.331 ; -5455.308     ;
+; wolfcore:CPU|instrWriteBack[10] ; -2.831 ; -77.477       ;
 +---------------------------------+--------+---------------+
 
 
@@ -309,8 +306,8 @@ Design MTBF is not calculated because the design doesn't meet its timing require
 +---------------------------------+--------+---------------+
 ; Clock                           ; Slack  ; End Point TNS ;
 +---------------------------------+--------+---------------+
-; FPGA_CLK1_50                    ; -0.960 ; -23.436       ;
-; wolfcore:CPU|instrWriteBack[10] ; 1.240  ; 0.000         ;
+; FPGA_CLK1_50                    ; -0.388 ; -0.687        ;
+; wolfcore:CPU|instrWriteBack[10] ; 0.760  ; 0.000         ;
 +---------------------------------+--------+---------------+
 
 
@@ -331,30 +328,29 @@ No paths to report.
 +---------------------------------+--------+---------------+
 ; Clock                           ; Slack  ; End Point TNS ;
 +---------------------------------+--------+---------------+
-; FPGA_CLK1_50                    ; -0.433 ; -247.524      ;
-; wolfcore:CPU|instrWriteBack[10] ; 0.194  ; 0.000         ;
+; FPGA_CLK1_50                    ; -2.174 ; -10734.378    ;
+; wolfcore:CPU|instrWriteBack[10] ; 0.126  ; 0.000         ;
 +---------------------------------+--------+---------------+
 
 
 ----------------------------------------------
 ; Fast 1100mV 0C Model Metastability Summary ;
 ----------------------------------------------
-Design MTBF is not calculated because the design doesn't meet its timing requirements.
-
+No synchronizer chains to report.
 
 
 +---------------------------------------------------------------------------------------------------+
 ; Multicorner Timing Analysis Summary                                                               ;
-+----------------------------------+-----------+---------+----------+---------+---------------------+
-; Clock                            ; Setup     ; Hold    ; Recovery ; Removal ; Minimum Pulse Width ;
-+----------------------------------+-----------+---------+----------+---------+---------------------+
-; Worst-case Slack                 ; -8.392    ; -1.912  ; N/A      ; N/A     ; -0.433              ;
-;  FPGA_CLK1_50                    ; -8.392    ; -1.912  ; N/A      ; N/A     ; -0.433              ;
-;  wolfcore:CPU|instrWriteBack[10] ; -6.391    ; 1.209   ; N/A      ; N/A     ; 0.035               ;
-; Design-wide TNS                  ; -1945.128 ; -77.846 ; 0.0      ; 0.0     ; -308.043            ;
-;  FPGA_CLK1_50                    ; -1771.408 ; -77.846 ; N/A      ; N/A     ; -308.043            ;
-;  wolfcore:CPU|instrWriteBack[10] ; -178.623  ; 0.000   ; N/A      ; N/A     ; 0.000               ;
-+----------------------------------+-----------+---------+----------+---------+---------------------+
++----------------------------------+------------+--------+----------+---------+---------------------+
+; Clock                            ; Setup      ; Hold   ; Recovery ; Removal ; Minimum Pulse Width ;
++----------------------------------+------------+--------+----------+---------+---------------------+
+; Worst-case Slack                 ; -9.887     ; -0.985 ; N/A      ; N/A     ; -2.174              ;
+;  FPGA_CLK1_50                    ; -9.887     ; -0.985 ; N/A      ; N/A     ; -2.174              ;
+;  wolfcore:CPU|instrWriteBack[10] ; -5.963     ; 0.647  ; N/A      ; N/A     ; -0.030              ;
+; Design-wide TNS                  ; -15468.288 ; -3.899 ; 0.0      ; 0.0     ; -10734.378          ;
+;  FPGA_CLK1_50                    ; -15300.812 ; -3.899 ; N/A      ; N/A     ; -10734.378          ;
+;  wolfcore:CPU|instrWriteBack[10] ; -171.331   ; 0.000  ; N/A      ; N/A     ; -0.066              ;
++----------------------------------+------------+--------+----------+---------+---------------------+
 
 
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -907,8 +903,8 @@ Design MTBF is not calculated because the design doesn't meet its timing require
 +---------------------------------+---------------------------------+----------+----------+----------+----------+
 ; From Clock                      ; To Clock                        ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
 +---------------------------------+---------------------------------+----------+----------+----------+----------+
-; FPGA_CLK1_50                    ; FPGA_CLK1_50                    ; 20772    ; 139      ; 1999     ; 1        ;
-; wolfcore:CPU|instrWriteBack[10] ; FPGA_CLK1_50                    ; 915      ; 1075     ; 0        ; 0        ;
+; FPGA_CLK1_50                    ; FPGA_CLK1_50                    ; 71121    ; 427      ; 38010    ; 2090     ;
+; wolfcore:CPU|instrWriteBack[10] ; FPGA_CLK1_50                    ; 2614     ; 3129     ; 0        ; 0        ;
 ; FPGA_CLK1_50                    ; wolfcore:CPU|instrWriteBack[10] ; 0        ; 0        ; 2176     ; 0        ;
 +---------------------------------+---------------------------------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
@@ -919,8 +915,8 @@ Entries labeled "false path" only account for clock-to-clock false paths and not
 +---------------------------------+---------------------------------+----------+----------+----------+----------+
 ; From Clock                      ; To Clock                        ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
 +---------------------------------+---------------------------------+----------+----------+----------+----------+
-; FPGA_CLK1_50                    ; FPGA_CLK1_50                    ; 20772    ; 139      ; 1999     ; 1        ;
-; wolfcore:CPU|instrWriteBack[10] ; FPGA_CLK1_50                    ; 915      ; 1075     ; 0        ; 0        ;
+; FPGA_CLK1_50                    ; FPGA_CLK1_50                    ; 71121    ; 427      ; 38010    ; 2090     ;
+; wolfcore:CPU|instrWriteBack[10] ; FPGA_CLK1_50                    ; 2614     ; 3129     ; 0        ; 0        ;
 ; FPGA_CLK1_50                    ; wolfcore:CPU|instrWriteBack[10] ; 0        ; 0        ; 2176     ; 0        ;
 +---------------------------------+---------------------------------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
@@ -946,7 +942,7 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 ; Illegal Clocks                  ; 0     ; 0    ;
 ; Unconstrained Clocks            ; 0     ; 0    ;
 ; Unconstrained Input Ports       ; 1     ; 1    ;
-; Unconstrained Input Port Paths  ; 465   ; 465  ;
+; Unconstrained Input Port Paths  ; 1988  ; 1988 ;
 ; Unconstrained Output Ports      ; 1     ; 1    ;
 ; Unconstrained Output Port Paths ; 1     ; 1    ;
 +---------------------------------+-------+------+
@@ -1004,7 +1000,7 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 Info: *******************************************************************
 Info: Running Quartus Prime TimeQuest Timing Analyzer
     Info: Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
-    Info: Processing started: Sun Mar 19 12:49:35 2017
+    Info: Processing started: Sun Mar 19 13:40:11 2017
 Info: Command: quartus_sta DE0_NANO_SOC_Default -c DE0_NANO_SOC_Default
 Info: qsta_default_script.tcl version: #1
 Warning (20013): Ignored 16 assignments for entity "mainPLL" -- entity does not exist in design
@@ -1023,121 +1019,113 @@ Info (332105): Deriving Clocks
     Info (332105): create_clock -period 1.000 -name FPGA_CLK1_50 FPGA_CLK1_50
     Info (332105): create_clock -period 1.000 -name wolfcore:CPU|instrWriteBack[10] wolfcore:CPU|instrWriteBack[10]
 Info (332097): The following timing edges are non-unate.  TimeQuest will assume pos-unate behavior for these edges in the clock network.
-    Info (332098): Cell: CPU|mainALU|Mux1~0  from: datad  to: combout
+    Info (332098): Cell: CPU|mainALU|Mux1~0  from: datac  to: combout
 Info (332143): No user constrained clock uncertainty found in the design. Calling "derive_clock_uncertainty"
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
 Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
 Info: Analyzing Slow 1100mV 85C Model
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the TimeQuest Timing Analyzer.
-Info (332146): Worst-case setup slack is -8.392
+Info (332146): Worst-case setup slack is -9.887
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -8.392           -1771.408 FPGA_CLK1_50 
-    Info (332119):    -6.304            -173.720 wolfcore:CPU|instrWriteBack[10] 
-Info (332146): Worst-case hold slack is -1.854
+    Info (332119):    -9.887          -15300.812 FPGA_CLK1_50 
+    Info (332119):    -5.858            -167.476 wolfcore:CPU|instrWriteBack[10] 
+Info (332146): Worst-case hold slack is -0.919
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -1.854             -61.527 FPGA_CLK1_50 
-    Info (332119):     2.142               0.000 wolfcore:CPU|instrWriteBack[10] 
+    Info (332119):    -0.919              -2.817 FPGA_CLK1_50 
+    Info (332119):     1.489               0.000 wolfcore:CPU|instrWriteBack[10] 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
-Info (332146): Worst-case minimum pulse width slack is -0.394
+Info (332146): Worst-case minimum pulse width slack is -2.174
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -0.394            -308.043 FPGA_CLK1_50 
-    Info (332119):     0.035               0.000 wolfcore:CPU|instrWriteBack[10] 
+    Info (332119):    -2.174          -10425.790 FPGA_CLK1_50 
+    Info (332119):    -0.030              -0.066 wolfcore:CPU|instrWriteBack[10] 
 Warning (18330): Ignoring Synchronizer Identification setting Off, and using Auto instead.
-Info (332114): Report Metastability: Found 40 synchronizer chains.
-    Info (332114): Design MTBF is not calculated because the design doesn't meet its timing requirements.
 Info: Analyzing Slow 1100mV 0C Model
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (332097): The following timing edges are non-unate.  TimeQuest will assume pos-unate behavior for these edges in the clock network.
-    Info (332098): Cell: CPU|mainALU|Mux1~0  from: datad  to: combout
+    Info (332098): Cell: CPU|mainALU|Mux1~0  from: datac  to: combout
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the TimeQuest Timing Analyzer.
-Info (332146): Worst-case setup slack is -8.165
+Info (332146): Worst-case setup slack is -9.612
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -8.165           -1728.335 FPGA_CLK1_50 
-    Info (332119):    -6.391            -178.623 wolfcore:CPU|instrWriteBack[10] 
-Info (332146): Worst-case hold slack is -1.912
+    Info (332119):    -9.612          -14827.233 FPGA_CLK1_50 
+    Info (332119):    -5.963            -171.331 wolfcore:CPU|instrWriteBack[10] 
+Info (332146): Worst-case hold slack is -0.985
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -1.912             -77.846 FPGA_CLK1_50 
-    Info (332119):     2.212               0.000 wolfcore:CPU|instrWriteBack[10] 
+    Info (332119):    -0.985              -3.899 FPGA_CLK1_50 
+    Info (332119):     1.620               0.000 wolfcore:CPU|instrWriteBack[10] 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
-Info (332146): Worst-case minimum pulse width slack is -0.394
+Info (332146): Worst-case minimum pulse width slack is -2.174
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -0.394            -276.197 FPGA_CLK1_50 
-    Info (332119):     0.067               0.000 wolfcore:CPU|instrWriteBack[10] 
+    Info (332119):    -2.174          -10362.807 FPGA_CLK1_50 
+    Info (332119):    -0.008              -0.016 wolfcore:CPU|instrWriteBack[10] 
 Warning (18330): Ignoring Synchronizer Identification setting Off, and using Auto instead.
-Info (332114): Report Metastability: Found 40 synchronizer chains.
-    Info (332114): Design MTBF is not calculated because the design doesn't meet its timing requirements.
 Info: Analyzing Fast 1100mV 85C Model
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (332097): The following timing edges are non-unate.  TimeQuest will assume pos-unate behavior for these edges in the clock network.
-    Info (332098): Cell: CPU|mainALU|Mux1~0  from: datad  to: combout
+    Info (332098): Cell: CPU|mainALU|Mux1~0  from: datac  to: combout
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the TimeQuest Timing Analyzer.
-Info (332146): Worst-case setup slack is -5.096
+Info (332146): Worst-case setup slack is -6.134
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -5.096            -936.696 FPGA_CLK1_50 
-    Info (332119):    -3.217             -85.253 wolfcore:CPU|instrWriteBack[10] 
-Info (332146): Worst-case hold slack is -0.962
+    Info (332119):    -6.134           -6985.415 FPGA_CLK1_50 
+    Info (332119):    -3.086             -82.832 wolfcore:CPU|instrWriteBack[10] 
+Info (332146): Worst-case hold slack is -0.330
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -0.962             -18.154 FPGA_CLK1_50 
-    Info (332119):     1.209               0.000 wolfcore:CPU|instrWriteBack[10] 
+    Info (332119):    -0.330              -0.407 FPGA_CLK1_50 
+    Info (332119):     0.647               0.000 wolfcore:CPU|instrWriteBack[10] 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
-Info (332146): Worst-case minimum pulse width slack is -0.393
+Info (332146): Worst-case minimum pulse width slack is -2.174
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -0.393            -201.781 FPGA_CLK1_50 
-    Info (332119):     0.120               0.000 wolfcore:CPU|instrWriteBack[10] 
+    Info (332119):    -2.174          -10372.229 FPGA_CLK1_50 
+    Info (332119):     0.034               0.000 wolfcore:CPU|instrWriteBack[10] 
 Warning (18330): Ignoring Synchronizer Identification setting Off, and using Auto instead.
-Info (332114): Report Metastability: Found 40 synchronizer chains.
-    Info (332114): Design MTBF is not calculated because the design doesn't meet its timing requirements.
 Info: Analyzing Fast 1100mV 0C Model
 Info (332097): The following timing edges are non-unate.  TimeQuest will assume pos-unate behavior for these edges in the clock network.
-    Info (332098): Cell: CPU|mainALU|Mux1~0  from: datad  to: combout
+    Info (332098): Cell: CPU|mainALU|Mux1~0  from: datac  to: combout
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the TimeQuest Timing Analyzer.
-Info (332146): Worst-case setup slack is -4.399
+Info (332146): Worst-case setup slack is -5.331
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -4.399            -797.851 FPGA_CLK1_50 
-    Info (332119):    -2.979             -80.632 wolfcore:CPU|instrWriteBack[10] 
-Info (332146): Worst-case hold slack is -0.960
+    Info (332119):    -5.331           -5455.308 FPGA_CLK1_50 
+    Info (332119):    -2.831             -77.477 wolfcore:CPU|instrWriteBack[10] 
+Info (332146): Worst-case hold slack is -0.388
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -0.960             -23.436 FPGA_CLK1_50 
-    Info (332119):     1.240               0.000 wolfcore:CPU|instrWriteBack[10] 
+    Info (332119):    -0.388              -0.687 FPGA_CLK1_50 
+    Info (332119):     0.760               0.000 wolfcore:CPU|instrWriteBack[10] 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
-Info (332146): Worst-case minimum pulse width slack is -0.433
+Info (332146): Worst-case minimum pulse width slack is -2.174
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -0.433            -247.524 FPGA_CLK1_50 
-    Info (332119):     0.194               0.000 wolfcore:CPU|instrWriteBack[10] 
+    Info (332119):    -2.174          -10734.378 FPGA_CLK1_50 
+    Info (332119):     0.126               0.000 wolfcore:CPU|instrWriteBack[10] 
 Warning (18330): Ignoring Synchronizer Identification setting Off, and using Auto instead.
-Info (332114): Report Metastability: Found 40 synchronizer chains.
-    Info (332114): Design MTBF is not calculated because the design doesn't meet its timing requirements.
 Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
 Info: Quartus Prime TimeQuest Timing Analyzer was successful. 0 errors, 16 warnings
-    Info: Peak virtual memory: 1491 megabytes
-    Info: Processing ended: Sun Mar 19 12:49:43 2017
-    Info: Elapsed time: 00:00:08
-    Info: Total CPU time (on all processors): 00:00:11
+    Info: Peak virtual memory: 1564 megabytes
+    Info: Processing ended: Sun Mar 19 13:40:25 2017
+    Info: Elapsed time: 00:00:14
+    Info: Total CPU time (on all processors): 00:00:26
 
 

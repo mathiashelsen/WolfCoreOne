@@ -86,6 +86,7 @@ UART testUART(
 
 outputDataMux dataMux(
 	.outputAddr(cpuDataInAddr),
+	.outputDataUART(dataOutUART),
 	.outputDataFlowCtrl(dataOutFlowCtrl),
 	.outputDataDataCache(dataOutDataCache),
 	.outputData(cpuDataIn)

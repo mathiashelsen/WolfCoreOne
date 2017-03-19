@@ -81,7 +81,7 @@ process(clk, rst) begin
                 if(uartStatusC(0) = '1') then
                     txCurrent                   <= SENDING;
                     clkDivCtr                   <= clkDiv;
-                    bitCtr                      <= to_unsigned(9, 5);
+                    bitCtr                      <= to_unsigned(10, 5);
                     uartStatus(0)               <= '1';
                     outputBuffer                <= '1' & outputCache & '0';
                 end if;
