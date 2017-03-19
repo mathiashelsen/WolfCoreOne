@@ -2,50 +2,14 @@
 # Compile of flowController.vhd was successful.
 # Compile of progMem.vhd was successful.
 # Compile of wolfcore.vhd was successful.
-# Compile of mmu.vhd failed with 2 errors.
-# Compile of alu.vhd was successful.
-# Compile of data_cache.vhd was successful.
-# Compile of mainArch.vhd was successful.
-# Compile of tb_complete.v failed with 1 errors.
-# 8 compiles, 2 failed with 3 errors.
-# Compile of flowController.vhd was successful.
-# Compile of progMem.vhd was successful.
-# Compile of wolfcore.vhd was successful.
-# Compile of mmu.vhd was successful.
-# Compile of alu.vhd was successful.
-# Compile of data_cache.vhd was successful.
-# Compile of mainArch.vhd was successful.
-# Compile of tb_complete.v failed with 4 errors.
-# 8 compiles, 1 failed with 4 errors.
-# Compile of flowController.vhd was successful.
-# Compile of progMem.vhd was successful.
-# Compile of wolfcore.vhd was successful.
 # Compile of mmu.vhd was successful.
 # Compile of alu.vhd was successful.
 # Compile of data_cache.vhd was successful.
 # Compile of mainArch.vhd was successful.
 # Compile of tb_complete.v was successful.
-# 8 compiles, 0 failed with no errors.
-# Compile of flowController.vhd was successful.
-# Compile of progMem.vhd was successful.
-# Compile of wolfcore.vhd was successful.
-# Compile of mmu.vhd was successful.
-# Compile of alu.vhd was successful.
-# Compile of data_cache.vhd was successful.
-# Compile of mainArch.vhd was successful.
-# Compile of tb_complete.v was successful.
-# 8 compiles, 0 failed with no errors.
-vsim work.DE0_NANO_SOC_Default
-# vsim work.DE0_NANO_SOC_Default 
-# Start time: 08:32:23 on Mar 19,2017
-# Loading work.DE0_NANO_SOC_Default
-# ** Error: (vsim-3033) /home/mathias/Projects/WolfCoreOne/logic/tb/tb_complete.v(78): Instantiation of 'outputDataMux' failed. The design unit was not found.
-#    Time: 0 ps  Iteration: 0  Instance: /DE0_NANO_SOC_Default File: /home/mathias/Projects/WolfCoreOne/logic/tb/tb_complete.v
-#         Searched libraries:
-#             /home/mathias/Projects/WolfCoreOne/logic/tb/work
-# Error loading design
-# End time: 08:32:23 on Mar 19,2017, Elapsed time: 0:00:00
-# Errors: 1, Warnings: 0
+# Compile of outputDataMux.vhd failed with 3 errors.
+# Compile of uart.vhd failed with 7 errors.
+# 10 compiles, 2 failed with 10 errors.
 # Compile of flowController.vhd was successful.
 # Compile of progMem.vhd was successful.
 # Compile of wolfcore.vhd was successful.
@@ -55,10 +19,11 @@ vsim work.DE0_NANO_SOC_Default
 # Compile of mainArch.vhd was successful.
 # Compile of tb_complete.v was successful.
 # Compile of outputDataMux.vhd was successful.
-# 9 compiles, 0 failed with no errors.
+# Compile of uart.vhd was successful.
+# 10 compiles, 0 failed with no errors.
 vsim work.DE0_NANO_SOC_Default
 # vsim work.DE0_NANO_SOC_Default 
-# Start time: 08:32:51 on Mar 19,2017
+# Start time: 11:11:52 on Mar 19,2017
 # Loading work.DE0_NANO_SOC_Default
 # Loading std.standard
 # Loading std.textio(body)
@@ -77,41 +42,107 @@ vsim work.DE0_NANO_SOC_Default
 # Loading altera_mf.altera_common_conversion(body)
 # Loading altera_mf.altera_device_families(body)
 # Loading altera_mf.altsyncram(translated)
+# Loading work.uart(default)
+# ** Error: (vsim-3060) /home/mathias/Projects/WolfCoreOne/logic/tb/tb_complete.v(75): Port 'dataOutAddr' not found in VHDL entity (8th connection).
+#    Time: 0 ps  Iteration: 0  Instance: /DE0_NANO_SOC_Default/testUART File: /home/mathias/Projects/WolfCoreOne/logic/src/io/uart.vhd
 # Loading work.outputdatamux(default)
-add wave -position insertpoint  \
-sim:/DE0_NANO_SOC_Default/uartClk \
-sim:/DE0_NANO_SOC_Default/cpuDataOut \
-sim:/DE0_NANO_SOC_Default/cpuDataIn \
-sim:/DE0_NANO_SOC_Default/cpuDataInAddr \
-sim:/DE0_NANO_SOC_Default/cpuDataOutAddr \
-sim:/DE0_NANO_SOC_Default/cpuWrEn \
-sim:/DE0_NANO_SOC_Default/instrBus \
-sim:/DE0_NANO_SOC_Default/pcBus \
-sim:/DE0_NANO_SOC_Default/CPU_StatusBus \
-sim:/DE0_NANO_SOC_Default/forceRoot \
-sim:/DE0_NANO_SOC_Default/flushing \
-sim:/DE0_NANO_SOC_Default/instrCacheAddr \
-sim:/DE0_NANO_SOC_Default/instrCacheData \
-sim:/DE0_NANO_SOC_Default/dataOutFlowCtrl \
-sim:/DE0_NANO_SOC_Default/dataOutDataCache \
-sim:/DE0_NANO_SOC_Default/clk \
-sim:/DE0_NANO_SOC_Default/rst
-run
-# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: /DE0_NANO_SOC_Default/dataMux
+# Error loading design
+# End time: 11:11:52 on Mar 19,2017, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+# Compile of flowController.vhd was successful.
+# Compile of progMem.vhd was successful.
+# Compile of wolfcore.vhd was successful.
+# Compile of mmu.vhd was successful.
+# Compile of alu.vhd was successful.
+# Compile of data_cache.vhd was successful.
+# Compile of mainArch.vhd was successful.
+# Compile of tb_complete.v was successful.
+# Compile of outputDataMux.vhd was successful.
+# Compile of uart.vhd was successful.
+# 10 compiles, 0 failed with no errors.
+# Compile of flowController.vhd was successful.
+# Compile of progMem.vhd was successful.
+# Compile of wolfcore.vhd was successful.
+# Compile of mmu.vhd was successful.
+# Compile of alu.vhd was successful.
+# Compile of data_cache.vhd was successful.
+# Compile of mainArch.vhd was successful.
+# Compile of tb_complete.v was successful.
+# Compile of outputDataMux.vhd was successful.
+# Compile of uart.vhd was successful.
+# 10 compiles, 0 failed with no errors.
+vsim work.DE0_NANO_SOC_Default
+# vsim work.DE0_NANO_SOC_Default 
+# Start time: 11:12:31 on Mar 19,2017
+# Loading work.DE0_NANO_SOC_Default
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.mainarch
+# Loading work.wolfcore(default)
+# Loading work.alu(default)
+# Loading work.flowcontroller(default)
+# Loading work.progmem(default)
+# Loading work.mmu(default)
+# Loading altera_mf.altera_mf_components
+# Loading work.data_cache(syn)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading altera_mf.altera_common_conversion(body)
+# Loading altera_mf.altera_device_families(body)
+# Loading altera_mf.altsyncram(translated)
+# Loading work.uart(default)
+# Loading work.outputdatamux(default)
+# ** Warning: (vsim-8822) /home/mathias/Projects/WolfCoreOne/logic/tb/tb_complete.v(75): [TFMPC] - Missing Verilog connection for formal VHDL port 'uartStatus'.
+#    Time: 0 ps  Iteration: 0  Instance: /DE0_NANO_SOC_Default/testUART File: /home/mathias/Projects/WolfCoreOne/logic/src/io/uart.vhd
+# ** Warning: (vsim-8822) /home/mathias/Projects/WolfCoreOne/logic/tb/tb_complete.v(87): [TFMPC] - Missing Verilog connection for formal VHDL port 'outputDataUART'.
+#    Time: 0 ps  Iteration: 0  Instance: /DE0_NANO_SOC_Default/dataMux File: /home/mathias/Projects/WolfCoreOne/logic/src/outputDataMux.vhd
+# Compile of flowController.vhd was successful.
+# Compile of progMem.vhd was successful.
+# Compile of wolfcore.vhd was successful.
+# Compile of mmu.vhd was successful.
+# Compile of alu.vhd was successful.
+# Compile of data_cache.vhd was successful.
+# Compile of mainArch.vhd was successful.
+# Compile of tb_complete.v was successful.
+# Compile of outputDataMux.vhd was successful.
+# Compile of uart.vhd was successful.
+# 10 compiles, 0 failed with no errors.
 add wave -position insertpoint  \
 sim:/DE0_NANO_SOC_Default/CPU/pc
-restart
-# Compile of flowController.vhd was successful.
-# Compile of progMem.vhd was successful.
-# Compile of wolfcore.vhd was successful.
-# Compile of mmu.vhd was successful.
-# Compile of alu.vhd was successful.
-# Compile of data_cache.vhd was successful.
-# Compile of mainArch.vhd was successful.
-# Compile of tb_complete.v was successful.
-# Compile of outputDataMux.vhd was successful.
-# 9 compiles, 0 failed with no errors.
+add wave -position insertpoint  \
+sim:/DE0_NANO_SOC_Default/CPU/regFile
+add wave -position insertpoint  \
+sim:/DE0_NANO_SOC_Default/CPU/instrFetchB \
+sim:/DE0_NANO_SOC_Default/CPU/instrExecute \
+sim:/DE0_NANO_SOC_Default/CPU/instrWriteBack
+add wave -position insertpoint  \
+sim:/DE0_NANO_SOC_Default/CPU/wbEn
+add wave -position insertpoint  \
+sim:/DE0_NANO_SOC_Default/testUART/clk \
+sim:/DE0_NANO_SOC_Default/testUART/rst \
+sim:/DE0_NANO_SOC_Default/testUART/RxD \
+sim:/DE0_NANO_SOC_Default/testUART/TxD \
+sim:/DE0_NANO_SOC_Default/testUART/inputData \
+sim:/DE0_NANO_SOC_Default/testUART/inputAddr \
+sim:/DE0_NANO_SOC_Default/testUART/outputData \
+sim:/DE0_NANO_SOC_Default/testUART/outputAddr \
+sim:/DE0_NANO_SOC_Default/testUART/wrEn \
+sim:/DE0_NANO_SOC_Default/testUART/uartStatus \
+sim:/DE0_NANO_SOC_Default/testUART/txCurrent \
+sim:/DE0_NANO_SOC_Default/testUART/outputBuffer \
+sim:/DE0_NANO_SOC_Default/testUART/inputBuffer \
+sim:/DE0_NANO_SOC_Default/testUART/txReq \
+sim:/DE0_NANO_SOC_Default/testUART/clkDiv \
+sim:/DE0_NANO_SOC_Default/testUART/clkDivCtr \
+sim:/DE0_NANO_SOC_Default/testUART/bitCtr \
+sim:/DE0_NANO_SOC_Default/testUART/uartStatusC \
+sim:/DE0_NANO_SOC_Default/testUART/outputCache
+add wave -position insertpoint  \
+sim:/DE0_NANO_SOC_Default/clk
+add wave -position insertpoint  \
+sim:/DE0_NANO_SOC_Default/rst
 restart
 # Loading work.DE0_NANO_SOC_Default
 # Loading work.mainarch
@@ -121,8 +152,27 @@ restart
 # Loading work.progmem(default)
 # Loading work.mmu(default)
 # Loading work.data_cache(syn)
+# Loading work.uart(default)
 # Loading work.outputdatamux(default)
+# ** Warning: (vsim-8822) /home/mathias/Projects/WolfCoreOne/logic/tb/tb_complete.v(75): [TFMPC] - Missing Verilog connection for formal VHDL port 'uartStatus'.
+#    Time: 0 ps  Iteration: 0  Instance: /DE0_NANO_SOC_Default/testUART File: /home/mathias/Projects/WolfCoreOne/logic/src/io/uart.vhd
+# ** Warning: (vsim-8822) /home/mathias/Projects/WolfCoreOne/logic/tb/tb_complete.v(87): [TFMPC] - Missing Verilog connection for formal VHDL port 'outputDataUART'.
+#    Time: 0 ps  Iteration: 0  Instance: /DE0_NANO_SOC_Default/dataMux File: /home/mathias/Projects/WolfCoreOne/logic/src/outputDataMux.vhd
 run
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /DE0_NANO_SOC_Default/dataMux
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /DE0_NANO_SOC_Default/dataMux
+add wave -position insertpoint  \
+sim:/DE0_NANO_SOC_Default/instrBus
+restart
+# ** Warning: (vsim-8822) /home/mathias/Projects/WolfCoreOne/logic/tb/tb_complete.v(75): [TFMPC] - Missing Verilog connection for formal VHDL port 'uartStatus'.
+#    Time: 0 ps  Iteration: 0  Instance: /DE0_NANO_SOC_Default/testUART File: /home/mathias/Projects/WolfCoreOne/logic/src/io/uart.vhd
+# ** Warning: (vsim-8822) /home/mathias/Projects/WolfCoreOne/logic/tb/tb_complete.v(87): [TFMPC] - Missing Verilog connection for formal VHDL port 'outputDataUART'.
+#    Time: 0 ps  Iteration: 0  Instance: /DE0_NANO_SOC_Default/dataMux File: /home/mathias/Projects/WolfCoreOne/logic/src/outputDataMux.vhd
+run
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /DE0_NANO_SOC_Default/dataMux
 # ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
 #    Time: 0 ps  Iteration: 0  Instance: /DE0_NANO_SOC_Default/dataMux
 # Compile of flowController.vhd was successful.
@@ -134,20 +184,8 @@ run
 # Compile of mainArch.vhd was successful.
 # Compile of tb_complete.v was successful.
 # Compile of outputDataMux.vhd was successful.
-# 9 compiles, 0 failed with no errors.
-restart
-# Loading work.DE0_NANO_SOC_Default
-# Loading work.mainarch
-# Loading work.wolfcore(default)
-# Loading work.alu(default)
-# Loading work.flowcontroller(default)
-# Loading work.progmem(default)
-# Loading work.mmu(default)
-# Loading work.data_cache(syn)
-# Loading work.outputdatamux(default)
-run
-# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: /DE0_NANO_SOC_Default/dataMux
+# Compile of uart.vhd was successful.
+# 10 compiles, 0 failed with no errors.
 # Compile of flowController.vhd was successful.
 # Compile of progMem.vhd was successful.
 # Compile of wolfcore.vhd was successful.
@@ -157,7 +195,8 @@ run
 # Compile of mainArch.vhd was successful.
 # Compile of tb_complete.v was successful.
 # Compile of outputDataMux.vhd was successful.
-# 9 compiles, 0 failed with no errors.
+# Compile of uart.vhd was successful.
+# 10 compiles, 0 failed with no errors.
 restart
 # Loading work.DE0_NANO_SOC_Default
 # Loading work.mainarch
@@ -167,8 +206,15 @@ restart
 # Loading work.progmem(default)
 # Loading work.mmu(default)
 # Loading work.data_cache(syn)
+# Loading work.uart(default)
 # Loading work.outputdatamux(default)
+# ** Warning: (vsim-8822) /home/mathias/Projects/WolfCoreOne/logic/tb/tb_complete.v(75): [TFMPC] - Missing Verilog connection for formal VHDL port 'uartStatus'.
+#    Time: 0 ps  Iteration: 0  Instance: /DE0_NANO_SOC_Default/testUART File: /home/mathias/Projects/WolfCoreOne/logic/src/io/uart.vhd
+# ** Warning: (vsim-8822) /home/mathias/Projects/WolfCoreOne/logic/tb/tb_complete.v(87): [TFMPC] - Missing Verilog connection for formal VHDL port 'outputDataUART'.
+#    Time: 0 ps  Iteration: 0  Instance: /DE0_NANO_SOC_Default/dataMux File: /home/mathias/Projects/WolfCoreOne/logic/src/outputDataMux.vhd
 run
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /DE0_NANO_SOC_Default/dataMux
 # ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
 #    Time: 0 ps  Iteration: 0  Instance: /DE0_NANO_SOC_Default/dataMux
 add wave -position insertpoint  \
@@ -176,7 +222,29 @@ sim:/DE0_NANO_SOC_Default/instrCache/instrOutput \
 sim:/DE0_NANO_SOC_Default/instrCache/instrAddress \
 sim:/DE0_NANO_SOC_Default/instrCache/clk
 restart
+# ** Warning: (vsim-8822) /home/mathias/Projects/WolfCoreOne/logic/tb/tb_complete.v(75): [TFMPC] - Missing Verilog connection for formal VHDL port 'uartStatus'.
+#    Time: 0 ps  Iteration: 0  Instance: /DE0_NANO_SOC_Default/testUART File: /home/mathias/Projects/WolfCoreOne/logic/src/io/uart.vhd
+# ** Warning: (vsim-8822) /home/mathias/Projects/WolfCoreOne/logic/tb/tb_complete.v(87): [TFMPC] - Missing Verilog connection for formal VHDL port 'outputDataUART'.
+#    Time: 0 ps  Iteration: 0  Instance: /DE0_NANO_SOC_Default/dataMux File: /home/mathias/Projects/WolfCoreOne/logic/src/outputDataMux.vhd
 run
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /DE0_NANO_SOC_Default/dataMux
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /DE0_NANO_SOC_Default/dataMux
+add wave -position insertpoint  \
+sim:/DE0_NANO_SOC_Default/instrCtrl/instrOut \
+sim:/DE0_NANO_SOC_Default/instrCtrl/instrIn \
+sim:/DE0_NANO_SOC_Default/instrCtrl/IRQ \
+sim:/DE0_NANO_SOC_Default/instrCtrl/flowCtrlState \
+sim:/DE0_NANO_SOC_Default/instrCtrl/instrGen
+restart
+# ** Warning: (vsim-8822) /home/mathias/Projects/WolfCoreOne/logic/tb/tb_complete.v(75): [TFMPC] - Missing Verilog connection for formal VHDL port 'uartStatus'.
+#    Time: 0 ps  Iteration: 0  Instance: /DE0_NANO_SOC_Default/testUART File: /home/mathias/Projects/WolfCoreOne/logic/src/io/uart.vhd
+# ** Warning: (vsim-8822) /home/mathias/Projects/WolfCoreOne/logic/tb/tb_complete.v(87): [TFMPC] - Missing Verilog connection for formal VHDL port 'outputDataUART'.
+#    Time: 0 ps  Iteration: 0  Instance: /DE0_NANO_SOC_Default/dataMux File: /home/mathias/Projects/WolfCoreOne/logic/src/outputDataMux.vhd
+run
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /DE0_NANO_SOC_Default/dataMux
 # ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
 #    Time: 0 ps  Iteration: 0  Instance: /DE0_NANO_SOC_Default/dataMux
 # Compile of flowController.vhd was successful.
@@ -188,7 +256,8 @@ run
 # Compile of mainArch.vhd was successful.
 # Compile of tb_complete.v was successful.
 # Compile of outputDataMux.vhd was successful.
-# 9 compiles, 0 failed with no errors.
+# Compile of uart.vhd was successful.
+# 10 compiles, 0 failed with no errors.
 restart
 # Loading work.DE0_NANO_SOC_Default
 # Loading work.mainarch
@@ -198,8 +267,165 @@ restart
 # Loading work.progmem(default)
 # Loading work.mmu(default)
 # Loading work.data_cache(syn)
+# Loading work.uart(default)
 # Loading work.outputdatamux(default)
-# Warning in wave window restart: (vish-4014) No objects found matching '/DE0_NANO_SOC_Default/uartClk'. 
+# ** Warning: (vsim-8822) /home/mathias/Projects/WolfCoreOne/logic/tb/tb_complete.v(75): [TFMPC] - Missing Verilog connection for formal VHDL port 'uartStatus'.
+#    Time: 0 ps  Iteration: 0  Instance: /DE0_NANO_SOC_Default/testUART File: /home/mathias/Projects/WolfCoreOne/logic/src/io/uart.vhd
+# ** Warning: (vsim-8822) /home/mathias/Projects/WolfCoreOne/logic/tb/tb_complete.v(87): [TFMPC] - Missing Verilog connection for formal VHDL port 'outputDataUART'.
+#    Time: 0 ps  Iteration: 0  Instance: /DE0_NANO_SOC_Default/dataMux File: /home/mathias/Projects/WolfCoreOne/logic/src/outputDataMux.vhd
 run
 # ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
 #    Time: 0 ps  Iteration: 0  Instance: /DE0_NANO_SOC_Default/dataMux
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /DE0_NANO_SOC_Default/dataMux
+add wave -position insertpoint  \
+sim:/DE0_NANO_SOC_Default/CPU/wbEn
+add wave -position insertpoint  \
+sim:/DE0_NANO_SOC_Default/CPU/dataWrEn
+restart
+# ** Warning: (vsim-8822) /home/mathias/Projects/WolfCoreOne/logic/tb/tb_complete.v(75): [TFMPC] - Missing Verilog connection for formal VHDL port 'uartStatus'.
+#    Time: 0 ps  Iteration: 0  Instance: /DE0_NANO_SOC_Default/testUART File: /home/mathias/Projects/WolfCoreOne/logic/src/io/uart.vhd
+# ** Warning: (vsim-8822) /home/mathias/Projects/WolfCoreOne/logic/tb/tb_complete.v(87): [TFMPC] - Missing Verilog connection for formal VHDL port 'outputDataUART'.
+#    Time: 0 ps  Iteration: 0  Instance: /DE0_NANO_SOC_Default/dataMux File: /home/mathias/Projects/WolfCoreOne/logic/src/outputDataMux.vhd
+run
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /DE0_NANO_SOC_Default/dataMux
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /DE0_NANO_SOC_Default/dataMux
+# Compile of flowController.vhd was successful.
+# Compile of progMem.vhd failed with 3 errors.
+# Compile of wolfcore.vhd was successful.
+# Compile of mmu.vhd was successful.
+# Compile of alu.vhd was successful.
+# Compile of data_cache.vhd was successful.
+# Compile of mainArch.vhd was successful.
+# Compile of tb_complete.v was successful.
+# Compile of outputDataMux.vhd was successful.
+# Compile of uart.vhd was successful.
+# 10 compiles, 1 failed with 3 errors.
+add wave -position insertpoint  \
+sim:/DE0_NANO_SOC_Default/TxD
+restart
+# Loading work.DE0_NANO_SOC_Default
+# Loading work.mainarch
+# Loading work.wolfcore(default)
+# Loading work.alu(default)
+# Loading work.flowcontroller(default)
+# Loading work.mmu(default)
+# Loading work.data_cache(syn)
+# Loading work.uart(default)
+# Loading work.outputdatamux(default)
+# ** Warning: (vsim-8822) /home/mathias/Projects/WolfCoreOne/logic/tb/tb_complete.v(75): [TFMPC] - Missing Verilog connection for formal VHDL port 'uartStatus'.
+#    Time: 0 ps  Iteration: 0  Instance: /DE0_NANO_SOC_Default/testUART File: /home/mathias/Projects/WolfCoreOne/logic/src/io/uart.vhd
+# ** Warning: (vsim-8822) /home/mathias/Projects/WolfCoreOne/logic/tb/tb_complete.v(87): [TFMPC] - Missing Verilog connection for formal VHDL port 'outputDataUART'.
+#    Time: 0 ps  Iteration: 0  Instance: /DE0_NANO_SOC_Default/dataMux File: /home/mathias/Projects/WolfCoreOne/logic/src/outputDataMux.vhd
+run
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /DE0_NANO_SOC_Default/dataMux
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /DE0_NANO_SOC_Default/dataMux
+add wave -position insertpoint  \
+sim:/DE0_NANO_SOC_Default/testUART/txCurrent
+add wave -position insertpoint  \
+sim:/DE0_NANO_SOC_Default/testUART/outputBuffer
+add wave -position insertpoint  \
+sim:/DE0_NANO_SOC_Default/testUART/TxD
+restart
+# ** Warning: (vsim-8822) /home/mathias/Projects/WolfCoreOne/logic/tb/tb_complete.v(75): [TFMPC] - Missing Verilog connection for formal VHDL port 'uartStatus'.
+#    Time: 0 ps  Iteration: 0  Instance: /DE0_NANO_SOC_Default/testUART File: /home/mathias/Projects/WolfCoreOne/logic/src/io/uart.vhd
+# ** Warning: (vsim-8822) /home/mathias/Projects/WolfCoreOne/logic/tb/tb_complete.v(87): [TFMPC] - Missing Verilog connection for formal VHDL port 'outputDataUART'.
+#    Time: 0 ps  Iteration: 0  Instance: /DE0_NANO_SOC_Default/dataMux File: /home/mathias/Projects/WolfCoreOne/logic/src/outputDataMux.vhd
+run
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /DE0_NANO_SOC_Default/dataMux
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /DE0_NANO_SOC_Default/dataMux
+# Compile of flowController.vhd was successful.
+# Compile of progMem.vhd failed with 3 errors.
+# Compile of wolfcore.vhd was successful.
+# Compile of mmu.vhd was successful.
+# Compile of alu.vhd was successful.
+# Compile of data_cache.vhd was successful.
+# Compile of mainArch.vhd was successful.
+# Compile of tb_complete.v was successful.
+# Compile of outputDataMux.vhd was successful.
+# Compile of uart.vhd was successful.
+# 10 compiles, 1 failed with 3 errors.
+# Compile of flowController.vhd was successful.
+# Compile of progMem.vhd was successful.
+# Compile of wolfcore.vhd was successful.
+# Compile of mmu.vhd was successful.
+# Compile of alu.vhd was successful.
+# Compile of data_cache.vhd was successful.
+# Compile of mainArch.vhd was successful.
+# Compile of tb_complete.v was successful.
+# Compile of outputDataMux.vhd was successful.
+# Compile of uart.vhd was successful.
+# 10 compiles, 0 failed with no errors.
+restart
+# Loading work.DE0_NANO_SOC_Default
+# Loading work.mainarch
+# Loading work.wolfcore(default)
+# Loading work.alu(default)
+# Loading work.flowcontroller(default)
+# Loading work.progmem(default)
+# Loading work.mmu(default)
+# Loading work.data_cache(syn)
+# Loading work.uart(default)
+# Loading work.outputdatamux(default)
+# ** Warning: (vsim-8822) /home/mathias/Projects/WolfCoreOne/logic/tb/tb_complete.v(75): [TFMPC] - Missing Verilog connection for formal VHDL port 'uartStatus'.
+#    Time: 0 ps  Iteration: 0  Instance: /DE0_NANO_SOC_Default/testUART File: /home/mathias/Projects/WolfCoreOne/logic/src/io/uart.vhd
+# ** Warning: (vsim-8822) /home/mathias/Projects/WolfCoreOne/logic/tb/tb_complete.v(87): [TFMPC] - Missing Verilog connection for formal VHDL port 'outputDataUART'.
+#    Time: 0 ps  Iteration: 0  Instance: /DE0_NANO_SOC_Default/dataMux File: /home/mathias/Projects/WolfCoreOne/logic/src/outputDataMux.vhd
+run
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /DE0_NANO_SOC_Default/dataMux
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /DE0_NANO_SOC_Default/dataMux
+run
+# Compile of flowController.vhd was successful.
+# Compile of progMem.vhd was successful.
+# Compile of wolfcore.vhd was successful.
+# Compile of mmu.vhd was successful.
+# Compile of alu.vhd was successful.
+# Compile of data_cache.vhd was successful.
+# Compile of mainArch.vhd was successful.
+# Compile of tb_complete.v was successful.
+# Compile of outputDataMux.vhd was successful.
+# Compile of uart.vhd was successful.
+# 10 compiles, 0 failed with no errors.
+# Compile of flowController.vhd was successful.
+# Compile of progMem.vhd was successful.
+# Compile of wolfcore.vhd was successful.
+# Compile of mmu.vhd was successful.
+# Compile of alu.vhd was successful.
+# Compile of data_cache.vhd was successful.
+# Compile of mainArch.vhd was successful.
+# Compile of tb_complete.v was successful.
+# Compile of outputDataMux.vhd was successful.
+# Compile of uart.vhd was successful.
+# 10 compiles, 0 failed with no errors.
+restart
+# Loading work.DE0_NANO_SOC_Default
+# Loading work.mainarch
+# Loading work.wolfcore(default)
+# Loading work.alu(default)
+# Loading work.flowcontroller(default)
+# Loading work.progmem(default)
+# Loading work.mmu(default)
+# Loading work.data_cache(syn)
+# Loading work.uart(default)
+# Loading work.outputdatamux(default)
+# ** Warning: (vsim-8822) /home/mathias/Projects/WolfCoreOne/logic/tb/tb_complete.v(75): [TFMPC] - Missing Verilog connection for formal VHDL port 'uartStatus'.
+#    Time: 0 ps  Iteration: 0  Instance: /DE0_NANO_SOC_Default/testUART File: /home/mathias/Projects/WolfCoreOne/logic/src/io/uart.vhd
+# ** Warning: (vsim-8822) /home/mathias/Projects/WolfCoreOne/logic/tb/tb_complete.v(87): [TFMPC] - Missing Verilog connection for formal VHDL port 'outputDataUART'.
+#    Time: 0 ps  Iteration: 0  Instance: /DE0_NANO_SOC_Default/dataMux File: /home/mathias/Projects/WolfCoreOne/logic/src/outputDataMux.vhd
+run
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /DE0_NANO_SOC_Default/dataMux
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /DE0_NANO_SOC_Default/dataMux
+write format wave -window .main_pane.wave.interior.cs.body.pw.wf /home/mathias/Projects/WolfCoreOne/logic/tb/wave_uart.do
+quit
+# End time: 11:35:17 on Mar 19,2017, Elapsed time: 0:22:46
+# Errors: 0, Warnings: 46

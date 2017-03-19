@@ -14,7 +14,7 @@ entity UART is
         outputData  : out std_logic_vector(31 downto 0);
         outputAddr  : in std_logic_vector(31 downto 0);
         wrEn        : in std_logic;
-        uartStatus  : buffer std_logic_vector(31 downto 0);
+        uartStatus  : buffer std_logic_vector(31 downto 0)
     );
 end UART;
 
@@ -49,11 +49,11 @@ process(clk, rst) begin
         ) then
             if(wrEn = '1') then
                 case inputAddr(7 downto 0) is
-                    when X"0" =>
+                    when X"00" =>
                         uartStatusC <= inputData;
-                    when X"1" =>
+                    when X"01" =>
                         clkDiv      <= unsigned(inputData);
-                    when X"2" =>
+                    when X"02" =>
                         outputCache <= inputData(7 downto 0);
                     when others =>
 
@@ -65,11 +65,11 @@ process(clk, rst) begin
         if( unsigned(outputAddr) > X"0001_FFFF" and
             unsigned(outputAddr) < X"0002_0100") then
             case outputAddr(7 downto 0) is
-                when X"0" =>
+                when X"00" =>
                     outputData  <= uartStatus;
-                when X"1" =>
+                when X"01" =>
                     outputData  <= std_logic_vector(clkDiv);
-                when X"2" =>
+                when X"02" =>
                     outputData  <= std_logic_vector(to_unsigned(0, 24)) & outputCache;
                 when others =>
 
@@ -83,7 +83,7 @@ process(clk, rst) begin
                 if(uartStatusC(0) = '1') then
                     txCurrent                   <= SENDING;
                     clkDivCtr                   <= clkDiv;
-                    bitCtr                      <= to_unsigned(9, 4);
+                    bitCtr                      <= to_unsigned(9, 5);
                     uartStatus(0)               <= '1';
                     outputBuffer                <= '1' & outputCache & '0';
                 end if;

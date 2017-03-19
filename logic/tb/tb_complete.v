@@ -17,10 +17,12 @@ wire [31:0] instrCacheAddr;
 wire [31:0] instrCacheData;			
 			
 wire [31:0] dataOutFlowCtrl;
+wire [31:0] dataOutUART;
 wire [31:0] dataOutDataCache;
 			
 reg clk;
 reg rst;
+wire TxD;
 
 wolfcore CPU(
 	.dataOutput(cpuDataOut),
@@ -68,6 +70,18 @@ mmu dataCache(
 	.dataOutAddr(cpuDataInAddr),
 	.wren(cpuWrEn),
 	.clk(clk)
+);
+
+UART testUART(
+	.clk(clk),
+	.rst(rst),
+	.RxD(1'b0),
+	.TxD(TxD),
+	.inputData(cpuDataOut),
+        .inputAddr(cpuDataOutAddr),
+        .outputData(dataOutUART), 
+        .outputAddr(cpuDataInAddr),
+        .wren(cpuWrEn)
 );
 
 outputDataMux dataMux(

@@ -70,6 +70,7 @@ process(clk, rst)
     variable irqRunning: integer := 31;
 begin
     if(rst = '1') then
+        IRQBus              <= X"0000_0000";
         IRQ_FinishedFlag    <= '0';
         flowCtrlState       <= IDLE;
         instrGen            <= X"0000_0000";
