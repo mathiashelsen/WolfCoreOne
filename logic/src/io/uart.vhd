@@ -22,11 +22,14 @@ architecture default of UART is
     type txState is ( IDLE, SENDING );
 	signal txCurrent: txState;
     signal outputBuffer : std_logic_vector(9 downto 0);
-    signal inputBuffer  : std_logic_vector(9 downto 0);
+    signal inputBuffer  : std_logic_vector(39 downto 0); -- 10 bits x 4 oversampling
+    signal rxData       : std_logic_vector(7 downto 0);
     signal txReq        : std_logic;
-    signal clkDiv       : unsigned(31 downto 0);
+    signal clkDiv       : unsigned(31 downto 0) := to_unsigned(5208, 32);
     signal clkDivCtr    : unsigned(31 downto 0);
+    signal rxClkDivCtr  : unsigned(31 downto 0);
     signal bitCtr       : unsigned(4 downto 0);
+    signal RxD_Q        : std_logic;
 
     signal uartStatusC  : std_logic_vector(31 downto 0);
     signal outputCache  : std_logic_vector(7 downto 0);
@@ -36,13 +39,18 @@ process(clk, rst) begin
     if(rst = '1') then
         outputBuffer    <= "1000000000"; 
         TxD             <= '1';
+        RxD_Q           <= '1';
         txReq           <= '0';
-        inputBuffer     <= "0000000000";
+        inputBuffer     <= (others => '1');
         outputBuffer    <= "1000000000";
         uartStatus      <= X"0000_0000";
         txCurrent       <= IDLE;
         clkDivCtr       <= to_unsigned(0, 32);
+        rxClkDivCtr     <= to_unsigned(0, 32);
+
     elsif(clk'event and clk='0') then
+        RxD_Q           <= RxD;
+
         -- Incoming data from bus --
         if( unsigned(inputAddr) > X"0001_FFFF" and 
             unsigned(inputAddr) < X"0002_0100"
@@ -111,6 +119,25 @@ process(clk, rst) begin
             when others =>
 
         end case;  
+
+        -- RX part
+        -- The RX will oversample with a factor of 4 over the baud rate
+        if( rxClkDivCtr = X"0000_0000" ) then
+            rxClkDivCtr     <= to_unsigned(0, 3) & clkDiv(31 downto 3);
+           
+            if( inputBuffer(0) = '1' and inputBuffer(1) = '0' ) then
+                for i in 0 to 7 loop
+                        rxData(i) <= inputBuffer( (i+1)*4 + 2 );
+                end loop;
+                inputBuffer     <= (others => '1');
+                uartStatus(2)   <= '1';
+            else 
+                inputBuffer     <= RxD_Q & inputBuffer(39 downto 1);
+                uartStatus(2)   <= '0';
+            end if;
+        else
+            rxClkDivCtr     <= rxClkDivCtr - to_unsigned(1, 32);
+        end if;
     end if;
 end process;
 
