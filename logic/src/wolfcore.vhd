@@ -166,10 +166,8 @@ process(clk, rst) begin
                         inputA      <= inputFA;
                     else
                         case to_integer(unsigned(instrExecute(REGa))) is
-                        when 13 =>
-                            inputA  <= shadowPC_FB;
                         when 14 =>
-                            inputA  <= ALU_Overflow;
+                            inputA  <= shadowPC_FB;
                         when 15 =>
                             inputA  <= CPU_Status;
                         when others =>
@@ -184,10 +182,8 @@ process(clk, rst) begin
                             inputB  <= std_logic_vector(to_unsigned(0, 21)) & instrExecute(IMMv);
                         else
                             case to_integer(unsigned(instrExecute(REGb))) is
-                            when 13 =>
-                                inputB  <= shadowPC_FB;
                             when 14 =>
-                                inputB  <= ALU_Overflow;
+                                inputB  <= shadowPC_FB;
                             when 15 =>
                                 inputB  <= CPU_Status;
                             when others =>
@@ -214,11 +210,11 @@ process(clk, rst) begin
                     else
                         dataWrEn    <= '0';
                         case to_integer(unsigned(instrWriteBack(REGc))) is
-                        when 0 to 12 =>
+                        when 0 to 13 =>
                             regFile(to_integer(unsigned(instrWriteBack(REGc)))) <= ALU_out;
                             pc          <= std_logic_vector(unsigned(pc) + to_unsigned(1, pc'length));
                             cpuState    <= Nominal;
-                        when 13 =>
+                        when 14 =>
                             pc          <= ALU_out;
                             cpuState    <= Flush;
                         when others =>

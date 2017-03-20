@@ -12,8 +12,8 @@ const (
 	NREG         = 16         // number of registers
 	MAXREG       = NREG - 1   // highest register for RA, RC
 	MAXREGB      = MAXREG - 2 // highest register for RB
-	PCREG        = 13         // register holding program counter
-	OVERFLOWREG  = 14         // register holding overflow of mul, div
+	PCREG        = 14         // register holding program counter
+	OVERFLOWREG  = 20         // register holding overflow of mul, div
 	PERI_DISPLAY = 0x3FFF     // memory-mapped address of 7-segment display
 )
 
