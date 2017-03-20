@@ -22,7 +22,7 @@ entity wolfcore is
 end entity;
 
 architecture default of wolfcore is
-        type regFileType is array(12 downto 0) of std_logic_vector(31 downto 0);
+        type regFileType is array(13 downto 0) of std_logic_vector(31 downto 0);
         signal inputA   : std_logic_vector(31 downto 0);
         signal inputFA  : std_logic_vector(31 downto 0);
         signal inputB   : std_logic_vector(31 downto 0);
@@ -210,14 +210,14 @@ process(clk, rst) begin
                     else
                         dataWrEn    <= '0';
                         case to_integer(unsigned(instrWriteBack(REGc))) is
-                        when 0 to 13 =>
-                            regFile(to_integer(unsigned(instrWriteBack(REGc)))) <= ALU_out;
-                            pc          <= std_logic_vector(unsigned(pc) + to_unsigned(1, pc'length));
-                            cpuState    <= Nominal;
                         when 14 =>
                             pc          <= ALU_out;
                             cpuState    <= Flush;
+                        when 15 =>
+                            pc          <= std_logic_vector(unsigned(pc) + to_unsigned(1, pc'length));
+                            cpuState    <= Nominal;
                         when others =>
+                            regFile(to_integer(unsigned(instrWriteBack(REGc)))) <= ALU_out;
                             pc          <= std_logic_vector(unsigned(pc) + to_unsigned(1, pc'length));
                             cpuState    <= Nominal;
                         end case;                       

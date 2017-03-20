@@ -161,7 +161,7 @@ begin
                     tmpPC       <= pc;    
                 end if;
 
-                instrGen        <= "1" & "0000" & irqAddrReg(irqRunning)(10 downto 0) & "000" & "01001" & "1101" & "001" & "0";
+                instrGen        <= "1" & "0000" & irqAddrReg(irqRunning)(10 downto 0) & "000" & "01001" & "1110" & "001" & "0";
                 addrGen         <= irqAddrReg(irqRunning);
                 nopCtr          <= to_unsigned(2, 32);
                 
@@ -207,7 +207,7 @@ begin
                 instrGen        <= "1" & "0000" & CPU_StatusStack(to_integer(IRQDepth))(10 downto 0) & "000" & "01001" & "1111" & "001" & "0";
             when IRQ_Finished_1 =>
                 flowCtrlState   <= IRQ_Finished_2;
-                instrGen        <= "1" & "0000" & retAddrStack(to_integer(IRQDepth))(10 downto 0) & "000" & "01001" & "1101" & "001" & "0";
+                instrGen        <= "1" & "0000" & retAddrStack(to_integer(IRQDepth))(10 downto 0) & "000" & "01001" & "1110" & "001" & "0";
                 nopCtr          <= to_unsigned(1, 32);
             when IRQ_Finished_2 =>
                 instrGen        <= X"0000_0000";
