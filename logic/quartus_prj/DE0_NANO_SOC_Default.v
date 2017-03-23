@@ -162,7 +162,7 @@ progMem instrCache(
 	.clk(clk)
 );
 
-mmu dataCache(
+dataController dataCache(
 	.dataIn(cpuDataOut),
 	.dataInAddr(cpuDataOutAddr),
 	.dataOut(dataOutDataCache),

@@ -417,7 +417,7 @@ set_global_assignment -name VHDL_FILE ../src/outputDataMux.vhd
 set_global_assignment -name VHDL_FILE ../src/wolfcore.vhd
 set_global_assignment -name VHDL_FILE ../src/progMem.vhd
 set_global_assignment -name VHDL_FILE ../src/mux.vhd
-set_global_assignment -name VHDL_FILE ../src/mmu.vhd
+set_global_assignment -name VHDL_FILE ../src/dataController.vhd
 set_global_assignment -name VHDL_FILE ../src/flowController.vhd
 set_global_assignment -name VHDL_FILE ../src/alu.vhd
 set_global_assignment -name VHDL_FILE ../src/io/uart.vhd

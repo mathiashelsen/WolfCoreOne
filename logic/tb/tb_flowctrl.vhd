@@ -42,7 +42,7 @@ architecture behavior of tb_flowctrl IS
     );
     end component;
 
-    component mmu
+    component dataController
     port(
         -- Coming from the CPU
         dataIn      : in    std_logic_vector(31 downto 0);
@@ -144,11 +144,11 @@ begin
         regAddr => dataAddrOutCPU2MMU,
         regData => dataCPU2MMU,
         regOutput => dataMMU2CPU,
-        regWrEn =>wrencpu2mmu,
+        regWrEn =>wrencpu2dataController,
         flushing => flushCPU2Ctrl
         );       
 
-    --mmu_uut: mmu port map(
+    --dataController_uut: dataController port map(
     --    -- Coming from the CPU
     --    dataIn => dataCPU2MMU,
     --    dataAddr => dataAddrOutCPU2MMU,
@@ -175,7 +175,7 @@ begin
             data => dataCPU2MMU,
             rdaddress => dataAddrInCPU2MMU(13 downto 0),
             wraddress => dataAddrOutCPU2MMU(13 downto 0),
-            wren => wrencpu2mmu,
+            wren => wrencpu2dataController,
             q => dataMMU2CPU
         );
 

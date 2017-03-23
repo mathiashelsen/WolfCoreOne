@@ -172,14 +172,14 @@ R9
 !i113 1
 R12
 R13
-Emmu
+EdataController
 Z26 w1489908650
 R2
 R3
 R4
 R0
-Z27 8/home/mathias/Projects/WolfCoreOne/logic/src/mmu.vhd
-Z28 F/home/mathias/Projects/WolfCoreOne/logic/src/mmu.vhd
+Z27 8/home/mathias/Projects/WolfCoreOne/logic/src/dataController.vhd
+Z28 F/home/mathias/Projects/WolfCoreOne/logic/src/dataController.vhd
 l0
 L5
 VmmCVZdSjg=cmmQhn2M]Nm3
@@ -189,8 +189,8 @@ R7
 R8
 !i10b 1
 R9
-Z29 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|/home/mathias/Projects/WolfCoreOne/logic/src/mmu.vhd|
-Z30 !s107 /home/mathias/Projects/WolfCoreOne/logic/src/mmu.vhd|
+Z29 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|/home/mathias/Projects/WolfCoreOne/logic/src/dataController.vhd|
+Z30 !s107 /home/mathias/Projects/WolfCoreOne/logic/src/dataController.vhd|
 !i113 1
 R12
 R13
@@ -198,7 +198,7 @@ Adefault
 R2
 R3
 R4
-DEx4 work 3 mmu 0 22 mmCVZdSjg=cmmQhn2M]Nm3
+DEx4 work 3 dataController 0 22 mmCVZdSjg=cmmQhn2M]Nm3
 l34
 L17
 VJ^n;nzD1=@_HPIfgYJ:Yl1

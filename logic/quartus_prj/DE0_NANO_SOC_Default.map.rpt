@@ -22,8 +22,8 @@ Quartus Prime Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
  14. General Register Statistics
  15. Inverted Register Statistics
  16. Multiplexer Restructuring Statistics (Restructuring Performed)
- 17. Source assignments for mmu:dataCache|data_cache:data_cache_instance|altsyncram:altsyncram_component|altsyncram_u5v3:auto_generated
- 18. Parameter Settings for User Entity Instance: mmu:dataCache|data_cache:data_cache_instance|altsyncram:altsyncram_component
+ 17. Source assignments for dataController:dataCache|data_cache:data_cache_instance|altsyncram:altsyncram_component|altsyncram_u5v3:auto_generated
+ 18. Parameter Settings for User Entity Instance: dataController:dataCache|data_cache:data_cache_instance|altsyncram:altsyncram_component
  19. altsyncram Parameter Settings by Entity Instance
  20. Port Connectivity Checks: "UART:testUART"
  21. Port Connectivity Checks: "flowController:instrCtrl"
@@ -193,7 +193,7 @@ agreement for further details.
 ; ../src/outputDataMux.vhd         ; yes             ; User VHDL File               ; /home/mathias/Projects/WolfCoreOne/logic/src/outputDataMux.vhd              ;         ;
 ; ../src/wolfcore.vhd              ; yes             ; User VHDL File               ; /home/mathias/Projects/WolfCoreOne/logic/src/wolfcore.vhd                   ;         ;
 ; ../src/progMem.vhd               ; yes             ; User VHDL File               ; /home/mathias/Projects/WolfCoreOne/logic/src/progMem.vhd                    ;         ;
-; ../src/mmu.vhd                   ; yes             ; User VHDL File               ; /home/mathias/Projects/WolfCoreOne/logic/src/mmu.vhd                        ;         ;
+; ../src/dataController.vhd                   ; yes             ; User VHDL File               ; /home/mathias/Projects/WolfCoreOne/logic/src/dataController.vhd                        ;         ;
 ; ../src/flowController.vhd        ; yes             ; User VHDL File               ; /home/mathias/Projects/WolfCoreOne/logic/src/flowController.vhd             ;         ;
 ; ../src/alu.vhd                   ; yes             ; User VHDL File               ; /home/mathias/Projects/WolfCoreOne/logic/src/alu.vhd                        ;         ;
 ; ../src/io/uart.vhd               ; yes             ; User VHDL File               ; /home/mathias/Projects/WolfCoreOne/logic/src/io/uart.vhd                    ;         ;
@@ -253,11 +253,11 @@ agreement for further details.
 ; |DE0_NANO_SOC_Default                        ; 2463 (1)          ; 1958 (0)     ; 524288            ; 0          ; 93   ; 0            ; |DE0_NANO_SOC_Default                                                                                                                                ; DE0_NANO_SOC_Default ; work         ;
 ;    |UART:testUART|                           ; 73 (73)           ; 123 (123)    ; 0                 ; 0          ; 0    ; 0            ; |DE0_NANO_SOC_Default|UART:testUART                                                                                                                  ; UART                 ; work         ;
 ;    |flowController:instrCtrl|                ; 1552 (1552)       ; 1138 (1138)  ; 0                 ; 0          ; 0    ; 0            ; |DE0_NANO_SOC_Default|flowController:instrCtrl                                                                                                       ; flowController       ; work         ;
-;    |mmu:dataCache|                           ; 7 (5)             ; 1 (0)        ; 524288            ; 0          ; 0    ; 0            ; |DE0_NANO_SOC_Default|mmu:dataCache                                                                                                                  ; mmu                  ; work         ;
-;       |data_cache:data_cache_instance|       ; 2 (0)             ; 1 (0)        ; 524288            ; 0          ; 0    ; 0            ; |DE0_NANO_SOC_Default|mmu:dataCache|data_cache:data_cache_instance                                                                                   ; data_cache           ; work         ;
-;          |altsyncram:altsyncram_component|   ; 2 (0)             ; 1 (0)        ; 524288            ; 0          ; 0    ; 0            ; |DE0_NANO_SOC_Default|mmu:dataCache|data_cache:data_cache_instance|altsyncram:altsyncram_component                                                   ; altsyncram           ; work         ;
-;             |altsyncram_u5v3:auto_generated| ; 2 (0)             ; 1 (1)        ; 524288            ; 0          ; 0    ; 0            ; |DE0_NANO_SOC_Default|mmu:dataCache|data_cache:data_cache_instance|altsyncram:altsyncram_component|altsyncram_u5v3:auto_generated                    ; altsyncram_u5v3      ; work         ;
-;                |decode_5la:decode2|          ; 2 (2)             ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |DE0_NANO_SOC_Default|mmu:dataCache|data_cache:data_cache_instance|altsyncram:altsyncram_component|altsyncram_u5v3:auto_generated|decode_5la:decode2 ; decode_5la           ; work         ;
+;    |dataController:dataCache|                           ; 7 (5)             ; 1 (0)        ; 524288            ; 0          ; 0    ; 0            ; |DE0_NANO_SOC_Default|dataController:dataCache                                                                                                                  ; dataController                  ; work         ;
+;       |data_cache:data_cache_instance|       ; 2 (0)             ; 1 (0)        ; 524288            ; 0          ; 0    ; 0            ; |DE0_NANO_SOC_Default|dataController:dataCache|data_cache:data_cache_instance                                                                                   ; data_cache           ; work         ;
+;          |altsyncram:altsyncram_component|   ; 2 (0)             ; 1 (0)        ; 524288            ; 0          ; 0    ; 0            ; |DE0_NANO_SOC_Default|dataController:dataCache|data_cache:data_cache_instance|altsyncram:altsyncram_component                                                   ; altsyncram           ; work         ;
+;             |altsyncram_u5v3:auto_generated| ; 2 (0)             ; 1 (1)        ; 524288            ; 0          ; 0    ; 0            ; |DE0_NANO_SOC_Default|dataController:dataCache|data_cache:data_cache_instance|altsyncram:altsyncram_component|altsyncram_u5v3:auto_generated                    ; altsyncram_u5v3      ; work         ;
+;                |decode_5la:decode2|          ; 2 (2)             ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |DE0_NANO_SOC_Default|dataController:dataCache|data_cache:data_cache_instance|altsyncram:altsyncram_component|altsyncram_u5v3:auto_generated|decode_5la:decode2 ; decode_5la           ; work         ;
 ;    |outputDataMux:dataMux|                   ; 8 (8)             ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |DE0_NANO_SOC_Default|outputDataMux:dataMux                                                                                                          ; outputDataMux        ; work         ;
 ;    |progMem:instrCache|                      ; 31 (31)           ; 24 (24)      ; 0                 ; 0          ; 0    ; 0            ; |DE0_NANO_SOC_Default|progMem:instrCache                                                                                                             ; progMem              ; work         ;
 ;    |wolfcore:CPU|                            ; 791 (409)         ; 672 (672)    ; 0                 ; 0          ; 0    ; 0            ; |DE0_NANO_SOC_Default|wolfcore:CPU                                                                                                                   ; wolfcore             ; work         ;
@@ -271,7 +271,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +------------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+--------+------+
 ; Name                                                                                                                   ; Type ; Mode             ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size   ; MIF  ;
 +------------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+--------+------+
-; mmu:dataCache|data_cache:data_cache_instance|altsyncram:altsyncram_component|altsyncram_u5v3:auto_generated|ALTSYNCRAM ; AUTO ; Simple Dual Port ; 16384        ; 32           ; 16384        ; 32           ; 524288 ; None ;
+; dataController:dataCache|data_cache:data_cache_instance|altsyncram:altsyncram_component|altsyncram_u5v3:auto_generated|ALTSYNCRAM ; AUTO ; Simple Dual Port ; 16384        ; 32           ; 16384        ; 32           ; 524288 ; None ;
 +------------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+--------+------+
 
 
@@ -280,7 +280,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------+--------------+---------+--------------+--------------+--------------------------------------------------------------------+-----------------+
 ; Vendor ; IP Core Name ; Version ; Release Date ; License Type ; Entity Instance                                                    ; IP Include File ;
 +--------+--------------+---------+--------------+--------------+--------------------------------------------------------------------+-----------------+
-; Altera ; RAM: 2-PORT  ; 16.0    ; N/A          ; N/A          ; |DE0_NANO_SOC_Default|mmu:dataCache|data_cache:data_cache_instance ; data_cache.vhd  ;
+; Altera ; RAM: 2-PORT  ; 16.0    ; N/A          ; N/A          ; |DE0_NANO_SOC_Default|dataController:dataCache|data_cache:data_cache_instance ; data_cache.vhd  ;
 +--------+--------------+---------+--------------+--------------+--------------------------------------------------------------------+-----------------+
 
 
@@ -1883,7 +1883,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 
 
 +------------------------------------------------------------------------------------------------------------------------------------+
-; Source assignments for mmu:dataCache|data_cache:data_cache_instance|altsyncram:altsyncram_component|altsyncram_u5v3:auto_generated ;
+; Source assignments for dataController:dataCache|data_cache:data_cache_instance|altsyncram:altsyncram_component|altsyncram_u5v3:auto_generated ;
 +---------------------------------+--------------------+------+----------------------------------------------------------------------+
 ; Assignment                      ; Value              ; From ; To                                                                   ;
 +---------------------------------+--------------------+------+----------------------------------------------------------------------+
@@ -1892,7 +1892,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 
 
 +---------------------------------------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: mmu:dataCache|data_cache:data_cache_instance|altsyncram:altsyncram_component ;
+; Parameter Settings for User Entity Instance: dataController:dataCache|data_cache:data_cache_instance|altsyncram:altsyncram_component ;
 +------------------------------------+----------------------+---------------------------------------------------------------+
 ; Parameter Name                     ; Value                ; Type                                                          ;
 +------------------------------------+----------------------+---------------------------------------------------------------+
@@ -1958,7 +1958,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Name                                      ; Value                                                                        ;
 +-------------------------------------------+------------------------------------------------------------------------------+
 ; Number of entity instances                ; 1                                                                            ;
-; Entity Instance                           ; mmu:dataCache|data_cache:data_cache_instance|altsyncram:altsyncram_component ;
+; Entity Instance                           ; dataController:dataCache|data_cache:data_cache_instance|altsyncram:altsyncram_component ;
 ;     -- OPERATION_MODE                     ; DUAL_PORT                                                                    ;
 ;     -- WIDTH_A                            ; 32                                                                           ;
 ;     -- NUMWORDS_A                         ; 16384                                                                        ;
@@ -2065,9 +2065,9 @@ Warning (12090): Entity "mux" obtained from "../src/mux.vhd" instead of from Qua
 Info (12021): Found 2 design units, including 1 entities, in source file /home/mathias/Projects/WolfCoreOne/logic/src/mux.vhd
     Info (12022): Found design unit 1: mux-mdefault File: /home/mathias/Projects/WolfCoreOne/logic/src/mux.vhd Line: 27
     Info (12023): Found entity 1: mux File: /home/mathias/Projects/WolfCoreOne/logic/src/mux.vhd Line: 7
-Info (12021): Found 2 design units, including 1 entities, in source file /home/mathias/Projects/WolfCoreOne/logic/src/mmu.vhd
-    Info (12022): Found design unit 1: mmu-default File: /home/mathias/Projects/WolfCoreOne/logic/src/mmu.vhd Line: 17
-    Info (12023): Found entity 1: mmu File: /home/mathias/Projects/WolfCoreOne/logic/src/mmu.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file /home/mathias/Projects/WolfCoreOne/logic/src/dataController.vhd
+    Info (12022): Found design unit 1: dataController-default File: /home/mathias/Projects/WolfCoreOne/logic/src/dataController.vhd Line: 17
+    Info (12023): Found entity 1: dataController File: /home/mathias/Projects/WolfCoreOne/logic/src/dataController.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file /home/mathias/Projects/WolfCoreOne/logic/src/flowController.vhd
     Info (12022): Found design unit 1: flowController-default File: /home/mathias/Projects/WolfCoreOne/logic/src/flowController.vhd Line: 32
     Info (12023): Found entity 1: flowController File: /home/mathias/Projects/WolfCoreOne/logic/src/flowController.vhd Line: 5
@@ -2135,11 +2135,11 @@ Info (10041): Inferred latch for "resTmp[32]" at alu.vhd(34) File: /home/mathias
 Info (12128): Elaborating entity "flowController" for hierarchy "flowController:instrCtrl" File: /home/mathias/Projects/WolfCoreOne/logic/quartus_prj/DE0_NANO_SOC_Default.v Line: 157
 Warning (10036): Verilog HDL or VHDL warning at flowController.vhd(55): object "flushFlag" assigned a value but never read File: /home/mathias/Projects/WolfCoreOne/logic/src/flowController.vhd Line: 55
 Info (12128): Elaborating entity "progMem" for hierarchy "progMem:instrCache" File: /home/mathias/Projects/WolfCoreOne/logic/quartus_prj/DE0_NANO_SOC_Default.v Line: 163
-Info (12128): Elaborating entity "mmu" for hierarchy "mmu:dataCache" File: /home/mathias/Projects/WolfCoreOne/logic/quartus_prj/DE0_NANO_SOC_Default.v Line: 172
-Info (12128): Elaborating entity "data_cache" for hierarchy "mmu:dataCache|data_cache:data_cache_instance" File: /home/mathias/Projects/WolfCoreOne/logic/src/mmu.vhd Line: 35
-Info (12128): Elaborating entity "altsyncram" for hierarchy "mmu:dataCache|data_cache:data_cache_instance|altsyncram:altsyncram_component" File: /home/mathias/Projects/WolfCoreOne/logic/quartus_prj/data_cache.vhd Line: 63
-Info (12130): Elaborated megafunction instantiation "mmu:dataCache|data_cache:data_cache_instance|altsyncram:altsyncram_component" File: /home/mathias/Projects/WolfCoreOne/logic/quartus_prj/data_cache.vhd Line: 63
-Info (12133): Instantiated megafunction "mmu:dataCache|data_cache:data_cache_instance|altsyncram:altsyncram_component" with the following parameter: File: /home/mathias/Projects/WolfCoreOne/logic/quartus_prj/data_cache.vhd Line: 63
+Info (12128): Elaborating entity "dataController" for hierarchy "dataController:dataCache" File: /home/mathias/Projects/WolfCoreOne/logic/quartus_prj/DE0_NANO_SOC_Default.v Line: 172
+Info (12128): Elaborating entity "data_cache" for hierarchy "dataController:dataCache|data_cache:data_cache_instance" File: /home/mathias/Projects/WolfCoreOne/logic/src/dataController.vhd Line: 35
+Info (12128): Elaborating entity "altsyncram" for hierarchy "dataController:dataCache|data_cache:data_cache_instance|altsyncram:altsyncram_component" File: /home/mathias/Projects/WolfCoreOne/logic/quartus_prj/data_cache.vhd Line: 63
+Info (12130): Elaborated megafunction instantiation "dataController:dataCache|data_cache:data_cache_instance|altsyncram:altsyncram_component" File: /home/mathias/Projects/WolfCoreOne/logic/quartus_prj/data_cache.vhd Line: 63
+Info (12133): Instantiated megafunction "dataController:dataCache|data_cache:data_cache_instance|altsyncram:altsyncram_component" with the following parameter: File: /home/mathias/Projects/WolfCoreOne/logic/quartus_prj/data_cache.vhd Line: 63
     Info (12134): Parameter "address_aclr_a" = "UNUSED"
     Info (12134): Parameter "address_aclr_b" = "NONE"
     Info (12134): Parameter "address_reg_b" = "CLOCK0"
@@ -2192,16 +2192,16 @@ Info (12133): Instantiated megafunction "mmu:dataCache|data_cache:data_cache_ins
     Info (12134): Parameter "lpm_type" = "altsyncram"
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_u5v3.tdf
     Info (12023): Found entity 1: altsyncram_u5v3 File: /home/mathias/Projects/WolfCoreOne/logic/quartus_prj/db/altsyncram_u5v3.tdf Line: 34
-Info (12128): Elaborating entity "altsyncram_u5v3" for hierarchy "mmu:dataCache|data_cache:data_cache_instance|altsyncram:altsyncram_component|altsyncram_u5v3:auto_generated" File: /opt/altera/16.0/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
+Info (12128): Elaborating entity "altsyncram_u5v3" for hierarchy "dataController:dataCache|data_cache:data_cache_instance|altsyncram:altsyncram_component|altsyncram_u5v3:auto_generated" File: /opt/altera/16.0/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
 Info (12021): Found 1 design units, including 1 entities, in source file db/decode_5la.tdf
     Info (12023): Found entity 1: decode_5la File: /home/mathias/Projects/WolfCoreOne/logic/quartus_prj/db/decode_5la.tdf Line: 23
-Info (12128): Elaborating entity "decode_5la" for hierarchy "mmu:dataCache|data_cache:data_cache_instance|altsyncram:altsyncram_component|altsyncram_u5v3:auto_generated|decode_5la:decode2" File: /home/mathias/Projects/WolfCoreOne/logic/quartus_prj/db/altsyncram_u5v3.tdf Line: 45
+Info (12128): Elaborating entity "decode_5la" for hierarchy "dataController:dataCache|data_cache:data_cache_instance|altsyncram:altsyncram_component|altsyncram_u5v3:auto_generated|decode_5la:decode2" File: /home/mathias/Projects/WolfCoreOne/logic/quartus_prj/db/altsyncram_u5v3.tdf Line: 45
 Info (12021): Found 1 design units, including 1 entities, in source file db/decode_u0a.tdf
     Info (12023): Found entity 1: decode_u0a File: /home/mathias/Projects/WolfCoreOne/logic/quartus_prj/db/decode_u0a.tdf Line: 23
-Info (12128): Elaborating entity "decode_u0a" for hierarchy "mmu:dataCache|data_cache:data_cache_instance|altsyncram:altsyncram_component|altsyncram_u5v3:auto_generated|decode_u0a:rden_decode_b" File: /home/mathias/Projects/WolfCoreOne/logic/quartus_prj/db/altsyncram_u5v3.tdf Line: 46
+Info (12128): Elaborating entity "decode_u0a" for hierarchy "dataController:dataCache|data_cache:data_cache_instance|altsyncram:altsyncram_component|altsyncram_u5v3:auto_generated|decode_u0a:rden_decode_b" File: /home/mathias/Projects/WolfCoreOne/logic/quartus_prj/db/altsyncram_u5v3.tdf Line: 46
 Info (12021): Found 1 design units, including 1 entities, in source file db/mux_2hb.tdf
     Info (12023): Found entity 1: mux_2hb File: /home/mathias/Projects/WolfCoreOne/logic/quartus_prj/db/mux_2hb.tdf Line: 23
-Info (12128): Elaborating entity "mux_2hb" for hierarchy "mmu:dataCache|data_cache:data_cache_instance|altsyncram:altsyncram_component|altsyncram_u5v3:auto_generated|mux_2hb:mux3" File: /home/mathias/Projects/WolfCoreOne/logic/quartus_prj/db/altsyncram_u5v3.tdf Line: 48
+Info (12128): Elaborating entity "mux_2hb" for hierarchy "dataController:dataCache|data_cache:data_cache_instance|altsyncram:altsyncram_component|altsyncram_u5v3:auto_generated|mux_2hb:mux3" File: /home/mathias/Projects/WolfCoreOne/logic/quartus_prj/db/altsyncram_u5v3.tdf Line: 48
 Info (12128): Elaborating entity "UART" for hierarchy "UART:testUART" File: /home/mathias/Projects/WolfCoreOne/logic/quartus_prj/DE0_NANO_SOC_Default.v Line: 184
 Warning (10036): Verilog HDL or VHDL warning at uart.vhd(25): object "inputBuffer" assigned a value but never read File: /home/mathias/Projects/WolfCoreOne/logic/src/io/uart.vhd Line: 25
 Warning (10036): Verilog HDL or VHDL warning at uart.vhd(26): object "txReq" assigned a value but never read File: /home/mathias/Projects/WolfCoreOne/logic/src/io/uart.vhd Line: 26

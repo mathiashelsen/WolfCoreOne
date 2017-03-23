@@ -42,6 +42,7 @@ architecture default of flowController is
 
     signal tmpPC            : std_logic_vector(31 downto 0);
     signal IRQBus           : std_logic_vector(31 downto 0);
+    signal IRQMask          : std_logic_vector(31 downto 0);
 
     type smallRegFile is array(31 downto 0) of unsigned(4 downto 0);
     signal activeIRQStack   : smallRegFile;
@@ -71,6 +72,7 @@ process(clk, rst)
 begin
     if(rst = '1') then
         IRQBus              <= X"0000_0000";
+        IRQMask             <= X"0000_0000";
         IRQ_FinishedFlag    <= '0';
         flowCtrlState       <= IDLE;
         instrGen            <= X"0000_0000";
@@ -102,6 +104,8 @@ begin
                         else
                             IRQ_Finished(0) <= '0';
                         end if;
+                    when "0010" =>
+                        IRQMask <= inputData;
                     when others =>
                 end case;
             end if;
@@ -122,7 +126,7 @@ begin
 
     elsif(clk'event and clk='1') then
 
-        IRQBus  <= IRQ;
+        IRQBus  <= (IRQ and IRQMask);
 
         case flowCtrlState is
             when IDLE =>

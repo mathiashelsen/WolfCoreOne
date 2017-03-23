@@ -19,10 +19,15 @@ wire [31:0] instrCacheData;
 wire [31:0] dataOutFlowCtrl;
 wire [31:0] dataOutUART;
 wire [31:0] dataOutDataCache;
-			
+wire [31:0] IRQBus;
+wire [31:0] uartStatus;
 reg clk;
 reg rst;
 wire TxD;
+
+assign IRQBus       = 0;
+assign IRQBus[0]    = uartStatus[2]; // RX buffer ready
+assign IRQBus[1]    = uartStatus[1]; // TX complete
 
 wolfcore CPU(
 	.dataOutput(cpuDataOut),
@@ -63,7 +68,7 @@ progMem instrCache(
 	.clk(clk)
 );
 
-mmu dataCache(
+dataController dataCache(
 	.dataIn(cpuDataOut),
 	.dataInAddr(cpuDataOutAddr),
 	.dataOut(dataOutDataCache),
@@ -81,7 +86,8 @@ UART testUART(
         .inputAddr(cpuDataOutAddr),
         .outputData(dataOutUART), 
         .outputAddr(cpuDataInAddr),
-        .wren(cpuWrEn)
+        .wren(cpuWrEn),
+        .uartStatus(uartStatus)
 );
 
 outputDataMux dataMux(
