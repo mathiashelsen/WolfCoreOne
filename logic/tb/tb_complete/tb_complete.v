@@ -54,7 +54,7 @@ flowController instrCtrl(
 	.forceRoot(forceRoot),
 	.memAddr(instrCacheAddr),
 	.instrIn(instrCacheData),
-	.IRQ(32'h00000000),
+	.IRQ(IRQBus),
 	.inputAddr(cpuDataOutAddr),
 	.outputAddr(cpuDataInAddr),
 	.inputData(cpuDataOut),
