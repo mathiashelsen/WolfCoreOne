@@ -150,7 +150,7 @@ func ParseBVal(x string) (immb, regb, immv, ptr uint32) {
 		return 0, r, 0, p
 	} else {
 		immv := ParseInt(x, 11)
-		regb := (immv & 0xFF80) >> 4
+		regb := (immv >> 7) & 0xF
 		imml := (immv & 0x007F)
 		assert(regb < isa.NREG)
 		return 1, regb, imml, 0

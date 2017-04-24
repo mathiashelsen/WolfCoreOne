@@ -65,6 +65,7 @@ func handleLabel(args []string, pc int) {
 		Err("#label needs 1 argument, have: ", args)
 	}
 	handleDef([]string{args[0], fmt.Sprint(pc)})
+        fmt.Printf("PC value %d\n", pc)
 }
 
 func transl(x string) string {
