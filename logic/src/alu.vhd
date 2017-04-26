@@ -48,6 +48,7 @@ architecture default of ALU is
 	constant MOV	: std_logic_vector(4 downto 0) := "01001";
 	constant BSL    : std_logic_vector(4 downto 0) := "01010";
 	constant BSR    : std_logic_vector(4 downto 0) := "01011";
+        constant NOT_OPC: std_logic_vector(4 downto 0) := "01100";
 	signal unsgndA	: unsigned(31 downto 0);
 	signal unsgndB	: unsigned(31 downto 0);
 	signal sgndA	: signed(31 downto 0);
@@ -110,6 +111,8 @@ begin
                         ALU_Out <= std_logic_vector(shift_left(unsgndA, to_integer(unsigned(inputB(4 downto 0)))));
                 when BSR =>
                         ALU_Out <= std_logic_vector(shift_right(unsgndA, to_integer(unsigned(inputB(4 downto 0)))));
+                when NOT_OPC =>
+                        ALU_Out <= not inputB;
 		when others =>
 		    ALU_Out	<= X"0000_0000";
 		end case;

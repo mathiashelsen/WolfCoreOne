@@ -71,6 +71,7 @@ const (
 	MOV   = 0x09
 	BSL   = 0x0A
 	BSR   = 0x0B
+        NOT   = 0x0C
 )
 
 // Human-readable strings for Conditions
@@ -99,6 +100,7 @@ var OpcodeStr = map[uint32]string{
 	MOV:   "MOV",
 	BSL:   "BSL",
 	BSR:   "BSR",
+        NOT:    "NOT",
 }
 
 // Parses opcodes

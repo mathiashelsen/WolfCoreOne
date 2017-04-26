@@ -9,7 +9,7 @@ z2
 cModel Technology
 d/home/mathias/Projects/WolfCoreOne/logic/tb/tb_uart
 Ealu
-Z0 w1490420520
+Z0 w1493221908
 Z1 DPx4 ieee 11 numeric_std 0 22 :ASDNFgHXf_ih3J@9F3Ze1
 Z2 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
 Z3 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
@@ -22,9 +22,9 @@ Vg9d3iYRMijFhEW9NQd4iB1
 !s100 QOH0DSlPL6?[JiHhi_AOI0
 Z7 OV;C;10.5b;63
 32
-Z8 !s110 1493051052
+Z8 !s110 1493222493
 !i10b 1
-Z9 !s108 1493051052.000000
+Z9 !s108 1493222493.000000
 Z10 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|/home/mathias/Projects/WolfCoreOne/logic/src/alu.vhd|
 Z11 !s107 /home/mathias/Projects/WolfCoreOne/logic/src/alu.vhd|
 !i113 1
@@ -35,10 +35,10 @@ R1
 R2
 R3
 DEx4 work 3 alu 0 22 g9d3iYRMijFhEW9NQd4iB1
-l56
+l57
 L39
-V>zeoj6R>NUebAFJGiAC7<2
-!s100 5RFB]`VbYkCZ[<0?H<]]<0
+V?CXkhF5Z24k_coV]OcGok0
+!s100 7Oo7QTDm`gC6Q=OHY9[:?2
 R7
 32
 R8
@@ -63,9 +63,9 @@ V==49T3a_OVHI?64:`l=7`0
 !s100 >=jKKD:mUZOTlWG[8]WXl3
 R7
 32
-Z18 !s110 1493051053
+Z18 !s110 1493222494
 !i10b 1
-Z19 !s108 1493051053.000000
+Z19 !s108 1493222494.000000
 Z20 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|/home/mathias/Projects/WolfCoreOne/logic/quartus_prj/data_cache.vhd|
 Z21 !s107 /home/mathias/Projects/WolfCoreOne/logic/quartus_prj/data_cache.vhd|
 !i113 1
@@ -104,7 +104,7 @@ VVKYHJM5eo:S<HSd0CGPd92
 !s100 ?ILLZo1HJWDh>SIHE^nFG3
 R7
 32
-R18
+R8
 !i10b 1
 R9
 Z28 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|/home/mathias/Projects/WolfCoreOne/logic/src/dataController.vhd|
@@ -123,7 +123,7 @@ VG>zf<?2mVoV>:3eb=H4;12
 !s100 il086D;oDl91oh0^HRFT80
 R7
 32
-R18
+R8
 !i10b 1
 R9
 R28
@@ -167,9 +167,9 @@ VYoCMR9lFgLIM6mXa7Y9]d1
 !s100 Im`oIDbO`::gXU0i^NNOE2
 R7
 32
-R18
+R8
 !i10b 1
-R19
+R9
 Z33 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|/home/mathias/Projects/WolfCoreOne/logic/src/flowController.vhd|
 Z34 !s107 /home/mathias/Projects/WolfCoreOne/logic/src/flowController.vhd|
 !i113 1
@@ -186,9 +186,9 @@ VVFB2C;8DLABN=P<:OY<UJ3
 !s100 I1>Zf[Q9i=N5XKoKEL6f90
 R7
 32
-R18
+R8
 !i10b 1
-R19
+R9
 R33
 R34
 !i113 1
@@ -205,9 +205,9 @@ VDfkBj;55Tf]X]DQIE`>k?2
 !s100 ]9U2dOnNOZ<L6PU9X`S:<3
 R7
 32
-R18
+R8
 !i10b 1
-R19
+R9
 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|/home/mathias/Projects/WolfCoreOne/logic/src/mainArch.vhd|
 !s107 /home/mathias/Projects/WolfCoreOne/logic/src/mainArch.vhd|
 !i113 1
@@ -272,9 +272,9 @@ V;m_J:=A[coXLUnXf03AJJ2
 !s100 LiK@lhV@oCkXboZ1COQPi3
 R7
 32
-R18
+R8
 !i10b 1
-R19
+R9
 Z47 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|/home/mathias/Projects/WolfCoreOne/logic/src/outputDataMux.vhd|
 Z48 !s107 /home/mathias/Projects/WolfCoreOne/logic/src/outputDataMux.vhd|
 !i113 1
@@ -291,16 +291,16 @@ VU00ngi?FiNRFV10O]^[l03
 !s100 jgm7BioTHImLG_M;4=U4k3
 R7
 32
-R18
+R8
 !i10b 1
-R19
+R9
 R47
 R48
 !i113 1
 R12
 R13
 Eprogmem
-Z49 w1493051046
+Z49 w1493222484
 R1
 R2
 R3
@@ -313,9 +313,9 @@ V7UZP>h8i;kMiMzS4[>oS50
 !s100 =o?FDRjZ`loGb`^O9bB6G1
 R7
 32
-R18
+R8
 !i10b 1
-R19
+R9
 Z52 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|/home/mathias/Projects/WolfCoreOne/logic/src/progMem.vhd|
 Z53 !s107 /home/mathias/Projects/WolfCoreOne/logic/src/progMem.vhd|
 !i113 1
@@ -328,13 +328,13 @@ R3
 DEx4 work 7 progmem 0 22 7UZP>h8i;kMiMzS4[>oS50
 l38
 L36
-Vm63flU?4C4Qd:E<KPBinH0
-!s100 @YgW^m5eA]6lX83oRO<<U1
+V2X0`R0jhBi0V4RjBYmVbL0
+!s100 j[_EW15<GXnok;?B[J4`d1
 R7
 32
-R18
+R8
 !i10b 1
-R19
+R9
 R52
 R53
 !i113 1
@@ -402,7 +402,7 @@ R7
 32
 R18
 !i10b 1
-R19
+R9
 Z63 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|/home/mathias/Projects/WolfCoreOne/logic/src/wolfcore.vhd|
 Z64 !s107 /home/mathias/Projects/WolfCoreOne/logic/src/wolfcore.vhd|
 !i113 1
@@ -422,7 +422,7 @@ R7
 32
 R18
 !i10b 1
-R19
+R9
 R63
 R64
 !i113 1
